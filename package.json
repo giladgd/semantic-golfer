@@ -1,0 +1,74 @@
+{
+  "name": "live-structured-decision",
+  "private": true,
+  "version": "0.0.0",
+  "main": "./dist-electron/index.js",
+  "type": "module",
+  "homepage": "https://github.com/giladgd/live-structured-decision",
+  "scripts": {
+    "start": "vite dev",
+    "start:inspect": "cross-env ENABLE_INSPECT=true vite dev",
+    "start:build": "electron ./dist-electron",
+    "prebuild": "rimraf ./dist ./dist-electron ./release",
+    "build": "tsc && vite build && electron-builder --config ./electron-builder.ts",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint --report-unused-disable-directives .",
+    "format": "npm run lint:eslint -- --fix",
+    "clean": "rm -rf ./node_modules ./dist ./tsconfig.tsbuildinfo ./dist-electron ./release ./models"
+  },
+  "author": {
+    "name": "Gilad S.",
+    "url": "https://github.com/giladgd"
+  },
+  "license": "MIT",
+  "preferUnplugged": true,
+  "bugs": {
+    "url": "https://github.com/giladgd/live-structured-decision/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/giladgd"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "birpc": "^4.0.0",
+    "classnames": "^2.5.1",
+    "highlight.js": "^11.11.1",
+    "lifecycle-utils": "^3.1.1",
+    "markdown-it": "^14.1.1",
+    "node-llama-cpp": "^3.21.1",
+    "pretty-ms": "^9.3.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "semver": "^7.7.1"
+  },
+  "allowScripts": {
+    "node-llama-cpp": true
+  },
+  "devDependencies": {
+    "@eslint/compat": "^2.0.2",
+    "@stylistic/eslint-plugin": "^5.8.0",
+    "@types/markdown-it": "^14.1.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/semver": "^7.7.1",
+    "@vitejs/plugin-react": "^5.1.4",
+    "cross-env": "^10.1.0",
+    "electron": "^40.4.1",
+    "electron-builder": "^26.7.0",
+    "eslint": "^9.39.2",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsdoc": "^62.5.5",
+    "eslint-plugin-n": "^17.24.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.0",
+    "rimraf": "^6.1.3",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.0",
+    "vite": "^7.3.1",
+    "vite-plugin-electron": "^0.29.0",
+    "vite-plugin-electron-renderer": "^0.14.6",
+    "zx": "^8.8.5"
+  }
+}
