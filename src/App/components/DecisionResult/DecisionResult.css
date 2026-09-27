@@ -1,0 +1,173 @@
+.decisionResult {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    padding: var(--panel-padding);
+    min-width: 0;
+    min-height: 0;
+    > * { flex-shrink: 0; }
+
+    > .decisionContent {
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        > * { flex-shrink: 0; }
+    }
+
+    > h2 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    > .decisionContent > .answerSummary {
+        > .answerValue {
+            font-size: 48px;
+            font-weight: 500;
+            letter-spacing: -0.05em;
+            color: var(--accent-color);
+            font-variant-numeric: tabular-nums;
+            > span { font-size: 19px; letter-spacing: -0.03em; }
+            &[data-empty="true"] { color: var(--muted-text-color); }
+        }
+        > .choiceValue {
+            display: grid;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--accent-color);
+            overflow-wrap: anywhere;
+            > span {
+                grid-area: 1 / 1;
+                visibility: hidden;
+                &[data-selected="true"] { visibility: visible; }
+            }
+        }
+        > .answerLabel {
+            font-size: 11px;
+            color: var(--muted-text-color);
+            margin-top: 4px;
+        }
+    }
+    > .decisionContent > .scoreScale {
+        > .scoreMarkers {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 10px;
+            color: var(--muted-text-color);
+            > span {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                &::before {
+                    content: "";
+                    width: 1px;
+                    height: 5px;
+                    background: var(--muted-text-color);
+                    opacity: 0.5;
+                }
+            }
+        }
+        > .scoreEndpoints {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            font-size: 10px;
+            color: var(--muted-text-color);
+            margin-top: 8px;
+            > span { max-width: 45%; overflow-wrap: anywhere; }
+            > span:last-child { text-align: end; }
+        }
+    }
+    > .decisionContent > .probabilities {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        > .probability {
+            > .probabilityLabel {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                gap: 16px;
+                font-size: 11px;
+                margin-bottom: 8px;
+                > .criterionLabel {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 7px;
+                    overflow-wrap: anywhere;
+                    > .selectedIcon {
+                        width: 15px;
+                        height: 15px;
+                        flex-shrink: 0;
+                        align-self: center;
+                        visibility: hidden;
+                    }
+                }
+                > span:last-child {
+                    flex-shrink: 0;
+                    color: var(--muted-text-color);
+                    font-variant-numeric: tabular-nums;
+                }
+            }
+            &[data-selected="true"] > .probabilityLabel {
+                color: var(--accent-color);
+                font-weight: 600;
+                .selectedIcon { visibility: visible; }
+            }
+        }
+    }
+    &[data-type="score"] > .decisionContent > .probabilities {
+        margin-top: 18px;
+        .decisionProgressBar { height: 4px; }
+    }
+    > .resultFooter {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-top: 1px solid var(--border-color);
+        margin-top: auto;
+        margin-inline: calc(-1 * var(--panel-padding));
+        &:last-child { margin-bottom: calc(-1 * var(--panel-padding)); }
+        > .confidence, > .timing { padding: 18px var(--panel-padding); }
+        strong {
+            font-size: 18px;
+            font-weight: 500;
+            font-variant-numeric: tabular-nums;
+            overflow-wrap: anywhere;
+            > span { font-size: 11px; color: var(--muted-text-color); }
+        }
+        > .confidence {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: baseline;
+            align-content: center;
+            gap: 8px;
+            color: var(--accent-color);
+            > span { font-size: 11px; color: var(--muted-text-color); }
+            > strong { font-size: 11px; white-space: nowrap; }
+            > .decisionProgressBar { grid-column: 1 / -1; }
+        }
+        > .timing {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            grid-column: 2;
+        }
+        > .confidence + .timing { border-inline-start: 1px solid var(--border-color); }
+    }
+    > .error {
+        max-height: 25%;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        color: var(--error-color);
+        font-size: 12px;
+        overflow-wrap: anywhere;
+        > button { margin-top: 12px; font-size: 12px; }
+    }
+}

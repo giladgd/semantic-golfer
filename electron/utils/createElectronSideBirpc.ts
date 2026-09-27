@@ -10,13 +10,21 @@ export function createElectronSideBirpc<
     window: BrowserWindow,
     electronFunctions: ElectronFunctions
 ) {
+    let listener: ((event: Electron.IpcMainEvent, data: string) => void) | undefined;
     return createBirpc<RendererFunction, ElectronFunctions>(electronFunctions, {
         post: (data) => window.webContents.send(toRendererEventName, data),
-        on: (onData) => ipcMain.on(fromRendererEventName, (event, data) => {
-            if (BrowserWindow.fromWebContents(event.sender) === window)
-                onData(data);
-        }),
-        serialize: (value) => JSON.stringify(value),
+        on: (onData) => {
+            listener = (event, data) => {
+                if (event.sender === window.webContents)
+                    onData(data);
+            };
+            ipcMain.on(fromRendererEventName, listener);
+        },
+        off: () => {
+            if (listener != null)
+                ipcMain.off(fromRendererEventName, listener);
+        },
+        serialize: (value) => JSON.stringify(value, (_, item) => (item instanceof Error ? String(item) : item)),
         deserialize: (value) => JSON.parse(value)
     });
 }

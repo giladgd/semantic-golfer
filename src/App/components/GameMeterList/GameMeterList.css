@@ -1,0 +1,59 @@
+.gameMeterList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--game-meter-gap, 24px);
+    min-width: 0;
+
+    > .gameMeter {
+        > .meterHeading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: var(--game-meter-label-size, 12px);
+            margin-bottom: var(--game-meter-label-gap, 10px);
+            > span { display: flex; align-items: center; gap: 10px; }
+            > strong { font-weight: 500; font-variant-numeric: tabular-nums; }
+            .lockNumber {
+                display: grid;
+                place-items: center;
+                flex-shrink: 0;
+                border-radius: 8px;
+                width: var(--game-meter-number-size, 24px);
+                height: var(--game-meter-number-size, 24px);
+                font-size: 10px;
+                background: var(--subtle-surface-color);
+                color: var(--muted-text-color);
+                transition: color 180ms, background 180ms;
+            }
+        }
+        &[data-target="true"] .lockNumber { color: var(--accent-color); background: var(--accent-surface-color); }
+        > .meterBar {
+            --threshold-shadow-color: color-mix(in srgb, var(--text-color) 14%, transparent);
+            position: relative;
+
+            > .threshold {
+                position: absolute;
+                inset-block: 0px;
+                width: 0;
+                border-inline-start: 1px solid color-mix(in srgb, var(--text-color) 65%, transparent);
+                translate: -50% 0;
+                pointer-events: none;
+                transition: left 180ms var(--transition-easing);
+                opacity: 0.5;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset-block: 0;
+                    width: 20px;
+                    background: linear-gradient(to right, var(--threshold-shadow-color), transparent);
+                }
+                &[data-bound="minimum"]::before {
+                    right: 1px;
+                    background: linear-gradient(to left, var(--threshold-shadow-color), transparent);
+                }
+            }
+        }
+    }
+}

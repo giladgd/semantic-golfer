@@ -1,0 +1,25 @@
+.decisionProgressBar {
+    height: 8px;
+    background: var(--track-color);
+    border-radius: 99px;
+    overflow: hidden;
+
+    > .fill {
+        width: 100%;
+        height: 100%;
+        background: var(--accent-color);
+        border-radius: inherit;
+        transform-origin: left;
+        transition: transform 180ms var(--transition-easing);
+    }
+
+    &[data-indeterminate] > .fill {
+        animation: decisionProgressPulse 1.2s ease-in-out infinite alternate;
+    }
+}
+
+@keyframes decisionProgressPulse {
+    to {
+        translate: 180%;
+    }
+}

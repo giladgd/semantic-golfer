@@ -1,0 +1,90 @@
+.gameDemo {
+    --game-meter-gap: 14px;
+    --game-meter-label-size: 11px;
+    --game-meter-label-gap: 8px;
+    margin: 16px 0 0;
+
+    > .demoScene {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 1.15fr);
+        min-height: 218px;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        overflow: hidden;
+
+        > .demoDocument {
+            display: flex;
+            flex-direction: column;
+            padding: 18px;
+            background: var(--document-surface-color);
+            > .demoLabel { font-size: 11px; color: var(--muted-text-color); }
+            > .demoSentence {
+                flex: 1;
+                padding: 18px 0;
+                font-size: 18px;
+                line-height: 1.65;
+                letter-spacing: -0.03em;
+                overflow-wrap: anywhere;
+                > .caret {
+                    display: inline-block;
+                    width: 2px;
+                    height: 1em;
+                    vertical-align: -0.1em;
+                    margin-inline-start: 2px;
+                    background: var(--accent-color);
+                    &[data-playing="true"] { animation: gameDemoCaret 1s steps(1) infinite; }
+                }
+            }
+            > .demoFooter {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                font-size: 10px;
+                font-variant-numeric: tabular-nums;
+                color: var(--muted-text-color);
+                > .demoSuccess {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    color: var(--accent-color);
+                    visibility: hidden;
+                    &[data-won="true"] { visibility: visible; }
+                    > svg { width: 14px; height: 14px; }
+                }
+            }
+        }
+        > .demoMeters {
+            padding: 18px;
+            align-content: center;
+            border-inline-start: 1px solid var(--border-color);
+            background: var(--surface-color);
+        }
+    }
+    > figcaption {
+        margin-top: 10px;
+        min-height: 18px;
+        text-align: center;
+        color: var(--muted-text-color);
+        font-size: 11px;
+        line-height: 1.6;
+    }
+}
+
+.gameDemoPlayback {
+    --demo-fill-color: var(--accent-surface-color);
+    min-width: 112px;
+    background-color: color-mix(in srgb, var(--demo-fill-color) 45%, transparent);
+    background-image: linear-gradient(var(--demo-fill-color), var(--demo-fill-color));
+    background-repeat: no-repeat;
+    transition: background-size 65ms linear, background-color 150ms;
+
+    &:hover:not(:disabled) {
+        --demo-fill-color: var(--hover-accent-surface-color);
+        background-color: color-mix(in srgb, var(--demo-fill-color) 45%, transparent);
+    }
+}
+
+@keyframes gameDemoCaret {
+    50% { opacity: 0; }
+}

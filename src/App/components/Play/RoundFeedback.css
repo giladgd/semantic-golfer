@@ -1,0 +1,15 @@
+.roundFeedback {
+    color: var(--accent-color);
+    font-size: 13px;
+    text-align: end;
+    opacity: 0;
+    transition: opacity 180ms;
+    &[data-visible="true"] {
+        opacity: 1;
+        animation: feedbackEnter 220ms var(--transition-easing);
+    }
+}
+@keyframes feedbackEnter {
+    from { transform: translateY(6px) scale(0.98); }
+    to { transform: none; }
+}

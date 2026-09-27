@@ -1,9 +1,18 @@
 import {fileURLToPath} from "node:url";
 import path from "node:path";
-import {app, shell, BrowserWindow} from "electron";
+import {app, shell, BrowserWindow, nativeTheme} from "electron";
+import {discoverModels} from "./llm/models.ts";
 import {registerLlmRpc} from "./rpc/llmRpc.ts";
+import {loadScores} from "./state/scores.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Preserve existing models and settings when the display name changes.
+if (app.getPath("userData") === path.join(app.getPath("appData"), app.getName()))
+    app.setPath("userData", path.join(app.getPath("appData"), "semantic-golfer"));
+app.setName("Semantic Golfer");
+if (process.platform === "win32")
+    app.setAppUserModelId("ai.withcat.semantic-golfer");
 
 // The built directory structure
 //
@@ -27,15 +36,35 @@ process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL
 let win: BrowserWindow | null;
 
 function createWindow() {
+    const overlay = () => ({
+        color: nativeTheme.shouldUseDarkColors ? "#1a211c" : "#edf1eb",
+        symbolColor: nativeTheme.shouldUseDarkColors ? "#e2eee5" : "#263c32",
+        height: 60
+    });
     win = new BrowserWindow({
-        icon: path.join(process.env.VITE_PUBLIC, "electron-vite.svg"),
         webPreferences: {
             preload: path.join(__dirname, "preload.mjs"),
             scrollBounce: true
         },
-        width: 1000,
-        height: 700
+        width: 1380,
+        height: 900,
+        minWidth: 760,
+        minHeight: 600,
+        title: "Semantic Golfer",
+        icon: path.join(process.env.VITE_PUBLIC, "icon.png"),
+        titleBarStyle: "hidden",
+        ...(process.platform === "darwin" ? {trafficLightPosition: {x: 20, y: 22}} : {titleBarOverlay: overlay()}),
+        autoHideMenuBar: true,
+        backgroundColor: overlay().color
     });
+    const window = win;
+    const updateTheme = () => {
+        window.setBackgroundColor(overlay().color);
+        if (process.platform !== "darwin")
+            window.setTitleBarOverlay(overlay());
+    };
+    nativeTheme.on("updated", updateTheme);
+    window.once("closed", () => nativeTheme.off("updated", updateTheme));
     registerLlmRpc(win);
 
     // open external links in the default browser
@@ -45,11 +74,6 @@ function createWindow() {
 
         void shell.openExternal(url);
         return {action: "deny"};
-    });
-
-    // Test active push message to Renderer-process.
-    win.webContents.on("did-finish-load", () => {
-        win?.webContents.send("main-process-message", (new Date()).toLocaleString());
     });
 
     if (VITE_DEV_SERVER_URL)
@@ -76,4 +100,10 @@ app.on("activate", () => {
     }
 });
 
-app.whenReady().then(createWindow);
+app.whenReady().then(async () => {
+    // Packaged macOS apps use their native appearance-aware icon catalog.
+    if (!app.isPackaged)
+        app.dock?.setIcon(path.join(process.env.VITE_PUBLIC, "icon.png"));
+    await Promise.all([discoverModels(), loadScores()]);
+    createWindow();
+});

@@ -1,0 +1,98 @@
+.play {
+    padding: 56px max(36px, calc((100vw - 1100px) / 2)) 48px;
+
+    h1 {
+        font-size: clamp(28px, 3.2vw, 42px);
+        line-height: 1.15;
+        font-weight: 550;
+        letter-spacing: -0.055em;
+        margin: 12px 0;
+    }
+    > .intro {
+        position: relative;
+        > button {
+            position: absolute;
+            inset-inline-end: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            > svg { width: 18px; height: 18px; }
+        }
+        margin: 5vh 0 36px;
+    }
+    > .gameChoices {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        > .gameChoice {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: start;
+            padding: 32px;
+            min-height: 300px;
+            border-radius: 26px;
+            background: var(--surface-color);
+            color: var(--text-color);
+            box-shadow: var(--surface-shadow);
+            transition: transform 200ms var(--transition-easing), background-color 150ms;
+            &:hover:not(:disabled) {
+                transform: translateY(-4px);
+                background: var(--hover-surface-color);
+            }
+            > .gameSymbol {
+                display: grid;
+                place-items: center;
+                width: 64px;
+                height: 64px;
+                border-radius: 20px;
+                margin-bottom: 30px;
+                color: var(--accent-color);
+                background: var(--accent-overlay-color);
+                > svg { width: 36px; height: 36px; }
+            }
+            &:last-child > .gameSymbol {
+                color: var(--secondary-accent-color);
+                background: color-mix(in srgb, var(--secondary-accent-color) 12%, transparent);
+            }
+            > .gameName { font-size: 22px; font-weight: 550; letter-spacing: -0.04em; }
+            > .description { font-size: 12px; color: var(--muted-text-color); margin-top: 8px; font-weight: 400; }
+            > .gameMeta {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding-top: 28px;
+                margin-top: auto;
+                color: var(--muted-text-color);
+                font-size: 11px;
+                white-space: nowrap;
+                > .gameTag {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    padding: 5px 9px;
+                    border-radius: 8px;
+                    background: var(--subtle-overlay-color);
+                    > svg { width: 14px; height: 14px; }
+                }
+                > .playGame {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-inline-start: auto;
+                    font-size: 13px;
+                    color: var(--accent-color);
+                    > svg { width: 18px; height: 18px; rotate: 180deg; }
+                }
+            }
+        }
+    }
+    @media (max-width: 1100px) {
+        padding: 48px 20px 24px;
+    }
+    @media (max-width: 900px) {
+        > .gameChoices { grid-template-columns: 1fr; }
+    }
+}

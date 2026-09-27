@@ -9,11 +9,12 @@ export function createRendererSideBirpc<
     rendererFunctions: RendererFunctions
 ) {
     return createBirpc<ElectronFunction, RendererFunctions>(rendererFunctions, {
+        timeout: -1, // Model inference can take longer than birpc's default timeout on CPU.
         post: (data) => window.ipcRenderer.send(fromRendererEventName, data),
         on: (onData) => window.ipcRenderer.on(toRendererEventName, (event, data) => {
             onData(data);
         }),
-        serialize: (value) => JSON.stringify(value),
+        serialize: (value) => JSON.stringify(value, (_, item) => (item instanceof Error ? String(item) : item)),
         deserialize: (value) => JSON.parse(value)
     });
 }

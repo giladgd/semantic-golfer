@@ -1,0 +1,53 @@
+.documentInput {
+    --document-focus-color: color-mix(in srgb, var(--accent-color) 65%, transparent);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    padding: var(--panel-padding);
+    background: var(--document-surface-color);
+    border-inline: 1px solid var(--border-color);
+    transition: border-color 180ms, box-shadow 180ms;
+
+    &:has(> textarea:hover:not(:disabled)):not(:focus-within) {
+        border-color: var(--hover-border-color);
+        box-shadow: 0 -1px 0 var(--hover-border-color), 0 1px 0 var(--hover-border-color);
+    }
+    &:focus-within {
+        border-color: var(--document-focus-color);
+        box-shadow: 0 -1px 0 var(--document-focus-color), 0 1px 0 var(--document-focus-color);
+    }
+
+    > label {
+        font-weight: 600;
+        font-size: 15px;
+    }
+    > textarea {
+        flex: 1;
+        resize: none;
+        width: 100%;
+        min-height: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        margin-top: 22px;
+        padding: 0;
+        border: 0;
+        border-radius: 4px;
+        background: transparent;
+        font-size: 17px;
+        line-height: 1.9;
+        letter-spacing: -0.02em;
+        &:focus-visible { outline: none; }
+    }
+
+    > .documentFooter {
+        text-align: end;
+        margin-top: 22px;
+        color: var(--muted-text-color);
+        font-size: 10px;
+        opacity: 0.7;
+    }
+}

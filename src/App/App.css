@@ -1,162 +1,91 @@
 #root {
-    margin: 0 auto;
-    padding: 16px;
-    text-align: center;
     width: 100%;
-    min-height: 100%;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+    height: 100dvh;
+    overflow: hidden;
 }
 
 .app {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100%;
-    max-width: 1280px;
-    --app-max-width: 1280px;
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    height: 100%;
 
-    > .chatHistory {
-        margin-bottom: 32px;
-    }
-
-    > .message {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 48px;
-        overflow: auto;
-        padding: 24px 0px;
-
-        > .error {
-            border: solid 1px var(--error-border-color);
-            padding: 8px 12px;
-            border-radius: 12px;
-            box-shadow: 0px 8px 32px -16px var(--error-border-color);
+    > .mainContent {
+        width: 100%;
+        max-width: 1500px;
+        min-height: 0;
+        overflow: hidden;
+        margin: 0 auto;
+        padding: 32px 36px 48px;
+        transition: opacity 220ms, filter 220ms;
+        &[data-blocked="true"] {
+            opacity: 0.2;
+            filter: blur(2px);
         }
-
-        > .loadModel {
+        > .page {
+            height: 100%;
+            min-height: 0;
+            animation: appPageEnter 220ms var(--transition-easing);
+        }
+        &[data-mode="play"] > .page {
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+        &:has(> .page > .play) {
+            max-width: none;
+            padding: 0;
+            > .page { scrollbar-gutter: stable; }
+        }
+        &:has(> .page > :is(.levelPicker, .myLevel)) {
+            max-width: none;
+            padding: 0;
+            > .page { overflow: hidden; }
+        }
+        &[data-mode="playground"] {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 64px;
-            text-align: start;
-
-            > .hint {
-                opacity: 0.6;
-            }
-
-            > .actions {
+            max-width: none;
+            padding: 0;
+            > .page {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                background-color: var(--actions-block-background-color);
-                border: solid 1px var(--actions-block-border-color);
-                box-shadow: var(--actions-block-box-shadow);
-                padding: 16px 24px;
-                border-radius: 12px;
-                gap: 16px;
-
-                > .starLink {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 8px;
-                    color: var(--star-link-color);
-
-                    &:hover {
-                        color: var(--star-hover-color);
-                    }
-
-                    > .starIcon {
-                        flex-shrink: 0;
-                        fill: currentColor;
-                    }
-                }
-
-                > .separator {
-                    height: 1px;
-                    background-color: var(--actions-block-border-color);
-                    margin: 0px -24px;
-                    align-self: stretch;
-                }
-
-                > .title {
-                    padding-inline-end: 16px;
-                    color: var(--text-color);
-                    opacity: 0.8;
-                    font-weight: 600;
-                }
-
-                > .links {
-                    display: flex;
-                    flex-direction: row;
-
-                    > a {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 8px;
-
-                        > .downloadIcon {
-                            flex-shrink: 0;
-                            fill: currentColor;
-                        }
-                    }
-
-                    > .separator {
-                        width: 1px;
-                        background-color: var(--link-color);
-                        opacity: 0.2;
-                        margin: 0px 16px;
-                        height: 0.8lh;
-                        align-self: center;
-                    }
-                }
-
-                > .browseLink {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 8px;
-
-                    > .searchIcon {
-                        flex-shrink: 0;
-                        fill: currentColor;
-                    }
-                }
+                flex: 1;
+                min-width: 0;
             }
         }
-
-        > .loading {
-            opacity: 0.6;
-            font-weight: bold;
-
-            mask: linear-gradient(
-                to right,
-                rgb(0 0 0 / 48%) 34%,
-                black,
-                rgb(0 0 0 / 48%) 66%
-            ) content-box 0 0 / 300% 100% no-repeat;
-            animation: loading-animation 2s infinite ease-in-out;
-        }
-
-        > .typeMessage {
-            opacity: 0.6;
-        }
+    }
+    @media (max-width: 1100px) {
+        > .mainContent { padding: 24px 20px; }
     }
 }
 
-@keyframes loading-animation {
-    0% {
-        mask-position: 100% 100%;
-    }
+@keyframes appPageEnter {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
 
-    100% {
-        mask-position: 0 100%;
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+:root:active-view-transition-type(to-playground) { --mode-slide-offset: 24px; }
+:root:active-view-transition-type(to-play) { --mode-slide-offset: -24px; }
+:root:active-view-transition-type(to-playground, to-play) {
+    .mainContent {
+        view-transition-name: app-mode;
+        * { view-transition-name: none; }
     }
+    &::view-transition { pointer-events: none; }
+    &::view-transition-group(app-mode) { animation-duration: 240ms; }
+    &::view-transition-old(app-mode) {
+        animation: appModeLeave 220ms var(--transition-easing) both;
+        mix-blend-mode: normal;
+    }
+    &::view-transition-new(app-mode) {
+        animation: appModeEnter 240ms var(--transition-easing) both;
+        mix-blend-mode: normal;
+    }
+}
+@keyframes appModeLeave {
+    to { opacity: 0; transform: translateX(calc(-1 * var(--mode-slide-offset))); }
+}
+@keyframes appModeEnter {
+    from { opacity: 0; transform: translateX(var(--mode-slide-offset)); }
+    to { opacity: 1; transform: none; }
 }

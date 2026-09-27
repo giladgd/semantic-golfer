@@ -1,7 +1,7 @@
-import {ElectronFunctions} from "../../electron/rpc/llmRpc.ts";
 import {createRendererSideBirpc} from "../utils/createRendererSideBirpc.ts";
 import {llmState} from "../state/llmState.ts";
-import {LlmState} from "../../electron/state/llmState.ts";
+import type {ElectronFunctions} from "../../electron/rpc/llmRpc.ts";
+import type {LlmState} from "../../shared/llmState.ts";
 
 
 const renderedFunctions = {
@@ -18,5 +18,5 @@ electronLlmRpc.getState()
         llmState.state = state;
     })
     .catch((error) => {
-        console.error("Failed to get the initial state from the main process", error);
+        llmState.state = {...llmState.state, error: "Could not connect to the app: " + String(error)};
     });

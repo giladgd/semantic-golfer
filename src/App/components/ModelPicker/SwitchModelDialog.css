@@ -1,0 +1,37 @@
+.switchModelDialog {
+    width: min(420px, calc(100vw - 32px));
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    background: var(--surface-color);
+    color: var(--text-color);
+    box-shadow: 0 20px 70px -20px var(--popover-shadow-color);
+    app-region: no-drag;
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+    transition: opacity 180ms, transform 220ms var(--transition-easing), display 220ms allow-discrete, overlay 220ms allow-discrete;
+    &[open] { opacity: 1; transform: none; }
+    &::backdrop {
+        background: color-mix(in srgb, var(--background-color) 55%, transparent);
+        opacity: 0;
+        transition: opacity 180ms, display 220ms allow-discrete, overlay 220ms allow-discrete;
+    }
+    &[open]::backdrop { opacity: 1; }
+    > p { margin: 0; font-size: 14px; line-height: 1.7; }
+    > .dialogActions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 24px;
+        > button { font-size: 12px; }
+        > .confirmSwitch {
+            background: var(--accent-color);
+            color: var(--on-accent-color);
+            &:hover { background: var(--hover-accent-color); }
+        }
+    }
+    @starting-style {
+        &[open] { opacity: 0; transform: translateY(16px) scale(0.96); }
+        &[open]::backdrop { opacity: 0; }
+    }
+}

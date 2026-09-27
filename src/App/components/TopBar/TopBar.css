@@ -1,0 +1,111 @@
+.topBar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    height: 60px;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 24px;
+    padding-left: calc(env(titlebar-area-x, 0px) + 24px);
+    padding-right: calc(100% - env(titlebar-area-x, 0px) - env(titlebar-area-width, 100%) + 11px);
+    background: var(--top-bar-color);
+    border-bottom: 1px solid transparent;
+    box-shadow: var(--top-bar-shadow);
+    transition: border-bottom-color 180ms, box-shadow 180ms;
+    app-region: drag;
+    cursor: default;
+    user-select: none;
+
+    &[data-mode="playground"] {
+        border-bottom-color: var(--border-color);
+        box-shadow: none;
+    }
+    &[data-platform="darwin"] { padding-inline-start: 104px; }
+    > .appIdentity {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        > .appMark {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+        }
+        > strong { font-size: 15px; font-weight: 550; letter-spacing: -0.04em; white-space: nowrap; }
+    }
+    > nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 6px;
+        padding: 3px;
+        border-radius: 14px;
+        background: var(--subtle-surface-color);
+        app-region: no-drag;
+        > button {
+            border: 0;
+            font-size: 13px;
+            padding: 6px 16px;
+            color: var(--muted-text-color);
+            background: transparent;
+            &:hover:not(:disabled) {
+                color: var(--accent-color);
+                background: var(--hover-surface-color);
+            }
+            &[aria-current="page"] {
+                color: var(--accent-color);
+                background: var(--accent-surface-color);
+                box-shadow: 0 1px 4px -2px var(--popover-shadow-color);
+                &:hover:not(:disabled) { background: var(--hover-accent-surface-color); }
+            }
+        }
+    }
+    > .headerActions {
+        min-width: 0;
+        margin-inline-start: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &:has(.modelButtonArea[hidden]) { gap: 0; }
+        > .repositoryLink {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-inline: 14px;
+            height: 38px;
+            flex-shrink: 0;
+            app-region: no-drag;
+            color: var(--muted-text-color);
+            background: var(--subtle-surface-color);
+            border-radius: 10px;
+            transition: color 150ms, background-color 150ms;
+            &:hover {
+                text-decoration: none;
+                color: var(--accent-color);
+                background: var(--hover-surface-color);
+            }
+            > svg { width: 20px; height: 20px; flex-shrink: 0; }
+            > .externalLinkIcon { width: 16px; height: 16px; }
+            > code {
+                font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+        }
+    }
+    @media (max-width: 1400px) {
+        --model-button-max-width: 200px;
+    }
+    @media (max-width: 1200px) {
+        > nav { position: static; transform: none; margin-inline: auto; flex-shrink: 0; }
+    }
+    @media (max-width: 900px) {
+        gap: 8px;
+        padding-left: calc(env(titlebar-area-x, 0px) + 16px);
+        --model-button-max-width: 180px;
+        > nav > button { padding-inline: 10px; }
+        > .headerActions > .repositoryLink { gap: 6px; padding-inline: 12px; }
+    }
+}

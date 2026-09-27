@@ -1,112 +1,123 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "Inter Variable", Inter, system-ui, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-
     color-scheme: light dark;
-    background-color: var(--background-color);
+    background: var(--background-color);
     color: var(--text-color);
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --transition-easing: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    --background-color: light-dark(#f4f5f2, #141916);
+    --surface-color: light-dark(#ffffff, #1c221f);
+    --subtle-surface-color: light-dark(#f5f7f4, #232b26);
+    --subtle-overlay-color: light-dark(rgb(155 175 145 / 10%), rgb(98 124 101 / 10%));
+    --accent-overlay-color: light-dark(rgb(125 190 125 / 20%), rgb(100 162 111 / 25%));
+    --tag-overlay-color: light-dark(rgb(102 153 72 / 10%), rgb(134 198 152 / 15%));
+    --document-surface-color: light-dark(#fcfdfb, #1e2520);
+    --text-color: light-dark(#263c32, #e2eee5);
+    --muted-text-color: light-dark(#718078, #96a79c);
+    --border-color: light-dark(#263c3212, #96a79c1c);
+    --top-bar-color: light-dark(#edf1eb, #1a211c);
+    --top-bar-shadow: 0 4px 20px -12px light-dark(#263c3233, #00000066);
+    --accent-color: light-dark(#337654, #8ace9e);
+    --on-accent-color: light-dark(#ffffff, #183c28);
+    --accent-surface-color: light-dark(#e5f2e5, #2e4233);
+    --hover-border-color: color-mix(in srgb, var(--accent-color) 20%, transparent);
+    --hover-accent-color: color-mix(in srgb, var(--accent-color) 84%, light-dark(black, white));
+    --hover-surface-color: color-mix(in srgb, var(--accent-color) 10%, var(--surface-color));
+    --hover-accent-surface-color: light-dark(var(--hover-surface-color), color-mix(in srgb, var(--accent-color) 16%, var(--accent-surface-color)));
+    --track-color: light-dark(#eaf0e8, #303d33);
+    --error-color: light-dark(#b23e3e, #ffaaa4);
+    --surface-shadow: 0 12px 40px -28px light-dark(#51664b40, #00000060);
+    --popover-shadow-color: light-dark(#243c3650, #000000a0);
+    --secondary-accent-color: light-dark(#7167a3, #b3a4ed);
 }
 
-:root {
-    --background-color: light-dark(#eeeeee, #242424);
-    --text-color: light-dark(#242424, #eeeeee);
-
-    --button-background-color: light-dark(rgba(255 255 255 / 64%), rgba(255 255 255 / 8%));
-    --button-hover-border-color: light-dark(#646cff, #646cff);
-
-    --link-color: light-dark(#646cff, #646cff);
-    --link-hover-color: light-dark(#747bff, #535bf2);
-    --star-link-color: light-dark(#e09c1c, #eac54f);
-    --star-hover-color: light-dark(#daaa52, #c7a027);
-
-    --panel-background-color: light-dark(rgba(0 0 0 / 52%), rgba(0 0 0 / 48%));
-    --panel-text-color: light-dark(#ffffff, #eeeeee);
-    --panel-button-background-color: light-dark(rgba(0 0 0 / 24%), rgba(255 255 255 / 8%));
-    --panel-button-hover-border-color: light-dark(var(--panel-text-color), var(--button-hover-border-color));
-    --panel-progress-color: light-dark(rgba(255 255 255 / 8%), rgba(255 255 255 / 4%));
-    --panel-box-shadow: 0px 4px 8px 0px rgba(0 0 0 / 8%), 0px 6px 24px 0px rgba(0 0 0 / 16%);
-
-    --error-border-color: light-dark(rgba(239 83 80 / 100%), rgba(239 83 80 / 100%));
-
-    --user-message-background-color: light-dark(rgba(0 0 0 / 16%), rgba(0 0 0 / 48%));
-    --user-message-text-color: light-dark(#242424, var(--text-color));
-
-    --actions-block-background-color: light-dark(rgba(0 0 0 / 4%), rgba(0 0 0 / 16%));
-    --actions-block-border-color: light-dark(rgba(0 0 0 / 4%), rgba(0 0 0 / 16%));
-    --actions-block-box-shadow: 0px 4px 8px 0px rgba(0 0 0 / 2%), 0px 6px 24px 0px rgba(0 0 0 / 8%);
-
-    --code-block-background-color: light-dark(rgba(0 0 0 / 4%), rgba(0 0 0 / 16%));
-
-    --update-badge-background-color: light-dark(rgba(0 0 0 / 4%), rgba(0 0 0 / 16%));
-    --update-badge-border-color: light-dark(rgba(0 0 0 / 4%), rgba(0 0 0 / 16%));
-    --update-badge-box-shadow: 0px 4px 8px 0px rgba(0 0 0 / 2%), 0px 6px 24px 0px rgba(0 0 0 / 8%);
-
-    --message-table-outline-color: light-dark(rgba(0 0 0 / 8%), rgba(255 255 255 / 6%));
-    --message-table-background-color: light-dark(rgba(0 0 0 / 0%), rgba(0 0 0 / 12%));
-    --message-table-even-background-color: light-dark(rgba(0 0 0 / 4%), rgba(255 255 255 / 6%));
-
-    --message-hr-color: light-dark(rgba(0 0 0 / 16%), rgba(255 255 255 / 16%));
-    --message-blockquote-border-color: light-dark(rgba(0 0 0 / 8%), rgba(255 255 255 / 8%));
-
-    --model-comment-block-background-color: light-dark(rgba(0 0 0 / 6%), rgba(0 0 0 / 24%));
-    --model-comment-block-button-background-color: light-dark(rgba(0 0 0 / 6%), rgba(0 0 0 / 24%));
+* {
+    box-sizing: border-box;
+    user-select: none;
 }
-
+[hidden] {
+    display: none !important;
+}
 body {
     margin: 0;
-    display: flex;
-    min-width: 320px;
+    min-width: 360px;
     min-height: 100vh;
-    overscroll-behavior-x: none;
+    overflow: hidden;
 }
-
 a {
-    font-weight: 500;
-    color: var(--link-color);
-    text-decoration: inherit;
-
-    &:hover {
-        color: var(--link-hover-color);
-    }
+    cursor: default;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 
-code {
-    background-color: color-mix(in srgb, currentColor, transparent 84%);
-    padding: 0.1em 0.3em;
-    border-radius: 0.4em;
-    font-size: 1.2em;
+button, input, textarea {
+    font: inherit;
+    color: inherit;
 }
-
 button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
+    cursor: default;
+    user-select: none;
+    border: 0;
+    border-radius: 10px;
+    padding: 9px 14px;
+    background: var(--accent-surface-color);
+    color: var(--accent-color);
     font-weight: 500;
-    font-family: inherit;
-    background-color: var(--button-background-color);
-    cursor: pointer;
-    transition: border-color 0.3s var(--transition-easing), opacity 0.3s var(--transition-easing);
-    color: var(--text-color);
-    fill: var(--text-color);
+    transition: background-color 150ms;
 
-    &[disabled] {
-        opacity: 0.52;
-        pointer-events: none;
+    &:hover:not(:disabled) {
+        background-color: var(--hover-accent-surface-color);
     }
-
-    &:hover,
-    &:focus,
-    &:focus-visible {
-        border-color: var(--button-hover-border-color);
+    &:disabled {
+        opacity: 0.5;
     }
 }
 
+input, textarea {
+    user-select: text;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 11px 12px;
+    background: var(--subtle-surface-color);
+    font-size: 12px;
+    transition: border-color 150ms;
+
+    &:hover:not(:disabled):not(:focus) {
+        border-color: var(--hover-border-color);
+    }
+    &:focus {
+        outline: none;
+        border-color: var(--accent-color);
+    }
+    &:disabled {
+        opacity: 0.55;
+    }
+    &::placeholder {
+        color: var(--muted-text-color);
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+::selection {
+    background: var(--accent-surface-color);
+    color: var(--text-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

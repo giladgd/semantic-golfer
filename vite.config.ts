@@ -3,6 +3,10 @@ import {fileURLToPath} from "node:url";
 import {defineConfig} from "vite";
 import electron from "vite-plugin-electron/simple";
 import react from "@vitejs/plugin-react";
+import {LlamaModel} from "node-llama-cpp";
+import {assertDecisionSupport} from "./shared/runtimeCompatibility.ts";
+
+assertDecisionSupport(LlamaModel.prototype);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -29,7 +33,7 @@ export default defineConfig({
     root: path.join(__dirname, "src"),
     publicDir: path.join(__dirname, "public"),
     plugins: [
-        react(),
+        react({babel: {plugins: ["babel-plugin-react-compiler"]}}),
         electron({
             main: {
                 // Shortcut of `build.lib.entry`.

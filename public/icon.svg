@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+    <!-- famicons:golf, MIT. See ../src/icons/LICENSES.md. Dark is the static fallback. -->
+    <style>
+        :root {
+            --tile-top: #314739;
+            --tile-bottom: #16261e;
+            --golf-top: #e3f6d5;
+            --golf-bottom: #8cd39d;
+            --rim-opacity: .2;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --tile-top: #edf6e7;
+                --tile-bottom: #bfd7c0;
+                --golf-top: #417e58;
+                --golf-bottom: #214d35;
+                --rim-opacity: .7;
+            }
+        }
+    </style>
+    <defs>
+        <linearGradient id="tile" x2="0" y2="1">
+            <stop stop-color="var(--tile-top)" />
+            <stop offset="1" stop-color="var(--tile-bottom)" />
+        </linearGradient>
+        <linearGradient id="golf" x2="0" y2="512" gradientUnits="userSpaceOnUse">
+            <stop stop-color="var(--golf-top)" />
+            <stop offset="1" stop-color="var(--golf-bottom)" />
+        </linearGradient>
+        <linearGradient id="rim" x2="0" y2="1">
+            <stop stop-color="white" stop-opacity="var(--rim-opacity)" />
+            <stop offset=".55" stop-color="white" stop-opacity=".04" />
+            <stop offset="1" stop-color="black" stop-opacity=".2" />
+        </linearGradient>
+        <filter id="tileShadow" x="-15%" y="-15%" width="130%" height="140%">
+            <feDropShadow dy="14" stdDeviation="14" flood-color="#07140d" flood-opacity=".28" />
+        </filter>
+        <filter id="golfShadow" x="-20%" y="-20%" width="140%" height="150%">
+            <feDropShadow dy="7" stdDeviation="6" flood-color="#07140d" flood-opacity=".22" />
+        </filter>
+    </defs>
+    <rect x="100" y="100" width="824" height="824" rx="184" fill="url(#tile)" filter="url(#tileShadow)" />
+    <rect x="102" y="102" width="820" height="820" rx="182" fill="none" stroke="url(#rim)" stroke-width="3" />
+    <g transform="translate(224 224) scale(1.125)" fill="url(#golf)" filter="url(#golfShadow)">
+        <path d="M272 320.46V202.3l166.62-75.73a16 16 0 0 0 0-29.14l-176-80A16 16 0 0 0 240 32v288.46q8-.45 16-.46t16 .46" />
+        <path d="M463.33 457.5c-8.56-42.85-35.11-78.74-76.78-103.8c-32.5-19.55-72.67-31.3-114.55-33.7v79.75a16 16 0 1 1-32 0V320c-41.88 2.4-82.05 14.15-114.55 33.7c-41.67 25.06-68.22 60.95-76.78 103.8a32.49 32.49 0 0 0 6.44 27.08C61.13 492 70 496 80 496h352c10 0 18.88-4.05 24.9-11.42a32.49 32.49 0 0 0 6.43-27.08" />
+    </g>
+</svg>
