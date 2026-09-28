@@ -28,11 +28,17 @@ test("the npm package ships compiled code and direct runtimes without local depe
     await access(new URL(pkg.main, root));
     const launcher = await readFile(new URL(pkg.bin[pkg.name], root), "utf8");
     assert.ok(launcher.startsWith("#!/usr/bin/env node\n"));
+    for (const file of [pkg.main, pkg.bin[pkg.name]])
+        assert.match(await readFile(new URL(file, root), "utf8"), /\bfrom\s*["']node-llama-cpp["']/,
+            `${file} must import node-llama-cpp from the installed dependency`);
     const npm = process.platform === "win32" ? "npm.cmd" : "npm";
     const [packed] = JSON.parse(execFileSync(npm, ["pack", "--dry-run", "--json", "--ignore-scripts"], {
         cwd: fileURLToPath(root), encoding: "utf8", shell: process.platform === "win32"
     }));
     const files = packed.files.map(({path}: {path: string}) => path) as string[];
+    assert.deepEqual(packed.bundled, [], "npm must install dependencies separately");
+    assert.ok(files.every((file) => !/(^|\/)node_modules\/|\.(node|dll|dylib|so(\.\d+)*)$/.test(file)),
+        "The npm package must not contain dependency directories or native binaries");
     for (const file of ["dist/index.html", "dist/icon.png", "dist/icon.svg", "dist-electron/index.js", "dist-electron/preload.mjs",
         "dist-cli/index.js", "dist-cli/prepareUpdate.js", "package.json", "README.md", "LICENSE",
         "dist/licenses/icons/LICENSE", "dist/licenses/icons/LICENSE-MIT", "dist/licenses/icons/LICENSES.md", "dist/licenses/Inter-OFL.txt"])

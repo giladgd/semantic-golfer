@@ -5,12 +5,12 @@ import {createRequire} from "node:module";
 import {constants} from "node:os";
 import {fileURLToPath} from "node:url";
 import path from "node:path";
-import {getLlama} from "node-llama-cpp";
+import {getLlama, LlamaLogLevel} from "node-llama-cpp";
 import {prepareRuntime, prepareUpdate, savedUpdate} from "./prepareUpdate.ts";
 
 try {
     // Node can build a missing native binary; Electron disables that fallback by default.
-    const llama = await getLlama();
+    const llama = await getLlama({logLevel: LlamaLogLevel.error});
     await llama.dispose();
 
     if (process.env.SEMANTIC_GOLFER_PREPARE_ONLY === "1")

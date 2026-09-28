@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import {createHash} from "node:crypto";
 import {app, BrowserWindow, dialog, shell} from "electron";
 import {AsyncDisposeAggregator, withLock} from "lifecycle-utils";
-import {createModelDownloader, getLlama, type LlamaModel, type Llama, type LlamaDecisionContext} from "node-llama-cpp";
+import {createModelDownloader, getLlama, type LlamaModel, type Llama, type LlamaDecisionContext, LlamaLogLevel} from "node-llama-cpp";
 import {getModel, models, type ModelId, type DownloadableModelId} from "../../shared/models.ts";
 import {createQuestion, validateDecisionRequest, type DecisionRequest, type DecisionResult} from "../../shared/decision.ts";
 import {llmState} from "../state/llmState.ts";
@@ -106,7 +106,9 @@ export function loadModel(id: ModelId) {
         try {
             await unloadModel();
             // Desktop builds use the prepared native runtime; npm launches prepare their own runtime.
-            llama ??= process.env.SEMANTIC_GOLFER_LAUNCHER === "1" ? await getLlama() : await getLlama("lastBuild");
+            llama ??= process.env.SEMANTIC_GOLFER_LAUNCHER === "1"
+                ? await getLlama({logLevel: LlamaLogLevel.error})
+                : await getLlama("lastBuild", {logLevel: LlamaLogLevel.error});
             model = await llama.loadModel({
                 modelPath: filePath,
                 onLoadProgress(progress) {
