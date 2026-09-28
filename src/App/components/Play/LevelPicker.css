@@ -30,7 +30,7 @@
         gap: 12px;
         overflow-y: auto;
         scrollbar-gutter: stable;
-        overscroll-behavior: contain;
+        overscroll-behavior: auto;
         padding: 16px var(--content-padding) 0;
         scroll-padding-top: 16px;
         mask-image: linear-gradient(to bottom, transparent, #000 16px);
@@ -42,8 +42,11 @@
             padding: 22px;
             border-radius: 18px;
             background: var(--surface-color);
-            &:hover:not(:disabled) {
-                background: var(--hover-surface-color);
+            &:last-child {
+                margin-bottom: 32px;
+            }
+            &:is(:hover, [data-demo-hover="true"]):not(:disabled) {
+                background: light-dark(color-mix(in srgb, var(--accent-color) 18%, var(--surface-color)), var(--hover-surface-color));
             }
             &:focus-visible { outline-offset: -3px; }
             > .levelNumber {

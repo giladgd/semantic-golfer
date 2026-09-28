@@ -2,7 +2,6 @@ import assert from "node:assert/strict";
 import {test} from "node:test";
 import {characterCount, gameProbabilities, gameRequest, games, isRoundWon, type GameId} from "../shared/games.ts";
 import {validateDecisionRequest} from "../shared/decision.ts";
-import {assertDecisionSupport} from "../shared/runtimeCompatibility.ts";
 import {getDownloadProgress, initialLlmState} from "../shared/llmState.ts";
 
 test("game rounds enforce their character budget and semantic targets", () => {
@@ -43,9 +42,7 @@ test("game rounds enforce their character budget and semantic targets", () => {
     assert.match(validateDecisionRequest(request)!, /at most seven/);
 });
 
-test("model progress is byte-weighted and incompatible runtimes report an outdated version", () => {
-    assert.throws(() => assertDecisionSupport({}), /The installed version of node-llama-cpp is too old for this app\./);
-    assert.doesNotThrow(() => assertDecisionSupport({createDecisionContext() {}}));
+test("model download progress is byte-weighted", () => {
     assert.deepEqual(getDownloadProgress(initialLlmState), {count: 0, progress: undefined});
     const state = {...initialLlmState, models: {
         "qwen-0.8b": {downloaded: false, download: {status: "downloading" as const, downloadedSize: 50, totalSize: 100}},

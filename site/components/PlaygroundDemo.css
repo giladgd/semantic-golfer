@@ -1,0 +1,83 @@
+.playgroundDemo {
+    margin: 0;
+    min-width: 0;
+    scroll-margin-top: 24px;
+
+    > .demoFrame {
+        --preview-scale: 1;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1280 / 720;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 24px 90px -30px light-dark(#34513f45, #00000090), 0 0 0 1px var(--border-color);
+
+        > .demoViewport {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            transform: scale(var(--preview-scale));
+            transform-origin: top left;
+            pointer-events: none;
+            > .app > .mainContent > .page { animation: none; }
+            .play {
+                --content-padding: 90px;
+                padding: 48px 0;
+                > .intro { margin-top: 36px; }
+                > .gameChoices { grid-template-columns: 1fr 1fr; }
+            }
+            .levelPicker { --content-padding: 90px; }
+            > .windowLights {
+                position: absolute;
+                top: 24px;
+                left: 24px;
+                z-index: 6;
+                display: flex;
+                gap: 8px;
+                > i {
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: #ed6a5e;
+                    &:nth-child(2) { background: #f4bf50; }
+                    &:nth-child(3) { background: #61c554; }
+                }
+            }
+            &[data-focused="true"] .documentInput {
+                border-color: var(--document-focus-color);
+                box-shadow: 0 -1px 0 var(--document-focus-color), 0 1px 0 var(--document-focus-color);
+            }
+            &[data-focused="true"] .playRound > .gameBoard > .writingArea {
+                box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-color) 65%, transparent);
+            }
+        }
+    }
+    > .demoControls {
+        display: flex;
+        align-items: stretch;
+        gap: 16px;
+        margin: 24px auto 0;
+        max-width: 1100px;
+        > .demoSegments {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(210px, 1.4fr);
+            gap: 10px;
+            flex: 1;
+        }
+    }
+    @media (max-width: 960px) {
+        > .demoFrame { border-radius: 12px; }
+        > .demoControls {
+            flex-direction: column-reverse;
+            gap: 8px;
+            margin-top: 18px;
+            > .demoSegments { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+            > .playbackToggle { align-self: center; }
+        }
+    }
+    @media (max-width: 440px) {
+        > .demoControls > .demoSegments {
+            grid-template-columns: 1fr;
+        }
+    }
+}

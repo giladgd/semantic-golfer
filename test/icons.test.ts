@@ -25,7 +25,7 @@ test("macOS retains native icon appearances and a dark fallback for older system
         const fallback = await readFile(path.join(resources, "icon.icns"));
         assert.equal(fallback.toString("ascii", 0, 4), "icns");
         assert.equal(fallback.readUInt32BE(4), fallback.length);
-        assert.deepEqual(fallback, await readFile("build/icon.icns"));
+        assert.deepEqual(fallback, await readFile("assets/icon.icns"));
         assert.equal(await readFile(path.join(resources, "Assets.car"), "utf8"), "Native appearance catalog");
 
         await writeFile(path.join(resources, "icon.icns"), "Unchanged");

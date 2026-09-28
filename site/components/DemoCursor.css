@@ -1,0 +1,41 @@
+.demoCursor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 8;
+    > .typingMirror {
+        position: absolute;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        color: transparent;
+        &[data-selected="true"] {
+            > span:first-child {
+                color: var(--text-color);
+                background: var(--accent-surface-color);
+                box-decoration-break: clone;
+            }
+            > .caret { visibility: hidden; }
+        }
+        > .caret {
+            display: inline-block;
+            width: 0;
+            height: 1.1em;
+            vertical-align: text-bottom;
+            border-left: 2px solid var(--accent-color);
+        }
+    }
+    &[data-playing="true"] > .typingMirror > .caret { animation: demoCaretBlink 1s steps(1) infinite; }
+    > .pointer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        > svg { display: block; translate: -1px -1px; filter: drop-shadow(0 1px 1px #0004); }
+        &[data-visible="true"] { opacity: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        &[data-playing="true"] > .typingMirror > .caret { animation: none; }
+    }
+}
+@keyframes demoCaretBlink { 50% { opacity: 0; } }

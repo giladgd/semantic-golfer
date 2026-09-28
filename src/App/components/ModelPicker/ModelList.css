@@ -5,7 +5,7 @@
     border-radius: 22px;
     box-shadow: 0 20px 70px -20px var(--popover-shadow-color);
     overflow-y: auto;
-    overscroll-behavior: contain;
+    overscroll-behavior: auto;
     max-height: calc(100dvh - 110px);
     padding: 10px;
 
@@ -16,19 +16,23 @@
     }
     .modelRow {
         border-radius: 12px;
-        background: color-mix(in srgb, var(--subtle-surface-color) 40%, transparent);
+        background: light-dark(color-mix(in srgb, var(--accent-color) 8%, transparent),
+            color-mix(in srgb, var(--subtle-surface-color) 40%, transparent));
         transition: background-color 150ms;
         &:has(button:hover:not(:disabled)) {
-            background: color-mix(in srgb, var(--hover-surface-color) 55%, transparent);
+            background: light-dark(color-mix(in srgb, var(--accent-color) 14%, transparent),
+                color-mix(in srgb, var(--hover-surface-color) 55%, transparent));
         }
         &:has(.modelSelect:focus-visible) {
             outline: 2px solid var(--accent-color);
             outline-offset: 2px;
         }
         &[data-active="true"] {
-            background: color-mix(in srgb, var(--accent-surface-color) 60%, transparent);
+            background: light-dark(color-mix(in srgb, var(--accent-color) 14%, transparent),
+                color-mix(in srgb, var(--accent-surface-color) 60%, transparent));
             &:has(button:hover:not(:disabled)) {
-                background: color-mix(in srgb, var(--hover-accent-surface-color) 70%, transparent);
+                background: light-dark(color-mix(in srgb, var(--accent-color) 20%, transparent),
+                    color-mix(in srgb, var(--hover-accent-surface-color) 70%, transparent));
             }
         }
         > .modelRowMain {
@@ -129,8 +133,12 @@
             flex: 1;
             padding: 8px 10px;
             font-size: 11px;
-            background: color-mix(in srgb, var(--subtle-surface-color) 65%, transparent);
-            &:hover:not(:disabled) { background: color-mix(in srgb, var(--hover-surface-color) 85%, transparent); }
+            background: light-dark(color-mix(in srgb, var(--accent-color) 8%, transparent),
+                color-mix(in srgb, var(--subtle-surface-color) 65%, transparent));
+            &:hover:not(:disabled) {
+                background: light-dark(color-mix(in srgb, var(--accent-color) 14%, transparent),
+                    color-mix(in srgb, var(--hover-surface-color) 85%, transparent));
+            }
             > svg { width: 16px; height: 16px; flex-shrink: 0; }
         }
     }

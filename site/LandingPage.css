@@ -1,0 +1,160 @@
+html { scroll-behavior: smooth; }
+body { min-width: 320px; overflow: auto; }
+html body > #root { height: auto; overflow: visible; min-height: 100svh; }
+
+.landingPage {
+    --landing-link-color: light-dark(#087b4d, var(--accent-color));
+    position: relative;
+    overflow: clip;
+    background:
+        radial-gradient(ellipse 65% 520px at 50% 320px, light-dark(#dce8d390, #2b453940), transparent),
+        var(--background-color);
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    > .siteHeader, > main, > .siteFooter {
+        width: min(100% - 64px, 1280px);
+        margin-inline: auto;
+    }
+    > .siteHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 22px;
+        flex-shrink: 0;
+        > .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-color);
+            text-decoration: none;
+            > svg { width: 36px; height: 36px; }
+            > strong { font-size: 16px; font-weight: 570; letter-spacing: -0.04em; }
+        }
+        > nav {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            font-size: 12px;
+            > a { color: var(--muted-text-color); }
+            > .githubLink {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-radius: 12px;
+                color: var(--text-color);
+                &:hover { background: var(--subtle-overlay-color); }
+                > svg { width: 20px; height: 20px; }
+            }
+        }
+    }
+    > main {
+        flex-shrink: 0;
+        flex-grow: 1;
+
+        > .hero {
+            text-align: center;
+            padding: 34px 0 64px;
+            > h1 {
+                font-size: clamp(44px, 5.7vw, 78px);
+                font-weight: 550;
+                letter-spacing: -0.075em;
+                line-height: 1.06;
+                margin: 20px 0;
+                > span, > em { display: block; user-select: text; }
+                > em { font-style: normal; color: var(--accent-color); user-select: text; }
+            }
+            > p {
+                color: var(--muted-text-color);
+                line-height: 1.8;
+                font-size: 15px;
+                margin: 0 auto 26px;
+                max-width: 520px;
+                letter-spacing: -0.015em;
+            }
+        }
+        > .features {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 64px;
+            padding: 76px 36px 70px;
+            > article {
+                > .featureIcon {
+                    display: inline-flex;
+                    color: var(--accent-color);
+                    > svg, > img { width: 26px; height: 26px; }
+                }
+                > h2 { font-size: 17px; font-weight: 550; letter-spacing: -0.035em; margin: 16px 0 10px; }
+                > p {
+                    font-size: 12px; color: var(--muted-text-color); line-height: 1.9; margin: 0;
+                    > a { color: var(--landing-link-color); text-decoration: none; user-select: text; &:hover { text-decoration: underline; } }
+                }
+            }
+        }
+    }
+    > .siteFooter {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding-block: 24px 30px;
+        font-size: 11px;
+        color: var(--muted-text-color);
+        a { color: inherit; user-select: text; }
+        code { font-size: 11px; }
+        > .plainTextGuide {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip-path: inset(50%);
+            white-space: nowrap;
+        }
+    }
+    a, button { cursor: pointer; }
+    h1, h2, p, code { user-select: text; }
+
+    @media (prefers-reduced-motion: no-preference) {
+        > main > .hero > h1 > span,
+        > main > .hero > h1 > em,
+        > main > .hero > p,
+        > main > .hero > .installCommand,
+        > main > .demoSection,
+        > main > .features,
+        > .siteFooter { animation: landingEntrance 600ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+        > main > .hero > h1 > em { animation-delay: 70ms; }
+        > main > .hero > p { animation-delay: 140ms; }
+        > main > .hero > .installCommand { animation-delay: 210ms; }
+        > main > .demoSection { animation-delay: 280ms; }
+        @media (scripting: enabled) {
+            > main > .demoSection:has(.appPreview) { animation-play-state: paused; }
+        }
+        > main > .features { animation-delay: 350ms; }
+        > .siteFooter { animation-delay: 420ms; }
+    }
+
+    @media (max-width: 680px) {
+        > .siteHeader, > main, > .siteFooter { width: calc(100% - 32px); }
+        > .siteHeader {
+            padding-block: 16px;
+            > .brand { gap: 5px; > strong { font-size: 14px; } }
+        }
+        > main {
+            > .hero {
+                padding: 32px 0 44px;
+                > p { max-width: 340px; font-size: 13px; }
+                .desktopBreak { display: none; }
+            }
+            > .features { grid-template-columns: 1fr; gap: 30px; padding: 44px 10px; }
+        }
+        > .siteFooter { font-size: 10px; }
+    }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@keyframes landingEntrance {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}

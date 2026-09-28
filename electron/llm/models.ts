@@ -3,10 +3,9 @@ import fs from "node:fs/promises";
 import {createHash} from "node:crypto";
 import {app, BrowserWindow, dialog, shell} from "electron";
 import {AsyncDisposeAggregator, withLock} from "lifecycle-utils";
-import {createModelDownloader, getLlama, LlamaModel, type Llama, type LlamaDecisionContext} from "node-llama-cpp";
+import {createModelDownloader, getLlama, type LlamaModel, type Llama, type LlamaDecisionContext} from "node-llama-cpp";
 import {getModel, models, type ModelId, type DownloadableModelId} from "../../shared/models.ts";
 import {createQuestion, validateDecisionRequest, type DecisionRequest, type DecisionResult} from "../../shared/decision.ts";
-import {assertDecisionSupport} from "../../shared/runtimeCompatibility.ts";
 import {llmState} from "../state/llmState.ts";
 import type {ModelState} from "../../shared/llmState.ts";
 
@@ -102,18 +101,12 @@ export function loadModel(id: ModelId) {
     if (llmState.state.models[id]?.deleting || llmState.state.loading != null || llmState.state.loadedModelId === id)
         return;
 
-    try {
-        assertDecisionSupport(LlamaModel.prototype);
-    } catch (error) {
-        llmState.state = {...llmState.state, error: String(error)};
-        return;
-    }
     llmState.state = {...llmState.state, loadedModelId: undefined, loading: {modelId: id, progress: 0, stage: "model"}, error: undefined};
     return withLock(inferenceScope, async () => {
         try {
             await unloadModel();
-            // Keep the native build paired with the unreleased library, including inside a packaged app.
-            llama ??= await getLlama("lastBuild");
+            // Desktop builds use the prepared native runtime; npm launches prepare their own runtime.
+            llama ??= process.env.SEMANTIC_GOLFER_LAUNCHER === "1" ? await getLlama() : await getLlama("lastBuild");
             model = await llama.loadModel({
                 modelPath: filePath,
                 onLoadProgress(progress) {
@@ -121,7 +114,6 @@ export function loadModel(id: ModelId) {
                 }
             });
             llmState.state = {...llmState.state, loading: {modelId: id, progress: 1, stage: "context"}};
-            assertDecisionSupport(model);
             context = await model.createDecisionContext({contextSize: {max: 4096}, parallelQuestions: 3});
             llmState.state = {...llmState.state, loading: {modelId: id, progress: 1, stage: "warmup"}};
             await context.warmup();

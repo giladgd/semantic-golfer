@@ -1,0 +1,3781 @@
+{
+  "model": {
+    "id": "gemma-q8",
+    "name": "Gemma 4",
+    "parameters": "5B E2B",
+    "quant": "Q8_0",
+    "size": "5.0 GB",
+    "uri": "hf:giladgd/gemma-4-E2B-it-GGUF:Q8_0"
+  },
+  "modelFile": "gemma-q8.gguf",
+  "modelBytes": 4995021216,
+  "recordedAt": "2026-09-28T00:18:09.138Z",
+  "recordings": [
+    {
+      "input": {
+        "type": "noul",
+        "document": "",
+        "instruction": "Does this message ask for a reply?",
+        "criteria": [
+          "A question or request needs a response",
+          "No response is requested"
+        ]
+      },
+      "frames": [
+        {
+          "document": "",
+          "answer": {
+            "type": "noul",
+            "value": 0.09009893571517409
+          },
+          "measuredDuration": 50.78025000000025
+        },
+        {
+          "document": "T",
+          "answer": {
+            "type": "noul",
+            "value": 0.028727773412576738
+          },
+          "measuredDuration": 42.321957999999995
+        },
+        {
+          "document": "Th",
+          "answer": {
+            "type": "noul",
+            "value": 0.04542059245208563
+          },
+          "measuredDuration": 42.54420900000014
+        },
+        {
+          "document": "Tha",
+          "answer": {
+            "type": "noul",
+            "value": 0.020152784609957904
+          },
+          "measuredDuration": 41.80595799999992
+        },
+        {
+          "document": "Than",
+          "answer": {
+            "type": "noul",
+            "value": 0.07982109099479381
+          },
+          "measuredDuration": 41.64429199999995
+        },
+        {
+          "document": "Thank",
+          "answer": {
+            "type": "noul",
+            "value": 0.01742562542325972
+          },
+          "measuredDuration": 44.33987500000012
+        },
+        {
+          "document": "Thanks",
+          "answer": {
+            "type": "noul",
+            "value": 0.0030696793837972653
+          },
+          "measuredDuration": 42.43033299999979
+        },
+        {
+          "document": "Thanks ",
+          "answer": {
+            "type": "noul",
+            "value": 0.008238871526654777
+          },
+          "measuredDuration": 42.322875000000295
+        },
+        {
+          "document": "Thanks f",
+          "answer": {
+            "type": "noul",
+            "value": 0.010740531747013402
+          },
+          "measuredDuration": 42.667415999999776
+        },
+        {
+          "document": "Thanks fo",
+          "answer": {
+            "type": "noul",
+            "value": 0.030635050130926794
+          },
+          "measuredDuration": 43.90012499999966
+        },
+        {
+          "document": "Thanks for",
+          "answer": {
+            "type": "noul",
+            "value": 0.013605698954160245
+          },
+          "measuredDuration": 42.759124999999585
+        },
+        {
+          "document": "Thanks for ",
+          "answer": {
+            "type": "noul",
+            "value": 0.019378783801393254
+          },
+          "measuredDuration": 42.375666999999794
+        },
+        {
+          "document": "Thanks for t",
+          "answer": {
+            "type": "noul",
+            "value": 0.01293339621992042
+          },
+          "measuredDuration": 42.689166000000114
+        },
+        {
+          "document": "Thanks for th",
+          "answer": {
+            "type": "noul",
+            "value": 0.03797665428878595
+          },
+          "measuredDuration": 44.04750000000013
+        },
+        {
+          "document": "Thanks for the",
+          "answer": {
+            "type": "noul",
+            "value": 0.10628389802360927
+          },
+          "measuredDuration": 42.76945799999976
+        },
+        {
+          "document": "Thanks for the ",
+          "answer": {
+            "type": "noul",
+            "value": 0.14494980756525064
+          },
+          "measuredDuration": 41.95266700000002
+        },
+        {
+          "document": "Thanks for the u",
+          "answer": {
+            "type": "noul",
+            "value": 0.021680208711700153
+          },
+          "measuredDuration": 41.3840409999998
+        },
+        {
+          "document": "Thanks for the up",
+          "answer": {
+            "type": "noul",
+            "value": 0.012580138569580136
+          },
+          "measuredDuration": 42.14054099999976
+        },
+        {
+          "document": "Thanks for the upd",
+          "answer": {
+            "type": "noul",
+            "value": 0.011726096443217086
+          },
+          "measuredDuration": 42.21195899999975
+        },
+        {
+          "document": "Thanks for the upda",
+          "answer": {
+            "type": "noul",
+            "value": 0.16285638191671897
+          },
+          "measuredDuration": 43.07383400000026
+        },
+        {
+          "document": "Thanks for the updat",
+          "answer": {
+            "type": "noul",
+            "value": 0.031807537101271995
+          },
+          "measuredDuration": 42.59670899999992
+        },
+        {
+          "document": "Thanks for the update",
+          "answer": {
+            "type": "noul",
+            "value": 0.004024912694661411
+          },
+          "measuredDuration": 42.30925000000025
+        },
+        {
+          "document": "Thanks for the update.",
+          "answer": {
+            "type": "noul",
+            "value": 0.018511149950949067
+          },
+          "measuredDuration": 42.107290999999805
+        },
+        {
+          "document": "Thanks for the update.\n",
+          "answer": {
+            "type": "noul",
+            "value": 0.0028650545088895296
+          },
+          "measuredDuration": 42.32079199999998
+        },
+        {
+          "document": "Thanks for the update.\nC",
+          "answer": {
+            "type": "noul",
+            "value": 0.0035808197479201822
+          },
+          "measuredDuration": 42.74229200000036
+        },
+        {
+          "document": "Thanks for the update.\nCo",
+          "answer": {
+            "type": "noul",
+            "value": 0.007058683247179311
+          },
+          "measuredDuration": 41.54779099999996
+        },
+        {
+          "document": "Thanks for the update.\nCou",
+          "answer": {
+            "type": "noul",
+            "value": 0.007044513582475228
+          },
+          "measuredDuration": 42.11666699999978
+        },
+        {
+          "document": "Thanks for the update.\nCoul",
+          "answer": {
+            "type": "noul",
+            "value": 0.009323097236118209
+          },
+          "measuredDuration": 41.88270800000009
+        },
+        {
+          "document": "Thanks for the update.\nCould",
+          "answer": {
+            "type": "noul",
+            "value": 0.035736015921517796
+          },
+          "measuredDuration": 41.868124999999964
+        },
+        {
+          "document": "Thanks for the update.\nCould ",
+          "answer": {
+            "type": "noul",
+            "value": 0.0557035300879504
+          },
+          "measuredDuration": 41.92037500000015
+        },
+        {
+          "document": "Thanks for the update.\nCould y",
+          "answer": {
+            "type": "noul",
+            "value": 0.1626110561536675
+          },
+          "measuredDuration": 41.992457999999715
+        },
+        {
+          "document": "Thanks for the update.\nCould yo",
+          "answer": {
+            "type": "noul",
+            "value": 0.230492891845028
+          },
+          "measuredDuration": 42.98775000000023
+        },
+        {
+          "document": "Thanks for the update.\nCould you",
+          "answer": {
+            "type": "noul",
+            "value": 0.2537096597673845
+          },
+          "measuredDuration": 42.009500000000116
+        },
+        {
+          "document": "Thanks for the update.\nCould you ",
+          "answer": {
+            "type": "noul",
+            "value": 0.49580536192958785
+          },
+          "measuredDuration": 42.11566600000015
+        },
+        {
+          "document": "Thanks for the update.\nCould you c",
+          "answer": {
+            "type": "noul",
+            "value": 0.029627598231158164
+          },
+          "measuredDuration": 42.49412500000017
+        },
+        {
+          "document": "Thanks for the update.\nCould you co",
+          "answer": {
+            "type": "noul",
+            "value": 0.07471042364223429
+          },
+          "measuredDuration": 41.82620799999995
+        },
+        {
+          "document": "Thanks for the update.\nCould you con",
+          "answer": {
+            "type": "noul",
+            "value": 0.07920128214001651
+          },
+          "measuredDuration": 42.025709000000006
+        },
+        {
+          "document": "Thanks for the update.\nCould you conf",
+          "answer": {
+            "type": "noul",
+            "value": 0.06799169491931051
+          },
+          "measuredDuration": 41.42333299999973
+        },
+        {
+          "document": "Thanks for the update.\nCould you confi",
+          "answer": {
+            "type": "noul",
+            "value": 0.13671821016563862
+          },
+          "measuredDuration": 42.228791999999885
+        },
+        {
+          "document": "Thanks for the update.\nCould you confir",
+          "answer": {
+            "type": "noul",
+            "value": 0.9751121519137123
+          },
+          "measuredDuration": 42.45912499999986
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm",
+          "answer": {
+            "type": "noul",
+            "value": 0.9692477115058068
+          },
+          "measuredDuration": 43.07074999999986
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm ",
+          "answer": {
+            "type": "noul",
+            "value": 0.9674174705692048
+          },
+          "measuredDuration": 42.21645899999976
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm t",
+          "answer": {
+            "type": "noul",
+            "value": 0.3425234238109062
+          },
+          "measuredDuration": 42.457374999999956
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm th",
+          "answer": {
+            "type": "noul",
+            "value": 0.23965993058856927
+          },
+          "measuredDuration": 41.84187500000007
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the",
+          "answer": {
+            "type": "noul",
+            "value": 0.20867739079053185
+          },
+          "measuredDuration": 42.06449999999995
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the ",
+          "answer": {
+            "type": "noul",
+            "value": 0.9600142441554111
+          },
+          "measuredDuration": 42.08174999999983
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the n",
+          "answer": {
+            "type": "noul",
+            "value": 0.852199459292014
+          },
+          "measuredDuration": 42.163208999999824
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the ne",
+          "answer": {
+            "type": "noul",
+            "value": 0.8433924133368335
+          },
+          "measuredDuration": 41.94945800000005
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the new",
+          "answer": {
+            "type": "noul",
+            "value": 0.07916178675539072
+          },
+          "measuredDuration": 41.778708000000734
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the new ",
+          "answer": {
+            "type": "noul",
+            "value": 0.39577028386807006
+          },
+          "measuredDuration": 42.15116599999965
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the new d",
+          "answer": {
+            "type": "noul",
+            "value": 0.9987987358876969
+          },
+          "measuredDuration": 41.9931660000002
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the new da",
+          "answer": {
+            "type": "noul",
+            "value": 0.9998360817211703
+          },
+          "measuredDuration": 42.199124999999185
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the new dat",
+          "answer": {
+            "type": "noul",
+            "value": 0.9996818724882377
+          },
+          "measuredDuration": 42.49699999999939
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the new date",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999428608683922
+          },
+          "measuredDuration": 42.14912499999991
+        },
+        {
+          "document": "Thanks for the update.\nCould you confirm the new date?",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999406184855135
+          },
+          "measuredDuration": 42.12575000000015
+        }
+      ]
+    },
+    {
+      "input": {
+        "type": "choice",
+        "document": "",
+        "instruction": "Which team should handle this ticket?",
+        "criteria": [
+          "Account access",
+          "Billing and refunds",
+          "Product features"
+        ]
+      },
+      "frames": [
+        {
+          "document": "",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9896814781133411,
+            "probabilities": {
+              "0": 0.9940830970129435,
+              "1": 0.0051553317988425554,
+              "2": 0.0007615711882140392
+            }
+          },
+          "measuredDuration": 43.14783299999999
+        },
+        {
+          "document": "I",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9968749381873008,
+            "probabilities": {
+              "0": 0.9980812416109351,
+              "1": 0.0015619734188066653,
+              "2": 0.00035678497025803794
+            }
+          },
+          "measuredDuration": 42.52099999999973
+        },
+        {
+          "document": "I ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9972461508532365,
+            "probabilities": {
+              "0": 0.9983004999731167,
+              "1": 0.0013764797988921093,
+              "2": 0.00032302022799121383
+            }
+          },
+          "measuredDuration": 42.298000000000684
+        },
+        {
+          "document": "I n",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9969409692355884,
+            "probabilities": {
+              "0": 0.9981351532282585,
+              "1": 0.0015290017020056013,
+              "2": 0.00033584506973583384
+            }
+          },
+          "measuredDuration": 42.10649999999987
+        },
+        {
+          "document": "I ne",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9970707229379845,
+            "probabilities": {
+              "0": 0.9981873248381663,
+              "1": 0.0014641280354565642,
+              "2": 0.00034854712637708284
+            }
+          },
+          "measuredDuration": 42.025040999999874
+        },
+        {
+          "document": "I nee",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9974654122154507,
+            "probabilities": {
+              "0": 0.9983579951257302,
+              "1": 0.001266818420773645,
+              "2": 0.0003751864534960422
+            }
+          },
+          "measuredDuration": 42.02812499999982
+        },
+        {
+          "document": "I need",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9978677358602687,
+            "probabilities": {
+              "0": 0.9985075556497375,
+              "1": 0.001065677079592052,
+              "2": 0.0004267672706703766
+            }
+          },
+          "measuredDuration": 42.2573339999999
+        },
+        {
+          "document": "I need ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9976182206406192,
+            "probabilities": {
+              "0": 0.9983913182948907,
+              "1": 0.0011903915422523089,
+              "2": 0.00041829016285697376
+            }
+          },
+          "measuredDuration": 42.042750000000524
+        },
+        {
+          "document": "I need h",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9987609770433524,
+            "probabilities": {
+              "0": 0.9991385233880646,
+              "1": 0.0006193614852237369,
+              "2": 0.00024211512671175857
+            }
+          },
+          "measuredDuration": 41.73124999999982
+        },
+        {
+          "document": "I need he",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9986435809225457,
+            "probabilities": {
+              "0": 0.9989106586925208,
+              "1": 0.0006779305160040225,
+              "2": 0.00041141079147515166
+            }
+          },
+          "measuredDuration": 41.71141699999953
+        },
+        {
+          "document": "I need hel",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9967318745825146,
+            "probabilities": {
+              "0": 0.9980075550818932,
+              "1": 0.0016334761312344897,
+              "2": 0.0003589687868721241
+            }
+          },
+          "measuredDuration": 42.189290999999685
+        },
+        {
+          "document": "I need help",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9947476044880496,
+            "probabilities": {
+              "0": 0.9969000301640608,
+              "1": 0.0026249502606324982,
+              "2": 0.0004750195753067181
+            }
+          },
+          "measuredDuration": 41.92820800000027
+        },
+        {
+          "document": "I need help ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9948352743232927,
+            "probabilities": {
+              "0": 0.9969860123619697,
+              "1": 0.002581245340726503,
+              "2": 0.0004327422973038726
+            }
+          },
+          "measuredDuration": 42.040500000000065
+        },
+        {
+          "document": "I need help w",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9956695042032311,
+            "probabilities": {
+              "0": 0.997476549660218,
+              "1": 0.002164470618296939,
+              "2": 0.0003589797214851621
+            }
+          },
+          "measuredDuration": 42.14179200000035
+        },
+        {
+          "document": "I need help wi",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9957265878484396,
+            "probabilities": {
+              "0": 0.9975166064886154,
+              "1": 0.0021359637204349893,
+              "2": 0.00034742979094950425
+            }
+          },
+          "measuredDuration": 42.020832999999584
+        },
+        {
+          "document": "I need help wit",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9960208553029393,
+            "probabilities": {
+              "0": 0.9975552823053965,
+              "1": 0.001988664998697101,
+              "2": 0.00045605269590632684
+            }
+          },
+          "measuredDuration": 41.93187499999931
+        },
+        {
+          "document": "I need help with",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9941969603724141,
+            "probabilities": {
+              "0": 0.9965911357120066,
+              "1": 0.0029000434600790523,
+              "2": 0.0005088208279144007
+            }
+          },
+          "measuredDuration": 41.85500000000047
+        },
+        {
+          "document": "I need help with ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9946421885710556,
+            "probabilities": {
+              "0": 0.9968557620997713,
+              "1": 0.0026776557849774087,
+              "2": 0.0004665821152513046
+            }
+          },
+          "measuredDuration": 42.00758300000052
+        },
+        {
+          "document": "I need help with a",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9942165938755764,
+            "probabilities": {
+              "0": 0.9966530930022038,
+              "1": 0.0028903829301674924,
+              "2": 0.00045652406762866773
+            }
+          },
+          "measuredDuration": 41.763082999999824
+        },
+        {
+          "document": "I need help with an",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9949549875963338,
+            "probabilities": {
+              "0": 0.9970643547158687,
+              "1": 0.0025214614204683065,
+              "2": 0.000414183863662989
+            }
+          },
+          "measuredDuration": 41.720124999999825
+        },
+        {
+          "document": "I need help with an ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9934315558929714,
+            "probabilities": {
+              "0": 0.9962167155347615,
+              "1": 0.003282577621054301,
+              "2": 0.0005007068441841748
+            }
+          },
+          "measuredDuration": 41.743750000000546
+        },
+        {
+          "document": "I need help with an i",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9958557284194609,
+            "probabilities": {
+              "0": 0.9976345718369418,
+              "1": 0.00207152678670881,
+              "2": 0.00029390137634941995
+            }
+          },
+          "measuredDuration": 41.82916699999987
+        },
+        {
+          "document": "I need help with an in",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9952257448481703,
+            "probabilities": {
+              "0": 0.9972176045052331,
+              "1": 0.0023861817631902647,
+              "2": 0.00039621373157661555
+            }
+          },
+          "measuredDuration": 41.76041600000008
+        },
+        {
+          "document": "I need help with an inv",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9966097866653734,
+            "probabilities": {
+              "0": 0.9975167647307158,
+              "1": 0.0016937684368219742,
+              "2": 0.0007894668324621696
+            }
+          },
+          "measuredDuration": 41.738916999999674
+        },
+        {
+          "document": "I need help with an invo",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.7315201972069912,
+            "probabilities": {
+              "0": 0.01760098330440377,
+              "1": 0.8505218695623564,
+              "2": 0.13187714713323967
+            }
+          },
+          "measuredDuration": 41.6693750000004
+        },
+        {
+          "document": "I need help with an invoi",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.7411880904250928,
+            "probabilities": {
+              "0": 0.018561549354815764,
+              "1": 0.8544344708743249,
+              "2": 0.12700397977085925
+            }
+          },
+          "measuredDuration": 42.30095799999981
+        },
+        {
+          "document": "I need help with an invoic",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.8191041443517655,
+            "probabilities": {
+              "0": 0.0031889503804062545,
+              "1": 0.906651555749318,
+              "2": 0.09015949387027557
+            }
+          },
+          "measuredDuration": 42.552208000000064
+        },
+        {
+          "document": "I need help with an invoice",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.7331016382289843,
+            "probabilities": {
+              "0": 0.005518628118842601,
+              "1": 0.861768647397721,
+              "2": 0.13271272448343652
+            }
+          },
+          "measuredDuration": 42.41229199999998
+        },
+        {
+          "document": "W",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9974501430995119,
+            "probabilities": {
+              "0": 0.9983681002009467,
+              "1": 0.0012744727563384307,
+              "2": 0.0003574270427148894
+            }
+          },
+          "measuredDuration": 42.94024999999965
+        },
+        {
+          "document": "We",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9955654760556754,
+            "probabilities": {
+              "0": 0.9972221375557998,
+              "1": 0.0022160162118771832,
+              "2": 0.0005618462323228706
+            }
+          },
+          "measuredDuration": 42.44737499999974
+        },
+        {
+          "document": "We ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9958224257563028,
+            "probabilities": {
+              "0": 0.9973647969863904,
+              "1": 0.0020876433863507666,
+              "2": 0.0005475596272588536
+            }
+          },
+          "measuredDuration": 43.15883300000041
+        },
+        {
+          "document": "We c",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9965865066793076,
+            "probabilities": {
+              "0": 0.9979684971772543,
+              "1": 0.0017061914362236686,
+              "2": 0.0003253113865220892
+            }
+          },
+          "measuredDuration": 43.28641599999992
+        },
+        {
+          "document": "We ca",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9959467013700902,
+            "probabilities": {
+              "0": 0.9975694653921723,
+              "1": 0.002025829118852874,
+              "2": 0.00040470548897496495
+            }
+          },
+          "measuredDuration": 42.02850000000035
+        },
+        {
+          "document": "We can",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9977074877316116,
+            "probabilities": {
+              "0": 0.9983867305832544,
+              "1": 0.0011457202030399922,
+              "2": 0.00046754921370547226
+            }
+          },
+          "measuredDuration": 41.861916999999266
+        },
+        {
+          "document": "We cann",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9964402936957161,
+            "probabilities": {
+              "0": 0.9978165792014206,
+              "1": 0.0017791335802620786,
+              "2": 0.0004042872183173712
+            }
+          },
+          "measuredDuration": 41.78187500000058
+        },
+        {
+          "document": "We canno",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9968803551003058,
+            "probabilities": {
+              "0": 0.9980218008273266,
+              "1": 0.0015591688369222438,
+              "2": 0.00041903033575118974
+            }
+          },
+          "measuredDuration": 41.72791700000016
+        },
+        {
+          "document": "We cannot",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9974483938849861,
+            "probabilities": {
+              "0": 0.9983755483939946,
+              "1": 0.0012753576824118703,
+              "2": 0.00034909392359360673
+            }
+          },
+          "measuredDuration": 41.813624999999774
+        },
+        {
+          "document": "We cannot ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9966058466133195,
+            "probabilities": {
+              "0": 0.9977794702773447,
+              "1": 0.0016961868432603061,
+              "2": 0.0005243428793951495
+            }
+          },
+          "measuredDuration": 41.95637499999975
+        },
+        {
+          "document": "We cannot s",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9973649702953749,
+            "probabilities": {
+              "0": 0.9983130680791283,
+              "1": 0.001317027497741165,
+              "2": 0.00036990442313051847
+            }
+          },
+          "measuredDuration": 41.83808299999964
+        },
+        {
+          "document": "We cannot si",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9973800402025657,
+            "probabilities": {
+              "0": 0.9982772265603397,
+              "1": 0.0013094384381737677,
+              "2": 0.0004133350014865861
+            }
+          },
+          "measuredDuration": 41.823959000000286
+        },
+        {
+          "document": "We cannot sig",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9983345617293636,
+            "probabilities": {
+              "0": 0.9989072254456862,
+              "1": 0.0008325024017163037,
+              "2": 0.00026027215259755626
+            }
+          },
+          "measuredDuration": 41.74041699999998
+        },
+        {
+          "document": "We cannot sign",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9907949523748423,
+            "probabilities": {
+              "0": 0.9936305095307032,
+              "1": 0.004594353703342986,
+              "2": 0.0017751367659536402
+            }
+          },
+          "measuredDuration": 41.767540999999255
+        },
+        {
+          "document": "We cannot sign ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9743943845089578,
+            "probabilities": {
+              "0": 0.9832075989863551,
+              "1": 0.01275106732729935,
+              "2": 0.0040413336863455015
+            }
+          },
+          "measuredDuration": 41.871083
+        },
+        {
+          "document": "We cannot sign i",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9990814604136491,
+            "probabilities": {
+              "0": 0.9993930500277814,
+              "1": 0.0004592019369658437,
+              "2": 0.00014774803525270175
+            }
+          },
+          "measuredDuration": 41.76887500000066
+        },
+        {
+          "document": "We cannot sign in",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999142727879919,
+            "probabilities": {
+              "0": 0.9999563114076937,
+              "1": 0.00004286357064060399,
+              "2": 8.250216656631463e-7
+            }
+          },
+          "measuredDuration": 41.737833999999566
+        },
+        {
+          "document": "We cannot sign in ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999319337496637,
+            "probabilities": {
+              "0": 0.9999652512476837,
+              "1": 0.000034033100812303286,
+              "2": 7.156515039094164e-7
+            }
+          },
+          "measuredDuration": 41.747417000000496
+        },
+        {
+          "document": "We cannot sign in t",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9998825771940937,
+            "probabilities": {
+              "0": 0.999939586264364,
+              "1": 0.00005871130300097434,
+              "2": 0.0000017024326348506278
+            }
+          },
+          "measuredDuration": 41.807207999999264
+        },
+        {
+          "document": "We cannot sign in to",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999289609040523,
+            "probabilities": {
+              "0": 0.9999637951082558,
+              "1": 0.00003551952362991201,
+              "2": 6.853681143211103e-7
+            }
+          },
+          "measuredDuration": 41.95258399999966
+        },
+        {
+          "document": "We cannot sign in to ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999490127623213,
+            "probabilities": {
+              "0": 0.9999739674169494,
+              "1": 0.000025493605098857432,
+              "2": 5.389779517639189e-7
+            }
+          },
+          "measuredDuration": 41.728291000000354
+        },
+        {
+          "document": "We cannot sign in to o",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.999911433722948,
+            "probabilities": {
+              "0": 0.9999547689896578,
+              "1": 0.000044283096549413425,
+              "2": 9.479137927657781e-7
+            }
+          },
+          "measuredDuration": 41.680875000000015
+        },
+        {
+          "document": "We cannot sign in to ou",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999316427834246,
+            "probabilities": {
+              "0": 0.9999651798074843,
+              "1": 0.00003417858635847153,
+              "2": 6.416061572596346e-7
+            }
+          },
+          "measuredDuration": 41.88729200000034
+        },
+        {
+          "document": "We cannot sign in to our",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999471739020177,
+            "probabilities": {
+              "0": 0.9999731482626811,
+              "1": 0.000026413037403747227,
+              "2": 4.386999150304345e-7
+            }
+          },
+          "measuredDuration": 43.3715000000002
+        },
+        {
+          "document": "We cannot sign in to our ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999499512615465,
+            "probabilities": {
+              "0": 0.9999745419483139,
+              "1": 0.00002502435837382486,
+              "2": 4.3369331223337945e-7
+            }
+          },
+          "measuredDuration": 42.5555830000003
+        },
+        {
+          "document": "We cannot sign in to our a",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999442742109437,
+            "probabilities": {
+              "0": 0.9999716154283714,
+              "1": 0.00002786287999234506,
+              "2": 5.216916360227256e-7
+            }
+          },
+          "measuredDuration": 43.382416999999805
+        },
+        {
+          "document": "We cannot sign in to our ac",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999579390898532,
+            "probabilities": {
+              "0": 0.9999786735114939,
+              "1": 0.000021030448847536785,
+              "2": 2.960396585261102e-7
+            }
+          },
+          "measuredDuration": 42.24641699999938
+        },
+        {
+          "document": "We cannot sign in to our acc",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.999961670259057,
+            "probabilities": {
+              "0": 0.9999805743443277,
+              "1": 0.000019164865473472774,
+              "2": 2.6079019886071695e-7
+            }
+          },
+          "measuredDuration": 42.069375000000036
+        },
+        {
+          "document": "We cannot sign in to our acco",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999728103739837,
+            "probabilities": {
+              "0": 0.9999862221663369,
+              "1": 0.000013594810519986892,
+              "2": 1.8302314293013161e-7
+            }
+          },
+          "measuredDuration": 42.27116600000045
+        },
+        {
+          "document": "We cannot sign in to our accou",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999658013916884,
+            "probabilities": {
+              "0": 0.9999826753724153,
+              "1": 0.000017099300302860097,
+              "2": 2.2532728202387625e-7
+            }
+          },
+          "measuredDuration": 42.08520899999985
+        },
+        {
+          "document": "We cannot sign in to our accoun",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.99996377482226,
+            "probabilities": {
+              "0": 0.9999816559224589,
+              "1": 0.000018112584677106466,
+              "2": 2.3149286407800591e-7
+            }
+          },
+          "measuredDuration": 42.06225000000086
+        },
+        {
+          "document": "We cannot sign in to our account",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999632222258933,
+            "probabilities": {
+              "0": 0.9999813671831621,
+              "1": 0.000018388882567669474,
+              "2": 2.439342700203529e-7
+            }
+          },
+          "measuredDuration": 42.153417000000445
+        },
+        {
+          "document": "We cannot sign in to our accounts",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9999550069611722,
+            "probabilities": {
+              "0": 0.9999771814844184,
+              "1": 0.00002249651216990134,
+              "2": 3.2200341158892283e-7
+            }
+          },
+          "measuredDuration": 42.2309580000001
+        }
+      ]
+    },
+    {
+      "input": {
+        "type": "score",
+        "document": "",
+        "instruction": "How much is the issue affecting the customer's work?",
+        "criteria": [
+          "No interruption to work",
+          "Some tasks are slower or harder",
+          "The customer cannot continue their work"
+        ]
+      },
+      "frames": [
+        {
+          "document": "",
+          "answer": {
+            "type": "score",
+            "score": 1.8958927939424612,
+            "confidence": 0.7202583221957035,
+            "probabilities": [
+              0.046434861375684304,
+              0.011237483306170297,
+              0.9423276553181454
+            ]
+          },
+          "measuredDuration": 42.92941599999995
+        },
+        {
+          "document": "T",
+          "answer": {
+            "type": "score",
+            "score": 1.8415051343289899,
+            "confidence": 0.8177044294339836,
+            "probabilities": [
+              0.07175077190054649,
+              0.01499332186991708,
+              0.9132559062295365
+            ]
+          },
+          "measuredDuration": 42.91216600000007
+        },
+        {
+          "document": "Th",
+          "answer": {
+            "type": "score",
+            "score": 1.7721626265260566,
+            "confidence": 0.7867302203167624,
+            "probabilities": [
+              0.10518433394609847,
+              0.0174687055817466,
+              0.877346960472155
+            ]
+          },
+          "measuredDuration": 42.714458999999806
+        },
+        {
+          "document": "The",
+          "answer": {
+            "type": "score",
+            "score": 1.9845018100166132,
+            "confidence": 0.9800290647952138,
+            "probabilities": [
+              0.0073212411997887255,
+              0.0008557075838095149,
+              0.9918230512164018
+            ]
+          },
+          "measuredDuration": 42.77674999999999
+        },
+        {
+          "document": "The ",
+          "answer": {
+            "type": "score",
+            "score": 1.9908619393686928,
+            "confidence": 0.9871463868503662,
+            "probabilities": [
+              0.00436186459095204,
+              0.00041433144940329365,
+              0.9952238039596447
+            ]
+          },
+          "measuredDuration": 42.951875000000655
+        },
+        {
+          "document": "The l",
+          "answer": {
+            "type": "score",
+            "score": 1.9431054676594508,
+            "confidence": 0.9367670928843822,
+            "probabilities": [
+              0.025749067626770174,
+              0.005396397087008849,
+              0.968854535286221
+            ]
+          },
+          "measuredDuration": 44.55550000000039
+        },
+        {
+          "document": "The lo",
+          "answer": {
+            "type": "score",
+            "score": 1.9408188488485947,
+            "confidence": 0.9005207548144922,
+            "probabilities": [
+              0.027092305544854072,
+              0.004996540061697132,
+              0.9679111543934488
+            ]
+          },
+          "measuredDuration": 43.13520799999969
+        },
+        {
+          "document": "The log",
+          "answer": {
+            "type": "score",
+            "score": 1.999978242521748,
+            "confidence": 0.9999787621134096,
+            "probabilities": [
+              0.000010842953881759288,
+              7.157048834502572e-8,
+              0.9999890854756298
+            ]
+          },
+          "measuredDuration": 44.556249999999636
+        },
+        {
+          "document": "The logo",
+          "answer": {
+            "type": "score",
+            "score": 0.044213030687203704,
+            "confidence": 0.46728361069707736,
+            "probabilities": [
+              0.9767486935583252,
+              0.0022895821961459112,
+              0.020961724245528897
+            ]
+          },
+          "measuredDuration": 43.369833000000654
+        },
+        {
+          "document": "The logo ",
+          "answer": {
+            "type": "score",
+            "score": 0.03253774741373689,
+            "confidence": 0.8199192889110066,
+            "probabilities": [
+              0.9830757038114128,
+              0.0013108449634374692,
+              0.015613451225149712
+            ]
+          },
+          "measuredDuration": 43.26487500000076
+        },
+        {
+          "document": "The logo i",
+          "answer": {
+            "type": "score",
+            "score": 0.023565788767763187,
+            "confidence": 0.8297296131974154,
+            "probabilities": [
+              0.9874154427621967,
+              0.0016033257078436854,
+              0.01098123152995975
+            ]
+          },
+          "measuredDuration": 42.63929100000041
+        },
+        {
+          "document": "The logo is",
+          "answer": {
+            "type": "score",
+            "score": 0.18351667348395814,
+            "confidence": 0.09407916545074413,
+            "probabilities": [
+              0.9070228771649715,
+              0.0024375721860990895,
+              0.09053955064892953
+            ]
+          },
+          "measuredDuration": 43.16587499999969
+        },
+        {
+          "document": "The logo is ",
+          "answer": {
+            "type": "score",
+            "score": 0.16413475980294892,
+            "confidence": 0.1855857632347795,
+            "probabilities": [
+              0.9170397040044628,
+              0.0017858321881253929,
+              0.08117446380741176
+            ]
+          },
+          "measuredDuration": 43.07000000000062
+        },
+        {
+          "document": "The logo is b",
+          "answer": {
+            "type": "score",
+            "score": 0.13471747168792422,
+            "confidence": 0.04777651669780825,
+            "probabilities": [
+              0.9310832893781487,
+              0.0031159495557785744,
+              0.06580076106607283
+            ]
+          },
+          "measuredDuration": 43.160375000000386
+        },
+        {
+          "document": "The logo is bl",
+          "answer": {
+            "type": "score",
+            "score": 0.15702322731355914,
+            "confidence": 0.019613263361888067,
+            "probabilities": [
+              0.9203427004792887,
+              0.0022913717278635853,
+              0.07736592779284777
+            ]
+          },
+          "measuredDuration": 42.73020899999938
+        },
+        {
+          "document": "The logo is blu",
+          "answer": {
+            "type": "score",
+            "score": 0.03889798561161394,
+            "confidence": 0.2520538539199748,
+            "probabilities": [
+              0.9798451711603821,
+              0.0014116720676221098,
+              0.018743156771995916
+            ]
+          },
+          "measuredDuration": 42.98424999999952
+        },
+        {
+          "document": "The logo is blur",
+          "answer": {
+            "type": "score",
+            "score": 1.6995561677806235,
+            "confidence": 0.00043980177814229027,
+            "probabilities": [
+              0.14935410466992413,
+              0.0017356228795281997,
+              0.8489102724505476
+            ]
+          },
+          "measuredDuration": 42.94562500000029
+        },
+        {
+          "document": "The logo is blurr",
+          "answer": {
+            "type": "score",
+            "score": 1.6293972235970149,
+            "confidence": 0.0004119794795591769,
+            "probabilities": [
+              0.1834100826325315,
+              0.0037826111379222487,
+              0.8128073062295463
+            ]
+          },
+          "measuredDuration": 42.90849999999955
+        },
+        {
+          "document": "The logo is blurry",
+          "answer": {
+            "type": "score",
+            "score": 1.1945035691356183,
+            "confidence": 0.0004848914932065185,
+            "probabilities": [
+              0.3963442889253801,
+              0.012807853013621456,
+              0.5908478580609984
+            ]
+          },
+          "measuredDuration": 42.699249999999665
+        },
+        {
+          "document": "The logo is blurry.",
+          "answer": {
+            "type": "score",
+            "score": 0.8343086732760948,
+            "confidence": 0.0005538052756601797,
+            "probabilities": [
+              0.5617238689170041,
+              0.04224358888989685,
+              0.39603254219309897
+            ]
+          },
+          "measuredDuration": 43.18133399999988
+        },
+        {
+          "document": "The logo is blurry. ",
+          "answer": {
+            "type": "score",
+            "score": 0.5305739590911357,
+            "confidence": 0.0007155383028495388,
+            "probabilities": [
+              0.7132720047326907,
+              0.04288203144348292,
+              0.2438459638238264
+            ]
+          },
+          "measuredDuration": 42.33954199999971
+        },
+        {
+          "document": "The logo is blurry. E",
+          "answer": {
+            "type": "score",
+            "score": 1.840988305645133,
+            "confidence": 0.0011149949349059662,
+            "probabilities": [
+              0.07575029201420419,
+              0.007511110326458659,
+              0.9167385976593372
+            ]
+          },
+          "measuredDuration": 43.48612500000036
+        },
+        {
+          "document": "The logo is blurry. Ev",
+          "answer": {
+            "type": "score",
+            "score": 1.331650456950703,
+            "confidence": 0.00033781883014716296,
+            "probabilities": [
+              0.3289870193862462,
+              0.010375504276804533,
+              0.6606374763369492
+            ]
+          },
+          "measuredDuration": 42.943083000000115
+        },
+        {
+          "document": "The logo is blurry. Eve",
+          "answer": {
+            "type": "score",
+            "score": 1.9885880065674018,
+            "confidence": 0.007761917753029923,
+            "probabilities": [
+              0.005237858162469948,
+              0.0009362771076582117,
+              0.9938258647298718
+            ]
+          },
+          "measuredDuration": 43.1205829999999
+        },
+        {
+          "document": "The logo is blurry. Ever",
+          "answer": {
+            "type": "score",
+            "score": 1.3960168861876998,
+            "confidence": 0.00044407906616306114,
+            "probabilities": [
+              0.2849884903056722,
+              0.034006133200955836,
+              0.681005376493372
+            ]
+          },
+          "measuredDuration": 42.99595799999952
+        },
+        {
+          "document": "The logo is blurry. Every",
+          "answer": {
+            "type": "score",
+            "score": 1.999953422062195,
+            "confidence": 0.9669491797413136,
+            "probabilities": [
+              0.000023244872397962653,
+              8.819300876702435e-8,
+              0.9999766669345932
+            ]
+          },
+          "measuredDuration": 43.19508299999961
+        },
+        {
+          "document": "The logo is blurry. Everyt",
+          "answer": {
+            "type": "score",
+            "score": 1.9796085917964512,
+            "confidence": 0.0028099364273614924,
+            "probabilities": [
+              0.008574026172468474,
+              0.0032433558586119015,
+              0.9881826179689197
+            ]
+          },
+          "measuredDuration": 43.177999999999884
+        },
+        {
+          "document": "The logo is blurry. Everyth",
+          "answer": {
+            "type": "score",
+            "score": 1.9998110280102874,
+            "confidence": 0.29461732229983195,
+            "probabilities": [
+              0.00008843604693784318,
+              0.000012099895837019116,
+              0.9998994640572252
+            ]
+          },
+          "measuredDuration": 43.20545800000036
+        },
+        {
+          "document": "The logo is blurry. Everythi",
+          "answer": {
+            "type": "score",
+            "score": 1.9985100919157717,
+            "confidence": 0.060464367737381286,
+            "probabilities": [
+              0.0006482521705837257,
+              0.00019340374306121632,
+              0.9991583440863552
+            ]
+          },
+          "measuredDuration": 43.363499999999476
+        },
+        {
+          "document": "The logo is blurry. Everythin",
+          "answer": {
+            "type": "score",
+            "score": 1.9991592342667197,
+            "confidence": 0.06870585556411912,
+            "probabilities": [
+              0.0003876641417082012,
+              0.00006543744986408499,
+              0.9995468984084278
+            ]
+          },
+          "measuredDuration": 43.06233299999985
+        },
+        {
+          "document": "The logo is blurry. Everything",
+          "answer": {
+            "type": "score",
+            "score": 1.9996235233958934,
+            "confidence": 0.24664122376551423,
+            "probabilities": [
+              0.00018587904249829803,
+              0.000004718519110103405,
+              0.9998094024383917
+            ]
+          },
+          "measuredDuration": 43.11041699999987
+        },
+        {
+          "document": "The logo is blurry. Everything ",
+          "answer": {
+            "type": "score",
+            "score": 1.9916839193575326,
+            "confidence": 0.019349548675622108,
+            "probabilities": [
+              0.003935561366992355,
+              0.00044495790848269,
+              0.995619480724525
+            ]
+          },
+          "measuredDuration": 43.091333000000304
+        },
+        {
+          "document": "The logo is blurry. Everything s",
+          "answer": {
+            "type": "score",
+            "score": 1.9998088381703216,
+            "confidence": 0.4160286983419219,
+            "probabilities": [
+              0.00009351147660620792,
+              0.0000041388764661112945,
+              0.9999023496469277
+            ]
+          },
+          "measuredDuration": 43.0731250000008
+        },
+        {
+          "document": "The logo is blurry. Everything st",
+          "answer": {
+            "type": "score",
+            "score": 1.999895601041989,
+            "confidence": 0.5527569154365379,
+            "probabilities": [
+              0.00005171182035177254,
+              9.753173074153318e-7,
+              0.9999473128623408
+            ]
+          },
+          "measuredDuration": 43.02404100000058
+        },
+        {
+          "document": "The logo is blurry. Everything sti",
+          "answer": {
+            "type": "score",
+            "score": 1.9995670588107526,
+            "confidence": 0.24081467967767067,
+            "probabilities": [
+              0.00021131926213687095,
+              0.000010302664973733418,
+              0.9997783780728894
+            ]
+          },
+          "measuredDuration": 42.873499999999694
+        },
+        {
+          "document": "The logo is blurry. Everything stil",
+          "answer": {
+            "type": "score",
+            "score": 1.9964709931082496,
+            "confidence": 0.04802496217162289,
+            "probabilities": [
+              0.001681596902915945,
+              0.00016581308591870139,
+              0.9981525900111654
+            ]
+          },
+          "measuredDuration": 43.31333300000006
+        },
+        {
+          "document": "The logo is blurry. Everything still",
+          "answer": {
+            "type": "score",
+            "score": 1.4256944783382017,
+            "confidence": 0.0005648804890737713,
+            "probabilities": [
+              0.2704850677190261,
+              0.03333538622374615,
+              0.6961795460572278
+            ]
+          },
+          "measuredDuration": 43.17279099999905
+        },
+        {
+          "document": "The logo is blurry. Everything still ",
+          "answer": {
+            "type": "score",
+            "score": 1.3279210284862213,
+            "confidence": 0.0006272602658090598,
+            "probabilities": [
+              0.3159378268102009,
+              0.040203317893376986,
+              0.6438588552964222
+            ]
+          },
+          "measuredDuration": 43.29658299999937
+        },
+        {
+          "document": "The logo is blurry. Everything still w",
+          "answer": {
+            "type": "score",
+            "score": 1.9945122379969042,
+            "confidence": 0.01979137730245717,
+            "probabilities": [
+              0.0024469243987190483,
+              0.0005939132056578091,
+              0.9969591623956232
+            ]
+          },
+          "measuredDuration": 43.13812499999949
+        },
+        {
+          "document": "The logo is blurry. Everything still wo",
+          "answer": {
+            "type": "score",
+            "score": 1.999409381314272,
+            "confidence": 0.30498186211770695,
+            "probabilities": [
+              0.00027213265842531326,
+              0.00004635336887735574,
+              0.9996815139726973
+            ]
+          },
+          "measuredDuration": 43.62791700000162
+        },
+        {
+          "document": "The logo is blurry. Everything still wor",
+          "answer": {
+            "type": "score",
+            "score": 0.31607345902592254,
+            "confidence": 0.010065403008131857,
+            "probabilities": [
+              0.8321681448268776,
+              0.019590251320322025,
+              0.14824160385280025
+            ]
+          },
+          "measuredDuration": 44.602624999999534
+        },
+        {
+          "document": "The logo is blurry. Everything still work",
+          "answer": {
+            "type": "score",
+            "score": 0.07286589412220444,
+            "confidence": 0.9902197500295785,
+            "probabilities": [
+              0.9623818877372927,
+              0.002370330403209947,
+              0.03524778185949725
+            ]
+          },
+          "measuredDuration": 44.916833000001134
+        },
+        {
+          "document": "The logo is blurry. Everything still works",
+          "answer": {
+            "type": "score",
+            "score": 0.042755772274009694,
+            "confidence": 0.9758645697708519,
+            "probabilities": [
+              0.9774129857111631,
+              0.002418256303664155,
+              0.02016875798517277
+            ]
+          },
+          "measuredDuration": 43.57487500000025
+        },
+        {
+          "document": "The a",
+          "answer": {
+            "type": "score",
+            "score": 1.9136304231275814,
+            "confidence": 0.9226096472338775,
+            "probabilities": [
+              0.0393347714989799,
+              0.007700033874458501,
+              0.9529651946265615
+            ]
+          },
+          "measuredDuration": 44.409332999999606
+        },
+        {
+          "document": "The ap",
+          "answer": {
+            "type": "score",
+            "score": 1.9845527436616053,
+            "confidence": 0.9862021610580256,
+            "probabilities": [
+              0.007055711920220738,
+              0.0013358324979533256,
+              0.991608455581826
+            ]
+          },
+          "measuredDuration": 44.76604199999929
+        },
+        {
+          "document": "The app",
+          "answer": {
+            "type": "score",
+            "score": 0.13798726898179065,
+            "confidence": 0.6922459106010409,
+            "probabilities": [
+              0.9308565146691904,
+              0.00029970167982860046,
+              0.06884378365098102
+            ]
+          },
+          "measuredDuration": 43.6122090000008
+        },
+        {
+          "document": "The app ",
+          "answer": {
+            "type": "score",
+            "score": 0.15855012848740296,
+            "confidence": 0.9332677088993975,
+            "probabilities": [
+              0.9205249818903536,
+              0.00039990773188957864,
+              0.07907511037775669
+            ]
+          },
+          "measuredDuration": 43.020166999998764
+        },
+        {
+          "document": "The app i",
+          "answer": {
+            "type": "score",
+            "score": 0.06864671243636437,
+            "confidence": 0.8885100640657145,
+            "probabilities": [
+              0.9651364375742769,
+              0.0010804124150820718,
+              0.03378315001064115
+            ]
+          },
+          "measuredDuration": 42.981667000000016
+        },
+        {
+          "document": "The app is",
+          "answer": {
+            "type": "score",
+            "score": 0.8521367732024794,
+            "confidence": 0.5766908745253978,
+            "probabilities": [
+              0.5734977685789293,
+              0.0008676896396618374,
+              0.42563454178140875
+            ]
+          },
+          "measuredDuration": 42.91112500000054
+        },
+        {
+          "document": "The app is ",
+          "answer": {
+            "type": "score",
+            "score": 1.045883557626513,
+            "confidence": 0.8842935818233342,
+            "probabilities": [
+              0.4764285319881796,
+              0.0012593783971276396,
+              0.5223120896146928
+            ]
+          },
+          "measuredDuration": 42.817417000000205
+        },
+        {
+          "document": "The app is s",
+          "answer": {
+            "type": "score",
+            "score": 0.3283660392200617,
+            "confidence": 0.04769303998840291,
+            "probabilities": [
+              0.8350329617809321,
+              0.0015680372180738652,
+              0.16339900100099392
+            ]
+          },
+          "measuredDuration": 43.15016699999978
+        },
+        {
+          "document": "The app is sl",
+          "answer": {
+            "type": "score",
+            "score": 1.7510927656791155,
+            "confidence": 0.004838022105739692,
+            "probabilities": [
+              0.12409550506910658,
+              0.0007162241826711148,
+              0.8751882707482223
+            ]
+          },
+          "measuredDuration": 43.01820900000166
+        },
+        {
+          "document": "The app is slo",
+          "answer": {
+            "type": "score",
+            "score": 1.9215870016411465,
+            "confidence": 0.007328898116773286,
+            "probabilities": [
+              0.038862240814633145,
+              0.0006885167295871486,
+              0.9604492424557797
+            ]
+          },
+          "measuredDuration": 42.91454200000044
+        },
+        {
+          "document": "The app is slow",
+          "answer": {
+            "type": "score",
+            "score": 1.9794009515479445,
+            "confidence": 0.9864714325597636,
+            "probabilities": [
+              0.004486012478692125,
+              0.011627023494671393,
+              0.9838869640266366
+            ]
+          },
+          "measuredDuration": 42.96079099999952
+        },
+        {
+          "document": "The app is slow,",
+          "answer": {
+            "type": "score",
+            "score": 1.9715287419985268,
+            "confidence": 0.9835593900926639,
+            "probabilities": [
+              0.007096070653969526,
+              0.014279116693534254,
+              0.9786248126524962
+            ]
+          },
+          "measuredDuration": 42.91941699999916
+        },
+        {
+          "document": "The app is slow, ",
+          "answer": {
+            "type": "score",
+            "score": 1.959700874926557,
+            "confidence": 0.973729830743118,
+            "probabilities": [
+              0.00937861392369966,
+              0.021541897226043504,
+              0.9690794888502567
+            ]
+          },
+          "measuredDuration": 43.08037500000137
+        },
+        {
+          "document": "The app is slow, b",
+          "answer": {
+            "type": "score",
+            "score": 1.9650737413311046,
+            "confidence": 0.9851914377142049,
+            "probabilities": [
+              0.005618702706640369,
+              0.023688853255614796,
+              0.9706924440377449
+            ]
+          },
+          "measuredDuration": 42.91533299999901
+        },
+        {
+          "document": "The app is slow, bu",
+          "answer": {
+            "type": "score",
+            "score": 1.9645211329799883,
+            "confidence": 0.9793731751898017,
+            "probabilities": [
+              0.007176480695687157,
+              0.021125905628637313,
+              0.9716976136756755
+            ]
+          },
+          "measuredDuration": 43.07237499999974
+        },
+        {
+          "document": "The app is slow, but",
+          "answer": {
+            "type": "score",
+            "score": 1.868454658289798,
+            "confidence": 0.9475608873220726,
+            "probabilities": [
+              0.029864222731191693,
+              0.07181689624781862,
+              0.8983188810209898
+            ]
+          },
+          "measuredDuration": 42.814916999999696
+        },
+        {
+          "document": "The app is slow, but ",
+          "answer": {
+            "type": "score",
+            "score": 1.8678918652202818,
+            "confidence": 0.9522020248608111,
+            "probabilities": [
+              0.02428809461110324,
+              0.08353194555751199,
+              0.8921799598313849
+            ]
+          },
+          "measuredDuration": 42.884000000000015
+        },
+        {
+          "document": "The app is slow, but w",
+          "answer": {
+            "type": "score",
+            "score": 1.9138672875878975,
+            "confidence": 0.9678163224004618,
+            "probabilities": [
+              0.01104913765242783,
+              0.06403443710724689,
+              0.9249164252403252
+            ]
+          },
+          "measuredDuration": 43.12695800000074
+        },
+        {
+          "document": "The app is slow, but we",
+          "answer": {
+            "type": "score",
+            "score": 1.9309423777764458,
+            "confidence": 0.9697357003557566,
+            "probabilities": [
+              0.013378244098563502,
+              0.04230113402642736,
+              0.9443206218750092
+            ]
+          },
+          "measuredDuration": 42.929166999998415
+        },
+        {
+          "document": "The app is slow, but we ",
+          "answer": {
+            "type": "score",
+            "score": 1.9359301347140947,
+            "confidence": 0.9615181796256493,
+            "probabilities": [
+              0.014580889082750258,
+              0.034908087120404975,
+              0.9505110237968448
+            ]
+          },
+          "measuredDuration": 42.81766599999901
+        },
+        {
+          "document": "The app is slow, but we c",
+          "answer": {
+            "type": "score",
+            "score": 1.9343961245710317,
+            "confidence": 0.9723048750716567,
+            "probabilities": [
+              0.00908368501202755,
+              0.04743650540491307,
+              0.9434798095830593
+            ]
+          },
+          "measuredDuration": 44.47691699999996
+        },
+        {
+          "document": "The app is slow, but we ca",
+          "answer": {
+            "type": "score",
+            "score": 1.93499509448413,
+            "confidence": 0.9736569776061433,
+            "probabilities": [
+              0.00881994566793028,
+              0.04736501418000944,
+              0.9438150401520603
+            ]
+          },
+          "measuredDuration": 43.84087499999987
+        },
+        {
+          "document": "The app is slow, but we can",
+          "answer": {
+            "type": "score",
+            "score": 1.9021885249952557,
+            "confidence": 0.9476617270889787,
+            "probabilities": [
+              0.018195009557976566,
+              0.06142145588879147,
+              0.9203835345532321
+            ]
+          },
+          "measuredDuration": 43.131916000000274
+        },
+        {
+          "document": "The app is slow, but we can ",
+          "answer": {
+            "type": "score",
+            "score": 1.9125208051154192,
+            "confidence": 0.9468496900910812,
+            "probabilities": [
+              0.01800775806120232,
+              0.05146367876217603,
+              0.9305285631766216
+            ]
+          },
+          "measuredDuration": 43.120875000000524
+        },
+        {
+          "document": "The app is slow, but we can s",
+          "answer": {
+            "type": "score",
+            "score": 1.9197865542138903,
+            "confidence": 0.9596574699048666,
+            "probabilities": [
+              0.011642574988798664,
+              0.05692829580851224,
+              0.931429129202689
+            ]
+          },
+          "measuredDuration": 43.04691599999933
+        },
+        {
+          "document": "The app is slow, but we can st",
+          "answer": {
+            "type": "score",
+            "score": 1.9137533031238094,
+            "confidence": 0.9533109167491519,
+            "probabilities": [
+              0.01385069632864017,
+              0.05854530421890995,
+              0.9276039994524498
+            ]
+          },
+          "measuredDuration": 42.926000000001295
+        },
+        {
+          "document": "The app is slow, but we can sti",
+          "answer": {
+            "type": "score",
+            "score": 1.9389088508343282,
+            "confidence": 0.9655719847394076,
+            "probabilities": [
+              0.009667811361211575,
+              0.041755526443248814,
+              0.9485766621955397
+            ]
+          },
+          "measuredDuration": 43.152374999999665
+        },
+        {
+          "document": "The app is slow, but we can stil",
+          "answer": {
+            "type": "score",
+            "score": 1.9071824135255468,
+            "confidence": 0.9451251289073022,
+            "probabilities": [
+              0.016326881129140703,
+              0.06016382421617162,
+              0.9235092946546876
+            ]
+          },
+          "measuredDuration": 42.975125000000844
+        },
+        {
+          "document": "The app is slow, but we can still",
+          "answer": {
+            "type": "score",
+            "score": 1.914867827532665,
+            "confidence": 0.9354966541871302,
+            "probabilities": [
+              0.01681500309978424,
+              0.05150216626776674,
+              0.931682830632449
+            ]
+          },
+          "measuredDuration": 42.82554199999868
+        },
+        {
+          "document": "The app is slow, but we can still ",
+          "answer": {
+            "type": "score",
+            "score": 1.9058517583023422,
+            "confidence": 0.9486418687480959,
+            "probabilities": [
+              0.018071589908518357,
+              0.058005061880621094,
+              0.9239233482108605
+            ]
+          },
+          "measuredDuration": 42.85833400000047
+        },
+        {
+          "document": "The app is slow, but we can still w",
+          "answer": {
+            "type": "score",
+            "score": 1.887121409166731,
+            "confidence": 0.9385077407709239,
+            "probabilities": [
+              0.014413396677911297,
+              0.08405179747744605,
+              0.9015348058446425
+            ]
+          },
+          "measuredDuration": 42.956499999998414
+        },
+        {
+          "document": "The app is slow, but we can still wo",
+          "answer": {
+            "type": "score",
+            "score": 1.9166366876673315,
+            "confidence": 0.9478905350057977,
+            "probabilities": [
+              0.012418084150343836,
+              0.05852714403198044,
+              0.9290547718176756
+            ]
+          },
+          "measuredDuration": 42.82020899999952
+        },
+        {
+          "document": "The app is slow, but we can still wor",
+          "answer": {
+            "type": "score",
+            "score": 1.8892908982029653,
+            "confidence": 0.946881023693772,
+            "probabilities": [
+              0.017065197260146894,
+              0.07657870727674082,
+              0.9063560954631122
+            ]
+          },
+          "measuredDuration": 43.31450000000041
+        },
+        {
+          "document": "The app is slow, but we can still work",
+          "answer": {
+            "type": "score",
+            "score": 1.6787780818034421,
+            "confidence": 0.9233424122751198,
+            "probabilities": [
+              0.03403533224329763,
+              0.2531512537099627,
+              0.7128134140467397
+            ]
+          },
+          "measuredDuration": 43.979208000000654
+        },
+        {
+          "document": "The app w",
+          "answer": {
+            "type": "score",
+            "score": 0.157632196210035,
+            "confidence": 0.3528068777552549,
+            "probabilities": [
+              0.920967025832487,
+              0.00043375212499107546,
+              0.07859922204252195
+            ]
+          },
+          "measuredDuration": 43.86366699999962
+        },
+        {
+          "document": "The app wi",
+          "answer": {
+            "type": "score",
+            "score": 0.2765886991526992,
+            "confidence": 0.0761237972567983,
+            "probabilities": [
+              0.8612582564214991,
+              0.0008947880043027171,
+              0.13784695557419824
+            ]
+          },
+          "measuredDuration": 43.2885839999999
+        },
+        {
+          "document": "The app wil",
+          "answer": {
+            "type": "score",
+            "score": 0.06376957774731384,
+            "confidence": 0.9001343829399489,
+            "probabilities": [
+              0.9675445008918484,
+              0.0011414204689894902,
+              0.03131407863916218
+            ]
+          },
+          "measuredDuration": 42.879541999998764
+        },
+        {
+          "document": "The app will",
+          "answer": {
+            "type": "score",
+            "score": 0.036669882975517216,
+            "confidence": 0.5918716212123745,
+            "probabilities": [
+              0.9815068093030112,
+              0.00031649841846044947,
+              0.018176692278528382
+            ]
+          },
+          "measuredDuration": 43.195583000000624
+        },
+        {
+          "document": "The app will ",
+          "answer": {
+            "type": "score",
+            "score": 0.055519801817340834,
+            "confidence": 0.6035045932642555,
+            "probabilities": [
+              0.9715806911298549,
+              0.001318815922949533,
+              0.027100492947195652
+            ]
+          },
+          "measuredDuration": 43.04920799999854
+        },
+        {
+          "document": "The app will n",
+          "answer": {
+            "type": "score",
+            "score": 0.14393013197426408,
+            "confidence": 0.42308388905023253,
+            "probabilities": [
+              0.927901851529561,
+              0.0002661649666142436,
+              0.07183198350382491
+            ]
+          },
+          "measuredDuration": 43.332791999999245
+        },
+        {
+          "document": "The app will no",
+          "answer": {
+            "type": "score",
+            "score": 0.03432022575762668,
+            "confidence": 0.9191222045396872,
+            "probabilities": [
+              0.9826347330004959,
+              0.00041030824138151446,
+              0.01695495875812258
+            ]
+          },
+          "measuredDuration": 43.46200000000135
+        },
+        {
+          "document": "The app will not",
+          "answer": {
+            "type": "score",
+            "score": 1.999281384253737,
+            "confidence": 0.9994160519766145,
+            "probabilities": [
+              0.00035929611736508856,
+              2.351153308558573e-8,
+              0.9996406803711019
+            ]
+          },
+          "measuredDuration": 43.476541
+        },
+        {
+          "document": "The app will not ",
+          "answer": {
+            "type": "score",
+            "score": 1.9994827173145722,
+            "confidence": 0.998797987897158,
+            "probabilities": [
+              0.0002586304420682714,
+              2.1801291480559396e-8,
+              0.9997413477566404
+            ]
+          },
+          "measuredDuration": 43.48441699999967
+        },
+        {
+          "document": "The app will not o",
+          "answer": {
+            "type": "score",
+            "score": 0.23065577751778898,
+            "confidence": 0.07538906123686628,
+            "probabilities": [
+              0.884639459695527,
+              0.00006530309115679162,
+              0.1152952372133161
+            ]
+          },
+          "measuredDuration": 45.21862500000134
+        },
+        {
+          "document": "The app will not op",
+          "answer": {
+            "type": "score",
+            "score": 1.9999802041922994,
+            "confidence": 0.9999829184928953,
+            "probabilities": [
+              0.000009829244737115817,
+              1.3731822625158418e-7,
+              0.9999900334370365
+            ]
+          },
+          "measuredDuration": 44.390541999999186
+        },
+        {
+          "document": "The app will not ope",
+          "answer": {
+            "type": "score",
+            "score": 1.9999193302969744,
+            "confidence": 0.9999706378156266,
+            "probabilities": [
+              0.00003753320784755033,
+              0.000005603287330581758,
+              0.9999568635048219
+            ]
+          },
+          "measuredDuration": 43.464874999999665
+        },
+        {
+          "document": "The app will not open",
+          "answer": {
+            "type": "score",
+            "score": 1.9999062764002942,
+            "confidence": 0.9999708949809276,
+            "probabilities": [
+              0.00004338184340225267,
+              0.000006959912901310412,
+              0.9999496582436964
+            ]
+          },
+          "measuredDuration": 43.112584000000425
+        },
+        {
+          "document": "The app will not open.",
+          "answer": {
+            "type": "score",
+            "score": 1.999893193993191,
+            "confidence": 0.9999655047696349,
+            "probabilities": [
+              0.00004993132185127177,
+              0.000006943363106369749,
+              0.9999431253150423
+            ]
+          },
+          "measuredDuration": 42.97854200000074
+        },
+        {
+          "document": "The app will not open. ",
+          "answer": {
+            "type": "score",
+            "score": 1.999918171448352,
+            "confidence": 0.9999643439891125,
+            "probabilities": [
+              0.00003792144902952649,
+              0.000005985653588839297,
+              0.9999560928973816
+            ]
+          },
+          "measuredDuration": 43.07391599999937
+        },
+        {
+          "document": "The app will not open. N",
+          "answer": {
+            "type": "score",
+            "score": 1.9998748493534806,
+            "confidence": 0.999954600254681,
+            "probabilities": [
+              0.0000577721744508204,
+              0.000009606297617580893,
+              0.9999326215279315
+            ]
+          },
+          "measuredDuration": 42.812292000000525
+        },
+        {
+          "document": "The app will not open. No",
+          "answer": {
+            "type": "score",
+            "score": 1.999752878802827,
+            "confidence": 0.9999776638664352,
+            "probabilities": [
+              0.00012351101748102791,
+              9.916221129412156e-8,
+              0.9998763898203078
+            ]
+          },
+          "measuredDuration": 42.88716700000077
+        },
+        {
+          "document": "The app will not open. Nob",
+          "answer": {
+            "type": "score",
+            "score": 1.9999505899250503,
+            "confidence": 0.9999779740532567,
+            "probabilities": [
+              0.000024019302808922347,
+              0.0000013714693320260298,
+              0.9999746092278591
+            ]
+          },
+          "measuredDuration": 42.96545900000092
+        },
+        {
+          "document": "The app will not open. Nobo",
+          "answer": {
+            "type": "score",
+            "score": 1.9999344052250472,
+            "confidence": 0.9999729406495009,
+            "probabilities": [
+              0.000030717706159223304,
+              0.000004159362634693615,
+              0.9999651229312062
+            ]
+          },
+          "measuredDuration": 42.8863339999989
+        },
+        {
+          "document": "The app will not open. Nobod",
+          "answer": {
+            "type": "score",
+            "score": 1.999916186353974,
+            "confidence": 0.9999686117534273,
+            "probabilities": [
+              0.00003763655644318175,
+              0.00000854053313957811,
+              0.9999538229104172
+            ]
+          },
+          "measuredDuration": 42.715250000001106
+        },
+        {
+          "document": "The app will not open. Nobody",
+          "answer": {
+            "type": "score",
+            "score": 1.9998891899272715,
+            "confidence": 0.9999639294967003,
+            "probabilities": [
+              0.000049326791704068116,
+              0.000012156489320564782,
+              0.9999385167189755
+            ]
+          },
+          "measuredDuration": 42.86920800000007
+        },
+        {
+          "document": "The app will not open. Nobody ",
+          "answer": {
+            "type": "score",
+            "score": 1.9999095863506746,
+            "confidence": 0.9999651633440171,
+            "probabilities": [
+              0.00004106211949593075,
+              0.000008289410333377909,
+              0.9999506484701706
+            ]
+          },
+          "measuredDuration": 42.97679199999948
+        },
+        {
+          "document": "The app will not open. Nobody c",
+          "answer": {
+            "type": "score",
+            "score": 1.9998545770420095,
+            "confidence": 0.9999540020015943,
+            "probabilities": [
+              0.00006463860810467313,
+              0.00001614574178130081,
+              0.9999192156501141
+            ]
+          },
+          "measuredDuration": 42.768167000000176
+        },
+        {
+          "document": "The app will not open. Nobody ca",
+          "answer": {
+            "type": "score",
+            "score": 1.9998613412640898,
+            "confidence": 0.9999582922978913,
+            "probabilities": [
+              0.000060979739588922996,
+              0.000016699256732561592,
+              0.9999223210036786
+            ]
+          },
+          "measuredDuration": 42.70287500000086
+        },
+        {
+          "document": "The app will not open. Nobody can",
+          "answer": {
+            "type": "score",
+            "score": 1.9998505802127502,
+            "confidence": 0.9999379114675346,
+            "probabilities": [
+              0.00006226862703252533,
+              0.00002488253318455189,
+              0.9999128488397828
+            ]
+          },
+          "measuredDuration": 42.86895799999911
+        },
+        {
+          "document": "The app will not open. Nobody can ",
+          "answer": {
+            "type": "score",
+            "score": 1.9998355434703372,
+            "confidence": 0.9999367140529186,
+            "probabilities": [
+              0.00006981388892423745,
+              0.000024828751814273207,
+              0.9999053573592614
+            ]
+          },
+          "measuredDuration": 42.93616699999984
+        },
+        {
+          "document": "The app will not open. Nobody can w",
+          "answer": {
+            "type": "score",
+            "score": 1.9998035555961706,
+            "confidence": 0.9999324215378322,
+            "probabilities": [
+              0.00008499687487700954,
+              0.00002645065407564288,
+              0.9998885524710475
+            ]
+          },
+          "measuredDuration": 42.758874999999534
+        },
+        {
+          "document": "The app will not open. Nobody can wo",
+          "answer": {
+            "type": "score",
+            "score": 1.9998329138237336,
+            "confidence": 0.9999428126220355,
+            "probabilities": [
+              0.00007273336711322268,
+              0.000021619442040000216,
+              0.9999056471908468
+            ]
+          },
+          "measuredDuration": 42.95583400000032
+        },
+        {
+          "document": "The app will not open. Nobody can wor",
+          "answer": {
+            "type": "score",
+            "score": 1.9999114970593985,
+            "confidence": 0.9999581142478939,
+            "probabilities": [
+              0.000037549293840830664,
+              0.000013404352919625303,
+              0.9999490463532394
+            ]
+          },
+          "measuredDuration": 43.03529200000048
+        },
+        {
+          "document": "The app will not open. Nobody can work",
+          "answer": {
+            "type": "score",
+            "score": 1.9999360253421439,
+            "confidence": 0.9999405889205528,
+            "probabilities": [
+              0.000025797640097257934,
+              0.000012379377661284037,
+              0.9999618229822413
+            ]
+          },
+          "measuredDuration": 43.039042000000336
+        }
+      ]
+    },
+    {
+      "input": {
+        "type": "noul",
+        "instruction": "Does the text contain an actual animal name? A category label is not an animal name.",
+        "criteria": [
+          "An animal name like cat, dog, or fox appears in the text.",
+          "No animal name appears in the text."
+        ],
+        "document": "Text: \"\""
+      },
+      "additionalInputs": [
+        {
+          "type": "noul",
+          "instruction": "Does the writer ask someone for help? Answer yes if the writer requests assistance or asks someone to help. Answer no otherwise.",
+          "criteria": [
+            "Yes",
+            "No"
+          ],
+          "document": "Text: \"\""
+        },
+        {
+          "type": "noul",
+          "instruction": "Does the text explicitly call for immediate action? Answer yes if the message requests action now, immediately, or describes an emergency. Answer no otherwise.",
+          "criteria": [
+            "Yes",
+            "No"
+          ],
+          "document": "Text: \"\""
+        }
+      ],
+      "frames": [
+        {
+          "document": "",
+          "answer": {
+            "type": "noul",
+            "value": 0.0000023422828812015367
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.00001278346253268285
+            },
+            {
+              "type": "noul",
+              "value": 0.0000022082757192882676
+            }
+          ],
+          "measuredDuration": 170.84045900000092
+        },
+        {
+          "document": "M",
+          "answer": {
+            "type": "noul",
+            "value": 0.00002161866417545948
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.000015732895965623793
+            },
+            {
+              "type": "noul",
+              "value": 0.000004100306648088523
+            }
+          ],
+          "measuredDuration": 114.49862500000017
+        },
+        {
+          "document": "My",
+          "answer": {
+            "type": "noul",
+            "value": 0.0000677622381133983
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.000017476939276322986
+            },
+            {
+              "type": "noul",
+              "value": 6.548017857005254e-7
+            }
+          ],
+          "measuredDuration": 115.04866599999878
+        },
+        {
+          "document": "My ",
+          "answer": {
+            "type": "noul",
+            "value": 0.000026652717928019973
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.000019043551574847886
+            },
+            {
+              "type": "noul",
+              "value": 0.0000010656937392976252
+            }
+          ],
+          "measuredDuration": 116.33229100000062
+        },
+        {
+          "document": "My c",
+          "answer": {
+            "type": "noul",
+            "value": 0.9931869855299204
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.00000365551141535226
+            },
+            {
+              "type": "noul",
+              "value": 5.067583073602265e-7
+            }
+          ],
+          "measuredDuration": 113.77958399999989
+        },
+        {
+          "document": "My ca",
+          "answer": {
+            "type": "noul",
+            "value": 0.9937623360485062
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.0000061362459518248984
+            },
+            {
+              "type": "noul",
+              "value": 0.000002225754594193385
+            }
+          ],
+          "measuredDuration": 113.10991699999977
+        },
+        {
+          "document": "My cat",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999919357337734
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.000001570040552359232
+            },
+            {
+              "type": "noul",
+              "value": 1.7735671851539978e-7
+            }
+          ],
+          "measuredDuration": 115.33816699999988
+        },
+        {
+          "document": "My cat ",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999689092353833
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 9.18583937018352e-7
+            },
+            {
+              "type": "noul",
+              "value": 1.4126733351344195e-7
+            }
+          ],
+          "measuredDuration": 113.06266700000015
+        },
+        {
+          "document": "My cat i",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999836176554174
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.0000010897103203150046
+            },
+            {
+              "type": "noul",
+              "value": 3.46886429926667e-7
+            }
+          ],
+          "measuredDuration": 113.25283299999865
+        },
+        {
+          "document": "My cat is",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999922272388173
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.0000012925463071400313
+            },
+            {
+              "type": "noul",
+              "value": 3.3817561581742465e-7
+            }
+          ],
+          "measuredDuration": 113.28583400000025
+        },
+        {
+          "document": "My cat is ",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999871905318087
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 8.317036971050187e-7
+            },
+            {
+              "type": "noul",
+              "value": 2.419685176436524e-7
+            }
+          ],
+          "measuredDuration": 113.26483399999961
+        },
+        {
+          "document": "My cat is s",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999924503123063
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 5.920438828148355e-7
+            },
+            {
+              "type": "noul",
+              "value": 4.283156685501392e-7
+            }
+          ],
+          "measuredDuration": 113.93325000000004
+        },
+        {
+          "document": "My cat is st",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999927843601587
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 5.94469065946474e-7
+            },
+            {
+              "type": "noul",
+              "value": 5.664168526214872e-7
+            }
+          ],
+          "measuredDuration": 113.09400000000096
+        },
+        {
+          "document": "My cat is stu",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999897184513783
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 4.146722639791734e-7
+            },
+            {
+              "type": "noul",
+              "value": 3.2828941502248876e-7
+            }
+          ],
+          "measuredDuration": 112.87637499999983
+        },
+        {
+          "document": "My cat is stuc",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999926941301785
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.000016816045064258043
+            },
+            {
+              "type": "noul",
+              "value": 0.00008795701133824821
+            }
+          ],
+          "measuredDuration": 112.87962499999958
+        },
+        {
+          "document": "My cat is stuck",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999954110943557
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.0010541500618281615
+            },
+            {
+              "type": "noul",
+              "value": 0.49760438844851484
+            }
+          ],
+          "measuredDuration": 113.28687499999978
+        },
+        {
+          "document": "My cat is stuck.",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999952271380083
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.015515508221399082
+            },
+            {
+              "type": "noul",
+              "value": 0.3104542454922806
+            }
+          ],
+          "measuredDuration": 112.04254199999923
+        },
+        {
+          "document": "My cat is stuck. ",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999945010117227
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.25625102738164623
+            },
+            {
+              "type": "noul",
+              "value": 0.009099596908074322
+            }
+          ],
+          "measuredDuration": 112.98866699999962
+        },
+        {
+          "document": "My cat is stuck. P",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999930225422331
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.015972659179222748
+            },
+            {
+              "type": "noul",
+              "value": 0.41425261146334164
+            }
+          ],
+          "measuredDuration": 113.89875000000029
+        },
+        {
+          "document": "My cat is stuck. Pl",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999934976121168
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9899881120593058
+            },
+            {
+              "type": "noul",
+              "value": 0.9467566921819579
+            }
+          ],
+          "measuredDuration": 114.31495800000084
+        },
+        {
+          "document": "My cat is stuck. Ple",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999932561365551
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9904091090067277
+            },
+            {
+              "type": "noul",
+              "value": 0.8651876017696916
+            }
+          ],
+          "measuredDuration": 113.83562499999971
+        },
+        {
+          "document": "My cat is stuck. Plea",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999941863821071
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9998871738986564
+            },
+            {
+              "type": "noul",
+              "value": 0.9992195532992612
+            }
+          ],
+          "measuredDuration": 112.88337499999943
+        },
+        {
+          "document": "My cat is stuck. Pleas",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999953564928044
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999789345184495
+            },
+            {
+              "type": "noul",
+              "value": 0.9993716485107698
+            }
+          ],
+          "measuredDuration": 112.99720900000102
+        },
+        {
+          "document": "My cat is stuck. Please",
+          "answer": {
+            "type": "noul",
+            "value": 0.99999441700929
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999959064019136
+            },
+            {
+              "type": "noul",
+              "value": 0.9995530760528596
+            }
+          ],
+          "measuredDuration": 115.71212500000001
+        },
+        {
+          "document": "My cat is stuck. Please ",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999948370038889
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999869049135566
+            },
+            {
+              "type": "noul",
+              "value": 0.9986636373266506
+            }
+          ],
+          "measuredDuration": 112.97225000000071
+        },
+        {
+          "document": "My cat is stuck. Please h",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999953315652483
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999861896804684
+            },
+            {
+              "type": "noul",
+              "value": 0.9991206167052137
+            }
+          ],
+          "measuredDuration": 113.20604099999946
+        },
+        {
+          "document": "My cat is stuck. Please he",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999959696171837
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999848290390677
+            },
+            {
+              "type": "noul",
+              "value": 0.9995639402599764
+            }
+          ],
+          "measuredDuration": 113.08083400000032
+        },
+        {
+          "document": "My cat is stuck. Please hel",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999955002848626
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999980430195674
+            },
+            {
+              "type": "noul",
+              "value": 0.9997846493375236
+            }
+          ],
+          "measuredDuration": 114.93495799999982
+        },
+        {
+          "document": "My cat is stuck. Please help",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999952410051653
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999985364341231
+            },
+            {
+              "type": "noul",
+              "value": 0.9998146838091576
+            }
+          ],
+          "measuredDuration": 113.37933300000077
+        },
+        {
+          "document": "My cat is stuck. Please help ",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999953452000289
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999990430148856
+            },
+            {
+              "type": "noul",
+              "value": 0.9998152561337885
+            }
+          ],
+          "measuredDuration": 111.89479199999914
+        },
+        {
+          "document": "My cat is stuck. Please help n",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999963322001986
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999988310202763
+            },
+            {
+              "type": "noul",
+              "value": 0.9995814420006974
+            }
+          ],
+          "measuredDuration": 113.49220800000148
+        },
+        {
+          "document": "My cat is stuck. Please help no",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999958347617262
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999957108468732
+            },
+            {
+              "type": "noul",
+              "value": 0.9995151830353316
+            }
+          ],
+          "measuredDuration": 113.48966699999983
+        },
+        {
+          "document": "My cat is stuck. Please help now",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999952476131817
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999991406819712
+            },
+            {
+              "type": "noul",
+              "value": 0.9999912118996395
+            }
+          ],
+          "measuredDuration": 112.98133300000154
+        },
+        {
+          "document": "My cat is stuck. Please help now!",
+          "answer": {
+            "type": "noul",
+            "value": 0.999995183263691
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.999999011269708
+            },
+            {
+              "type": "noul",
+              "value": 0.9999927302014855
+            }
+          ],
+          "measuredDuration": 111.89887499999895
+        },
+        {
+          "document": "H",
+          "answer": {
+            "type": "noul",
+            "value": 0.000011044588211220789
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.000011973008256967449
+            },
+            {
+              "type": "noul",
+              "value": 0.000003270025031593987
+            }
+          ],
+          "measuredDuration": 113.04995899999994
+        },
+        {
+          "document": "He",
+          "answer": {
+            "type": "noul",
+            "value": 0.00013348516460883687
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.000012402929500550988
+            },
+            {
+              "type": "noul",
+              "value": 0.0000012241960594501418
+            }
+          ],
+          "measuredDuration": 112.99104199999965
+        },
+        {
+          "document": "Hel",
+          "answer": {
+            "type": "noul",
+            "value": 0.000019570458749593537
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.000040543817907017384
+            },
+            {
+              "type": "noul",
+              "value": 0.000011280759051036132
+            }
+          ],
+          "measuredDuration": 114.01187500000015
+        },
+        {
+          "document": "Help",
+          "answer": {
+            "type": "noul",
+            "value": 0.000019695622644036828
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9235975659127483
+            },
+            {
+              "type": "noul",
+              "value": 0.0216044041872871
+            }
+          ],
+          "measuredDuration": 113.21366699999999
+        },
+        {
+          "document": "Help ",
+          "answer": {
+            "type": "noul",
+            "value": 0.000004709502840340686
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9970957639884438
+            },
+            {
+              "type": "noul",
+              "value": 0.0010617898449006063
+            }
+          ],
+          "measuredDuration": 112.26608300000044
+        },
+        {
+          "document": "Help m",
+          "answer": {
+            "type": "noul",
+            "value": 0.000003026680093696308
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9993791822612776
+            },
+            {
+              "type": "noul",
+              "value": 0.007348497417174831
+            }
+          ],
+          "measuredDuration": 112.83966599999985
+        },
+        {
+          "document": "Help my",
+          "answer": {
+            "type": "noul",
+            "value": 0.000007463155161727962
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9992897734530332
+            },
+            {
+              "type": "noul",
+              "value": 0.000038584125609511015
+            }
+          ],
+          "measuredDuration": 113.01012499999888
+        },
+        {
+          "document": "Help my ",
+          "answer": {
+            "type": "noul",
+            "value": 0.000043404553326282986
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9996867015149102
+            },
+            {
+              "type": "noul",
+              "value": 0.00010106765984193135
+            }
+          ],
+          "measuredDuration": 111.94979199999943
+        },
+        {
+          "document": "Help my c",
+          "answer": {
+            "type": "noul",
+            "value": 0.0022188575968613887
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.999695335583288
+            },
+            {
+              "type": "noul",
+              "value": 0.0017870348000308877
+            }
+          ],
+          "measuredDuration": 112.90475000000151
+        },
+        {
+          "document": "Help my ca",
+          "answer": {
+            "type": "noul",
+            "value": 0.001410656702003087
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999828629036964
+            },
+            {
+              "type": "noul",
+              "value": 0.9481691580406987
+            }
+          ],
+          "measuredDuration": 112.7848750000012
+        },
+        {
+          "document": "Help my cat",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999950011939116
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999432255389965
+            },
+            {
+              "type": "noul",
+              "value": 0.9987724557883637
+            }
+          ],
+          "measuredDuration": 112.62312500000189
+        },
+        {
+          "document": "Help my cat ",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999944718133519
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999771177747966
+            },
+            {
+              "type": "noul",
+              "value": 0.9995207235525169
+            }
+          ],
+          "measuredDuration": 112.46283300000141
+        },
+        {
+          "document": "Help my cat n",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999940367281258
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999509124916963
+            },
+            {
+              "type": "noul",
+              "value": 0.995287028807864
+            }
+          ],
+          "measuredDuration": 113.4832920000008
+        },
+        {
+          "document": "Help my cat no",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999940587075277
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9992639584137097
+            },
+            {
+              "type": "noul",
+              "value": 0.9963736725533657
+            }
+          ],
+          "measuredDuration": 113.60208300000158
+        },
+        {
+          "document": "Help my cat now",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999951003048261
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999968246378003
+            },
+            {
+              "type": "noul",
+              "value": 0.9999886317850071
+            }
+          ],
+          "measuredDuration": 113.69929200000115
+        },
+        {
+          "document": "Help my cat now!",
+          "answer": {
+            "type": "noul",
+            "value": 0.9999944139949085
+          },
+          "additionalAnswers": [
+            {
+              "type": "noul",
+              "value": 0.9999975350010877
+            },
+            {
+              "type": "noul",
+              "value": 0.9999963271002542
+            }
+          ],
+          "measuredDuration": 112.0734999999986
+        }
+      ]
+    }
+  ]
+}

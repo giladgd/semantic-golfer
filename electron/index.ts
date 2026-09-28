@@ -4,6 +4,9 @@ import {app, shell, BrowserWindow, nativeTheme} from "electron";
 import {discoverModels} from "./llm/models.ts";
 import {registerLlmRpc} from "./rpc/llmRpc.ts";
 import {loadScores} from "./state/scores.ts";
+import {llmState} from "./state/llmState.ts";
+import {configureMenu} from "./menu.ts";
+import {initializeUpdates} from "./updates/updates.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -11,6 +14,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 if (app.getPath("userData") === path.join(app.getPath("appData"), app.getName()))
     app.setPath("userData", path.join(app.getPath("appData"), "semantic-golfer"));
 app.setName("Semantic Golfer");
+llmState.state = {...llmState.state, appVersion: app.getVersion()};
+// A launcher that exits unexpectedly must not leave its Electron process running.
+if (process.env.SEMANTIC_GOLFER_LAUNCHER === "1") {
+    process.once("disconnect", () => app.quit());
+    if (!process.connected)
+        app.quit();
+}
 if (process.platform === "win32")
     app.setAppUserModelId("ai.withcat.semantic-golfer");
 
@@ -29,9 +39,7 @@ export const VITE_DEV_SERVER_URL = process.env["VITE_DEV_SERVER_URL"];
 export const MAIN_DIST = path.join(process.env.APP_ROOT, "dist-electron");
 export const RENDERER_DIST = path.join(process.env.APP_ROOT, "dist");
 
-process.env.VITE_PUBLIC = VITE_DEV_SERVER_URL
-    ? path.join(process.env.APP_ROOT, "public")
-    : RENDERER_DIST;
+const iconPath = path.join(VITE_DEV_SERVER_URL ? path.join(process.env.APP_ROOT, "assets") : RENDERER_DIST, "icon.png");
 
 let win: BrowserWindow | null;
 
@@ -51,13 +59,15 @@ function createWindow() {
         minWidth: 760,
         minHeight: 600,
         title: "Semantic Golfer",
-        icon: path.join(process.env.VITE_PUBLIC, "icon.png"),
+        icon: iconPath,
         titleBarStyle: "hidden",
         ...(process.platform === "darwin" ? {trafficLightPosition: {x: 20, y: 22}} : {titleBarOverlay: overlay()}),
         autoHideMenuBar: true,
         backgroundColor: overlay().color
     });
     const window = win;
+    if (process.platform !== "darwin")
+        window.removeMenu();
     const updateTheme = () => {
         window.setBackgroundColor(overlay().color);
         if (process.platform !== "darwin")
@@ -86,7 +96,7 @@ function createWindow() {
 // for applications and their menu bar to stay active until the user quits
 // explicitly with Cmd + Q.
 app.on("window-all-closed", () => {
-    if (process.platform !== "darwin") {
+    if (process.platform !== "darwin" || process.env.SEMANTIC_GOLFER_LAUNCHER === "1") {
         app.quit();
         win = null;
     }
@@ -103,7 +113,16 @@ app.on("activate", () => {
 app.whenReady().then(async () => {
     // Packaged macOS apps use their native appearance-aware icon catalog.
     if (!app.isPackaged)
-        app.dock?.setIcon(path.join(process.env.VITE_PUBLIC, "icon.png"));
+        app.dock?.setIcon(iconPath);
     await Promise.all([discoverModels(), loadScores()]);
+    configureMenu(() => {
+        if (!win || win.isDestroyed())
+            createWindow();
+        if (win!.isMinimized())
+            win!.restore();
+        win!.show();
+        win!.focus();
+    });
     createWindow();
+    initializeUpdates();
 });

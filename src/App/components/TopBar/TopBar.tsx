@@ -30,10 +30,18 @@ export function TopBar({state}: {state: LlmState}) {
     }
 
     return <header className="topBar" data-platform={window.platform} data-mode={mode}>
-        <div className="appIdentity">
+        <a
+            className="appIdentity"
+            href="https://github.com/giladgd/semantic-golfer"
+            target="_blank"
+            rel="noreferrer"
+            title="Semantic Golfer on GitHub"
+            draggable={false}
+        >
             <img className="appMark" src="./icon.svg" alt="" draggable={false} />
             <strong>Semantic Golfer</strong>
-        </div>
+            <ExternalLinkIconSVG className="identityLinkIcon" aria-hidden="true" />
+        </a>
         <nav aria-label="Main navigation">
             <button
                 aria-current={mode === "play" ? "page" : undefined}

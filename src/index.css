@@ -55,7 +55,7 @@ a {
     color: var(--accent-color);
     text-decoration: none;
 }
-a:hover {
+a:is(:hover, [data-demo-hover="true"]) {
     text-decoration: underline;
 }
 
@@ -74,8 +74,8 @@ button {
     font-weight: 500;
     transition: background-color 150ms;
 
-    &:hover:not(:disabled) {
-        background-color: var(--hover-accent-surface-color);
+    &:is(:hover, [data-demo-hover="true"]):not(:disabled) {
+        background-color: light-dark(color-mix(in srgb, var(--accent-color) 20%, var(--accent-surface-color)), var(--hover-accent-surface-color));
     }
     &:disabled {
         opacity: 0.5;
@@ -91,7 +91,7 @@ input, textarea {
     font-size: 12px;
     transition: border-color 150ms;
 
-    &:hover:not(:disabled):not(:focus) {
+    &:is(:hover, [data-demo-hover="true"]):not(:disabled):not(:focus) {
         border-color: var(--hover-border-color);
     }
     &:focus {

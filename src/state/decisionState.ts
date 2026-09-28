@@ -1,11 +1,11 @@
 import {State} from "lifecycle-utils";
 import {electronLlmRpc} from "../rpc/llmRpc.ts";
 import {gameRequest, games} from "../../shared/games.ts";
+import {getDecisionCriteria, type DecisionInput, type DecisionType} from "../../shared/decision.ts";
 import {llmState} from "./llmState.ts";
 import {DecisionRunner} from "./DecisionRunner.ts";
 import {examples} from "./examples.ts";
 import {getDraft, modeState, playState} from "./playState.ts";
-import type {DecisionInput, DecisionType} from "../../shared/decision.ts";
 
 export const decisionState = new State<{type: DecisionType, drafts: Record<DecisionType, DecisionInput>}>({
     type: "noul",
@@ -20,9 +20,10 @@ export function updateInput(input: DecisionInput) {
 const listener = State.createCombinedChangeListener([decisionState, llmState, modeState, playState], ([editor, llm, mode, play]) => {
     if (llm.loadedModelId == null)
         void decisionRunner.setInput(undefined);
-    else if (mode === "playground")
-        void decisionRunner.setInput({modelId: llm.loadedModelId, input: editor.drafts[editor.type]});
-    else {
+    else if (mode === "playground") {
+        const input = editor.drafts[editor.type];
+        void decisionRunner.setInput({modelId: llm.loadedModelId, input: {...input, criteria: getDecisionCriteria(input)}});
+    } else {
         const draft = play.screen === "round" ? getDraft(play.drafts, llm.loadedModelId, play.game, play.level) : undefined;
         const level = games[play.game].levels.find(({id}) => id === play.level);
         const round = draft == null ? undefined : level?.rounds[draft.answers.length];

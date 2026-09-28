@@ -11,7 +11,7 @@
     border-inline: 1px solid var(--border-color);
     transition: border-color 180ms, box-shadow 180ms;
 
-    &:has(> textarea:hover:not(:disabled)):not(:focus-within) {
+    &:has(> textarea:is(:hover, [data-demo-hover="true"]):not(:disabled)):not(:focus-within) {
         border-color: var(--hover-border-color);
         box-shadow: 0 -1px 0 var(--hover-border-color), 0 1px 0 var(--hover-border-color);
     }
@@ -30,7 +30,7 @@
         width: 100%;
         min-height: 0;
         overflow-y: auto;
-        overscroll-behavior: contain;
+        overscroll-behavior: auto;
         scrollbar-width: thin;
         margin-top: 22px;
         padding: 0;

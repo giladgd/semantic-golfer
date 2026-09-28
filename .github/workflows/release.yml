@@ -1,0 +1,151 @@
+name: Build and release
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Keep version resolution, platform builds, and publication in the same serialized run.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  check:
+    name: Check and resolve version
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write # semantic-release verifies push access even for a dry run.
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm test
+      - name: Check the compiled npm package
+        run: npm run build:npm
+      - run: node --test test/npm-package.ts
+      - name: Resolve next version with semantic-release
+        id: version
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run release:plan
+
+  build:
+    name: Build ${{ matrix.platform }} ${{ matrix.arch }}
+    needs: check
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {platform: mac, arch: arm64, runner: macos-15, gpu: metal, targets: 'dmg zip'}
+          - {platform: mac, arch: x64, runner: macos-15-intel, gpu: 'false', targets: 'dmg zip'}
+          - {platform: win, arch: x64, runner: windows-2022, gpu: 'false', targets: nsis}
+          - {platform: win, arch: arm64, runner: windows-11-arm, gpu: 'false', targets: nsis}
+          - {platform: linux, arch: x64, runner: ubuntu-22.04, gpu: 'false', targets: 'AppImage snap deb tar.gz'}
+          - {platform: linux, arch: arm64, runner: ubuntu-22.04-arm, gpu: 'false', targets: 'AppImage deb tar.gz'}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install Linux build tools
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build libarchive-tools rpm xvfb xauth libgtk-3-0 libnss3 libasound2
+      - name: Install Snapcraft
+        if: matrix.platform == 'linux' && matrix.arch == 'x64'
+        run: sudo snap install snapcraft --classic --channel=8.x/stable
+      - name: Install macOS build tools
+        if: runner.os == 'macOS'
+        env:
+          HOMEBREW_NO_AUTO_UPDATE: '1'
+        run: brew install cmake ninja
+      - name: Select Xcode for native icon appearances
+        if: runner.os == 'macOS'
+        run: |
+          sudo xcode-select --switch /Applications/Xcode_26.3.app/Contents/Developer
+          dirname "$(xcrun --find actool)" >> "$GITHUB_PATH"
+      - uses: ./.github/actions/setup
+      - name: Build the native inference runtime
+        env:
+          TARGET_ARCH: ${{ matrix.arch }}
+          GPU: ${{ matrix.gpu }}
+          # Repacking can exceed Electron's single-allocation limit on CPU backends.
+          NODE_LLAMA_CPP_CMAKE_OPTION_GGML_CPU_REPACK: 'OFF'
+        run: |
+          node node_modules/node-llama-cpp/dist/cli/cli.js source download --skipBuild --noUsageExample
+          node node_modules/node-llama-cpp/dist/cli/cli.js source build --arch "$TARGET_ARCH" --gpu "$GPU" --ciMode --noUsageExample
+      - name: Set the release version
+        if: needs.check.outputs.version != ''
+        env:
+          RELEASE_VERSION: ${{ needs.check.outputs.version }}
+        run: npm version "$RELEASE_VERSION" --no-git-tag-version --ignore-scripts
+      - name: Package Semantic Golfer
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+          SNAP_DESTRUCTIVE_MODE: 'true'
+        run: npm run build -- --${{ matrix.platform }} ${{ matrix.targets }} --${{ matrix.arch }}
+      - name: Check the packaged inference runtime
+        run: |
+          if [ "$RUNNER_OS" = 'Linux' ]; then
+            xvfb-run -a npx electron test/packaged-runtime.ts
+          else
+            npx electron test/packaged-runtime.ts
+          fi
+      - name: Upload installers and archives
+        # Update manifests are generated from all architectures together in the release job.
+        uses: actions/upload-artifact@v7
+        with:
+          name: Semantic-Golfer-${{ matrix.platform }}-${{ matrix.arch }}
+          path: release/Semantic-Golfer-*
+          if-no-files-found: error
+          compression-level: 0
+      - name: Check AppImage download, verification, replacement, and restart
+        if: runner.os == 'Linux'
+        run: xvfb-run -a npx electron test/update-install.ts
+
+  release:
+    name: Publish npm and GitHub release
+    # Wait for checks and every platform/architecture build before publishing the complete release.
+    needs: [check, build]
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/master' && needs.check.outputs.version != ''
+    runs-on: ubuntu-22.04
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/semantic-golfer/v/${{ needs.check.outputs.version }}
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/setup
+      - name: Build the npm package
+        run: npm run build:npm
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: Semantic-Golfer-*
+          merge-multiple: true
+          path: release
+      - name: Publish npm, then GitHub, with semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          RELEASE_VERSION: ${{ needs.check.outputs.version }}
+        run: npm run release

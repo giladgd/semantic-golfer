@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<svg xmlns="http://www.w3.org/2000/svg" class="semanticGolferIcon" width="1024" height="1024" viewBox="0 0 1024 1024">
     <!-- famicons:golf, MIT. See ../src/icons/LICENSES.md. Dark is the static fallback. -->
     <style>
-        :root {
+        .semanticGolferIcon {
             --tile-top: #314739;
             --tile-bottom: #16261e;
             --golf-top: #e3f6d5;
@@ -9,7 +9,7 @@
             --rim-opacity: .2;
         }
         @media (prefers-color-scheme: light) {
-            :root {
+            .semanticGolferIcon {
                 --tile-top: #edf6e7;
                 --tile-bottom: #bfd7c0;
                 --golf-top: #417e58;

@@ -1,8 +1,8 @@
 import {CheckIconSVG} from "../../../icons/CheckIconSVG.tsx";
 import {NoulScale} from "../NoulScale/NoulScale.tsx";
 import {ProgressBar} from "../ProgressBar/ProgressBar.tsx";
+import {getDecisionCriteria, type DecisionInput} from "../../../../shared/decision.ts";
 import "./DecisionResult.css";
-import type {DecisionInput} from "../../../../shared/decision.ts";
 import type {EvaluationState} from "../../../state/DecisionRunner.ts";
 
 export function DecisionResult({input, evaluation, ready, validationError, onRetry}: {
@@ -11,7 +11,7 @@ export function DecisionResult({input, evaluation, ready, validationError, onRet
     const result = evaluation.result?.request.input.type === input.type ? evaluation.result : undefined;
     const answer = result?.answer;
     const confidence = answer != null && answer.type !== "noul" ? answer.confidence : undefined;
-    const criteria = result?.request.input.criteria ?? input.criteria;
+    const criteria = getDecisionCriteria(result?.request.input ?? input);
     const selected = answer?.type === "choice" ? Number(answer.choice) : undefined;
     const probabilities = answer?.type === "choice" ? criteria.map((_, index) => answer.probabilities[String(index)] ?? 0) :
         answer?.type === "score" ? answer.probabilities : undefined;
@@ -19,6 +19,10 @@ export function DecisionResult({input, evaluation, ready, validationError, onRet
 
     return <section className="decisionResult" data-type={input.type} aria-label="Decision results" aria-busy={evaluation.running}>
         <h2>Decision</h2>
+        {(validationError ?? evaluation.error) != null && <div className="error">
+            <div role="alert">{validationError ?? evaluation.error}</div>
+            {validationError == null && ready && !evaluation.running && <button onClick={onRetry}>Retry</button>}
+        </div>}
         <div className="decisionContent" tabIndex={0} role="region" aria-label="Decision details">
             <div className="answerSummary">
                 {input.type === "choice" ? <>
@@ -72,9 +76,5 @@ export function DecisionResult({input, evaluation, ready, validationError, onRet
             </strong>
             </div>
         </div>
-        {(validationError ?? evaluation.error) != null && <div className="error">
-            <div role="alert">{validationError ?? evaluation.error}</div>
-            {validationError == null && ready && !evaluation.running && <button onClick={onRetry}>Retry</button>}
-        </div>}
     </section>;
 }

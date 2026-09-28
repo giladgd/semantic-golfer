@@ -17,6 +17,7 @@ import "./Play.css";
 export function Play() {
     const play = useExternalState(playState);
     const modelId = useExternalState(llmState, (state) => state.loadedModelId);
+    const appVersion = useExternalState(llmState, (state) => state.appVersion);
     if (play.screen === "scores")
         return <MyLevel />;
     if (play.screen === "levels")
@@ -29,7 +30,7 @@ export function Play() {
             : <PlayRound key={draft.answers.length} game={play.game} level={level} modelId={modelId} draft={draft} />;
     }
     return <section className="play" aria-label="Games">
-        <div className="intro"><h1>Play with meaning.</h1>
+        <div className="intro"><h1>Play with meaning</h1>
             <button onClick={() => {
                 playState.state = {...playState.state, screen: "scores"};
             }}
@@ -53,5 +54,6 @@ export function Play() {
             </span>
         </button>)}
         </div>
+        {appVersion != null && <span className="appVersion">v{appVersion}</span>}
     </section>;
 }

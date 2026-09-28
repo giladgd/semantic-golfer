@@ -24,9 +24,25 @@
     }
     &[data-platform="darwin"] { padding-inline-start: 104px; }
     > .appIdentity {
+        position: relative;
         display: flex;
         align-items: center;
         gap: 10px;
+        padding-inline-end: 20px;
+        color: var(--text-color);
+        app-region: no-drag;
+        &:is(:hover, [data-demo-hover="true"]) { text-decoration: none; }
+        > .identityLinkIcon {
+            position: absolute;
+            right: 0;
+            width: 15px;
+            height: 15px;
+            opacity: 0;
+            transform: translate(-2px, 2px);
+            color: var(--accent-color);
+            transition: opacity 150ms, transform 150ms;
+        }
+        &:is(:is(:hover, [data-demo-hover="true"]), :focus-visible) > .identityLinkIcon { opacity: 1; transform: none; }
         > .appMark {
             width: 36px;
             height: 36px;
@@ -50,7 +66,7 @@
             padding: 6px 16px;
             color: var(--muted-text-color);
             background: transparent;
-            &:hover:not(:disabled) {
+            &:is(:hover, [data-demo-hover="true"]):not(:disabled) {
                 color: var(--accent-color);
                 background: var(--hover-surface-color);
             }
@@ -58,7 +74,7 @@
                 color: var(--accent-color);
                 background: var(--accent-surface-color);
                 box-shadow: 0 1px 4px -2px var(--popover-shadow-color);
-                &:hover:not(:disabled) { background: var(--hover-accent-surface-color); }
+                &:is(:hover, [data-demo-hover="true"]):not(:disabled) { background: var(--hover-accent-surface-color); }
             }
         }
     }
@@ -81,10 +97,10 @@
             background: var(--subtle-surface-color);
             border-radius: 10px;
             transition: color 150ms, background-color 150ms;
-            &:hover {
+            &:is(:hover, [data-demo-hover="true"]) {
                 text-decoration: none;
                 color: var(--accent-color);
-                background: var(--hover-surface-color);
+                background: light-dark(color-mix(in srgb, var(--accent-color) 18%, var(--surface-color)), var(--hover-surface-color));
             }
             > svg { width: 20px; height: 20px; flex-shrink: 0; }
             > .externalLinkIcon { width: 16px; height: 16px; }

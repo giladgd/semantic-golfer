@@ -1,0 +1,28 @@
+.demoSegment.gameDemoPlayback {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-width: 0;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background-image: none;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    white-space: nowrap;
+    > .segmentFill { position: absolute; inset: 0 auto 0 0; background: var(--demo-fill-color); z-index: -1; }
+    > strong { font-size: 14px; font-weight: 550; }
+    > span { font-size: 10px; color: var(--muted-text-color); }
+    &[aria-current="step"] { color: var(--accent-color); }
+
+    @media (prefers-color-scheme: light) {
+        --accent-surface-color: #c7dcc5;
+        --hover-accent-surface-color: #b8d3ba;
+        --accent-color: #285f43;
+        --muted-text-color: #465b4b;
+    }
+
+    @media (max-width: 440px) { padding: 10px 14px; }
+}

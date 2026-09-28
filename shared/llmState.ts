@@ -1,5 +1,6 @@
 import type {ModelId} from "./models.ts";
 import type {ScoreRecord} from "./scores.ts";
+import type {AppUpdate} from "./appUpdate.ts";
 
 export type DownloadState = {
     status: "downloading" | "canceling",
@@ -10,6 +11,8 @@ export type DownloadState = {
 };
 export type ModelState = {downloaded: boolean, download?: DownloadState, deleting?: boolean, error?: string};
 export type LlmState = {
+    appVersion?: string,
+    update?: AppUpdate,
     models: Partial<Record<ModelId, ModelState>>,
     localModels: Array<{id: ModelId, name: string}>,
     loadedModelId?: ModelId,

@@ -1,4 +1,5 @@
 .modelPicker {
+    --model-button-color: light-dark(color-mix(in srgb, var(--accent-color) 12%, var(--accent-surface-color)), var(--accent-surface-color));
     app-region: no-drag;
     min-width: 0;
     max-width: var(--model-button-max-width, 310px);
@@ -13,11 +14,11 @@
             max-width: 100%;
             height: 38px;
             font-size: 12px;
-            background: var(--accent-surface-color);
+            background: var(--model-button-color);
             border: 0;
             box-shadow: var(--surface-shadow);
-            &:hover:not(:disabled) {
-                background: color-mix(in srgb, var(--accent-color) 16%, var(--accent-surface-color));
+            &:is(:hover, [data-demo-hover="true"]):not(:disabled) {
+                background: color-mix(in srgb, var(--accent-color) 16%, var(--model-button-color));
             }
             > svg { width: 18px; height: 18px; flex-shrink: 0; }
             > .modelButtonName {

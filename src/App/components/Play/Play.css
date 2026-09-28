@@ -1,6 +1,18 @@
 .play {
-    padding: 56px max(36px, calc((100vw - 1100px) / 2)) 48px;
+    --content-padding: max(36px, calc((100vw - 1100px) / 2));
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding-top: 56px;
 
+    > .appVersion {
+        align-self: flex-end;
+        margin-top: auto;
+        padding: 24px 16px 12px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 11px;
+        opacity: 0.16;
+    }
     h1 {
         font-size: clamp(28px, 3.2vw, 42px);
         line-height: 1.15;
@@ -19,9 +31,10 @@
             gap: 8px;
             > svg { width: 18px; height: 18px; }
         }
-        margin: 5vh 0 36px;
+        margin: 5vh var(--content-padding) 36px;
     }
     > .gameChoices {
+        margin-inline: var(--content-padding);
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px;
@@ -37,9 +50,9 @@
             color: var(--text-color);
             box-shadow: var(--surface-shadow);
             transition: transform 200ms var(--transition-easing), background-color 150ms;
-            &:hover:not(:disabled) {
+            &:is(:hover, [data-demo-hover="true"]):not(:disabled) {
                 transform: translateY(-4px);
-                background: var(--hover-surface-color);
+                background: light-dark(color-mix(in srgb, var(--accent-color) 18%, var(--surface-color)), var(--hover-surface-color));
             }
             > .gameSymbol {
                 display: grid;
@@ -90,7 +103,8 @@
         }
     }
     @media (max-width: 1100px) {
-        padding: 48px 20px 24px;
+        --content-padding: 20px;
+        padding-top: 48px;
     }
     @media (max-width: 900px) {
         > .gameChoices { grid-template-columns: 1fr; }

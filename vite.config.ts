@@ -1,19 +1,16 @@
 import path from "node:path";
+import {readFile} from "node:fs/promises";
 import {fileURLToPath} from "node:url";
 import {defineConfig} from "vite";
 import electron from "vite-plugin-electron/simple";
 import react from "@vitejs/plugin-react";
-import {LlamaModel} from "node-llama-cpp";
-import {assertDecisionSupport} from "./shared/runtimeCompatibility.ts";
-
-assertDecisionSupport(LlamaModel.prototype);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // These modules won't be bundled as part of the Vite build of the Electron (main) side,
 // but they'll be included in the final Electron app build inside the asar file.
 // Performance and efficiency wise, this is absolutely fine and has no real drawbacks
-const electronExternalModules = ["node-llama-cpp", "lifecycle-utils"];
+const electronExternalModules = ["node-llama-cpp", "lifecycle-utils", "electron-updater"];
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,12 +25,32 @@ export default defineConfig({
     },
     build: {
         outDir: path.join(__dirname, "dist"),
-        target: "es2022"
+        target: "es2022",
+        rollupOptions: {
+            output: {
+                // Electron also loads this icon directly from disk.
+                assetFileNames: (asset) => (asset.names.includes("icon.png")
+                    ? "icon.png" : "assets/[name]-[hash][extname]")
+            }
+        }
     },
     root: path.join(__dirname, "src"),
     publicDir: path.join(__dirname, "public"),
     plugins: [
         react({babel: {plugins: ["babel-plugin-react-compiler"]}}),
+        {
+            name: "bundled-licenses",
+            async generateBundle() {
+                for (const [source, name] of [
+                    ["src/icons/LICENSE", "icons/LICENSE"],
+                    ["src/icons/LICENSE-MIT", "icons/LICENSE-MIT"],
+                    ["src/icons/LICENSES.md", "icons/LICENSES.md"],
+                    ["node_modules/@fontsource-variable/inter/LICENSE", "Inter-OFL.txt"]
+                ] as const) {
+                    this.emitFile({type: "asset", fileName: `licenses/${name}`, source: await readFile(path.join(__dirname, source))});
+                }
+            }
+        },
         electron({
             main: {
                 // Shortcut of `build.lib.entry`.

@@ -1,0 +1,6 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {"module": "ESNext", "lib": ["ES2023", "DOM", "DOM.Iterable"]},
+    "include": ["site", "src", "shared", "electron/electron-env.d.ts"],
+    "references": []
+}

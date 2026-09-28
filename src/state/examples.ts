@@ -4,10 +4,10 @@ const ticket = "My whole team is locked out of our accounts. None of us can sign
 
 export const examples: Record<DecisionType, Array<{name: string, input: DecisionInput}>> = {
     noul: [
-        {name: "Team access", input: {
+        {name: "Shared issue", input: {
             type: "noul", document: ticket,
-            instruction: "Is the entire team unable to sign in?",
-            criteria: ["Every team member is unable to sign in", "At least one team member can still sign in"]
+            instruction: "Does this issue affect multiple people?",
+            criteria: ["Multiple people are affected", "No indication multiple people are affected"]
         }},
         {name: "An animal", input: {
             type: "noul", document: "A small cat curled up on my keyboard while I was working.",
@@ -28,7 +28,7 @@ export const examples: Record<DecisionType, Array<{name: string, input: Decision
                 "Technical: problems using features after signing in"]
         }},
         {name: "Delivery", input: {
-            type: "choice", document: "Please send my order by express courier. I am choosing express delivery rather than standard shipping or store pickup.",
+            type: "choice", document: "I need it delivered as soon as possible",
             instruction: "Which delivery method has the customer chosen?",
             criteria: ["Standard shipping", "Express courier", "Store pickup"]
         }},
@@ -44,15 +44,15 @@ export const examples: Record<DecisionType, Array<{name: string, input: Decision
             instruction: "How much is the issue affecting the customer's work?",
             criteria: ["No interruption to work", "Some tasks are slower or harder", "The customer cannot continue their work"]
         }},
-        {name: "Purchase intent", input: {
+        {name: "Intent", input: {
             type: "score", document: "We want to buy 20 seats, but only if your product integrates with our CRM. We need to confirm that before purchasing.",
             instruction: "How strongly does the customer express an intention to purchase?",
             criteria: ["Not interested", "Just browsing", "Considering purchasing", "Conditional intent to purchase", "Ready to buy"]
         }},
-        {name: "Order status", input: {
-            type: "score", document: "The parcel has arrived at my address. I signed for it and have opened the package.",
-            instruction: "What stage has the order reached?",
-            criteria: ["Not ordered", "Order placed", "Dispatched", "Delivered"]
+        {name: "Satisfaction", input: {
+            type: "score", document: "The app saves me time every day. The confusing menus still annoy me, but overall I’m happy with it",
+            instruction: "How satisfied is the customer with their overall experience?",
+            criteria: ["Very dissatisfied", "Somewhat dissatisfied", "Neutral", "Somewhat satisfied", "Very satisfied"]
         }}
     ]
 };

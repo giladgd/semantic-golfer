@@ -1,7 +1,7 @@
 .decisionResult {
     display: flex;
     flex-direction: column;
-    gap: 26px;
+    gap: 22px;
     padding: var(--panel-padding);
     min-width: 0;
     min-height: 0;
@@ -13,9 +13,11 @@
         gap: 26px;
         flex: 1;
         min-height: 0;
-        overflow-y: auto;
-        overscroll-behavior: contain;
+        overflow-y: clip;
+        overscroll-behavior: auto;
         scrollbar-width: thin;
+        margin-bottom: -22px;
+        padding-bottom: 22px;
         > * { flex-shrink: 0; }
     }
 
@@ -89,7 +91,21 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        flex: 1;
+        flex-shrink: 1;
+        min-height: 0;
+        overflow-y: auto;
+        overscroll-behavior: auto;
+        scrollbar-width: thin;
+        margin-inline: calc(-1 * var(--panel-padding));
+        padding-inline: var(--panel-padding);
+        padding-top: 16px;
+        margin-top: -16px;
+        margin-bottom: -22px;
+        padding-bottom: 22px;
+        mask-image: linear-gradient(to bottom, transparent, #000 16px);
         > .probability {
+            flex-shrink: 0;
             > .probabilityLabel {
                 display: flex;
                 justify-content: space-between;
@@ -164,7 +180,7 @@
     > .error {
         max-height: 25%;
         overflow-y: auto;
-        overscroll-behavior: contain;
+        overscroll-behavior: auto;
         color: var(--error-color);
         font-size: 12px;
         overflow-wrap: anywhere;

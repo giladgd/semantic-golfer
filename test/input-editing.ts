@@ -33,10 +33,20 @@ void app.whenReady().then(async () => {
     const evaluations: DecisionRequest[] = [];
     let selectedFile: ModelId | undefined;
     let loadCount = 0;
+    let updateClicks = 0;
     let state: LlmState = {...initialLlmState, loadedModelId: "qwen-0.8b",
         models: Object.fromEntries(models.map(({id}) => [id, {downloaded: true}]))};
     const rpc = createBirpc<{updateState: (state: LlmState) => void}>({
         getState: () => state,
+        installUpdate() {
+            updateClicks++;
+            state = {...state, update: {status: "downloading", version: "1.2.3", progress: 0.42}};
+            void rpc.updateState(state);
+        },
+        dismissUpdate() {
+            state = {...state, update: {...state.update!, dismissed: true}};
+            void rpc.updateState(state);
+        },
         selectModelFile: () => selectedFile,
         loadModel(modelId: ModelId) {
             loadCount++;
@@ -132,6 +142,180 @@ void app.whenReady().then(async () => {
         console.log(`${selector}: insertion, replacement, deletion, Unicode, and selection during evaluation passed`);
     };
 
+    const checkPlaygroundKeyboard = async (type: string) => {
+        const press = async (key: string, modifiers = 0) => {
+            const windowsVirtualKeyCode = {Enter: 13, Backspace: 8, ArrowUp: 38, ArrowDown: 40, Escape: 27}[key];
+            await contents.debugger.sendCommand("Input.dispatchKeyEvent", {
+                type: "keyDown", key, code: key, windowsVirtualKeyCode, modifiers, ...(key === "Enter" ? {text: "\r"} : {})
+            });
+            await contents.debugger.sendCommand("Input.dispatchKeyEvent", {type: "keyUp", key, code: key, modifiers});
+        };
+        const focus = () => evaluate(() => {
+            const input = document.activeElement as HTMLTextAreaElement;
+            return {id: input.id, start: input.selectionStart, end: input.selectionEnd};
+        });
+        const at = async (id: string, caret: number) => assert.deepEqual(await focus(), {id, start: caret, end: caret});
+        const rows = () => evaluate(() => [...document.querySelectorAll<HTMLTextAreaElement>(".criterion textarea")]
+            .map((input) => input.value));
+        await click(".criteriaEditor .examples button:first-of-type");
+        const original = await rows();
+        assert.equal(await evaluate(() => document.querySelector(".addButton") != null), false);
+        assert.deepEqual(await evaluate(() => [...document.querySelectorAll<HTMLTextAreaElement>(".criterion textarea")]
+            .map((input) => input.placeholder)), type === "noul"
+            ? ["Describe what counts as yes", "Describe what counts as no"]
+            : original.map(() => (type === "choice" ? "Describe this choice" : "Describe this level")));
+        for (const selector of ["#decisionQuestion", "#criterion-0", "#documentText"]) {
+            for (const key of ["Enter", "Backspace", "ArrowUp", "ArrowDown", "Escape"]) {
+                for (const guard of ["selection", "shiftKey", "metaKey", "ctrlKey", "altKey", "isComposing"]) {
+                    await select(selector, key === "ArrowUp" ? 0 : 32_000);
+                    if (guard === "selection")
+                        await select(selector, 0, 1);
+                    const before = await focus();
+                    const prevented = await evaluate(({selector, key, guard}) => {
+                        const event = new KeyboardEvent("keydown", {
+                            key, bubbles: true, cancelable: true, ...(guard === "selection" ? {} : {[guard]: true})
+                        });
+                        document.querySelector(selector)!.dispatchEvent(event);
+                        return event.defaultPrevented;
+                    }, {selector, key, guard});
+                    assert.equal(prevented, false, `${type} ${selector} ${key} ${guard}`);
+                    assert.deepEqual(await focus(), before);
+                    assert.deepEqual(await rows(), original);
+                }
+            }
+        }
+        await select("#criterion-0", 0);
+        await press("ArrowUp");
+        const instructionLength = (await read("#decisionQuestion")).value.length;
+        await at("decisionQuestion", instructionLength);
+        await press("Enter");
+        await at("criterion-0", 0);
+        await press("ArrowUp");
+        await press("ArrowDown");
+        await at("criterion-0", 0);
+        await select("#criterion-0", 32_000);
+        await press("ArrowDown");
+        await at("criterion-1", 0);
+        await press("ArrowUp");
+        await at("criterion-0", original[0]!.length);
+        await press("Escape");
+        assert.equal((await focus()).id, "documentText");
+        await press("Escape");
+        assert.equal((await focus()).id, "decisionQuestion");
+        await press("Escape");
+        assert.equal((await focus()).id, "documentText");
+        for (const selector of ["#decisionQuestion", "#criterion-0"]) {
+            await select(selector, 1);
+            await press("Enter");
+            assert.equal((await read(selector)).value[1], "\n");
+            assert.equal((await focus()).id, selector.slice(1));
+            await select(selector, 32_000);
+            await press("Enter", 8);
+            assert.ok((await read(selector)).value.endsWith("\n"));
+            assert.equal((await rows()).length, original.length);
+        }
+        await click(".criteriaEditor .examples button:first-of-type");
+        if (type !== "noul") {
+            await select("#criterion-0", 32_000);
+            await press("Enter");
+            assert.deepEqual(await rows(), [original[0], "", ...original.slice(1)]);
+            await at("criterion-1", 0);
+            await press("Backspace");
+            assert.deepEqual(await rows(), original);
+            await at("criterion-0", original[0]!.length);
+            const last = original.length - 2;
+            await waitFor(() => evaluate(() => document.querySelector(".decisionResult")?.getAttribute("aria-busy") === "false"));
+            const evaluationCount = evaluations.length;
+            await select(`#criterion-${last}`, 32_000);
+            await press("ArrowDown");
+            await at(`criterion-${last + 1}`, 0);
+            await press("ArrowUp");
+            await at(`criterion-${last}`, original[last]!.length);
+            await press("Enter");
+            await at(`criterion-${last + 1}`, 0);
+            assert.deepEqual(await rows(), original);
+            await press("Enter");
+            await at(`criterion-${last + 2}`, 0);
+            assert.deepEqual(await rows(), [...original, ""]);
+            await press("Backspace");
+            await at(`criterion-${last + 1}`, 0);
+            await press("Backspace");
+            await at(`criterion-${last}`, original[last]!.length);
+            await setTimeout(100);
+            assert.equal(evaluations.length, evaluationCount, "Navigating the placeholder must not evaluate it");
+            await press("Enter");
+            for (const character of "New option") {
+                await insert(character);
+                const value = (await read(`#criterion-${last + 1}`)).value;
+                await at(`criterion-${last + 1}`, value.length);
+                assert.equal((await rows()).length, original.length + 1);
+                assert.equal((await rows()).at(-1), "");
+            }
+            await waitFor(() => evaluations.at(-1)?.input.criteria.at(-1) === "New option");
+            assert.equal(evaluations.at(-1)!.input.criteria.length, original.length);
+            await select(`#criterion-${last + 1}`, 0, 32_000);
+            await press("Backspace");
+            assert.deepEqual(await rows(), original);
+            await at(`criterion-${last + 1}`, 0);
+            assert.equal(await evaluate(() => document.querySelector(".criterion:last-of-type textarea")?.getAttribute("aria-invalid")),
+                "false");
+            assert.deepEqual(await evaluate(() => {
+                const button = document.querySelector<HTMLButtonElement>(".criterion:last-of-type .removeButton")!;
+                return [button.matches(":disabled"), getComputedStyle(button).visibility, button.offsetWidth, button.offsetHeight];
+            }), [true, "hidden", 28, 28]);
+            await press("Backspace");
+            await select("#criterion-0", 0, 32_000);
+            await press("Backspace");
+            assert.equal((await rows()).length, original.length, "Deleting selected text must retain its row");
+            await press("Backspace");
+            assert.deepEqual(await rows(), original.slice(1));
+            await at("criterion-0", 0);
+            while ((await rows()).length > 3)
+                await click(".criterion:nth-last-of-type(2) .removeButton");
+            await select("#criterion-0", 0, 32_000);
+            await press("Backspace");
+            await press("Backspace");
+            assert.equal((await rows()).length, 3);
+            await click(".criteriaEditor .examples button:first-of-type");
+            const limit = type === "choice" ? 50 : 10;
+            while ((await rows()).at(-1) === "") {
+                await select(`#criterion-${(await rows()).length - 1}`, 0);
+                await insert(`Option ${(await rows()).length}`);
+            }
+            assert.equal((await rows()).length, limit);
+            if (type === "choice")
+                assert.deepEqual(await evaluate(() => [...document.querySelectorAll(".criterion > label")]
+                    .filter((_, index) => [0, 25, 26, 49].includes(index)).map((label) => label.textContent)), ["A", "Z", "AA", "AX"]);
+            await waitFor(() => evaluate((limit) => document.querySelectorAll(".probability").length === limit, limit));
+            assert.ok(await evaluate(() => [".criteriaList", ".probabilities"].every((selector) => {
+                const list = document.querySelector<HTMLElement>(selector)!;
+                list.scrollTop = list.scrollHeight;
+                return getComputedStyle(list).overflowY === "auto" && list.scrollTop > 0;
+            })), "All options and probabilities must be reachable by scrolling");
+            await select("#criterion-0", 32_000);
+            await press("Enter");
+            assert.equal((await rows()).length, limit);
+            await click(".criterion:last-of-type .removeButton");
+            assert.equal((await rows()).length, limit);
+            assert.equal((await rows()).at(-1), "");
+            await select("#criterion-0", 32_000);
+            await press("Enter");
+            await at("criterion-1", 0);
+            await insert("Inserted at the limit");
+            assert.equal((await rows()).length, limit);
+        } else {
+            await select("#criterion-0", 32_000);
+            await press("Enter");
+            assert.equal((await rows()).length, 2);
+            await select("#criterion-0", 0, 32_000);
+            await press("Backspace");
+            await press("Backspace");
+            assert.equal((await rows()).length, 2);
+        }
+        await click(".criteriaEditor .examples button:first-of-type");
+        console.log(`${type}: criterion editing, caret navigation, Escape, selections, modifiers, composition, and limits passed`);
+    };
+
     let exitCode = 0;
     try {
         await window.loadFile(fileURLToPath(new URL("../dist/index.html", import.meta.url)));
@@ -143,6 +327,35 @@ void app.whenReady().then(async () => {
         });
         await contents.debugger.sendCommand("Runtime.enable");
         await waitFor(() => evaluate(() => document.querySelector<HTMLElement>(".mainContent")?.inert === false));
+        state = {...state, update: {status: "available", version: "1.2.3"}};
+        await rpc.updateState(state);
+        await waitFor(() => evaluate(() => document.querySelector(".updateToast")?.matches(":popover-open")));
+        assert.equal(await evaluate(() => document.querySelector(".updateMessage strong")!.textContent), "1.2.3 is available");
+        await click(".installUpdate");
+        await waitFor(() => evaluate(() => document.querySelector(".installUpdate")?.textContent?.includes("42%")));
+        assert.equal(updateClicks, 1);
+        assert.equal(await evaluate(() => document.querySelector<HTMLButtonElement>(".installUpdate")!.disabled), true);
+        assert.equal(await evaluate(() => document.querySelector<HTMLProgressElement>(".installUpdate progress")!.value), 0.42);
+        state = {...state, update: {status: "error", version: "1.2.3", error: "Download interrupted"}};
+        await rpc.updateState(state);
+        await waitFor(() => evaluate(() => document.querySelector(".installUpdate")?.textContent === "Retry update"));
+        await click(".dismissUpdate");
+        await waitFor(() => evaluate(() => !document.querySelector(".updateToast")?.matches(":popover-open")));
+        state = {...state, update: {status: "available", version: "1.2.3", manual: "Download this build"}};
+        await rpc.updateState(state);
+        await waitFor(() => evaluate(() => document.querySelector(".installUpdate")?.textContent === "Download update"));
+        await click(".dismissUpdate");
+        const identity = await evaluate(() => {
+            const link = document.querySelector<HTMLAnchorElement>(".appIdentity")!;
+            link.focus();
+            return {url: link.href, target: link.target, region: getComputedStyle(link).getPropertyValue("app-region")};
+        });
+        assert.deepEqual(identity, {url: "https://github.com/giladgd/semantic-golfer", target: "_blank", region: "no-drag"});
+        await waitFor(() => evaluate(() => getComputedStyle(document.querySelector(".identityLinkIcon")!).opacity === "1"));
+        await evaluate(() => (document.activeElement as HTMLElement)?.blur());
+        state = {...state, update: undefined};
+        await rpc.updateState(state);
+        console.log("Update toast: progress, disabled download button, errors, dismissal, manual fallback, and identity link passed");
         const pickerPosition = () => evaluate(() => {
             const rect = document.querySelector("#modelsPopover")!.getBoundingClientRect();
             return [rect.right, rect.top];
@@ -229,6 +442,7 @@ void app.whenReady().then(async () => {
                 await checkEditing(selector);
             await waitFor(() => evaluations.at(-1)?.input.type === type &&
                 evaluations.at(-1)?.input.criteria[1] === "Hello beautiful 🐈 world");
+            await checkPlaygroundKeyboard(type);
         }
         await evaluate(() => {
             for (const game of ["lock", "camouflage"])

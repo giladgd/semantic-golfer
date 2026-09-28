@@ -31,7 +31,7 @@
                 font-size: 13px;
                 color: var(--muted-text-color);
 
-                &:hover:not(:disabled) {
+                &:is(:hover, [data-demo-hover="true"]):not(:disabled) {
                     background: var(--hover-surface-color);
                     color: var(--accent-color);
                 }
@@ -40,7 +40,7 @@
                     background: var(--accent-surface-color);
                     color: var(--accent-color);
                     box-shadow: 0 1px 4px -2px var(--popover-shadow-color);
-                    &:hover:not(:disabled) { background: var(--hover-accent-surface-color); }
+                    &:is(:hover, [data-demo-hover="true"]):not(:disabled) { background: var(--hover-accent-surface-color); }
                 }
             }
         }
@@ -48,7 +48,7 @@
         > .localBadge {
             justify-self: end;
             display: flex;
-            align-items: center;
+            align-items: baseline;
             gap: 7px;
             font-size: 11px;
             color: var(--muted-text-color);
@@ -58,6 +58,7 @@
             height: 6px;
             border-radius: 50%;
             background: var(--accent-color);
+            transform: translateY(calc(3px - 0.5cap));
         }
     }
 

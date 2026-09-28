@@ -1,0 +1,15 @@
+.appPreview {
+    margin: 0;
+    min-width: 0;
+    padding-bottom: 69px;
+    @media (scripting: enabled) { visibility: hidden; }
+    > img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 24px 90px -30px light-dark(#34513f45, #00000090), 0 0 0 1px var(--border-color);
+    }
+    @media (max-width: 960px) { padding-bottom: 142px; }
+    @media (max-width: 440px) { padding-bottom: 224px; }
+}

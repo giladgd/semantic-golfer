@@ -1,0 +1,11 @@
+{
+    "extends": "./tsconfig.node.json",
+    "compilerOptions": {
+        "composite": false,
+        "rootDir": "cli",
+        "outDir": "dist-cli",
+        "declaration": false,
+        "rewriteRelativeImportExtensions": true
+    },
+    "include": ["cli"]
+}

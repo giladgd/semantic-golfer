@@ -14,10 +14,11 @@ export default {
     asar: true,
     productName: productName,
     executableName: executableName,
-    icon: "public/icon.png",
+    icon: "assets/icon.png",
     artifactName: "Semantic-Golfer-${version}-${os}-${arch}.${ext}",
-    publish: null,
-    forceCodeSigning: Boolean(process.env.CSC_LINK),
+    // Builder embeds the updater configuration; semantic-release remains the only publisher.
+    publish: {provider: "generic", url: "https://github.com/giladgd/semantic-golfer/releases/latest/download/"},
+    forceCodeSigning: false,
     directories: {
         output: "release"
     },
@@ -25,6 +26,7 @@ export default {
     files: [
         "dist",
         "dist-electron",
+        "LICENSE",
         "!node_modules/node-llama-cpp/llama/llama.cpp/**/*",
         "!node_modules/node-llama-cpp/llama/gitRelease.bundle",
         "!node_modules/node-llama-cpp/bins/**/*",
@@ -43,15 +45,15 @@ export default {
     afterPack: async ({electronPlatformName, appOutDir}) => {
         if (electronPlatformName === "darwin") {
             // Older macOS versions use the dark ICNS; newer versions use Icon Composer's appearances.
-            await copyFile("build/icon.icns", path.join(appOutDir, `${productName}.app/Contents/Resources/icon.icns`));
+            await copyFile("assets/icon.icns", path.join(appOutDir, `${productName}.app/Contents/Resources/icon.icns`));
         }
     },
     mac: {
         icon: "build/SemanticGolfer.icon",
         category: "public.app-category.productivity",
-        // Let Electron Builder sign the final bundle, including native libraries and entitlements.
-        identity: process.env.CSC_LINK || process.env.CSC_NAME ? undefined : "-",
-        notarize: Boolean(process.env.APPLE_ID),
+        // Ad-hoc signing supports Apple Silicon; releases have no Developer ID signature or notarization.
+        identity: "-",
+        notarize: false,
         target: [{
             target: "dmg",
             arch: [
@@ -90,7 +92,7 @@ export default {
         }
     },
     linux: {
-        icon: "public/icon.png",
+        icon: "assets/icon.png",
         syncDesktopName: true,
         target: [{
             target: "AppImage",

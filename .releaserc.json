@@ -1,0 +1,15 @@
+{
+    "branches": ["master"],
+    "repositoryUrl": "https://github.com/giladgd/semantic-golfer.git",
+    "tagFormat": "v${version}",
+    "plugins": [
+        ["@semantic-release/commit-analyzer", {"preset": "conventionalcommits"}],
+        ["@semantic-release/release-notes-generator", {"preset": "conventionalcommits"}],
+        ["@semantic-release/npm", {"pkgRoot": "npm-package", "npmPublish": true, "tarballDir": "release"}],
+        ["@semantic-release/github", {
+            "assets": ["release/Semantic-Golfer-*", "release/semantic-golfer-*.tgz", "release/SHA256SUMS", "release/latest*.yml"],
+            "releaseNameTemplate": "Semantic Golfer ${nextRelease.version}",
+            "failCommentCondition": false
+        }]
+    ]
+}

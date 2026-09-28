@@ -1,0 +1,13 @@
+name: Set up Semantic Golfer
+description: Install the app dependencies from the lockfile.
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v6
+      with:
+        node-version: '24'
+        cache: npm
+        package-manager-cache: false
+    - name: Install app dependencies
+      shell: bash
+      run: npm ci

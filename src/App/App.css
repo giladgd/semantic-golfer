@@ -28,7 +28,7 @@
         }
         &[data-mode="play"] > .page {
             overflow-y: auto;
-            overscroll-behavior: contain;
+            overscroll-behavior: auto;
         }
         &:has(> .page > .play) {
             max-width: none;

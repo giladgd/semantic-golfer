@@ -6,5 +6,9 @@ node_modules
 /dist
 /tsconfig.tsbuildinfo
 /dist-electron
+/dist-cli
+/dist-site
+/.site-render
+/npm-package
 /release
 /models

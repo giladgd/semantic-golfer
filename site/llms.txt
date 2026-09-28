@@ -1,0 +1,64 @@
+# Semantic Golfer
+
+> Semantic Golfer is a free, open-source desktop word game and playground for node-llama-cpp's structured decisions API. Write short messages, watch a local AI model evaluate their meaning as you type, and solve challenges with as few characters as possible. It runs on macOS, Windows, and Linux.
+
+## Try it in real time
+
+Run `npx semantic-golfer`, pick a model in the app, and start typing. The command requires Node.js 24.10 or newer. A desktop download is also available from the latest GitHub release.
+
+Try the first Semantic Golfing round: express an animal, a request for help, and urgency in one short message. Watch which conditions match, then shorten your answer while keeping every bar above its threshold. In the Playground, change a support request from an invoice problem to a sign-in problem and watch the selected team change.
+
+The responsive loop is the experience: make an edit, see the model's judgment, and try a more precise phrase. A description or recording cannot convey how it feels to steer the decisions with your own words. Try the installed app to experience that interaction on your machine.
+
+## Why it is fun and useful
+
+- **A puzzle with room for creativity:** many different messages can meet the same conditions. The character budget rewards precise wording and inventive combinations.
+- **A reason to revise:** shorter successful answers earn more points. Saved personal bests let you return to a level and improve it.
+- **A progression of challenges:** each game has 11 levels, growing from simple combinations to as many as seven conditions. Level 11 has eight rounds.
+- **A way to learn how models read language:** probability bars reveal how a small wording change can alter a decision. Comparing local models exposes different interpretations.
+- **A practical structured-decisions sandbox:** write your own questions and criteria for classification, intent detection, routing, or ratings, and inspect the results as you edit.
+- **Local control:** choose a suggested model or load a compatible GGUF file. Inference runs on your computer, with no hosted inference API, account, or subscription required.
+
+## Games and scoring
+
+**Semantic Golfing:** write a message within the round's character limit. Every condition must reach at least 70%. For example, the first round asks for an animal name, a request for help, and a need for immediate action.
+
+**Category Camouflage:** blend two target meanings in one message. Both target categories must reach at least 70%, while each other category stays below 70%. The categories are evaluated independently; their values are not a probability distribution that sums to 100%.
+
+Each game has 11 levels and 51 rounds. A round's score is `max(1, round(1000 * (1 - characters / characterLimit)))`. A completed level adds its round scores. The My scores screen saves personal bests per level, game, and model across app launches. Scores belong to the model used, because different models can judge the same text differently.
+
+## Playground decision types
+
+The Playground contains a Document field, an editable question, criteria, examples, and live results.
+
+- **noul:** a yes/no decision. The value represents the model's probability of yes, from 0 to 1; values near the middle express uncertainty. Example: does this message ask for a reply?
+- **choice:** selects one of the defined options and returns confidence and option probabilities. Example: should a ticket go to account access, billing and refunds, or product features?
+- **score:** rates a document against ordered, user-defined levels and returns confidence and level probabilities. Example: does an issue leave work unaffected, slow some tasks, or prevent work entirely?
+
+The app evaluates edits automatically. While a decision is running, it retains the newest input and evaluates that when the current request finishes. It displays the duration of the model's decision call after warmup. This keeps experimentation responsive without queuing every keystroke.
+
+## Installation, models, and privacy
+
+Run `npx semantic-golfer` with Node.js 24.10 or newer, or download a desktop build. The npm launcher includes the built frontend and backend, depends on Electron and node-llama-cpp, and prepares the native runtime before opening the window. It can build the runtime from source if a compatible prebuilt binary is unavailable. Keep the terminal open while using the npx app; stopping the command closes it.
+
+The app suggests Gemma 4 5B E2B Q8_0 first (approximately 5.0 GB). Other built-in options are Gemma 4 5B E2B Q6_K (3.9 GB), Qwen 3.5 2B Q4_K_M (1.3 GB), and Qwen 3.5 0.8B Q8_0 (0.8 GB). Choose a model that fits your hardware. Downloads show progress, speed, and ETA, and can be canceled. Downloaded models are kept for future launches; a compatible local GGUF file can also be selected.
+
+Your document is evaluated locally rather than sent to a hosted model. Installation, model downloads, and update checks use network connections. After downloading a model, inference can run offline. Switching models unloads the previous model before loading the next.
+
+Desktop builds support macOS on Apple Silicon (arm64) and Intel (x64), Windows on arm64/x64, and Linux on arm64/x64. Releases are currently unsigned and not notarized on macOS. The operating system may require confirmation before opening a downloaded build. The app source uses the MIT license; model licenses are separate.
+
+## About the website demo and model results
+
+The website renders the same app components, with recorded decisions from the recommended Gemma 4 5B E2B Q8_0 model. It demonstrates all three Playground types and a Semantic Golfing round. The demo replays recorded evaluation durations for both result timing and the displayed milliseconds; no model runs in the visitor's browser. Real performance depends on hardware, model, and input.
+
+Model probabilities and confidence are model judgments, not guarantees of correctness. Ambiguous or unfinished text can be interpreted unexpectedly. The games are a way to explore those judgments and practice clear expression. Use your own examples in the installed app to understand the model's behavior.
+
+## Official links
+
+- [Website and interactive demo](https://giladgd.github.io/semantic-golfer/): overview, install command, and recorded app demo.
+- [Latest desktop release](https://github.com/giladgd/semantic-golfer/releases/latest): downloadable builds for supported platforms.
+- [npm package](https://www.npmjs.com/package/semantic-golfer): the package used by `npx semantic-golfer`.
+- [Source code and issues](https://github.com/giladgd/semantic-golfer): development, MIT license, and issue tracker.
+- [Structured decisions guide](https://node-llama-cpp.withcat.ai/guide/structured-decisions): the node-llama-cpp feature demonstrated by this app.
+- [node-llama-cpp source](https://github.com/withcatai/node-llama-cpp): the local inference library.
+- [Development and release instructions](https://github.com/giladgd/semantic-golfer/blob/master/docs/development.md): building, model evaluation, and publishing details.

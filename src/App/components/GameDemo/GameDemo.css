@@ -71,16 +71,23 @@
     }
 }
 
+@property --demo-fill-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+}
+
 .gameDemoPlayback {
     --demo-fill-color: var(--accent-surface-color);
     min-width: 112px;
     background-color: color-mix(in srgb, var(--demo-fill-color) 45%, transparent);
     background-image: linear-gradient(var(--demo-fill-color), var(--demo-fill-color));
     background-repeat: no-repeat;
-    transition: background-size 65ms linear, background-color 150ms;
+    transition: background-size 65ms linear, --demo-fill-color 150ms;
 
     &:hover:not(:disabled) {
-        --demo-fill-color: var(--hover-accent-surface-color);
+        --demo-fill-color: light-dark(color-mix(in srgb, var(--accent-color) 20%, var(--accent-surface-color)),
+            var(--hover-accent-surface-color));
         background-color: color-mix(in srgb, var(--demo-fill-color) 45%, transparent);
     }
 }

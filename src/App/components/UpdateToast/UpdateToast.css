@@ -1,0 +1,59 @@
+.updateToast {
+    inset: auto 24px 24px auto;
+    margin: 0;
+    padding: 18px;
+    width: min(380px, calc(100vw - 32px));
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--surface-color) 92%, transparent);
+    backdrop-filter: blur(24px);
+    color: var(--text-color);
+    box-shadow: 0 12px 48px -14px var(--popover-shadow-color);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 180ms, transform 180ms, display 180ms allow-discrete, overlay 180ms allow-discrete;
+    &:popover-open { display: grid; grid-template-columns: 1fr auto; gap: 14px; opacity: 1; transform: none; }
+    @starting-style { &:popover-open { opacity: 0; transform: translateY(10px); } }
+    > .updateMessage {
+        align-self: center;
+        min-width: 0;
+        > strong { display: block; font-size: 13px; font-weight: 550; }
+        > span { display: block; margin-top: 6px; font-size: 11px; line-height: 1.6; color: var(--muted-text-color); overflow-wrap: anywhere; }
+    }
+    > .dismissUpdate {
+        align-self: start;
+        padding: 5px;
+        background: transparent;
+        color: var(--muted-text-color);
+        display: flex;
+        > svg { width: 16px; height: 16px; }
+        &:hover { background: var(--hover-surface-color); color: var(--text-color); }
+    }
+    > .installUpdate {
+        position: relative;
+        grid-column: 1 / -1;
+        overflow: hidden;
+        font-size: 12px;
+        padding: 10px 16px;
+        background: var(--accent-surface-color);
+        &:hover:not(:disabled) { background: var(--hover-accent-surface-color); }
+        &:disabled { opacity: 1; }
+        > span { position: relative; }
+        > progress {
+            appearance: none;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: transparent;
+            &::-webkit-progress-bar { background: transparent; }
+            &::-webkit-progress-value { background: var(--accent-overlay-color); transition: width 160ms linear; }
+            &:indeterminate {
+                background: linear-gradient(90deg, transparent, var(--accent-overlay-color), transparent) -100% 0 / 50% 100% no-repeat;
+                animation: updateToastProgress 1.5s ease-in-out infinite;
+            }
+        }
+    }
+}
+@keyframes updateToastProgress { to { background-position: 200% 0; } }

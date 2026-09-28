@@ -2,11 +2,17 @@ import {BrowserWindow} from "electron";
 import {createElectronSideBirpc} from "../utils/createElectronSideBirpc.ts";
 import {llmState} from "../state/llmState.ts";
 import {saveLevelScore} from "../state/scores.ts";
+import {checkForUpdates, dismissUpdate, installUpdate} from "../updates/updates.ts";
 import {cancelDownload, deleteModel, downloadModel, evaluateDecision, loadModel, openModelsDirectory, selectModelFile} from "../llm/models.ts";
 import type {RenderedFunctions} from "../../src/rpc/llmRpc.ts";
 
 const functions = (window: BrowserWindow) => ({
     getState: () => llmState.state,
+    checkForUpdates: () => {
+        void checkForUpdates(true);
+    },
+    dismissUpdate,
+    installUpdate,
     saveLevelScore,
     downloadModel,
     cancelDownload,
