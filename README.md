@@ -38,6 +38,11 @@ npx semantic-golfer
 - [Structured decisions guide](https://node-llama-cpp.withcat.ai/guide/structured-decisions)
 - [node-llama-cpp](https://github.com/withcatai/node-llama-cpp)
 
+## Made with AI
+
+This app was predominantly made with AI. The human did a lot of prompting, reviewing all code, making many manual fixes, and directed everything. It has taken the human a lot of effort and time.
+The human cares about disclosing when a project was created using AI because the human knows other people want to know it. The human has manually reviewed everything and made fixes where relevant and is comfortable shipping the project. The human has manually written this text.
+
 ## Acknowledgements
 
 Built with [node-llama-cpp](https://github.com/withcatai/node-llama-cpp), [Electron](https://www.electronjs.org/), and [React](https://react.dev/). [Icon credits](https://github.com/giladgd/semantic-golfer/blob/master/src/icons/LICENSES.md).
