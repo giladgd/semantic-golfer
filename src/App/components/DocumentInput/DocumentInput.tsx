@@ -5,6 +5,10 @@ export function DocumentInput({value, disabled, onChange}: {value: string, disab
         <label htmlFor="documentText">Document</label>
         <textarea
             id="documentText"
+            data-gramm="false"
+            data-enable-grammarly="false"
+            data-enable-grazie="false"
+            data-lt-active="false"
             value={value}
             disabled={disabled}
             maxLength={32_000}

@@ -40,6 +40,18 @@ export function PlaygroundDemo() {
 
     useLayoutEffect(() => {
         const element = frame.current!;
+        const landing = element.closest(".landingPage");
+        const introAnimation = landing?.querySelector(".hero h1 > span")?.getAnimations()[0];
+        const demoAnimation = element.closest(".demoSection")?.getAnimations()[0];
+        if (introAnimation?.startTime != null && demoAnimation) {
+            // Consume the delay already spent loading, keeping the later sections staggered if the demo is late.
+            const now = Number(document.timeline.currentTime);
+            const elapsed = Math.min(now - Number(introAnimation.startTime), demoAnimation.effect!.getTiming().delay ?? 0);
+            for (const section of landing!.querySelectorAll(".demoSection, .features, .siteFooter")) {
+                for (const animation of section.getAnimations())
+                    animation.startTime = now - elapsed;
+            }
+        }
         element.style.setProperty("--preview-scale", String(element.getBoundingClientRect().width / previewWidth));
         const resize = new ResizeObserver(([entry]) => {
             element.style.setProperty("--preview-scale", String(entry!.contentRect.width / previewWidth));

@@ -63,10 +63,10 @@ test("every typed demo frame has a real recording from the recommended model", a
         data.recordings[index].frames.find((frame: {document: string}) => frame.document === document).answer));
     assert.ok(endpoints[0]![0].value < 0.1 && endpoints[0]![1].value > 0.9);
     assert.equal(endpoints[1]![0].choice, "1");
-    assert.equal(endpoints[1]![1].choice, "0");
-    assert.ok(endpoints[2]![0].score < 0.2);
-    assert.ok(endpoints[2]![1].score > 0.8 && endpoints[2]![1].score < 1.7);
-    assert.ok(endpoints[2]![2].score > 1.8);
+    assert.equal(endpoints[1]![1].choice, "2");
+    assert.equal(endpoints[2]!.length, 1);
+    const positiveReview = data.recordings[2].frames.find((frame: {document: string}) => frame.document === "The food was amazing");
+    assert.ok(endpoints[2]![0].score < positiveReview.answer.score, "The wait makes the review less positive");
     const game = scenes[3]!;
     for (const document of game.documents) {
         const result = data.recordings[3].frames.find((frame: {document: string}) => frame.document === document);
@@ -285,7 +285,7 @@ test("document replacements select all, delete, and wait a seeded 50–120ms bef
             assert.equal(typedFrame.selected, false);
         }
     }
-    assert.deepEqual(selectionCounts, [0, 1, 2, 1], "Select only when replacing text, including choice");
+    assert.deepEqual(selectionCounts, [0, 1, 0, 1], "Select only when replacing text, including choice");
     const first = getSceneSteps(scenes[1]!, 12345);
     const second = getSceneSteps(scenes[1]!, 67890);
     const index = first.steps.findIndex((step) => step.selected);
@@ -322,20 +322,19 @@ test("click targets use the nearest point plus a seeded inset toward the previou
     }
 });
 
-test("the score demo pauses for two seconds before continuing each sentence", () => {
+test("the score demo pauses for two seconds before completing its document", () => {
     const {steps} = timeline[2]!;
-    for (const [prefix, punctuation] of [["The logo is blurry", "."], ["The app is slow", ","], ["The app will not open", "."]]) {
-        const index = steps.findIndex((step) => step.document === prefix);
-        assert.ok(index >= 0);
-        const paused = steps[index]!;
-        const next = steps[index + 1]!;
-        assert.ok(Math.abs(next.at - paused.at - 2_000) < 0.000001);
-        const frame = getDemoFrame(2, paused.at + 1_999);
-        assert.equal(frame.document, prefix);
-        assert.ok(frame.focused && !frame.selected && !frame.cursor.visible);
-        assert.equal(getDemoDocument(2, next.at), prefix + punctuation);
-        assert.equal(next.selected, false);
-    }
+    const prefix = "The food was amazing";
+    const index = steps.findIndex((step) => step.document === prefix);
+    assert.ok(index >= 0);
+    const paused = steps[index]!;
+    const next = steps[index + 1]!;
+    assert.ok(Math.abs(next.at - paused.at - 2_000) < 0.000001);
+    const frame = getDemoFrame(2, paused.at + 1_999);
+    assert.equal(frame.document, prefix);
+    assert.ok(frame.focused && !frame.selected && !frame.cursor.visible);
+    assert.equal(getDemoDocument(2, next.at), prefix + ",");
+    assert.equal(next.selected, false);
 });
 
 test("typing rhythm is seeded once, follows key distance, and drifts within the requested bounds", () => {

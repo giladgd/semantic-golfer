@@ -55,6 +55,10 @@ export function PlayRound({game, level, modelId, draft}: {game: GameId, level: G
                 <label className="writingHeading" htmlFor="gameDocument">Your message</label>
                 <textarea
                     id="gameDocument"
+                    data-gramm="false"
+                    data-enable-grammarly="false"
+                    data-enable-grazie="false"
+                    data-lt-active="false"
                     value={draft.document}
                     autoFocus
                     placeholder="Make every character count…"

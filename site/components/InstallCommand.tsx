@@ -42,7 +42,7 @@ export function InstallCommand() {
                 <CheckIconSVG data-active={copied} />
             </button>
             <span className="copyTooltip" role="status" data-visible={copied}>
-                Copied! Now run it in a terminal
+                Copied! Now run it in your terminal
             </span>
         </div>
         <span className="commandStatus" role="status">{failed ? "Select and copy the command to run it." : "macOS · Windows · Linux"}

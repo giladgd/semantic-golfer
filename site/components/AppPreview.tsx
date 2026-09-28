@@ -1,15 +1,12 @@
-import {lazy, Suspense, useSyncExternalStore} from "react";
+import {useSyncExternalStore} from "react";
 import playgroundPreview from "../../assets/playground-preview.png";
+import {PlaygroundDemo} from "./PlaygroundDemo.tsx";
 import "./AppPreview.css";
 
-const PlaygroundDemo = lazy(async () => {
-    const {PlaygroundDemo} = await import("./PlaygroundDemo.tsx");
-    return {default: PlaygroundDemo};
-});
 const subscribe = () => () => {};
 
 export function AppPreview() {
-    // The server and hydration render the same poster; the browser then loads the interactive app.
+    // Match the server poster during hydration, then mount the already-loaded demo.
     const mounted = useSyncExternalStore(subscribe, () => true, () => false);
     const poster = <figure className="appPreview" id="demo">
         <img
@@ -19,5 +16,5 @@ export function AppPreview() {
             alt="Semantic Golfer Playground showing a document, yes/no criteria, and the model's decision probability."
         />
     </figure>;
-    return <Suspense fallback={poster}>{mounted ? <PlaygroundDemo /> : poster}</Suspense>;
+    return mounted ? <PlaygroundDemo /> : poster;
 }

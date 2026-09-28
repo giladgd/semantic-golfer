@@ -14,6 +14,10 @@ export function CriteriaEditor({input, disabled, onChange}: {
             <span>Instruction</span>
             <textarea
                 id="decisionQuestion"
+                data-gramm="false"
+                data-enable-grammarly="false"
+                data-enable-grazie="false"
+                data-lt-active="false"
                 rows={1}
                 value={input.instruction}
                 title={input.instruction}
@@ -29,6 +33,10 @@ export function CriteriaEditor({input, disabled, onChange}: {
                 </label>
                 <textarea
                     id={`criterion-${index}`}
+                    data-gramm="false"
+                    data-enable-grammarly="false"
+                    data-enable-grazie="false"
+                    data-lt-active="false"
                     rows={1}
                     aria-label={`Criterion ${index + 1}`}
                     aria-invalid={index < criteria.length && !isValidCriterion(criterion, input.type)}

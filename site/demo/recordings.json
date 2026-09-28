@@ -9,7 +9,7 @@
   },
   "modelFile": "gemma-q8.gguf",
   "modelBytes": 4995021216,
-  "recordedAt": "2026-09-28T00:18:09.138Z",
+  "recordedAt": "2026-09-28T05:40:20.785Z",
   "recordings": [
     {
       "input": {
@@ -28,7 +28,7 @@
             "type": "noul",
             "value": 0.09009893571517409
           },
-          "measuredDuration": 50.78025000000025
+          "measuredDuration": 52.2869169999999
         },
         {
           "document": "T",
@@ -36,7 +36,7 @@
             "type": "noul",
             "value": 0.028727773412576738
           },
-          "measuredDuration": 42.321957999999995
+          "measuredDuration": 42.19733300000007
         },
         {
           "document": "Th",
@@ -44,7 +44,7 @@
             "type": "noul",
             "value": 0.04542059245208563
           },
-          "measuredDuration": 42.54420900000014
+          "measuredDuration": 41.574791000000005
         },
         {
           "document": "Tha",
@@ -52,7 +52,7 @@
             "type": "noul",
             "value": 0.020152784609957904
           },
-          "measuredDuration": 41.80595799999992
+          "measuredDuration": 43.27274999999963
         },
         {
           "document": "Than",
@@ -60,7 +60,7 @@
             "type": "noul",
             "value": 0.07982109099479381
           },
-          "measuredDuration": 41.64429199999995
+          "measuredDuration": 44.67341699999997
         },
         {
           "document": "Thank",
@@ -68,7 +68,7 @@
             "type": "noul",
             "value": 0.01742562542325972
           },
-          "measuredDuration": 44.33987500000012
+          "measuredDuration": 42.73629200000005
         },
         {
           "document": "Thanks",
@@ -76,7 +76,7 @@
             "type": "noul",
             "value": 0.0030696793837972653
           },
-          "measuredDuration": 42.43033299999979
+          "measuredDuration": 43.00187499999993
         },
         {
           "document": "Thanks ",
@@ -84,7 +84,7 @@
             "type": "noul",
             "value": 0.008238871526654777
           },
-          "measuredDuration": 42.322875000000295
+          "measuredDuration": 42.694582999999966
         },
         {
           "document": "Thanks f",
@@ -92,7 +92,7 @@
             "type": "noul",
             "value": 0.010740531747013402
           },
-          "measuredDuration": 42.667415999999776
+          "measuredDuration": 43.02316599999995
         },
         {
           "document": "Thanks fo",
@@ -100,7 +100,7 @@
             "type": "noul",
             "value": 0.030635050130926794
           },
-          "measuredDuration": 43.90012499999966
+          "measuredDuration": 43.91004100000009
         },
         {
           "document": "Thanks for",
@@ -108,7 +108,7 @@
             "type": "noul",
             "value": 0.013605698954160245
           },
-          "measuredDuration": 42.759124999999585
+          "measuredDuration": 42.64574999999968
         },
         {
           "document": "Thanks for ",
@@ -116,7 +116,7 @@
             "type": "noul",
             "value": 0.019378783801393254
           },
-          "measuredDuration": 42.375666999999794
+          "measuredDuration": 42.39300000000003
         },
         {
           "document": "Thanks for t",
@@ -124,7 +124,7 @@
             "type": "noul",
             "value": 0.01293339621992042
           },
-          "measuredDuration": 42.689166000000114
+          "measuredDuration": 42.643375000000106
         },
         {
           "document": "Thanks for th",
@@ -132,7 +132,7 @@
             "type": "noul",
             "value": 0.03797665428878595
           },
-          "measuredDuration": 44.04750000000013
+          "measuredDuration": 41.70550000000003
         },
         {
           "document": "Thanks for the",
@@ -140,7 +140,7 @@
             "type": "noul",
             "value": 0.10628389802360927
           },
-          "measuredDuration": 42.76945799999976
+          "measuredDuration": 41.23675000000003
         },
         {
           "document": "Thanks for the ",
@@ -148,7 +148,7 @@
             "type": "noul",
             "value": 0.14494980756525064
           },
-          "measuredDuration": 41.95266700000002
+          "measuredDuration": 41.408540999999786
         },
         {
           "document": "Thanks for the u",
@@ -156,7 +156,7 @@
             "type": "noul",
             "value": 0.021680208711700153
           },
-          "measuredDuration": 41.3840409999998
+          "measuredDuration": 41.85262499999999
         },
         {
           "document": "Thanks for the up",
@@ -164,7 +164,7 @@
             "type": "noul",
             "value": 0.012580138569580136
           },
-          "measuredDuration": 42.14054099999976
+          "measuredDuration": 42.474874999999884
         },
         {
           "document": "Thanks for the upd",
@@ -172,7 +172,7 @@
             "type": "noul",
             "value": 0.011726096443217086
           },
-          "measuredDuration": 42.21195899999975
+          "measuredDuration": 42.1875
         },
         {
           "document": "Thanks for the upda",
@@ -180,7 +180,7 @@
             "type": "noul",
             "value": 0.16285638191671897
           },
-          "measuredDuration": 43.07383400000026
+          "measuredDuration": 42.60725000000002
         },
         {
           "document": "Thanks for the updat",
@@ -188,7 +188,7 @@
             "type": "noul",
             "value": 0.031807537101271995
           },
-          "measuredDuration": 42.59670899999992
+          "measuredDuration": 41.35270799999989
         },
         {
           "document": "Thanks for the update",
@@ -196,7 +196,7 @@
             "type": "noul",
             "value": 0.004024912694661411
           },
-          "measuredDuration": 42.30925000000025
+          "measuredDuration": 41.59708300000011
         },
         {
           "document": "Thanks for the update.",
@@ -204,7 +204,7 @@
             "type": "noul",
             "value": 0.018511149950949067
           },
-          "measuredDuration": 42.107290999999805
+          "measuredDuration": 41.42341699999997
         },
         {
           "document": "Thanks for the update.\n",
@@ -212,7 +212,7 @@
             "type": "noul",
             "value": 0.0028650545088895296
           },
-          "measuredDuration": 42.32079199999998
+          "measuredDuration": 42.29445799999985
         },
         {
           "document": "Thanks for the update.\nC",
@@ -220,7 +220,7 @@
             "type": "noul",
             "value": 0.0035808197479201822
           },
-          "measuredDuration": 42.74229200000036
+          "measuredDuration": 41.953125
         },
         {
           "document": "Thanks for the update.\nCo",
@@ -228,7 +228,7 @@
             "type": "noul",
             "value": 0.007058683247179311
           },
-          "measuredDuration": 41.54779099999996
+          "measuredDuration": 41.23191700000007
         },
         {
           "document": "Thanks for the update.\nCou",
@@ -236,7 +236,7 @@
             "type": "noul",
             "value": 0.007044513582475228
           },
-          "measuredDuration": 42.11666699999978
+          "measuredDuration": 41.49954099999968
         },
         {
           "document": "Thanks for the update.\nCoul",
@@ -244,7 +244,7 @@
             "type": "noul",
             "value": 0.009323097236118209
           },
-          "measuredDuration": 41.88270800000009
+          "measuredDuration": 41.28929100000005
         },
         {
           "document": "Thanks for the update.\nCould",
@@ -252,7 +252,7 @@
             "type": "noul",
             "value": 0.035736015921517796
           },
-          "measuredDuration": 41.868124999999964
+          "measuredDuration": 42.134833999999955
         },
         {
           "document": "Thanks for the update.\nCould ",
@@ -260,7 +260,7 @@
             "type": "noul",
             "value": 0.0557035300879504
           },
-          "measuredDuration": 41.92037500000015
+          "measuredDuration": 42.209375000000364
         },
         {
           "document": "Thanks for the update.\nCould y",
@@ -268,7 +268,7 @@
             "type": "noul",
             "value": 0.1626110561536675
           },
-          "measuredDuration": 41.992457999999715
+          "measuredDuration": 41.41179200000033
         },
         {
           "document": "Thanks for the update.\nCould yo",
@@ -276,7 +276,7 @@
             "type": "noul",
             "value": 0.230492891845028
           },
-          "measuredDuration": 42.98775000000023
+          "measuredDuration": 41.22533300000032
         },
         {
           "document": "Thanks for the update.\nCould you",
@@ -284,7 +284,7 @@
             "type": "noul",
             "value": 0.2537096597673845
           },
-          "measuredDuration": 42.009500000000116
+          "measuredDuration": 41.79629100000011
         },
         {
           "document": "Thanks for the update.\nCould you ",
@@ -292,7 +292,7 @@
             "type": "noul",
             "value": 0.49580536192958785
           },
-          "measuredDuration": 42.11566600000015
+          "measuredDuration": 41.58445800000027
         },
         {
           "document": "Thanks for the update.\nCould you c",
@@ -300,7 +300,7 @@
             "type": "noul",
             "value": 0.029627598231158164
           },
-          "measuredDuration": 42.49412500000017
+          "measuredDuration": 42.114500000000135
         },
         {
           "document": "Thanks for the update.\nCould you co",
@@ -308,7 +308,7 @@
             "type": "noul",
             "value": 0.07471042364223429
           },
-          "measuredDuration": 41.82620799999995
+          "measuredDuration": 41.77279099999987
         },
         {
           "document": "Thanks for the update.\nCould you con",
@@ -316,7 +316,7 @@
             "type": "noul",
             "value": 0.07920128214001651
           },
-          "measuredDuration": 42.025709000000006
+          "measuredDuration": 41.826166000000285
         },
         {
           "document": "Thanks for the update.\nCould you conf",
@@ -324,7 +324,7 @@
             "type": "noul",
             "value": 0.06799169491931051
           },
-          "measuredDuration": 41.42333299999973
+          "measuredDuration": 41.795292000000245
         },
         {
           "document": "Thanks for the update.\nCould you confi",
@@ -332,7 +332,7 @@
             "type": "noul",
             "value": 0.13671821016563862
           },
-          "measuredDuration": 42.228791999999885
+          "measuredDuration": 41.743582999999944
         },
         {
           "document": "Thanks for the update.\nCould you confir",
@@ -340,7 +340,7 @@
             "type": "noul",
             "value": 0.9751121519137123
           },
-          "measuredDuration": 42.45912499999986
+          "measuredDuration": 41.777500000000146
         },
         {
           "document": "Thanks for the update.\nCould you confirm",
@@ -348,7 +348,7 @@
             "type": "noul",
             "value": 0.9692477115058068
           },
-          "measuredDuration": 43.07074999999986
+          "measuredDuration": 41.29524999999967
         },
         {
           "document": "Thanks for the update.\nCould you confirm ",
@@ -356,7 +356,7 @@
             "type": "noul",
             "value": 0.9674174705692048
           },
-          "measuredDuration": 42.21645899999976
+          "measuredDuration": 41.35916700000007
         },
         {
           "document": "Thanks for the update.\nCould you confirm t",
@@ -364,7 +364,7 @@
             "type": "noul",
             "value": 0.3425234238109062
           },
-          "measuredDuration": 42.457374999999956
+          "measuredDuration": 41.54925000000003
         },
         {
           "document": "Thanks for the update.\nCould you confirm th",
@@ -372,7 +372,7 @@
             "type": "noul",
             "value": 0.23965993058856927
           },
-          "measuredDuration": 41.84187500000007
+          "measuredDuration": 41.47395800000004
         },
         {
           "document": "Thanks for the update.\nCould you confirm the",
@@ -380,7 +380,7 @@
             "type": "noul",
             "value": 0.20867739079053185
           },
-          "measuredDuration": 42.06449999999995
+          "measuredDuration": 41.87679199999957
         },
         {
           "document": "Thanks for the update.\nCould you confirm the ",
@@ -388,7 +388,7 @@
             "type": "noul",
             "value": 0.9600142441554111
           },
-          "measuredDuration": 42.08174999999983
+          "measuredDuration": 41.88395799999989
         },
         {
           "document": "Thanks for the update.\nCould you confirm the n",
@@ -396,7 +396,7 @@
             "type": "noul",
             "value": 0.852199459292014
           },
-          "measuredDuration": 42.163208999999824
+          "measuredDuration": 43.696249999999964
         },
         {
           "document": "Thanks for the update.\nCould you confirm the ne",
@@ -404,7 +404,7 @@
             "type": "noul",
             "value": 0.8433924133368335
           },
-          "measuredDuration": 41.94945800000005
+          "measuredDuration": 41.743375000000015
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new",
@@ -412,7 +412,7 @@
             "type": "noul",
             "value": 0.07916178675539072
           },
-          "measuredDuration": 41.778708000000734
+          "measuredDuration": 42.32049999999981
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new ",
@@ -420,7 +420,7 @@
             "type": "noul",
             "value": 0.39577028386807006
           },
-          "measuredDuration": 42.15116599999965
+          "measuredDuration": 41.9096669999999
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new d",
@@ -428,7 +428,7 @@
             "type": "noul",
             "value": 0.9987987358876969
           },
-          "measuredDuration": 41.9931660000002
+          "measuredDuration": 41.91137500000059
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new da",
@@ -436,7 +436,7 @@
             "type": "noul",
             "value": 0.9998360817211703
           },
-          "measuredDuration": 42.199124999999185
+          "measuredDuration": 41.94962499999929
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new dat",
@@ -444,7 +444,7 @@
             "type": "noul",
             "value": 0.9996818724882377
           },
-          "measuredDuration": 42.49699999999939
+          "measuredDuration": 42.36316600000009
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new date",
@@ -452,7 +452,7 @@
             "type": "noul",
             "value": 0.9999428608683922
           },
-          "measuredDuration": 42.14912499999991
+          "measuredDuration": 43.07316700000047
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new date?",
@@ -460,7 +460,7 @@
             "type": "noul",
             "value": 0.9999406184855135
           },
-          "measuredDuration": 42.12575000000015
+          "measuredDuration": 42.420625000000655
         }
       ]
     },
@@ -468,11 +468,11 @@
       "input": {
         "type": "choice",
         "document": "",
-        "instruction": "Which team should handle this ticket?",
+        "instruction": "Which delivery method has the customer chosen?",
         "criteria": [
-          "Account access",
-          "Billing and refunds",
-          "Product features"
+          "Standard shipping",
+          "Express courier",
+          "Store pickup"
         ]
       },
       "frames": [
@@ -481,854 +481,938 @@
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9896814781133411,
+            "confidence": 0.9915170794454404,
             "probabilities": {
-              "0": 0.9940830970129435,
-              "1": 0.0051553317988425554,
-              "2": 0.0007615711882140392
+              "0": 0.9948449833500788,
+              "1": 0.004237568959343716,
+              "2": 0.000917447690577491
             }
           },
-          "measuredDuration": 43.14783299999999
+          "measuredDuration": 44.11583300000075
         },
         {
           "document": "I",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9968749381873008,
+            "confidence": 0.9894680694994495,
             "probabilities": {
-              "0": 0.9980812416109351,
-              "1": 0.0015619734188066653,
-              "2": 0.00035678497025803794
+              "0": 0.9930479063947956,
+              "1": 0.00525703915242961,
+              "2": 0.001695054452774856
             }
           },
-          "measuredDuration": 42.52099999999973
+          "measuredDuration": 43.47233300000062
         },
         {
           "document": "I ",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9972461508532365,
+            "confidence": 0.9911822895227197,
             "probabilities": {
-              "0": 0.9983004999731167,
-              "1": 0.0013764797988921093,
-              "2": 0.00032302022799121383
+              "0": 0.994420452947164,
+              "1": 0.004403670971217721,
+              "2": 0.0011758760816182932
             }
           },
-          "measuredDuration": 42.298000000000684
+          "measuredDuration": 42.93662499999937
         },
         {
           "document": "I n",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9969409692355884,
+            "confidence": 0.985450386112604,
             "probabilities": {
-              "0": 0.9981351532282585,
-              "1": 0.0015290017020056013,
-              "2": 0.00033584506973583384
+              "0": 0.9900948614455616,
+              "1": 0.007255531564368555,
+              "2": 0.0026496069900698795
             }
           },
-          "measuredDuration": 42.10649999999987
+          "measuredDuration": 41.7002080000002
         },
         {
           "document": "I ne",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9970707229379845,
+            "confidence": 0.981937672671864,
             "probabilities": {
-              "0": 0.9981873248381663,
-              "1": 0.0014641280354565642,
-              "2": 0.00034854712637708284
+              "0": 0.9868943622386389,
+              "1": 0.00899403107112621,
+              "2": 0.004111606690234927
             }
           },
-          "measuredDuration": 42.025040999999874
+          "measuredDuration": 42.048375000000306
         },
         {
           "document": "I nee",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9974654122154507,
+            "confidence": 0.9942320050654626,
             "probabilities": {
-              "0": 0.9983579951257302,
-              "1": 0.001266818420773645,
-              "2": 0.0003751864534960422
+              "0": 0.9963876677011334,
+              "1": 0.002881890876055297,
+              "2": 0.0007304414228112303
             }
           },
-          "measuredDuration": 42.02812499999982
+          "measuredDuration": 41.69087500000023
         },
         {
           "document": "I need",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9978677358602687,
+            "confidence": 0.9968477364425753,
             "probabilities": {
-              "0": 0.9985075556497375,
-              "1": 0.001065677079592052,
-              "2": 0.0004267672706703766
+              "0": 0.998047560915647,
+              "1": 0.0015755377325142618,
+              "2": 0.0003769013518388584
             }
           },
-          "measuredDuration": 42.2573339999999
+          "measuredDuration": 42.38133299999936
         },
         {
           "document": "I need ",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9976182206406192,
+            "confidence": 0.9966426330284366,
             "probabilities": {
-              "0": 0.9983913182948907,
-              "1": 0.0011903915422523089,
-              "2": 0.00041829016285697376
+              "0": 0.9979480744499938,
+              "1": 0.00167805587693569,
+              "2": 0.0003738696730705322
             }
           },
-          "measuredDuration": 42.042750000000524
+          "measuredDuration": 42.2637079999995
         },
         {
-          "document": "I need h",
+          "document": "I need i",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9987609770433524,
+            "confidence": 0.9935961808450926,
             "probabilities": {
-              "0": 0.9991385233880646,
-              "1": 0.0006193614852237369,
-              "2": 0.00024211512671175857
+              "0": 0.9959912355083902,
+              "1": 0.003199317802346919,
+              "2": 0.0008094466892627846
             }
           },
-          "measuredDuration": 41.73124999999982
+          "measuredDuration": 41.867583000000195
         },
         {
-          "document": "I need he",
+          "document": "I need it",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9986435809225457,
+            "confidence": 0.989656130926582,
             "probabilities": {
-              "0": 0.9989106586925208,
-              "1": 0.0006779305160040225,
-              "2": 0.00041141079147515166
+              "0": 0.9934502042824304,
+              "1": 0.005164771280991254,
+              "2": 0.0013850244365783307
             }
           },
-          "measuredDuration": 41.71141699999953
+          "measuredDuration": 42.134125000000495
         },
         {
-          "document": "I need hel",
+          "document": "I need it ",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9967318745825146,
+            "confidence": 0.9929695411193142,
             "probabilities": {
-              "0": 0.9980075550818932,
-              "1": 0.0016334761312344897,
-              "2": 0.0003589687868721241
+              "0": 0.9956248235301621,
+              "1": 0.0035121958655161176,
+              "2": 0.000862980604321905
             }
           },
-          "measuredDuration": 42.189290999999685
+          "measuredDuration": 41.548375000000306
         },
         {
-          "document": "I need help",
+          "document": "I need it d",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9947476044880496,
+            "confidence": 0.9724226579366869,
             "probabilities": {
-              "0": 0.9969000301640608,
-              "1": 0.0026249502606324982,
-              "2": 0.0004750195753067181
+              "0": 0.9810921753363095,
+              "1": 0.013717097806609044,
+              "2": 0.005190726857081618
             }
           },
-          "measuredDuration": 41.92820800000027
+          "measuredDuration": 41.99920900000052
         },
         {
-          "document": "I need help ",
+          "document": "I need it de",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9948352743232927,
+            "confidence": 0.9915547285788884,
             "probabilities": {
-              "0": 0.9969860123619697,
-              "1": 0.002581245340726503,
-              "2": 0.0004327422973038726
+              "0": 0.9944446090590099,
+              "1": 0.004216984106059367,
+              "2": 0.0013384068349308947
             }
           },
-          "measuredDuration": 42.040500000000065
+          "measuredDuration": 41.51604099999986
         },
         {
-          "document": "I need help w",
+          "document": "I need it del",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9956695042032311,
+            "confidence": 0.9826142515730931,
             "probabilities": {
-              "0": 0.997476549660218,
-              "1": 0.002164470618296939,
-              "2": 0.0003589797214851621
+              "0": 0.9874589433542093,
+              "1": 0.008659129105641192,
+              "2": 0.003881927540149485
             }
           },
-          "measuredDuration": 42.14179200000035
+          "measuredDuration": 41.462375000000065
         },
         {
-          "document": "I need help wi",
+          "document": "I need it deli",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9957265878484396,
+            "confidence": 0.7461461363193487,
             "probabilities": {
-              "0": 0.9975166064886154,
-              "1": 0.0021359637204349893,
-              "2": 0.00034742979094950425
+              "0": 0.7922410943420879,
+              "1": 0.09258328628549943,
+              "2": 0.11517561937241273
             }
           },
-          "measuredDuration": 42.020832999999584
+          "measuredDuration": 41.63762499999939
         },
         {
-          "document": "I need help wit",
+          "document": "I need it deliv",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9960208553029393,
+            "confidence": 0.9903416748755364,
             "probabilities": {
-              "0": 0.9975552823053965,
-              "1": 0.001988664998697101,
-              "2": 0.00045605269590632684
+              "0": 0.9940048288407966,
+              "1": 0.004823504392948818,
+              "2": 0.0011716667662548135
             }
           },
-          "measuredDuration": 41.93187499999931
+          "measuredDuration": 41.54358299999967
         },
         {
-          "document": "I need help with",
+          "document": "I need it delive",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9941969603724141,
+            "confidence": 0.9784894092880494,
             "probabilities": {
-              "0": 0.9965911357120066,
-              "1": 0.0029000434600790523,
-              "2": 0.0005088208279144007
+              "0": 0.9870190403376452,
+              "1": 0.010731097423081655,
+              "2": 0.0022498622392729192
             }
           },
-          "measuredDuration": 41.85500000000047
+          "measuredDuration": 41.48941599999944
         },
         {
-          "document": "I need help with ",
+          "document": "I need it deliver",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9946421885710556,
+            "confidence": 0.8752308677461162,
             "probabilities": {
-              "0": 0.9968557620997713,
-              "1": 0.0026776557849774087,
-              "2": 0.0004665821152513046
+              "0": 0.9303944556028547,
+              "1": 0.06190411584836879,
+              "2": 0.007701428548776527
             }
           },
-          "measuredDuration": 42.00758300000052
+          "measuredDuration": 41.6284999999998
         },
         {
-          "document": "I need help with a",
+          "document": "I need it delivere",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9942165938755764,
+            "confidence": 0.931677795265866,
             "probabilities": {
-              "0": 0.9966530930022038,
-              "1": 0.0028903829301674924,
-              "2": 0.00045652406762866773
+              "0": 0.9615459969540775,
+              "1": 0.03400926522331411,
+              "2": 0.00444473782260847
             }
           },
-          "measuredDuration": 41.763082999999824
+          "measuredDuration": 41.38458300000002
         },
         {
-          "document": "I need help with an",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9949549875963338,
-            "probabilities": {
-              "0": 0.9970643547158687,
-              "1": 0.0025214614204683065,
-              "2": 0.000414183863662989
-            }
-          },
-          "measuredDuration": 41.720124999999825
-        },
-        {
-          "document": "I need help with an ",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9934315558929714,
-            "probabilities": {
-              "0": 0.9962167155347615,
-              "1": 0.003282577621054301,
-              "2": 0.0005007068441841748
-            }
-          },
-          "measuredDuration": 41.743750000000546
-        },
-        {
-          "document": "I need help with an i",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9958557284194609,
-            "probabilities": {
-              "0": 0.9976345718369418,
-              "1": 0.00207152678670881,
-              "2": 0.00029390137634941995
-            }
-          },
-          "measuredDuration": 41.82916699999987
-        },
-        {
-          "document": "I need help with an in",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9952257448481703,
-            "probabilities": {
-              "0": 0.9972176045052331,
-              "1": 0.0023861817631902647,
-              "2": 0.00039621373157661555
-            }
-          },
-          "measuredDuration": 41.76041600000008
-        },
-        {
-          "document": "I need help with an inv",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9966097866653734,
-            "probabilities": {
-              "0": 0.9975167647307158,
-              "1": 0.0016937684368219742,
-              "2": 0.0007894668324621696
-            }
-          },
-          "measuredDuration": 41.738916999999674
-        },
-        {
-          "document": "I need help with an invo",
+          "document": "I need it delivered",
           "answer": {
             "type": "choice",
             "choice": "1",
-            "confidence": 0.7315201972069912,
+            "confidence": 0.727757203947791,
             "probabilities": {
-              "0": 0.01760098330440377,
-              "1": 0.8505218695623564,
-              "2": 0.13187714713323967
+              "0": 0.12707936647986015,
+              "1": 0.8064944016612051,
+              "2": 0.06642623185893469
             }
           },
-          "measuredDuration": 41.6693750000004
+          "measuredDuration": 42.15495899999951
         },
         {
-          "document": "I need help with an invoi",
+          "document": "I need it delivered ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.6072230865981723,
+            "probabilities": {
+              "0": 0.7884636753796199,
+              "1": 0.19268658553216433,
+              "2": 0.018849739088215803
+            }
+          },
+          "measuredDuration": 41.71129199999996
+        },
+        {
+          "document": "I need it delivered a",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9567668335211867,
+            "probabilities": {
+              "0": 0.9744658310672923,
+              "1": 0.02153002738023523,
+              "2": 0.004004141552472504
+            }
+          },
+          "measuredDuration": 42.59037500000068
+        },
+        {
+          "document": "I need it delivered as",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9830030958583039,
+            "probabilities": {
+              "0": 0.9865114986560066,
+              "1": 0.008455680887416639,
+              "2": 0.00503282045657683
+            }
+          },
+          "measuredDuration": 41.90599999999995
+        },
+        {
+          "document": "I need it delivered as ",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9844693340015003,
+            "probabilities": {
+              "0": 0.9880486248256777,
+              "1": 0.007732572592342699,
+              "2": 0.004218802581979572
+            }
+          },
+          "measuredDuration": 42.3144999999995
+        },
+        {
+          "document": "I need it delivered as s",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9587708772188153,
+            "probabilities": {
+              "0": 0.9748136192505844,
+              "1": 0.020518331604929052,
+              "2": 0.004668049144486628
+            }
+          },
+          "measuredDuration": 42.97416700000031
+        },
+        {
+          "document": "I need it delivered as so",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.9918433171848823,
+            "probabilities": {
+              "0": 0.9937466587914404,
+              "1": 0.004069434691178787,
+              "2": 0.0021839065173808953
+            }
+          },
+          "measuredDuration": 42.728667000000314
+        },
+        {
+          "document": "I need it delivered as soo",
+          "answer": {
+            "type": "choice",
+            "choice": "0",
+            "confidence": 0.927726823779932,
+            "probabilities": {
+              "0": 0.9544386788093789,
+              "1": 0.03578324167818597,
+              "2": 0.009778079512435004
+            }
+          },
+          "measuredDuration": 42.88816700000007
+        },
+        {
+          "document": "I need it delivered as soon",
           "answer": {
             "type": "choice",
             "choice": "1",
-            "confidence": 0.7411880904250928,
+            "confidence": 0.9908422793572471,
             "probabilities": {
-              "0": 0.018561549354815764,
-              "1": 0.8544344708743249,
-              "2": 0.12700397977085925
+              "0": 0.00012447112452929824,
+              "1": 0.9952972384899875,
+              "2": 0.004578290385483195
             }
           },
-          "measuredDuration": 42.30095799999981
+          "measuredDuration": 43.085792000000765
         },
         {
-          "document": "I need help with an invoic",
+          "document": "I need it delivered as soon ",
           "answer": {
             "type": "choice",
             "choice": "1",
-            "confidence": 0.8191041443517655,
+            "confidence": 0.9573872902199353,
             "probabilities": {
-              "0": 0.0031889503804062545,
-              "1": 0.906651555749318,
-              "2": 0.09015949387027557
+              "0": 0.0014658262522755188,
+              "1": 0.9772590502720303,
+              "2": 0.02127512347569425
             }
           },
-          "measuredDuration": 42.552208000000064
+          "measuredDuration": 42.353916999999456
         },
         {
-          "document": "I need help with an invoice",
+          "document": "I need it delivered as soon a",
           "answer": {
             "type": "choice",
             "choice": "1",
-            "confidence": 0.7331016382289843,
+            "confidence": 0.9903596061324818,
             "probabilities": {
-              "0": 0.005518628118842601,
-              "1": 0.861768647397721,
-              "2": 0.13271272448343652
+              "0": 0.00013052941237102865,
+              "1": 0.9950499028313431,
+              "2": 0.004819567756285852
             }
           },
-          "measuredDuration": 42.41229199999998
+          "measuredDuration": 41.76508400000057
         },
         {
-          "document": "W",
+          "document": "I need it delivered as soon as",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.8275632402483819,
+            "probabilities": {
+              "0": 0.008657219059294027,
+              "1": 0.9058708124664194,
+              "2": 0.08547196847428673
+            }
+          },
+          "measuredDuration": 41.75824999999986
+        },
+        {
+          "document": "I need it delivered as soon as ",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.8333616795178164,
+            "probabilities": {
+              "0": 0.022734186299247644,
+              "1": 0.8958408467708784,
+              "2": 0.08142496692987396
+            }
+          },
+          "measuredDuration": 41.58204099999966
+        },
+        {
+          "document": "I need it delivered as soon as p",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.9804255945190608,
+            "probabilities": {
+              "0": 0.00045906443674633405,
+              "1": 0.9897582257794975,
+              "2": 0.009782709783756241
+            }
+          },
+          "measuredDuration": 42.21062499999971
+        },
+        {
+          "document": "I need it delivered as soon as po",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.9874873026087454,
+            "probabilities": {
+              "0": 0.00014060221940775787,
+              "1": 0.993603928741477,
+              "2": 0.00625546903911532
+            }
+          },
+          "measuredDuration": 41.6855000000005
+        },
+        {
+          "document": "I need it delivered as soon as pos",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.9566213739979862,
+            "probabilities": {
+              "0": 0.0006656159374326458,
+              "1": 0.9776595078139659,
+              "2": 0.02167487624860149
+            }
+          },
+          "measuredDuration": 41.78020900000047
+        },
+        {
+          "document": "I need it delivered as soon as poss",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.9862732960515729,
+            "probabilities": {
+              "0": 0.00029564082062300266,
+              "1": 0.9928430362921733,
+              "2": 0.006861322887203659
+            }
+          },
+          "measuredDuration": 41.923541000000114
+        },
+        {
+          "document": "I need it delivered as soon as possi",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.9872026144289373,
+            "probabilities": {
+              "0": 0.00020216759239985387,
+              "1": 0.9934004332303837,
+              "2": 0.006397399177216395
+            }
+          },
+          "measuredDuration": 41.765166999999565
+        },
+        {
+          "document": "I need it delivered as soon as possib",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.9743133558748536,
+            "probabilities": {
+              "0": 0.0006221537731770896,
+              "1": 0.9865425146855311,
+              "2": 0.012835331541291855
+            }
+          },
+          "measuredDuration": 42.261625000000095
+        },
+        {
+          "document": "I need it delivered as soon as possibl",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.9606506486375277,
+            "probabilities": {
+              "0": 0.0017635233395760185,
+              "1": 0.9785964977289502,
+              "2": 0.01963997893147371
+            }
+          },
+          "measuredDuration": 42.1524159999999
+        },
+        {
+          "document": "I need it delivered as soon as possible",
+          "answer": {
+            "type": "choice",
+            "choice": "1",
+            "confidence": 0.9821934812005411,
+            "probabilities": {
+              "0": 0.00039932936961930725,
+              "1": 0.9907009665636147,
+              "2": 0.008899704066765803
+            }
+          },
+          "measuredDuration": 42.26787500000046
+        },
+        {
+          "document": "I p",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9974501430995119,
+            "confidence": 0.9747041246053029,
             "probabilities": {
-              "0": 0.9983681002009467,
-              "1": 0.0012744727563384307,
-              "2": 0.0003574270427148894
+              "0": 0.9819886276022799,
+              "1": 0.012579232328185832,
+              "2": 0.005432140069534172
             }
           },
-          "measuredDuration": 42.94024999999965
+          "measuredDuration": 41.7315839999992
         },
         {
-          "document": "We",
+          "document": "I pr",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9955654760556754,
+            "confidence": 0.9819007299247298,
             "probabilities": {
-              "0": 0.9972221375557998,
-              "1": 0.0022160162118771832,
-              "2": 0.0005618462323228706
+              "0": 0.9881633229936887,
+              "1": 0.009024182993271596,
+              "2": 0.0028124940130397308
             }
           },
-          "measuredDuration": 42.44737499999974
+          "measuredDuration": 42.22675000000072
         },
         {
-          "document": "We ",
+          "document": "I pre",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9958224257563028,
+            "confidence": 0.9850283478765223,
             "probabilities": {
-              "0": 0.9973647969863904,
-              "1": 0.0020876433863507666,
-              "2": 0.0005475596272588536
+              "0": 0.9899635143341502,
+              "1": 0.007466588256737751,
+              "2": 0.002569897409112076
             }
           },
-          "measuredDuration": 43.15883300000041
+          "measuredDuration": 41.92241699999977
         },
         {
-          "document": "We c",
+          "document": "I pref",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9965865066793076,
+            "confidence": 0.983791969612276,
             "probabilities": {
-              "0": 0.9979684971772543,
-              "1": 0.0017061914362236686,
-              "2": 0.0003253113865220892
+              "0": 0.9891548256269792,
+              "1": 0.008081619301573945,
+              "2": 0.0027635550714469126
             }
           },
-          "measuredDuration": 43.28641599999992
+          "measuredDuration": 41.85362500000065
         },
         {
-          "document": "We ca",
+          "document": "I prefe",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9959467013700902,
+            "confidence": 0.9747222205821762,
             "probabilities": {
-              "0": 0.9975694653921723,
-              "1": 0.002025829118852874,
-              "2": 0.00040470548897496495
+              "0": 0.9829422481537402,
+              "1": 0.012582325286219236,
+              "2": 0.004475426560040526
             }
           },
-          "measuredDuration": 42.02850000000035
+          "measuredDuration": 42.55095800000072
         },
         {
-          "document": "We can",
+          "document": "I prefer",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9977074877316116,
+            "confidence": 0.9864716319510306,
             "probabilities": {
-              "0": 0.9983867305832544,
-              "1": 0.0011457202030399922,
-              "2": 0.00046754921370547226
+              "0": 0.9911844290357672,
+              "1": 0.006750213566973322,
+              "2": 0.0020653573972594873
             }
           },
-          "measuredDuration": 41.861916999999266
+          "measuredDuration": 41.713042000000314
         },
         {
-          "document": "We cann",
+          "document": "I prefer ",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9964402936957161,
+            "confidence": 0.9878497358169336,
             "probabilities": {
-              "0": 0.9978165792014206,
-              "1": 0.0017791335802620786,
-              "2": 0.0004042872183173712
+              "0": 0.9923456798600596,
+              "1": 0.006065479675841455,
+              "2": 0.0015888404640989034
             }
           },
-          "measuredDuration": 41.78187500000058
+          "measuredDuration": 42.043416000000434
         },
         {
-          "document": "We canno",
+          "document": "I prefer t",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9968803551003058,
+            "confidence": 0.934901522715317,
             "probabilities": {
-              "0": 0.9980218008273266,
-              "1": 0.0015591688369222438,
-              "2": 0.00041903033575118974
+              "0": 0.9403290361981684,
+              "1": 0.03163674620358483,
+              "2": 0.028034217598246723
             }
           },
-          "measuredDuration": 41.72791700000016
+          "measuredDuration": 42.237333999999464
         },
         {
-          "document": "We cannot",
+          "document": "I prefer to",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9974483938849861,
+            "confidence": 0.9668095978219621,
             "probabilities": {
-              "0": 0.9983755483939946,
-              "1": 0.0012753576824118703,
-              "2": 0.00034909392359360673
+              "0": 0.9738111906932652,
+              "1": 0.01643330655919913,
+              "2": 0.009755502747535798
             }
           },
-          "measuredDuration": 41.813624999999774
+          "measuredDuration": 41.723165999999765
         },
         {
-          "document": "We cannot ",
+          "document": "I prefer to ",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9966058466133195,
+            "confidence": 0.9742510852034797,
             "probabilities": {
-              "0": 0.9977794702773447,
-              "1": 0.0016961868432603061,
-              "2": 0.0005243428793951495
+              "0": 0.9808180305922608,
+              "1": 0.012792192487516353,
+              "2": 0.006389776920222737
             }
           },
-          "measuredDuration": 41.95637499999975
+          "measuredDuration": 42.345917000000554
         },
         {
-          "document": "We cannot s",
+          "document": "I prefer to t",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9973649702953749,
+            "confidence": 0.9135657478522878,
             "probabilities": {
-              "0": 0.9983130680791283,
-              "1": 0.001317027497741165,
-              "2": 0.00036990442313051847
+              "0": 0.9199124977879822,
+              "1": 0.038535781882115656,
+              "2": 0.041551720329902044
             }
           },
-          "measuredDuration": 41.83808299999964
+          "measuredDuration": 41.75724999999966
         },
         {
-          "document": "We cannot si",
+          "document": "I prefer to ta",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9973800402025657,
+            "confidence": 0.8270564576974847,
             "probabilities": {
-              "0": 0.9982772265603397,
-              "1": 0.0013094384381737677,
-              "2": 0.0004133350014865861
+              "0": 0.8739196571414838,
+              "1": 0.04335779722666536,
+              "2": 0.08272254563185083
             }
           },
-          "measuredDuration": 41.823959000000286
+          "measuredDuration": 41.81987500000014
         },
         {
-          "document": "We cannot sig",
+          "document": "I prefer to tak",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9983345617293636,
+            "confidence": 0.9372607041608416,
             "probabilities": {
-              "0": 0.9989072254456862,
-              "1": 0.0008325024017163037,
-              "2": 0.00026027215259755626
+              "0": 0.9398155672818985,
+              "1": 0.03043646463447288,
+              "2": 0.029747968083628708
             }
           },
-          "measuredDuration": 41.74041699999998
+          "measuredDuration": 41.699000000000524
         },
         {
-          "document": "We cannot sign",
+          "document": "I prefer to take",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9907949523748423,
+            "confidence": 0.9692376740934421,
             "probabilities": {
-              "0": 0.9936305095307032,
-              "1": 0.004594353703342986,
-              "2": 0.0017751367659536402
+              "0": 0.9710918550391306,
+              "1": 0.015169852031025154,
+              "2": 0.013738292929844105
             }
           },
-          "measuredDuration": 41.767540999999255
+          "measuredDuration": 42.165250000000015
         },
         {
-          "document": "We cannot sign ",
+          "document": "I prefer to take ",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9743943845089578,
+            "confidence": 0.9787361071032515,
             "probabilities": {
-              "0": 0.9832075989863551,
-              "1": 0.01275106732729935,
-              "2": 0.0040413336863455015
+              "0": 0.9794799732412394,
+              "1": 0.01052568716502678,
+              "2": 0.009994339593733779
             }
           },
-          "measuredDuration": 41.871083
+          "measuredDuration": 41.415125000000444
         },
         {
-          "document": "We cannot sign i",
+          "document": "I prefer to take i",
+          "answer": {
+            "type": "choice",
+            "choice": "2",
+            "confidence": 0.7526050235856221,
+            "probabilities": {
+              "0": 0.12025937365123804,
+              "1": 0.027794538157413926,
+              "2": 0.8519460881913481
+            }
+          },
+          "measuredDuration": 41.44054099999994
+        },
+        {
+          "document": "I prefer to take it",
+          "answer": {
+            "type": "choice",
+            "choice": "2",
+            "confidence": 0.1581342045162676,
+            "probabilities": {
+              "0": 0.40395239423961726,
+              "1": 0.040340167265002114,
+              "2": 0.5557074384953806
+            }
+          },
+          "measuredDuration": 41.4882090000001
+        },
+        {
+          "document": "I prefer to take it ",
+          "answer": {
+            "type": "choice",
+            "choice": "2",
+            "confidence": 0.7140932180117808,
+            "probabilities": {
+              "0": 0.14002655156415456,
+              "1": 0.02047408186403654,
+              "2": 0.839499366571809
+            }
+          },
+          "measuredDuration": 42.1527500000002
+        },
+        {
+          "document": "I prefer to take it i",
+          "answer": {
+            "type": "choice",
+            "choice": "2",
+            "confidence": 0.7046001839888897,
+            "probabilities": {
+              "0": 0.14274061474766753,
+              "1": 0.03357682022185897,
+              "2": 0.8236825650304734
+            }
+          },
+          "measuredDuration": 42.62695799999983
+        },
+        {
+          "document": "I prefer to take it in",
+          "answer": {
+            "type": "choice",
+            "choice": "2",
+            "confidence": 0.9945057278415138,
+            "probabilities": {
+              "0": 0.0027443376361358874,
+              "1": 0.0010186765513173627,
+              "2": 0.9962369858125468
+            }
+          },
+          "measuredDuration": 42.17070899999999
+        },
+        {
+          "document": "I prefer to take it in ",
+          "answer": {
+            "type": "choice",
+            "choice": "2",
+            "confidence": 0.9771224974082482,
+            "probabilities": {
+              "0": 0.011404973976915053,
+              "1": 0.002952885160901861,
+              "2": 0.985642140862183
+            }
+          },
+          "measuredDuration": 42.52679199999966
+        },
+        {
+          "document": "I prefer to take it in p",
+          "answer": {
+            "type": "choice",
+            "choice": "2",
+            "confidence": 0.9896924172695903,
+            "probabilities": {
+              "0": 0.005129059458315199,
+              "1": 0.0047987792165221504,
+              "2": 0.9900721613251627
+            }
+          },
+          "measuredDuration": 42.3212080000003
+        },
+        {
+          "document": "I prefer to take it in pe",
+          "answer": {
+            "type": "choice",
+            "choice": "2",
+            "confidence": 0.9995165826441356,
+            "probabilities": {
+              "0": 0.00024168378113769914,
+              "1": 0.00010300331254735252,
+              "2": 0.9996553129063149
+            }
+          },
+          "measuredDuration": 42.59174999999959
+        },
+        {
+          "document": "I prefer to take it in per",
+          "answer": {
+            "type": "choice",
+            "choice": "2",
+            "confidence": 0.8257396073695824,
+            "probabilities": {
+              "0": 0.0866902465480094,
+              "1": 0.005049337494980152,
+              "2": 0.9082604159570103
+            }
+          },
+          "measuredDuration": 42.796040999999605
+        },
+        {
+          "document": "I prefer to take it in pers",
           "answer": {
             "type": "choice",
             "choice": "0",
-            "confidence": 0.9990814604136491,
+            "confidence": 0.07641078642201213,
             "probabilities": {
-              "0": 0.9993930500277814,
-              "1": 0.0004592019369658437,
-              "2": 0.00014774803525270175
+              "0": 0.49589275037819325,
+              "1": 0.07861802086443222,
+              "2": 0.4254892287573746
             }
           },
-          "measuredDuration": 41.76887500000066
+          "measuredDuration": 42.21600000000035
         },
         {
-          "document": "We cannot sign in",
+          "document": "I prefer to take it in perso",
           "answer": {
             "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999142727879919,
+            "choice": "2",
+            "confidence": 0.999522220570129,
             "probabilities": {
-              "0": 0.9999563114076937,
-              "1": 0.00004286357064060399,
-              "2": 8.250216656631463e-7
+              "0": 0.0002388649529170575,
+              "1": 0.0001036546025743323,
+              "2": 0.9996574804445085
             }
           },
-          "measuredDuration": 41.737833999999566
+          "measuredDuration": 42.80424999999923
         },
         {
-          "document": "We cannot sign in ",
+          "document": "I prefer to take it in person",
           "answer": {
             "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999319337496637,
+            "choice": "2",
+            "confidence": 0.999964384490464,
             "probabilities": {
-              "0": 0.9999652512476837,
-              "1": 0.000034033100812303286,
-              "2": 7.156515039094164e-7
+              "0": 0.00001780767198128302,
+              "1": 0.0000046489144047951435,
+              "2": 0.9999775434136139
             }
           },
-          "measuredDuration": 41.747417000000496
-        },
-        {
-          "document": "We cannot sign in t",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9998825771940937,
-            "probabilities": {
-              "0": 0.999939586264364,
-              "1": 0.00005871130300097434,
-              "2": 0.0000017024326348506278
-            }
-          },
-          "measuredDuration": 41.807207999999264
-        },
-        {
-          "document": "We cannot sign in to",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999289609040523,
-            "probabilities": {
-              "0": 0.9999637951082558,
-              "1": 0.00003551952362991201,
-              "2": 6.853681143211103e-7
-            }
-          },
-          "measuredDuration": 41.95258399999966
-        },
-        {
-          "document": "We cannot sign in to ",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999490127623213,
-            "probabilities": {
-              "0": 0.9999739674169494,
-              "1": 0.000025493605098857432,
-              "2": 5.389779517639189e-7
-            }
-          },
-          "measuredDuration": 41.728291000000354
-        },
-        {
-          "document": "We cannot sign in to o",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.999911433722948,
-            "probabilities": {
-              "0": 0.9999547689896578,
-              "1": 0.000044283096549413425,
-              "2": 9.479137927657781e-7
-            }
-          },
-          "measuredDuration": 41.680875000000015
-        },
-        {
-          "document": "We cannot sign in to ou",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999316427834246,
-            "probabilities": {
-              "0": 0.9999651798074843,
-              "1": 0.00003417858635847153,
-              "2": 6.416061572596346e-7
-            }
-          },
-          "measuredDuration": 41.88729200000034
-        },
-        {
-          "document": "We cannot sign in to our",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999471739020177,
-            "probabilities": {
-              "0": 0.9999731482626811,
-              "1": 0.000026413037403747227,
-              "2": 4.386999150304345e-7
-            }
-          },
-          "measuredDuration": 43.3715000000002
-        },
-        {
-          "document": "We cannot sign in to our ",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999499512615465,
-            "probabilities": {
-              "0": 0.9999745419483139,
-              "1": 0.00002502435837382486,
-              "2": 4.3369331223337945e-7
-            }
-          },
-          "measuredDuration": 42.5555830000003
-        },
-        {
-          "document": "We cannot sign in to our a",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999442742109437,
-            "probabilities": {
-              "0": 0.9999716154283714,
-              "1": 0.00002786287999234506,
-              "2": 5.216916360227256e-7
-            }
-          },
-          "measuredDuration": 43.382416999999805
-        },
-        {
-          "document": "We cannot sign in to our ac",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999579390898532,
-            "probabilities": {
-              "0": 0.9999786735114939,
-              "1": 0.000021030448847536785,
-              "2": 2.960396585261102e-7
-            }
-          },
-          "measuredDuration": 42.24641699999938
-        },
-        {
-          "document": "We cannot sign in to our acc",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.999961670259057,
-            "probabilities": {
-              "0": 0.9999805743443277,
-              "1": 0.000019164865473472774,
-              "2": 2.6079019886071695e-7
-            }
-          },
-          "measuredDuration": 42.069375000000036
-        },
-        {
-          "document": "We cannot sign in to our acco",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999728103739837,
-            "probabilities": {
-              "0": 0.9999862221663369,
-              "1": 0.000013594810519986892,
-              "2": 1.8302314293013161e-7
-            }
-          },
-          "measuredDuration": 42.27116600000045
-        },
-        {
-          "document": "We cannot sign in to our accou",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999658013916884,
-            "probabilities": {
-              "0": 0.9999826753724153,
-              "1": 0.000017099300302860097,
-              "2": 2.2532728202387625e-7
-            }
-          },
-          "measuredDuration": 42.08520899999985
-        },
-        {
-          "document": "We cannot sign in to our accoun",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.99996377482226,
-            "probabilities": {
-              "0": 0.9999816559224589,
-              "1": 0.000018112584677106466,
-              "2": 2.3149286407800591e-7
-            }
-          },
-          "measuredDuration": 42.06225000000086
-        },
-        {
-          "document": "We cannot sign in to our account",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999632222258933,
-            "probabilities": {
-              "0": 0.9999813671831621,
-              "1": 0.000018388882567669474,
-              "2": 2.439342700203529e-7
-            }
-          },
-          "measuredDuration": 42.153417000000445
-        },
-        {
-          "document": "We cannot sign in to our accounts",
-          "answer": {
-            "type": "choice",
-            "choice": "0",
-            "confidence": 0.9999550069611722,
-            "probabilities": {
-              "0": 0.9999771814844184,
-              "1": 0.00002249651216990134,
-              "2": 3.2200341158892283e-7
-            }
-          },
-          "measuredDuration": 42.2309580000001
+          "measuredDuration": 43.62487500000043
         }
       ]
     },
@@ -1336,11 +1420,11 @@
       "input": {
         "type": "score",
         "document": "",
-        "instruction": "How much is the issue affecting the customer's work?",
+        "instruction": "How positive is this review?",
         "criteria": [
-          "No interruption to work",
-          "Some tasks are slower or harder",
-          "The customer cannot continue their work"
+          "Negative",
+          "Mixed",
+          "Positive"
         ]
       },
       "frames": [
@@ -1348,1499 +1432,617 @@
           "document": "",
           "answer": {
             "type": "score",
-            "score": 1.8958927939424612,
-            "confidence": 0.7202583221957035,
+            "score": 1.9966064874749878,
+            "confidence": 0.8687655174116167,
             "probabilities": [
-              0.046434861375684304,
-              0.011237483306170297,
-              0.9423276553181454
+              0.00043341827497985375,
+              0.002526675975052506,
+              0.9970399057499677
             ]
           },
-          "measuredDuration": 42.92941599999995
+          "measuredDuration": 43.124541999999565
         },
         {
           "document": "T",
           "answer": {
             "type": "score",
-            "score": 1.8415051343289899,
-            "confidence": 0.8177044294339836,
+            "score": 1.9827594602254506,
+            "confidence": 0.2702633356170392,
             "probabilities": [
-              0.07175077190054649,
-              0.01499332186991708,
-              0.9132559062295365
+              0.005383636867508582,
+              0.006473266039532277,
+              0.9881430970929591
             ]
           },
-          "measuredDuration": 42.91216600000007
+          "measuredDuration": 41.12012499999946
         },
         {
           "document": "Th",
           "answer": {
             "type": "score",
-            "score": 1.7721626265260566,
-            "confidence": 0.7867302203167624,
+            "score": 1.9596893571499268,
+            "confidence": 0.09492770599766631,
             "probabilities": [
-              0.10518433394609847,
-              0.0174687055817466,
-              0.877346960472155
+              0.012229260437077406,
+              0.01585212197591834,
+              0.9719186175870043
             ]
           },
-          "measuredDuration": 42.714458999999806
+          "measuredDuration": 41.45533299999988
         },
         {
           "document": "The",
           "answer": {
             "type": "score",
-            "score": 1.9845018100166132,
-            "confidence": 0.9800290647952138,
+            "score": 1.9777105055983433,
+            "confidence": 0.30465441164695883,
             "probabilities": [
-              0.0073212411997887255,
-              0.0008557075838095149,
-              0.9918230512164018
+              0.00507051017481274,
+              0.012148474052030888,
+              0.9827810157731562
             ]
           },
-          "measuredDuration": 42.77674999999999
+          "measuredDuration": 40.949375000000146
         },
         {
           "document": "The ",
           "answer": {
             "type": "score",
-            "score": 1.9908619393686928,
-            "confidence": 0.9871463868503662,
+            "score": 1.9856162746220904,
+            "confidence": 0.4753316681969634,
             "probabilities": [
-              0.00436186459095204,
-              0.00041433144940329365,
-              0.9952238039596447
+              0.0035995484439680656,
+              0.007184628489973414,
+              0.9892158230660585
             ]
           },
-          "measuredDuration": 42.951875000000655
+          "measuredDuration": 41.38570900000013
         },
         {
-          "document": "The l",
+          "document": "The f",
           "answer": {
             "type": "score",
-            "score": 1.9431054676594508,
-            "confidence": 0.9367670928843822,
+            "score": 1.6563621580760135,
+            "confidence": 0.016257240238707893,
             "probabilities": [
-              0.025749067626770174,
-              0.005396397087008849,
-              0.968854535286221
+              0.14332351858703452,
+              0.05699080474991732,
+              0.7996856766630481
             ]
           },
-          "measuredDuration": 44.55550000000039
+          "measuredDuration": 41.20862500000021
         },
         {
-          "document": "The lo",
+          "document": "The fo",
           "answer": {
             "type": "score",
-            "score": 1.9408188488485947,
-            "confidence": 0.9005207548144922,
+            "score": 1.4464976618005947,
+            "confidence": 0.017375736452394763,
             "probabilities": [
-              0.027092305544854072,
-              0.004996540061697132,
-              0.9679111543934488
+              0.23740839826377533,
+              0.07868554167185449,
+              0.6839060600643702
             ]
           },
-          "measuredDuration": 43.13520799999969
+          "measuredDuration": 41.578959000000395
         },
         {
-          "document": "The log",
+          "document": "The foo",
           "answer": {
             "type": "score",
-            "score": 1.999978242521748,
-            "confidence": 0.9999787621134096,
+            "score": 1.3156934937287126,
+            "confidence": 0.005117173191021895,
             "probabilities": [
-              0.000010842953881759288,
-              7.157048834502572e-8,
-              0.9999890854756298
+              0.2859756035702134,
+              0.11235529913086074,
+              0.6016690972989259
             ]
           },
-          "measuredDuration": 44.556249999999636
+          "measuredDuration": 42.57466699999986
         },
         {
-          "document": "The logo",
+          "document": "The food",
           "answer": {
             "type": "score",
-            "score": 0.044213030687203704,
-            "confidence": 0.46728361069707736,
+            "score": 1.9686684587217271,
+            "confidence": 0.18101619371039301,
             "probabilities": [
-              0.9767486935583252,
-              0.0022895821961459112,
-              0.020961724245528897
+              0.008936552502069272,
+              0.01345843627413428,
+              0.9776050112237964
             ]
           },
-          "measuredDuration": 43.369833000000654
+          "measuredDuration": 42.15650000000005
         },
         {
-          "document": "The logo ",
+          "document": "The food ",
           "answer": {
             "type": "score",
-            "score": 0.03253774741373689,
-            "confidence": 0.8199192889110066,
+            "score": 1.8935010127371854,
+            "confidence": 0.0456539390723848,
             "probabilities": [
-              0.9830757038114128,
-              0.0013108449634374692,
-              0.015613451225149712
+              0.038008237036900504,
+              0.030482513189013453,
+              0.931509249774086
             ]
           },
-          "measuredDuration": 43.26487500000076
+          "measuredDuration": 41.20591700000023
         },
         {
-          "document": "The logo i",
+          "document": "The food w",
           "answer": {
             "type": "score",
-            "score": 0.023565788767763187,
-            "confidence": 0.8297296131974154,
+            "score": 1.1893350388162616,
+            "confidence": 0.005035436336647048,
             "probabilities": [
-              0.9874154427621967,
-              0.0016033257078436854,
-              0.01098123152995975
+              0.3573220352357814,
+              0.09602089071217572,
+              0.5466570740520429
             ]
           },
-          "measuredDuration": 42.63929100000041
+          "measuredDuration": 41.55058300000019
         },
         {
-          "document": "The logo is",
+          "document": "The food wa",
           "answer": {
             "type": "score",
-            "score": 0.18351667348395814,
-            "confidence": 0.09407916545074413,
+            "score": 1.2000047531258788,
+            "confidence": 0.010361455646924478,
             "probabilities": [
-              0.9070228771649715,
-              0.0024375721860990895,
-              0.09053955064892953
+              0.3484304977385463,
+              0.10313425139702857,
+              0.5484352508644251
             ]
           },
-          "measuredDuration": 43.16587499999969
+          "measuredDuration": 41.01820899999984
         },
         {
-          "document": "The logo is ",
+          "document": "The food was",
           "answer": {
             "type": "score",
-            "score": 0.16413475980294892,
-            "confidence": 0.1855857632347795,
+            "score": 1.2468226267607854,
+            "confidence": 0.0006925298184208284,
             "probabilities": [
-              0.9170397040044628,
-              0.0017858321881253929,
-              0.08117446380741176
+              0.3136874888304883,
+              0.12580239557823797,
+              0.5605101155912737
             ]
           },
-          "measuredDuration": 43.07000000000062
+          "measuredDuration": 41.40400000000045
         },
         {
-          "document": "The logo is b",
+          "document": "The food was ",
           "answer": {
             "type": "score",
-            "score": 0.13471747168792422,
-            "confidence": 0.04777651669780825,
+            "score": 1.2341750888087069,
+            "confidence": 0.0012900737195410406,
             "probabilities": [
-              0.9310832893781487,
-              0.0031159495557785744,
-              0.06580076106607283
+              0.31847732465823747,
+              0.12887026187481815,
+              0.5526524134669444
             ]
           },
-          "measuredDuration": 43.160375000000386
+          "measuredDuration": 41.057166999999936
         },
         {
-          "document": "The logo is bl",
+          "document": "The food was a",
           "answer": {
             "type": "score",
-            "score": 0.15702322731355914,
-            "confidence": 0.019613263361888067,
+            "score": 1.6100324730993298,
+            "confidence": 0.006297377950364669,
             "probabilities": [
-              0.9203427004792887,
-              0.0022913717278635853,
-              0.07736592779284777
+              0.13020337941214624,
+              0.12956076807637767,
+              0.7402358525114761
             ]
           },
-          "measuredDuration": 42.73020899999938
+          "measuredDuration": 41.01337500000045
         },
         {
-          "document": "The logo is blu",
+          "document": "The food was am",
           "answer": {
             "type": "score",
-            "score": 0.03889798561161394,
-            "confidence": 0.2520538539199748,
+            "score": 1.0453576680885428,
+            "confidence": 0.0696647735694198,
             "probabilities": [
-              0.9798451711603821,
-              0.0014116720676221098,
-              0.018743156771995916
+              0.3766651967681726,
+              0.2013119383751122,
+              0.4220228648567153
             ]
           },
-          "measuredDuration": 42.98424999999952
+          "measuredDuration": 42.05962499999987
         },
         {
-          "document": "The logo is blur",
+          "document": "The food was ama",
           "answer": {
             "type": "score",
-            "score": 1.6995561677806235,
-            "confidence": 0.00043980177814229027,
+            "score": 1.7438625698133312,
+            "confidence": 0.23269148788205918,
             "probabilities": [
-              0.14935410466992413,
-              0.0017356228795281997,
-              0.8489102724505476
+              0.042113944442151836,
+              0.17190954130236527,
+              0.785976514255483
             ]
           },
-          "measuredDuration": 42.94562500000029
+          "measuredDuration": 41.823207999999795
         },
         {
-          "document": "The logo is blurr",
+          "document": "The food was amaz",
           "answer": {
             "type": "score",
-            "score": 1.6293972235970149,
-            "confidence": 0.0004119794795591769,
+            "score": 1.999995997439635,
+            "confidence": 0.993752679805962,
             "probabilities": [
-              0.1834100826325315,
-              0.0037826111379222487,
-              0.8128073062295463
+              3.655914040748387e-7,
+              0.000003271377557184938,
+              0.9999963630310389
             ]
           },
-          "measuredDuration": 42.90849999999955
+          "measuredDuration": 41.577790999999706
         },
         {
-          "document": "The logo is blurry",
+          "document": "The food was amazi",
           "answer": {
             "type": "score",
-            "score": 1.1945035691356183,
-            "confidence": 0.0004848914932065185,
+            "score": 1.9999949380967954,
+            "confidence": 0.9919738566929153,
             "probabilities": [
-              0.3963442889253801,
-              0.012807853013621456,
-              0.5908478580609984
+              4.274905671686686e-7,
+              0.000004206922070204053,
+              0.9999953655873626
             ]
           },
-          "measuredDuration": 42.699249999999665
+          "measuredDuration": 41.74229099999957
         },
         {
-          "document": "The logo is blurry.",
+          "document": "The food was amazin",
           "answer": {
             "type": "score",
-            "score": 0.8343086732760948,
-            "confidence": 0.0005538052756601797,
+            "score": 1.9999990975498434,
+            "confidence": 0.996541214067112,
             "probabilities": [
-              0.5617238689170041,
-              0.04224358888989685,
-              0.39603254219309897
+              8.567081835373021e-8,
+              7.311085199212004e-7,
+              0.9999991832206617
             ]
           },
-          "measuredDuration": 43.18133399999988
+          "measuredDuration": 42.643958999999995
         },
         {
-          "document": "The logo is blurry. ",
+          "document": "The food was amazing",
           "answer": {
             "type": "score",
-            "score": 0.5305739590911357,
-            "confidence": 0.0007155383028495388,
+            "score": 1.9999997094884872,
+            "confidence": 0.9969399024461997,
             "probabilities": [
-              0.7132720047326907,
-              0.04288203144348292,
-              0.2438459638238264
+              3.525921481520836e-8,
+              2.1999308326171824e-7,
+              0.9999997447477019
             ]
           },
-          "measuredDuration": 42.33954199999971
+          "measuredDuration": 41.90391600000112
         },
         {
-          "document": "The logo is blurry. E",
+          "document": "The food was amazing,",
           "answer": {
             "type": "score",
-            "score": 1.840988305645133,
-            "confidence": 0.0011149949349059662,
+            "score": 1.9999996840048704,
+            "confidence": 0.9941946135510734,
             "probabilities": [
-              0.07575029201420419,
-              0.007511110326458659,
-              0.9167385976593372
+              3.978434526579245e-8,
+              2.364264391179359e-7,
+              0.9999997237892156
             ]
           },
-          "measuredDuration": 43.48612500000036
+          "measuredDuration": 41.905791999999565
         },
         {
-          "document": "The logo is blurry. Ev",
+          "document": "The food was amazing, ",
           "answer": {
             "type": "score",
-            "score": 1.331650456950703,
-            "confidence": 0.00033781883014716296,
+            "score": 1.9999996735722576,
+            "confidence": 0.9967937845236213,
             "probabilities": [
-              0.3289870193862462,
-              0.010375504276804533,
-              0.6606374763369492
+              3.818209876088676e-8,
+              2.500635448582464e-7,
+              0.9999997117543564
             ]
           },
-          "measuredDuration": 42.943083000000115
+          "measuredDuration": 41.49766699999964
         },
         {
-          "document": "The logo is blurry. Eve",
+          "document": "The food was amazing, b",
           "answer": {
             "type": "score",
-            "score": 1.9885880065674018,
-            "confidence": 0.007761917753029923,
+            "score": 1.9999983766498386,
+            "confidence": 0.9862831910894798,
             "probabilities": [
-              0.005237858162469948,
-              0.0009362771076582117,
-              0.9938258647298718
+              1.5957685521448277e-7,
+              0.0000013041964509792893,
+              0.9999985362266938
             ]
           },
-          "measuredDuration": 43.1205829999999
+          "measuredDuration": 41.476167000000714
         },
         {
-          "document": "The logo is blurry. Ever",
+          "document": "The food was amazing, bu",
           "answer": {
             "type": "score",
-            "score": 1.3960168861876998,
-            "confidence": 0.00044407906616306114,
+            "score": 1.999997326886893,
+            "confidence": 0.9794420574699624,
             "probabilities": [
-              0.2849884903056722,
-              0.034006133200955836,
-              0.681005376493372
+              2.4840229920625623e-7,
+              0.000002176308508508751,
+              0.9999975752891922
             ]
           },
-          "measuredDuration": 42.99595799999952
+          "measuredDuration": 41.51658399999906
         },
         {
-          "document": "The logo is blurry. Every",
+          "document": "The food was amazing, but",
           "answer": {
             "type": "score",
-            "score": 1.999953422062195,
-            "confidence": 0.9669491797413136,
+            "score": 1.999723292814418,
+            "confidence": 0.9434706469315745,
             "probabilities": [
-              0.000023244872397962653,
-              8.819300876702435e-8,
-              0.9999766669345932
+              0.000006657734235155282,
+              0.00026339171711195865,
+              0.999729950548653
             ]
           },
-          "measuredDuration": 43.19508299999961
+          "measuredDuration": 41.30133299999943
         },
         {
-          "document": "The logo is blurry. Everyt",
+          "document": "The food was amazing, but ",
           "answer": {
             "type": "score",
-            "score": 1.9796085917964512,
-            "confidence": 0.0028099364273614924,
+            "score": 1.9590437424471792,
+            "confidence": 0.9930094201168114,
             "probabilities": [
-              0.008574026172468474,
-              0.0032433558586119015,
-              0.9881826179689197
+              0.000011064510317416152,
+              0.040934128532186045,
+              0.9590548069574966
             ]
           },
-          "measuredDuration": 43.177999999999884
+          "measuredDuration": 41.80204100000083
         },
         {
-          "document": "The logo is blurry. Everyth",
+          "document": "The food was amazing, but w",
           "answer": {
             "type": "score",
-            "score": 1.9998110280102874,
-            "confidence": 0.29461732229983195,
+            "score": 1.9704127969642216,
+            "confidence": 0.9784241418321317,
             "probabilities": [
-              0.00008843604693784318,
-              0.000012099895837019116,
-              0.9998994640572252
+              0.000012636451547018346,
+              0.029561930132684638,
+              0.9704254334157685
             ]
           },
-          "measuredDuration": 43.20545800000036
+          "measuredDuration": 41.44945800000096
         },
         {
-          "document": "The logo is blurry. Everythi",
+          "document": "The food was amazing, but we",
           "answer": {
             "type": "score",
-            "score": 1.9985100919157717,
-            "confidence": 0.060464367737381286,
+            "score": 1.9999071368722976,
+            "confidence": 0.9713307623645759,
             "probabilities": [
-              0.0006482521705837257,
-              0.00019340374306121632,
-              0.9991583440863552
+              0.0000032662646020156236,
+              0.00008633059849836086,
+              0.9999104031368996
             ]
           },
-          "measuredDuration": 43.363499999999476
+          "measuredDuration": 42.05308299999888
         },
         {
-          "document": "The logo is blurry. Everythin",
+          "document": "The food was amazing, but we ",
           "answer": {
             "type": "score",
-            "score": 1.9991592342667197,
-            "confidence": 0.06870585556411912,
+            "score": 1.996146667504913,
+            "confidence": 0.972359896061102,
             "probabilities": [
-              0.0003876641417082012,
-              0.00006543744986408499,
-              0.9995468984084278
+              0.0000581960643337034,
+              0.00373694036641921,
+              0.996204863569247
             ]
           },
-          "measuredDuration": 43.06233299999985
+          "measuredDuration": 41.58104200000162
         },
         {
-          "document": "The logo is blurry. Everything",
+          "document": "The food was amazing, but we w",
           "answer": {
             "type": "score",
-            "score": 1.9996235233958934,
-            "confidence": 0.24664122376551423,
+            "score": 1.9993453159320649,
+            "confidence": 0.9380454232756511,
             "probabilities": [
-              0.00018587904249829803,
-              0.000004718519110103405,
-              0.9998094024383917
+              0.00000910073843994211,
+              0.0006364825910552456,
+              0.9993544166705048
             ]
           },
-          "measuredDuration": 43.11041699999987
+          "measuredDuration": 42.415375000000495
         },
         {
-          "document": "The logo is blurry. Everything ",
+          "document": "The food was amazing, but we wa",
           "answer": {
             "type": "score",
-            "score": 1.9916839193575326,
-            "confidence": 0.019349548675622108,
+            "score": 1.9991614210983668,
+            "confidence": 0.9343290398901958,
             "probabilities": [
-              0.003935561366992355,
-              0.00044495790848269,
-              0.995619480724525
+              0.00001163274949340119,
+              0.0008153134026465364,
+              0.9991730538478601
             ]
           },
-          "measuredDuration": 43.091333000000304
+          "measuredDuration": 41.59587499999907
         },
         {
-          "document": "The logo is blurry. Everything s",
+          "document": "The food was amazing, but we wai",
           "answer": {
             "type": "score",
-            "score": 1.9998088381703216,
-            "confidence": 0.4160286983419219,
+            "score": 1.977045599027389,
+            "confidence": 0.9512392952201626,
             "probabilities": [
-              0.00009351147660620792,
-              0.0000041388764661112945,
-              0.9999023496469277
+              0.000018189194820477474,
+              0.02291802258297037,
+              0.9770637882222093
             ]
           },
-          "measuredDuration": 43.0731250000008
+          "measuredDuration": 42.097667
         },
         {
-          "document": "The logo is blurry. Everything st",
+          "document": "The food was amazing, but we wait",
           "answer": {
             "type": "score",
-            "score": 1.999895601041989,
-            "confidence": 0.5527569154365379,
+            "score": 1.0532675512318355,
+            "confidence": 0.9995166283398979,
             "probabilities": [
-              0.00005171182035177254,
-              9.753173074153318e-7,
-              0.9999473128623408
+              0.000008302168536638673,
+              0.9467158444310912,
+              0.053275853400372074
             ]
           },
-          "measuredDuration": 43.02404100000058
+          "measuredDuration": 42.05116699999962
         },
         {
-          "document": "The logo is blurry. Everything sti",
+          "document": "The food was amazing, but we waite",
           "answer": {
             "type": "score",
-            "score": 1.9995670588107526,
-            "confidence": 0.24081467967767067,
+            "score": 1.272240033036978,
+            "confidence": 0.9971786171770748,
             "probabilities": [
-              0.00021131926213687095,
-              0.000010302664973733418,
-              0.9997783780728894
+              0.000014447966417393511,
+              0.7277310710301872,
+              0.27225448100339544
             ]
           },
-          "measuredDuration": 42.873499999999694
+          "measuredDuration": 41.98320799999965
         },
         {
-          "document": "The logo is blurry. Everything stil",
+          "document": "The food was amazing, but we waited",
           "answer": {
             "type": "score",
-            "score": 1.9964709931082496,
-            "confidence": 0.04802496217162289,
+            "score": 1.0181758829090293,
+            "confidence": 0.9998914721780479,
             "probabilities": [
-              0.001681596902915945,
-              0.00016581308591870139,
-              0.9981525900111654
+              0.0000029358420864246425,
+              0.9818182454067981,
+              0.018178818751115575
             ]
           },
-          "measuredDuration": 43.31333300000006
+          "measuredDuration": 41.4067500000001
         },
         {
-          "document": "The logo is blurry. Everything still",
+          "document": "The food was amazing, but we waited ",
           "answer": {
             "type": "score",
-            "score": 1.4256944783382017,
-            "confidence": 0.0005648804890737713,
+            "score": 1.0234952303809703,
+            "confidence": 0.9998233309338266,
             "probabilities": [
-              0.2704850677190261,
-              0.03333538622374615,
-              0.6961795460572278
+              0.000005084206563832414,
+              0.9764946012059019,
+              0.02350031458753423
             ]
           },
-          "measuredDuration": 43.17279099999905
+          "measuredDuration": 41.62091700000019
         },
         {
-          "document": "The logo is blurry. Everything still ",
+          "document": "The food was amazing, but we waited a",
           "answer": {
             "type": "score",
-            "score": 1.3279210284862213,
-            "confidence": 0.0006272602658090598,
+            "score": 1.6212146144171795,
+            "confidence": 0.9943854323550886,
             "probabilities": [
-              0.3159378268102009,
-              0.040203317893376986,
-              0.6438588552964222
+              0.000021354842302054218,
+              0.3787426758982165,
+              0.6212359692594815
             ]
           },
-          "measuredDuration": 43.29658299999937
+          "measuredDuration": 41.650542000001224
         },
         {
-          "document": "The logo is blurry. Everything still w",
+          "document": "The food was amazing, but we waited an",
           "answer": {
             "type": "score",
-            "score": 1.9945122379969042,
-            "confidence": 0.01979137730245717,
+            "score": 1.372970723698327,
+            "confidence": 0.9971379083633892,
             "probabilities": [
-              0.0024469243987190483,
-              0.0005939132056578091,
-              0.9969591623956232
+              0.000020502027477882035,
+              0.6269882722467173,
+              0.37299122572580484
             ]
           },
-          "measuredDuration": 43.13812499999949
+          "measuredDuration": 41.361041000000114
         },
         {
-          "document": "The logo is blurry. Everything still wo",
+          "document": "The food was amazing, but we waited an ",
           "answer": {
             "type": "score",
-            "score": 1.999409381314272,
-            "confidence": 0.30498186211770695,
+            "score": 1.1034492255165735,
+            "confidence": 0.9992033035329736,
             "probabilities": [
-              0.00027213265842531326,
-              0.00004635336887735574,
-              0.9996815139726973
+              0.000020411494518581217,
+              0.8965099514943895,
+              0.10346963701109206
             ]
           },
-          "measuredDuration": 43.62791700000162
+          "measuredDuration": 41.711584000000585
         },
         {
-          "document": "The logo is blurry. Everything still wor",
+          "document": "The food was amazing, but we waited an h",
           "answer": {
             "type": "score",
-            "score": 0.31607345902592254,
-            "confidence": 0.010065403008131857,
+            "score": 1.0254737306923802,
+            "confidence": 0.9999424770947145,
             "probabilities": [
-              0.8321681448268776,
-              0.019590251320322025,
-              0.14824160385280025
+              0.0000010024586261318652,
+              0.9745242643903673,
+              0.02547473315100641
             ]
           },
-          "measuredDuration": 44.602624999999534
+          "measuredDuration": 41.71937500000058
         },
         {
-          "document": "The logo is blurry. Everything still work",
+          "document": "The food was amazing, but we waited an ho",
           "answer": {
             "type": "score",
-            "score": 0.07286589412220444,
-            "confidence": 0.9902197500295785,
+            "score": 1.0655273381800832,
+            "confidence": 0.9996277958457367,
             "probabilities": [
-              0.9623818877372927,
-              0.002370330403209947,
-              0.03524778185949725
+              0.000006707700077550623,
+              0.9344592464197613,
+              0.06553404588016096
             ]
           },
-          "measuredDuration": 44.916833000001134
+          "measuredDuration": 42.097915999998804
         },
         {
-          "document": "The logo is blurry. Everything still works",
+          "document": "The food was amazing, but we waited an hou",
           "answer": {
             "type": "score",
-            "score": 0.042755772274009694,
-            "confidence": 0.9758645697708519,
+            "score": 1.022197417571586,
+            "confidence": 0.9999257803297944,
             "probabilities": [
-              0.9774129857111631,
-              0.002418256303664155,
-              0.02016875798517277
+              0.0000012173211793963433,
+              0.9778001477860551,
+              0.022198634892765443
             ]
           },
-          "measuredDuration": 43.57487500000025
+          "measuredDuration": 41.88537499999984
         },
         {
-          "document": "The a",
+          "document": "The food was amazing, but we waited an hour",
           "answer": {
             "type": "score",
-            "score": 1.9136304231275814,
-            "confidence": 0.9226096472338775,
+            "score": 1.005943519712512,
+            "confidence": 0.9999916056119699,
             "probabilities": [
-              0.0393347714989799,
-              0.007700033874458501,
-              0.9529651946265615
+              1.2318865921823032e-7,
+              0.9940562339101694,
+              0.005943642901171282
             ]
           },
-          "measuredDuration": 44.409332999999606
-        },
-        {
-          "document": "The ap",
-          "answer": {
-            "type": "score",
-            "score": 1.9845527436616053,
-            "confidence": 0.9862021610580256,
-            "probabilities": [
-              0.007055711920220738,
-              0.0013358324979533256,
-              0.991608455581826
-            ]
-          },
-          "measuredDuration": 44.76604199999929
-        },
-        {
-          "document": "The app",
-          "answer": {
-            "type": "score",
-            "score": 0.13798726898179065,
-            "confidence": 0.6922459106010409,
-            "probabilities": [
-              0.9308565146691904,
-              0.00029970167982860046,
-              0.06884378365098102
-            ]
-          },
-          "measuredDuration": 43.6122090000008
-        },
-        {
-          "document": "The app ",
-          "answer": {
-            "type": "score",
-            "score": 0.15855012848740296,
-            "confidence": 0.9332677088993975,
-            "probabilities": [
-              0.9205249818903536,
-              0.00039990773188957864,
-              0.07907511037775669
-            ]
-          },
-          "measuredDuration": 43.020166999998764
-        },
-        {
-          "document": "The app i",
-          "answer": {
-            "type": "score",
-            "score": 0.06864671243636437,
-            "confidence": 0.8885100640657145,
-            "probabilities": [
-              0.9651364375742769,
-              0.0010804124150820718,
-              0.03378315001064115
-            ]
-          },
-          "measuredDuration": 42.981667000000016
-        },
-        {
-          "document": "The app is",
-          "answer": {
-            "type": "score",
-            "score": 0.8521367732024794,
-            "confidence": 0.5766908745253978,
-            "probabilities": [
-              0.5734977685789293,
-              0.0008676896396618374,
-              0.42563454178140875
-            ]
-          },
-          "measuredDuration": 42.91112500000054
-        },
-        {
-          "document": "The app is ",
-          "answer": {
-            "type": "score",
-            "score": 1.045883557626513,
-            "confidence": 0.8842935818233342,
-            "probabilities": [
-              0.4764285319881796,
-              0.0012593783971276396,
-              0.5223120896146928
-            ]
-          },
-          "measuredDuration": 42.817417000000205
-        },
-        {
-          "document": "The app is s",
-          "answer": {
-            "type": "score",
-            "score": 0.3283660392200617,
-            "confidence": 0.04769303998840291,
-            "probabilities": [
-              0.8350329617809321,
-              0.0015680372180738652,
-              0.16339900100099392
-            ]
-          },
-          "measuredDuration": 43.15016699999978
-        },
-        {
-          "document": "The app is sl",
-          "answer": {
-            "type": "score",
-            "score": 1.7510927656791155,
-            "confidence": 0.004838022105739692,
-            "probabilities": [
-              0.12409550506910658,
-              0.0007162241826711148,
-              0.8751882707482223
-            ]
-          },
-          "measuredDuration": 43.01820900000166
-        },
-        {
-          "document": "The app is slo",
-          "answer": {
-            "type": "score",
-            "score": 1.9215870016411465,
-            "confidence": 0.007328898116773286,
-            "probabilities": [
-              0.038862240814633145,
-              0.0006885167295871486,
-              0.9604492424557797
-            ]
-          },
-          "measuredDuration": 42.91454200000044
-        },
-        {
-          "document": "The app is slow",
-          "answer": {
-            "type": "score",
-            "score": 1.9794009515479445,
-            "confidence": 0.9864714325597636,
-            "probabilities": [
-              0.004486012478692125,
-              0.011627023494671393,
-              0.9838869640266366
-            ]
-          },
-          "measuredDuration": 42.96079099999952
-        },
-        {
-          "document": "The app is slow,",
-          "answer": {
-            "type": "score",
-            "score": 1.9715287419985268,
-            "confidence": 0.9835593900926639,
-            "probabilities": [
-              0.007096070653969526,
-              0.014279116693534254,
-              0.9786248126524962
-            ]
-          },
-          "measuredDuration": 42.91941699999916
-        },
-        {
-          "document": "The app is slow, ",
-          "answer": {
-            "type": "score",
-            "score": 1.959700874926557,
-            "confidence": 0.973729830743118,
-            "probabilities": [
-              0.00937861392369966,
-              0.021541897226043504,
-              0.9690794888502567
-            ]
-          },
-          "measuredDuration": 43.08037500000137
-        },
-        {
-          "document": "The app is slow, b",
-          "answer": {
-            "type": "score",
-            "score": 1.9650737413311046,
-            "confidence": 0.9851914377142049,
-            "probabilities": [
-              0.005618702706640369,
-              0.023688853255614796,
-              0.9706924440377449
-            ]
-          },
-          "measuredDuration": 42.91533299999901
-        },
-        {
-          "document": "The app is slow, bu",
-          "answer": {
-            "type": "score",
-            "score": 1.9645211329799883,
-            "confidence": 0.9793731751898017,
-            "probabilities": [
-              0.007176480695687157,
-              0.021125905628637313,
-              0.9716976136756755
-            ]
-          },
-          "measuredDuration": 43.07237499999974
-        },
-        {
-          "document": "The app is slow, but",
-          "answer": {
-            "type": "score",
-            "score": 1.868454658289798,
-            "confidence": 0.9475608873220726,
-            "probabilities": [
-              0.029864222731191693,
-              0.07181689624781862,
-              0.8983188810209898
-            ]
-          },
-          "measuredDuration": 42.814916999999696
-        },
-        {
-          "document": "The app is slow, but ",
-          "answer": {
-            "type": "score",
-            "score": 1.8678918652202818,
-            "confidence": 0.9522020248608111,
-            "probabilities": [
-              0.02428809461110324,
-              0.08353194555751199,
-              0.8921799598313849
-            ]
-          },
-          "measuredDuration": 42.884000000000015
-        },
-        {
-          "document": "The app is slow, but w",
-          "answer": {
-            "type": "score",
-            "score": 1.9138672875878975,
-            "confidence": 0.9678163224004618,
-            "probabilities": [
-              0.01104913765242783,
-              0.06403443710724689,
-              0.9249164252403252
-            ]
-          },
-          "measuredDuration": 43.12695800000074
-        },
-        {
-          "document": "The app is slow, but we",
-          "answer": {
-            "type": "score",
-            "score": 1.9309423777764458,
-            "confidence": 0.9697357003557566,
-            "probabilities": [
-              0.013378244098563502,
-              0.04230113402642736,
-              0.9443206218750092
-            ]
-          },
-          "measuredDuration": 42.929166999998415
-        },
-        {
-          "document": "The app is slow, but we ",
-          "answer": {
-            "type": "score",
-            "score": 1.9359301347140947,
-            "confidence": 0.9615181796256493,
-            "probabilities": [
-              0.014580889082750258,
-              0.034908087120404975,
-              0.9505110237968448
-            ]
-          },
-          "measuredDuration": 42.81766599999901
-        },
-        {
-          "document": "The app is slow, but we c",
-          "answer": {
-            "type": "score",
-            "score": 1.9343961245710317,
-            "confidence": 0.9723048750716567,
-            "probabilities": [
-              0.00908368501202755,
-              0.04743650540491307,
-              0.9434798095830593
-            ]
-          },
-          "measuredDuration": 44.47691699999996
-        },
-        {
-          "document": "The app is slow, but we ca",
-          "answer": {
-            "type": "score",
-            "score": 1.93499509448413,
-            "confidence": 0.9736569776061433,
-            "probabilities": [
-              0.00881994566793028,
-              0.04736501418000944,
-              0.9438150401520603
-            ]
-          },
-          "measuredDuration": 43.84087499999987
-        },
-        {
-          "document": "The app is slow, but we can",
-          "answer": {
-            "type": "score",
-            "score": 1.9021885249952557,
-            "confidence": 0.9476617270889787,
-            "probabilities": [
-              0.018195009557976566,
-              0.06142145588879147,
-              0.9203835345532321
-            ]
-          },
-          "measuredDuration": 43.131916000000274
-        },
-        {
-          "document": "The app is slow, but we can ",
-          "answer": {
-            "type": "score",
-            "score": 1.9125208051154192,
-            "confidence": 0.9468496900910812,
-            "probabilities": [
-              0.01800775806120232,
-              0.05146367876217603,
-              0.9305285631766216
-            ]
-          },
-          "measuredDuration": 43.120875000000524
-        },
-        {
-          "document": "The app is slow, but we can s",
-          "answer": {
-            "type": "score",
-            "score": 1.9197865542138903,
-            "confidence": 0.9596574699048666,
-            "probabilities": [
-              0.011642574988798664,
-              0.05692829580851224,
-              0.931429129202689
-            ]
-          },
-          "measuredDuration": 43.04691599999933
-        },
-        {
-          "document": "The app is slow, but we can st",
-          "answer": {
-            "type": "score",
-            "score": 1.9137533031238094,
-            "confidence": 0.9533109167491519,
-            "probabilities": [
-              0.01385069632864017,
-              0.05854530421890995,
-              0.9276039994524498
-            ]
-          },
-          "measuredDuration": 42.926000000001295
-        },
-        {
-          "document": "The app is slow, but we can sti",
-          "answer": {
-            "type": "score",
-            "score": 1.9389088508343282,
-            "confidence": 0.9655719847394076,
-            "probabilities": [
-              0.009667811361211575,
-              0.041755526443248814,
-              0.9485766621955397
-            ]
-          },
-          "measuredDuration": 43.152374999999665
-        },
-        {
-          "document": "The app is slow, but we can stil",
-          "answer": {
-            "type": "score",
-            "score": 1.9071824135255468,
-            "confidence": 0.9451251289073022,
-            "probabilities": [
-              0.016326881129140703,
-              0.06016382421617162,
-              0.9235092946546876
-            ]
-          },
-          "measuredDuration": 42.975125000000844
-        },
-        {
-          "document": "The app is slow, but we can still",
-          "answer": {
-            "type": "score",
-            "score": 1.914867827532665,
-            "confidence": 0.9354966541871302,
-            "probabilities": [
-              0.01681500309978424,
-              0.05150216626776674,
-              0.931682830632449
-            ]
-          },
-          "measuredDuration": 42.82554199999868
-        },
-        {
-          "document": "The app is slow, but we can still ",
-          "answer": {
-            "type": "score",
-            "score": 1.9058517583023422,
-            "confidence": 0.9486418687480959,
-            "probabilities": [
-              0.018071589908518357,
-              0.058005061880621094,
-              0.9239233482108605
-            ]
-          },
-          "measuredDuration": 42.85833400000047
-        },
-        {
-          "document": "The app is slow, but we can still w",
-          "answer": {
-            "type": "score",
-            "score": 1.887121409166731,
-            "confidence": 0.9385077407709239,
-            "probabilities": [
-              0.014413396677911297,
-              0.08405179747744605,
-              0.9015348058446425
-            ]
-          },
-          "measuredDuration": 42.956499999998414
-        },
-        {
-          "document": "The app is slow, but we can still wo",
-          "answer": {
-            "type": "score",
-            "score": 1.9166366876673315,
-            "confidence": 0.9478905350057977,
-            "probabilities": [
-              0.012418084150343836,
-              0.05852714403198044,
-              0.9290547718176756
-            ]
-          },
-          "measuredDuration": 42.82020899999952
-        },
-        {
-          "document": "The app is slow, but we can still wor",
-          "answer": {
-            "type": "score",
-            "score": 1.8892908982029653,
-            "confidence": 0.946881023693772,
-            "probabilities": [
-              0.017065197260146894,
-              0.07657870727674082,
-              0.9063560954631122
-            ]
-          },
-          "measuredDuration": 43.31450000000041
-        },
-        {
-          "document": "The app is slow, but we can still work",
-          "answer": {
-            "type": "score",
-            "score": 1.6787780818034421,
-            "confidence": 0.9233424122751198,
-            "probabilities": [
-              0.03403533224329763,
-              0.2531512537099627,
-              0.7128134140467397
-            ]
-          },
-          "measuredDuration": 43.979208000000654
-        },
-        {
-          "document": "The app w",
-          "answer": {
-            "type": "score",
-            "score": 0.157632196210035,
-            "confidence": 0.3528068777552549,
-            "probabilities": [
-              0.920967025832487,
-              0.00043375212499107546,
-              0.07859922204252195
-            ]
-          },
-          "measuredDuration": 43.86366699999962
-        },
-        {
-          "document": "The app wi",
-          "answer": {
-            "type": "score",
-            "score": 0.2765886991526992,
-            "confidence": 0.0761237972567983,
-            "probabilities": [
-              0.8612582564214991,
-              0.0008947880043027171,
-              0.13784695557419824
-            ]
-          },
-          "measuredDuration": 43.2885839999999
-        },
-        {
-          "document": "The app wil",
-          "answer": {
-            "type": "score",
-            "score": 0.06376957774731384,
-            "confidence": 0.9001343829399489,
-            "probabilities": [
-              0.9675445008918484,
-              0.0011414204689894902,
-              0.03131407863916218
-            ]
-          },
-          "measuredDuration": 42.879541999998764
-        },
-        {
-          "document": "The app will",
-          "answer": {
-            "type": "score",
-            "score": 0.036669882975517216,
-            "confidence": 0.5918716212123745,
-            "probabilities": [
-              0.9815068093030112,
-              0.00031649841846044947,
-              0.018176692278528382
-            ]
-          },
-          "measuredDuration": 43.195583000000624
-        },
-        {
-          "document": "The app will ",
-          "answer": {
-            "type": "score",
-            "score": 0.055519801817340834,
-            "confidence": 0.6035045932642555,
-            "probabilities": [
-              0.9715806911298549,
-              0.001318815922949533,
-              0.027100492947195652
-            ]
-          },
-          "measuredDuration": 43.04920799999854
-        },
-        {
-          "document": "The app will n",
-          "answer": {
-            "type": "score",
-            "score": 0.14393013197426408,
-            "confidence": 0.42308388905023253,
-            "probabilities": [
-              0.927901851529561,
-              0.0002661649666142436,
-              0.07183198350382491
-            ]
-          },
-          "measuredDuration": 43.332791999999245
-        },
-        {
-          "document": "The app will no",
-          "answer": {
-            "type": "score",
-            "score": 0.03432022575762668,
-            "confidence": 0.9191222045396872,
-            "probabilities": [
-              0.9826347330004959,
-              0.00041030824138151446,
-              0.01695495875812258
-            ]
-          },
-          "measuredDuration": 43.46200000000135
-        },
-        {
-          "document": "The app will not",
-          "answer": {
-            "type": "score",
-            "score": 1.999281384253737,
-            "confidence": 0.9994160519766145,
-            "probabilities": [
-              0.00035929611736508856,
-              2.351153308558573e-8,
-              0.9996406803711019
-            ]
-          },
-          "measuredDuration": 43.476541
-        },
-        {
-          "document": "The app will not ",
-          "answer": {
-            "type": "score",
-            "score": 1.9994827173145722,
-            "confidence": 0.998797987897158,
-            "probabilities": [
-              0.0002586304420682714,
-              2.1801291480559396e-8,
-              0.9997413477566404
-            ]
-          },
-          "measuredDuration": 43.48441699999967
-        },
-        {
-          "document": "The app will not o",
-          "answer": {
-            "type": "score",
-            "score": 0.23065577751778898,
-            "confidence": 0.07538906123686628,
-            "probabilities": [
-              0.884639459695527,
-              0.00006530309115679162,
-              0.1152952372133161
-            ]
-          },
-          "measuredDuration": 45.21862500000134
-        },
-        {
-          "document": "The app will not op",
-          "answer": {
-            "type": "score",
-            "score": 1.9999802041922994,
-            "confidence": 0.9999829184928953,
-            "probabilities": [
-              0.000009829244737115817,
-              1.3731822625158418e-7,
-              0.9999900334370365
-            ]
-          },
-          "measuredDuration": 44.390541999999186
-        },
-        {
-          "document": "The app will not ope",
-          "answer": {
-            "type": "score",
-            "score": 1.9999193302969744,
-            "confidence": 0.9999706378156266,
-            "probabilities": [
-              0.00003753320784755033,
-              0.000005603287330581758,
-              0.9999568635048219
-            ]
-          },
-          "measuredDuration": 43.464874999999665
-        },
-        {
-          "document": "The app will not open",
-          "answer": {
-            "type": "score",
-            "score": 1.9999062764002942,
-            "confidence": 0.9999708949809276,
-            "probabilities": [
-              0.00004338184340225267,
-              0.000006959912901310412,
-              0.9999496582436964
-            ]
-          },
-          "measuredDuration": 43.112584000000425
-        },
-        {
-          "document": "The app will not open.",
-          "answer": {
-            "type": "score",
-            "score": 1.999893193993191,
-            "confidence": 0.9999655047696349,
-            "probabilities": [
-              0.00004993132185127177,
-              0.000006943363106369749,
-              0.9999431253150423
-            ]
-          },
-          "measuredDuration": 42.97854200000074
-        },
-        {
-          "document": "The app will not open. ",
-          "answer": {
-            "type": "score",
-            "score": 1.999918171448352,
-            "confidence": 0.9999643439891125,
-            "probabilities": [
-              0.00003792144902952649,
-              0.000005985653588839297,
-              0.9999560928973816
-            ]
-          },
-          "measuredDuration": 43.07391599999937
-        },
-        {
-          "document": "The app will not open. N",
-          "answer": {
-            "type": "score",
-            "score": 1.9998748493534806,
-            "confidence": 0.999954600254681,
-            "probabilities": [
-              0.0000577721744508204,
-              0.000009606297617580893,
-              0.9999326215279315
-            ]
-          },
-          "measuredDuration": 42.812292000000525
-        },
-        {
-          "document": "The app will not open. No",
-          "answer": {
-            "type": "score",
-            "score": 1.999752878802827,
-            "confidence": 0.9999776638664352,
-            "probabilities": [
-              0.00012351101748102791,
-              9.916221129412156e-8,
-              0.9998763898203078
-            ]
-          },
-          "measuredDuration": 42.88716700000077
-        },
-        {
-          "document": "The app will not open. Nob",
-          "answer": {
-            "type": "score",
-            "score": 1.9999505899250503,
-            "confidence": 0.9999779740532567,
-            "probabilities": [
-              0.000024019302808922347,
-              0.0000013714693320260298,
-              0.9999746092278591
-            ]
-          },
-          "measuredDuration": 42.96545900000092
-        },
-        {
-          "document": "The app will not open. Nobo",
-          "answer": {
-            "type": "score",
-            "score": 1.9999344052250472,
-            "confidence": 0.9999729406495009,
-            "probabilities": [
-              0.000030717706159223304,
-              0.000004159362634693615,
-              0.9999651229312062
-            ]
-          },
-          "measuredDuration": 42.8863339999989
-        },
-        {
-          "document": "The app will not open. Nobod",
-          "answer": {
-            "type": "score",
-            "score": 1.999916186353974,
-            "confidence": 0.9999686117534273,
-            "probabilities": [
-              0.00003763655644318175,
-              0.00000854053313957811,
-              0.9999538229104172
-            ]
-          },
-          "measuredDuration": 42.715250000001106
-        },
-        {
-          "document": "The app will not open. Nobody",
-          "answer": {
-            "type": "score",
-            "score": 1.9998891899272715,
-            "confidence": 0.9999639294967003,
-            "probabilities": [
-              0.000049326791704068116,
-              0.000012156489320564782,
-              0.9999385167189755
-            ]
-          },
-          "measuredDuration": 42.86920800000007
-        },
-        {
-          "document": "The app will not open. Nobody ",
-          "answer": {
-            "type": "score",
-            "score": 1.9999095863506746,
-            "confidence": 0.9999651633440171,
-            "probabilities": [
-              0.00004106211949593075,
-              0.000008289410333377909,
-              0.9999506484701706
-            ]
-          },
-          "measuredDuration": 42.97679199999948
-        },
-        {
-          "document": "The app will not open. Nobody c",
-          "answer": {
-            "type": "score",
-            "score": 1.9998545770420095,
-            "confidence": 0.9999540020015943,
-            "probabilities": [
-              0.00006463860810467313,
-              0.00001614574178130081,
-              0.9999192156501141
-            ]
-          },
-          "measuredDuration": 42.768167000000176
-        },
-        {
-          "document": "The app will not open. Nobody ca",
-          "answer": {
-            "type": "score",
-            "score": 1.9998613412640898,
-            "confidence": 0.9999582922978913,
-            "probabilities": [
-              0.000060979739588922996,
-              0.000016699256732561592,
-              0.9999223210036786
-            ]
-          },
-          "measuredDuration": 42.70287500000086
-        },
-        {
-          "document": "The app will not open. Nobody can",
-          "answer": {
-            "type": "score",
-            "score": 1.9998505802127502,
-            "confidence": 0.9999379114675346,
-            "probabilities": [
-              0.00006226862703252533,
-              0.00002488253318455189,
-              0.9999128488397828
-            ]
-          },
-          "measuredDuration": 42.86895799999911
-        },
-        {
-          "document": "The app will not open. Nobody can ",
-          "answer": {
-            "type": "score",
-            "score": 1.9998355434703372,
-            "confidence": 0.9999367140529186,
-            "probabilities": [
-              0.00006981388892423745,
-              0.000024828751814273207,
-              0.9999053573592614
-            ]
-          },
-          "measuredDuration": 42.93616699999984
-        },
-        {
-          "document": "The app will not open. Nobody can w",
-          "answer": {
-            "type": "score",
-            "score": 1.9998035555961706,
-            "confidence": 0.9999324215378322,
-            "probabilities": [
-              0.00008499687487700954,
-              0.00002645065407564288,
-              0.9998885524710475
-            ]
-          },
-          "measuredDuration": 42.758874999999534
-        },
-        {
-          "document": "The app will not open. Nobody can wo",
-          "answer": {
-            "type": "score",
-            "score": 1.9998329138237336,
-            "confidence": 0.9999428126220355,
-            "probabilities": [
-              0.00007273336711322268,
-              0.000021619442040000216,
-              0.9999056471908468
-            ]
-          },
-          "measuredDuration": 42.95583400000032
-        },
-        {
-          "document": "The app will not open. Nobody can wor",
-          "answer": {
-            "type": "score",
-            "score": 1.9999114970593985,
-            "confidence": 0.9999581142478939,
-            "probabilities": [
-              0.000037549293840830664,
-              0.000013404352919625303,
-              0.9999490463532394
-            ]
-          },
-          "measuredDuration": 43.03529200000048
-        },
-        {
-          "document": "The app will not open. Nobody can work",
-          "answer": {
-            "type": "score",
-            "score": 1.9999360253421439,
-            "confidence": 0.9999405889205528,
-            "probabilities": [
-              0.000025797640097257934,
-              0.000012379377661284037,
-              0.9999618229822413
-            ]
-          },
-          "measuredDuration": 43.039042000000336
+          "measuredDuration": 42.328332999999475
         }
       ]
     },
@@ -2891,7 +2093,7 @@
               "value": 0.0000022082757192882676
             }
           ],
-          "measuredDuration": 170.84045900000092
+          "measuredDuration": 121.21191700000054
         },
         {
           "document": "M",
@@ -2909,7 +2111,7 @@
               "value": 0.000004100306648088523
             }
           ],
-          "measuredDuration": 114.49862500000017
+          "measuredDuration": 114.40950000000157
         },
         {
           "document": "My",
@@ -2927,7 +2129,7 @@
               "value": 6.548017857005254e-7
             }
           ],
-          "measuredDuration": 115.04866599999878
+          "measuredDuration": 114.29408300000068
         },
         {
           "document": "My ",
@@ -2945,7 +2147,7 @@
               "value": 0.0000010656937392976252
             }
           ],
-          "measuredDuration": 116.33229100000062
+          "measuredDuration": 115.20883399999911
         },
         {
           "document": "My c",
@@ -2963,7 +2165,7 @@
               "value": 5.067583073602265e-7
             }
           ],
-          "measuredDuration": 113.77958399999989
+          "measuredDuration": 114.27850000000035
         },
         {
           "document": "My ca",
@@ -2981,7 +2183,7 @@
               "value": 0.000002225754594193385
             }
           ],
-          "measuredDuration": 113.10991699999977
+          "measuredDuration": 112.94120900000053
         },
         {
           "document": "My cat",
@@ -2999,7 +2201,7 @@
               "value": 1.7735671851539978e-7
             }
           ],
-          "measuredDuration": 115.33816699999988
+          "measuredDuration": 112.39837500000067
         },
         {
           "document": "My cat ",
@@ -3017,7 +2219,7 @@
               "value": 1.4126733351344195e-7
             }
           ],
-          "measuredDuration": 113.06266700000015
+          "measuredDuration": 112.57479200000125
         },
         {
           "document": "My cat i",
@@ -3035,7 +2237,7 @@
               "value": 3.46886429926667e-7
             }
           ],
-          "measuredDuration": 113.25283299999865
+          "measuredDuration": 114.71095799999966
         },
         {
           "document": "My cat is",
@@ -3053,7 +2255,7 @@
               "value": 3.3817561581742465e-7
             }
           ],
-          "measuredDuration": 113.28583400000025
+          "measuredDuration": 112.16420899999866
         },
         {
           "document": "My cat is ",
@@ -3071,7 +2273,7 @@
               "value": 2.419685176436524e-7
             }
           ],
-          "measuredDuration": 113.26483399999961
+          "measuredDuration": 111.82287499999984
         },
         {
           "document": "My cat is s",
@@ -3089,7 +2291,7 @@
               "value": 4.283156685501392e-7
             }
           ],
-          "measuredDuration": 113.93325000000004
+          "measuredDuration": 112.98466700000063
         },
         {
           "document": "My cat is st",
@@ -3107,7 +2309,7 @@
               "value": 5.664168526214872e-7
             }
           ],
-          "measuredDuration": 113.09400000000096
+          "measuredDuration": 113.71950000000106
         },
         {
           "document": "My cat is stu",
@@ -3125,7 +2327,7 @@
               "value": 3.2828941502248876e-7
             }
           ],
-          "measuredDuration": 112.87637499999983
+          "measuredDuration": 113.69258300000001
         },
         {
           "document": "My cat is stuc",
@@ -3143,7 +2345,7 @@
               "value": 0.00008795701133824821
             }
           ],
-          "measuredDuration": 112.87962499999958
+          "measuredDuration": 113.43262500000128
         },
         {
           "document": "My cat is stuck",
@@ -3161,7 +2363,7 @@
               "value": 0.49760438844851484
             }
           ],
-          "measuredDuration": 113.28687499999978
+          "measuredDuration": 111.86050000000068
         },
         {
           "document": "My cat is stuck.",
@@ -3179,7 +2381,7 @@
               "value": 0.3104542454922806
             }
           ],
-          "measuredDuration": 112.04254199999923
+          "measuredDuration": 111.89808300000004
         },
         {
           "document": "My cat is stuck. ",
@@ -3197,7 +2399,7 @@
               "value": 0.009099596908074322
             }
           ],
-          "measuredDuration": 112.98866699999962
+          "measuredDuration": 113.711041999999
         },
         {
           "document": "My cat is stuck. P",
@@ -3215,7 +2417,7 @@
               "value": 0.41425261146334164
             }
           ],
-          "measuredDuration": 113.89875000000029
+          "measuredDuration": 112.19187499999862
         },
         {
           "document": "My cat is stuck. Pl",
@@ -3233,7 +2435,7 @@
               "value": 0.9467566921819579
             }
           ],
-          "measuredDuration": 114.31495800000084
+          "measuredDuration": 113.13320899999962
         },
         {
           "document": "My cat is stuck. Ple",
@@ -3251,7 +2453,7 @@
               "value": 0.8651876017696916
             }
           ],
-          "measuredDuration": 113.83562499999971
+          "measuredDuration": 113.01150000000052
         },
         {
           "document": "My cat is stuck. Plea",
@@ -3269,7 +2471,7 @@
               "value": 0.9992195532992612
             }
           ],
-          "measuredDuration": 112.88337499999943
+          "measuredDuration": 112.39399999999841
         },
         {
           "document": "My cat is stuck. Pleas",
@@ -3287,7 +2489,7 @@
               "value": 0.9993716485107698
             }
           ],
-          "measuredDuration": 112.99720900000102
+          "measuredDuration": 114.00837499999943
         },
         {
           "document": "My cat is stuck. Please",
@@ -3305,7 +2507,7 @@
               "value": 0.9995530760528596
             }
           ],
-          "measuredDuration": 115.71212500000001
+          "measuredDuration": 112.95916599999873
         },
         {
           "document": "My cat is stuck. Please ",
@@ -3323,7 +2525,7 @@
               "value": 0.9986636373266506
             }
           ],
-          "measuredDuration": 112.97225000000071
+          "measuredDuration": 114.19720799999959
         },
         {
           "document": "My cat is stuck. Please h",
@@ -3341,7 +2543,7 @@
               "value": 0.9991206167052137
             }
           ],
-          "measuredDuration": 113.20604099999946
+          "measuredDuration": 113.16362500000105
         },
         {
           "document": "My cat is stuck. Please he",
@@ -3359,7 +2561,7 @@
               "value": 0.9995639402599764
             }
           ],
-          "measuredDuration": 113.08083400000032
+          "measuredDuration": 112.6308339999996
         },
         {
           "document": "My cat is stuck. Please hel",
@@ -3377,7 +2579,7 @@
               "value": 0.9997846493375236
             }
           ],
-          "measuredDuration": 114.93495799999982
+          "measuredDuration": 111.95700000000033
         },
         {
           "document": "My cat is stuck. Please help",
@@ -3395,7 +2597,7 @@
               "value": 0.9998146838091576
             }
           ],
-          "measuredDuration": 113.37933300000077
+          "measuredDuration": 113.68674999999894
         },
         {
           "document": "My cat is stuck. Please help ",
@@ -3413,7 +2615,7 @@
               "value": 0.9998152561337885
             }
           ],
-          "measuredDuration": 111.89479199999914
+          "measuredDuration": 111.97945800000161
         },
         {
           "document": "My cat is stuck. Please help n",
@@ -3431,7 +2633,7 @@
               "value": 0.9995814420006974
             }
           ],
-          "measuredDuration": 113.49220800000148
+          "measuredDuration": 112.62020799999846
         },
         {
           "document": "My cat is stuck. Please help no",
@@ -3449,7 +2651,7 @@
               "value": 0.9995151830353316
             }
           ],
-          "measuredDuration": 113.48966699999983
+          "measuredDuration": 113.65987499999937
         },
         {
           "document": "My cat is stuck. Please help now",
@@ -3467,7 +2669,7 @@
               "value": 0.9999912118996395
             }
           ],
-          "measuredDuration": 112.98133300000154
+          "measuredDuration": 112.06295800000044
         },
         {
           "document": "My cat is stuck. Please help now!",
@@ -3485,7 +2687,7 @@
               "value": 0.9999927302014855
             }
           ],
-          "measuredDuration": 111.89887499999895
+          "measuredDuration": 112.18424999999843
         },
         {
           "document": "H",
@@ -3503,7 +2705,7 @@
               "value": 0.000003270025031593987
             }
           ],
-          "measuredDuration": 113.04995899999994
+          "measuredDuration": 113.10087500000009
         },
         {
           "document": "He",
@@ -3521,7 +2723,7 @@
               "value": 0.0000012241960594501418
             }
           ],
-          "measuredDuration": 112.99104199999965
+          "measuredDuration": 114.57254199999988
         },
         {
           "document": "Hel",
@@ -3539,7 +2741,7 @@
               "value": 0.000011280759051036132
             }
           ],
-          "measuredDuration": 114.01187500000015
+          "measuredDuration": 115.98212500000045
         },
         {
           "document": "Help",
@@ -3557,7 +2759,7 @@
               "value": 0.0216044041872871
             }
           ],
-          "measuredDuration": 113.21366699999999
+          "measuredDuration": 113.40683400000125
         },
         {
           "document": "Help ",
@@ -3575,7 +2777,7 @@
               "value": 0.0010617898449006063
             }
           ],
-          "measuredDuration": 112.26608300000044
+          "measuredDuration": 112.98212500000045
         },
         {
           "document": "Help m",
@@ -3593,7 +2795,7 @@
               "value": 0.007348497417174831
             }
           ],
-          "measuredDuration": 112.83966599999985
+          "measuredDuration": 114.18058399999973
         },
         {
           "document": "Help my",
@@ -3611,7 +2813,7 @@
               "value": 0.000038584125609511015
             }
           ],
-          "measuredDuration": 113.01012499999888
+          "measuredDuration": 116.08633299999929
         },
         {
           "document": "Help my ",
@@ -3629,7 +2831,7 @@
               "value": 0.00010106765984193135
             }
           ],
-          "measuredDuration": 111.94979199999943
+          "measuredDuration": 113.457042
         },
         {
           "document": "Help my c",
@@ -3647,7 +2849,7 @@
               "value": 0.0017870348000308877
             }
           ],
-          "measuredDuration": 112.90475000000151
+          "measuredDuration": 113.38008300000001
         },
         {
           "document": "Help my ca",
@@ -3665,7 +2867,7 @@
               "value": 0.9481691580406987
             }
           ],
-          "measuredDuration": 112.7848750000012
+          "measuredDuration": 114.50925000000097
         },
         {
           "document": "Help my cat",
@@ -3683,7 +2885,7 @@
               "value": 0.9987724557883637
             }
           ],
-          "measuredDuration": 112.62312500000189
+          "measuredDuration": 113.3774169999997
         },
         {
           "document": "Help my cat ",
@@ -3701,7 +2903,7 @@
               "value": 0.9995207235525169
             }
           ],
-          "measuredDuration": 112.46283300000141
+          "measuredDuration": 111.41245899999922
         },
         {
           "document": "Help my cat n",
@@ -3719,7 +2921,7 @@
               "value": 0.995287028807864
             }
           ],
-          "measuredDuration": 113.4832920000008
+          "measuredDuration": 112.87879099999918
         },
         {
           "document": "Help my cat no",
@@ -3737,7 +2939,7 @@
               "value": 0.9963736725533657
             }
           ],
-          "measuredDuration": 113.60208300000158
+          "measuredDuration": 113.97208300000057
         },
         {
           "document": "Help my cat now",
@@ -3755,7 +2957,7 @@
               "value": 0.9999886317850071
             }
           ],
-          "measuredDuration": 113.69929200000115
+          "measuredDuration": 113.04604199999994
         },
         {
           "document": "Help my cat now!",
@@ -3773,7 +2975,7 @@
               "value": 0.9999963271002542
             }
           ],
-          "measuredDuration": 112.0734999999986
+          "measuredDuration": 113.07329099999879
         }
       ]
     }

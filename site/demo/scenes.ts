@@ -13,17 +13,16 @@ const playgroundScenes: Array<{
     },
     {
         title: "choice", description: "pick one",
-        input: {type: "choice", document: "", instruction: "Which team should handle this ticket?",
-            criteria: ["Account access", "Billing and refunds", "Product features"]},
-        documents: ["I need help with an invoice", "We cannot sign in to our accounts"]
+        input: {type: "choice", document: "", instruction: "Which delivery method has the customer chosen?",
+            criteria: ["Standard shipping", "Express courier", "Store pickup"]},
+        documents: ["I need it delivered as soon as possible", "I prefer to take it in person"]
     },
     {
         title: "score", description: "rate it",
-        input: {type: "score", document: "", instruction: "How much is the issue affecting the customer's work?",
-            criteria: ["No interruption to work", "Some tasks are slower or harder", "The customer cannot continue their work"]},
-        documents: ["The logo is blurry. Everything still works", "The app is slow, but we can still work",
-            "The app will not open. Nobody can work"],
-        pauseAfter: ["The logo is blurry", "The app is slow", "The app will not open"]
+        input: {type: "score", document: "", instruction: "How positive is this review?",
+            criteria: ["Negative", "Mixed", "Positive"]},
+        documents: ["The food was amazing, but we waited an hour"],
+        pauseAfter: ["The food was amazing"]
     }
 ];
 

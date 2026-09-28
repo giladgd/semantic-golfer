@@ -130,7 +130,11 @@ html body > #root { height: auto; overflow: visible; min-height: 100svh; }
         > main > .hero > .installCommand { animation-delay: 210ms; }
         > main > .demoSection { animation-delay: 280ms; }
         @media (scripting: enabled) {
-            > main > .demoSection:has(.appPreview) { animation-play-state: paused; }
+            &:has(.appPreview) {
+                > main > .demoSection,
+                > main > .features,
+                > .siteFooter { animation-play-state: paused; }
+            }
         }
         > main > .features { animation-delay: 350ms; }
         > .siteFooter { animation-delay: 420ms; }
