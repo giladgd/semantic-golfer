@@ -1,7 +1,7 @@
 import {flushSync} from "react-dom";
 import {useExternalState} from "../../../hooks/useExternalState.ts";
 import {finishRound, playState, updateGame, type GameDraft} from "../../../state/playState.ts";
-import {camouflageTarget, characterCount, gameProbabilities, gameRequest, games, isRoundWon, lockTarget,
+import {signalMixingTarget, characterCount, gameProbabilities, gameRequest, games, isRoundWon, lockTarget,
     type GameId, type GameLevel} from "../../../../shared/games.ts";
 import {decisionRunner} from "../../../state/decisionState.ts";
 import {gameHelpState} from "../../../state/gameHelpState.ts";
@@ -43,8 +43,8 @@ export function PlayRound({game, level, modelId, draft}: {game: GameId, level: G
         <div className="roundHeader">
             <div className="roundIntro"><h1>{round.title}</h1><p>{game === "lock"
                 ? `Get every condition to ${lockTarget * 100}% or more.`
-                : <>Bring {round.labels[0]} and {round.labels[1]} to {camouflageTarget.min * 100}% or more each.
-                    Keep every other category below {camouflageTarget.other * 100}%.
+                : <>Bring {round.labels[0]} and {round.labels[1]} to {signalMixingTarget.min * 100}% or more each.
+                    Keep every other category below {signalMixingTarget.other * 100}%.
                 </>}
             </p>
             </div>

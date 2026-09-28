@@ -34,7 +34,7 @@ test("the latest played model is selected by completion time for the same game a
     const older = {...addLevelScore([], input, "Qwen").record, completedAt: "2026-09-26T01:00:00Z"};
     const newer = {...addLevelScore([], {...input, modelId: "gemma-q8"}, "Gemma").record,
         completedAt: "2026-09-25T23:00:00-04:00"};
-    const records = [newer, {...older, game: "camouflage" as const}, {...older, level: 2}, older];
+    const records = [newer, {...older, game: "signalMixing" as const}, {...older, level: 2}, older];
     assert.equal(getLatestScore(records, "lock", 1), newer);
     assert.equal(getLatestScore(records, "lock", 3), undefined);
     assert.equal(getLatestScore([], "lock", 1), undefined);
@@ -57,13 +57,16 @@ test("scores reward shorter answers, retain best scores, and stay separate per m
     assert.ok(improved.record.best > first.record.best);
     assert.equal(improved.record.latest, improved.record.best);
     const otherModel = addLevelScore([first.record], {...input, modelId: "gemma-q8"}, "Gemma").record;
-    const otherGame = addLevelScore([first.record], {...input, game: "camouflage"}, "Qwen").record;
+    const otherGame = addLevelScore([first.record], {...input, game: "signalMixing"}, "Qwen").record;
     const otherLevel = addLevelScore([first.record], {...input, level: 2}, "Qwen").record;
     const records = [first.record, otherModel, otherGame, otherLevel];
     assert.equal(gameTotal(records, "qwen-0.8b", "lock"), first.record.best + otherLevel.best);
     assert.equal(gameTotal(records, "qwen-2b", "lock"), 0);
     assert.equal(getScore(records, "gemma-q8", "lock", 1), otherModel);
     assert.deepEqual(readScoreRecords(JSON.parse(JSON.stringify({version: 1, records}))), records);
+    const legacyRecord = {...otherGame, game: "camouflage"};
+    assert.deepEqual(readScoreRecords({version: 1, records: [legacyRecord]}), [otherGame]);
+    assert.throws(() => readScoreRecords({version: 1, records: [legacyRecord, otherGame]}), /duplicate scores/);
     assert.equal(roundScore(level.rounds[0]!, level.rounds[0]!.limit), 1);
     for (const count of [0, -1, 1.5, NaN, Infinity, level.rounds[0]!.limit + 1])
         assert.throws(() => roundScore(level.rounds[0]!, count));

@@ -3,6 +3,16 @@
     flex-direction: column;
     gap: var(--game-meter-gap, 24px);
     min-width: 0;
+    margin-inline: calc(-1 * var(--game-meter-inset, 0px));
+    padding-inline: var(--game-meter-inset, 0px);
+
+    &[data-game="signalMixing"] > .gameMeter:nth-child(3) {
+        border-top: 1px solid var(--border-color);
+        margin-top: calc(var(--game-meter-inset, 0px) - var(--game-meter-gap, 24px));
+        margin-inline: calc(-1 * var(--game-meter-inset, 0px));
+        padding-inline: var(--game-meter-inset, 0px);
+        padding-top: var(--game-meter-inset, 0px);
+    }
 
     > .gameMeter {
         > .meterHeading {

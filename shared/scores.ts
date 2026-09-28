@@ -47,7 +47,9 @@ export function readScoreRecords(data: unknown): ScoreRecord[] {
         !("records" in data) || !Array.isArray(data.records))
         throw new Error("The saved score file has an unsupported format.");
     const seen = new Set<string>();
-    for (const record of data.records) {
+    // Preserve scores saved before Signal Mixing was renamed.
+    const records = data.records.map((record) => (record?.game === "camouflage" ? {...record, game: "signalMixing"} : record));
+    for (const record of records) {
         const level = record != null && Object.hasOwn(games, record.game)
             ? games[record.game as GameId].levels.find(({id}) => id === record.level) : undefined;
         if (level == null || typeof record.modelId !== "string" ||
@@ -62,5 +64,5 @@ export function readScoreRecords(data: unknown): ScoreRecord[] {
             throw new Error("The saved score file contains duplicate scores.");
         seen.add(key);
     }
-    return data.records;
+    return records;
 }

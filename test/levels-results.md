@@ -36,7 +36,7 @@ Copied-label failures remain part of the suite, and the runner correctly exits u
 
 ## Changes supported by playtesting
 
-- Camouflage evaluates independent binary category questions. Both targets must reach 70%, while distractors must remain below 70%. Semantic Golfing requires every noul condition to reach 70%.
+- Signal Mixing evaluates independent binary category questions. Both targets must reach 70%, while distractors must remain below 70%. Semantic Golfing requires every noul condition to reach 70%.
 - Tightened definitions for animal names, actual questions, refusals, repairs, named historical references, food, technology, leisure, and praise. For example, a repair now requires an identified broken object and a described repair after Gemma Q6 accepted `I` in a repair/offer round.
 - Replaced overlapping distractors and corrected reference answers that omitted required times or prices. Every reference was checked against its character budget and requested details.
 - Added clearer natural alternatives where models rejected reasonable answers: explicit invitations, actual lessons, food offers, and reviews describing a concrete bad experience. Questions and thresholds were not loosened to admit these references.

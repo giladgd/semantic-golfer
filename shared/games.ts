@@ -1,17 +1,17 @@
 import {lockLevels} from "./levels/lock.ts";
-import {camouflageLevels} from "./levels/camouflage.ts";
+import {signalMixingLevels} from "./levels/signalMixing.ts";
 import type {DecisionInput, DecisionRequest, DecisionResult} from "./decision.ts";
 import type {ModelId} from "./models.ts";
 
-export type GameId = "lock" | "camouflage";
+export type GameId = "lock" | "signalMixing";
 export type GameRound = {id: string, title: string, limit: number, labels: string[], questions: Omit<DecisionInput, "document">[]};
 export type GameLevel = {id: number, title: string, skill: string, rounds: GameRound[]};
 export const lockTarget = 0.7;
-export const camouflageTarget = {min: lockTarget, other: lockTarget};
+export const signalMixingTarget = {min: lockTarget, other: lockTarget};
 
 export const games: Record<GameId, {name: string, description: string, levels: GameLevel[]}> = {
     lock: {name: "Semantic Golfing", description: "Write a short message that matches every condition within the character limit.", levels: lockLevels},
-    camouflage: {name: "Category Camouflage", description: "Blend two meanings in a short message while keeping the other categories out.", levels: camouflageLevels}
+    signalMixing: {name: "Signal Mixing", description: "Blend two meanings in a short message while keeping the other categories out.", levels: signalMixingLevels}
 };
 
 export function characterCount(text: string) {
@@ -38,8 +38,8 @@ export function isRoundWon(game: GameId, round: GameRound, document: string, pro
         probabilities.some((value) => !Number.isFinite(value) || value < 0 || value > 1))
         return false;
     return probabilities.every((value, index) => (game === "lock" || index < 2
-        ? value >= (game === "lock" ? lockTarget : camouflageTarget.min)
-        : value < camouflageTarget.other));
+        ? value >= (game === "lock" ? lockTarget : signalMixingTarget.min)
+        : value < signalMixingTarget.other));
 }
 
 export function roundScore(round: GameRound, characters: number) {

@@ -28,7 +28,7 @@ npx semantic-golfer
 ## Features
 
 - **Semantic Golfing:** write a message that matches every condition within the character limit
-- **Category Camouflage:** blend two target meanings while avoiding the other categories
+- **Signal Mixing:** blend two target meanings while avoiding the other categories
 - **Playground:** experiment with `noul`, `choice`, and `score` decisions using your own documents and criteria
 - Download a model in the app or open a local GGUF file. Inference runs on your machine
 - macOS, Windows, and Linux support

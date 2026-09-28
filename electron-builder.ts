@@ -81,11 +81,12 @@ export default {
         deleteAppDataOnUninstall: false
     },
     snapcraft: {
-        // Match the Ubuntu runner and include the C++ runtime needed by the native engine.
-        base: "core22",
-        core22: {
-            useTemplateApp: false,
-            stagePackages: ["default", "libstdc++6"]
+        // Use the modern GNOME runtime in an isolated Ubuntu 24.04 build environment.
+        base: "core24",
+        core24: {
+            useLXD: true,
+            stagePackages: ["default", "libstdc++6"],
+            plugs: ["home", "network", {"browser-support": {interface: "browser-support", "allow-sandbox": true}}]
         }
     },
     linux: {

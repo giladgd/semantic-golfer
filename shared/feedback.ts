@@ -1,4 +1,4 @@
-import {camouflageTarget, characterCount, isRoundWon, lockTarget, type GameId, type GameLevel, type GameRound} from "./games.ts";
+import {signalMixingTarget, characterCount, isRoundWon, lockTarget, type GameId, type GameLevel, type GameRound} from "./games.ts";
 import {levelFeedback, roundFeedback, type FeedbackStyle} from "./feedback/messages.ts";
 
 export function getRoundFeedback(
@@ -10,7 +10,7 @@ export function getRoundFeedback(
     const ratio = characterCount(document) / round.limit;
     const targets = game === "lock" ? probabilities : probabilities.slice(0, 2);
     const margins = probabilities.map((value, index) => (game === "lock" ? value - lockTarget :
-        index < 2 ? value - camouflageTarget.min : camouflageTarget.other - value));
+        index < 2 ? value - signalMixingTarget.min : signalMixingTarget.other - value));
     const closest = Math.min(...margins);
     const clear = closest >= 0.18;
     const compact = ratio <= 0.45;
@@ -37,7 +37,7 @@ export function getRoundFeedback(
         return roundFeedback[game][level.id - 1]![index]!;
     if (variation === 0 && style === "balanced")
         return game === "lock" ? `All ${targets.length} conditions in balance` : `${round.labels[0]} and ${round.labels[1]} in balance`;
-    if (variation === 0 && style === "close" && game === "camouflage") {
+    if (variation === 0 && style === "close" && game === "signalMixing") {
         const tightest = margins.indexOf(closest);
         return `${round.labels[tightest]} ${tightest < 2 ? "just over" : "kept below"} the line`;
     }

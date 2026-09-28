@@ -9,6 +9,7 @@ import {test} from "node:test";
 import {fileURLToPath, pathToFileURL} from "node:url";
 import {getReleaseAssets} from "../scripts/releaseAssets.ts";
 import builderConfig from "../electron-builder.ts";
+import type {LinuxPackager} from "app-builder-lib/out/linuxPackager.js";
 
 test("CI builds the six supported platform/architecture pairs with all configured package formats", async () => {
     const {load} = createRequire(import.meta.url)("js-yaml");
@@ -31,6 +32,37 @@ test("CI builds the six supported platform/architecture pairs with all configure
     });
     for (const permission of ["contents", "issues", "pull-requests", "id-token"])
         assert.equal(workflow.jobs.release.permissions[permission], "write");
+    assert.doesNotMatch(JSON.stringify(workflow.jobs.release), /NPM_TOKEN|NODE_AUTH_TOKEN/,
+        "npm publishing must use OIDC without an npm token secret");
+    const lxdSetup = workflow.jobs.build.steps.find(({uses}: {uses?: string}) => uses?.startsWith("canonical/setup-lxd@"));
+    assert.equal(lxdSetup?.if, "matrix.platform == 'linux' && matrix.arch == 'x64'");
+    assert.equal(builderConfig.snapcraft.core24.useLXD, true);
+    assert.doesNotMatch(JSON.stringify(workflow.jobs.build), /SNAP_DESTRUCTIVE_MODE/,
+        "Snap's GNOME extension needs an isolated build environment");
+});
+
+test("Snap packaging uses the modern GNOME extension and retains model access and native dependencies", async (context) => {
+    const {LinuxTargetHelper} = await import("app-builder-lib/out/targets/LinuxTargetHelper.js");
+    const {Arch} = await import("builder-util");
+    const metadata = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
+    const helper = new LinuxTargetHelper({
+        config: builderConfig,
+        platformSpecificBuildOptions: builderConfig.linux,
+        executableName: builderConfig.executableName,
+        appInfo: {version: metadata.version, productName: builderConfig.productName, description: metadata.description},
+        info: {metadata}
+    } as LinuxPackager);
+    context.mock.getter(helper, "icons", async () => []);
+    const snap = await helper.getSnapCore().createDescriptor(Arch.x64);
+    const app = snap.apps[builderConfig.executableName];
+    assert.equal(snap.base, "core24");
+    assert.deepEqual(app.extensions, ["gnome"]);
+    assert.equal(app.command, `app/${builderConfig.executableName}`);
+    for (const plug of ["home", "network", "browser-support"])
+        assert.ok(app.plugs.includes(plug), `${plug} must remain available`);
+    assert.equal(snap.plugs["browser-support"]["allow-sandbox"], true);
+    assert.ok(snap.parts[builderConfig.executableName]["stage-packages"].includes("libstdc++6"));
+    assert.doesNotMatch(JSON.stringify(snap), /gnome-3-28-1804|desktop-gtk2|desktop-gnome-specific/);
 });
 
 test("semantic-release waits for npm publication and stops before GitHub when npm fails", async () => {

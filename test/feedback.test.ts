@@ -50,11 +50,11 @@ test("feedback responds to brevity, solve time, balanced bars and close threshol
     assert.equal(feedback("🐈".repeat(Math.floor(round.limit * 0.4)), [0.95, 0.95, 0.95], 1000), messages.compactQuick);
     assert.equal(feedback(medium, [0.95, 0.95, 0.95], 90_000), feedback(medium, [0.95, 0.95, 0.95], 90_000));
 
-    const blendLevel = games.camouflage.levels[0]!;
+    const blendLevel = games.signalMixing.levels[0]!;
     const blendRound = blendLevel.rounds[0]!;
     const values = [0.95, 0.95, 0.695, 0.05];
-    assert.equal(getRoundFeedback("camouflage", blendLevel, blendRound, "xxx", values, 1000),
+    assert.equal(getRoundFeedback("signalMixing", blendLevel, blendRound, "xxx", values, 1000),
         `${blendRound.labels[2]} kept below the line`);
     values[2] = 0.7;
-    assert.equal(getRoundFeedback("camouflage", blendLevel, blendRound, "xxx", values, 1000), undefined);
+    assert.equal(getRoundFeedback("signalMixing", blendLevel, blendRound, "xxx", values, 1000), undefined);
 });

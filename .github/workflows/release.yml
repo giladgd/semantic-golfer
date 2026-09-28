@@ -69,6 +69,11 @@ jobs:
       - name: Install Snapcraft
         if: matrix.platform == 'linux' && matrix.arch == 'x64'
         run: sudo snap install snapcraft --classic --channel=8.x/stable
+      - name: Set up LXD for Snap packaging
+        if: matrix.platform == 'linux' && matrix.arch == 'x64'
+        uses: canonical/setup-lxd@8c6a87bfb56aa48f3fb9b830baa18562d8bfd4ee # v1
+        with:
+          channel: 5.21/stable
       - name: Select Xcode for native icon appearances
         if: runner.os == 'macOS'
         run: |
@@ -88,7 +93,6 @@ jobs:
       - name: Package Semantic Golfer
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
-          SNAP_DESTRUCTIVE_MODE: 'true'
         run: npm run build -- --${{ matrix.platform }} ${{ matrix.targets }} --${{ matrix.arch }}
       - name: Check the packaged inference runtime
         run: |
@@ -138,6 +142,5 @@ jobs:
       - name: Publish npm, then GitHub, with semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           RELEASE_VERSION: ${{ needs.check.outputs.version }}
         run: npm run release

@@ -29,7 +29,7 @@ The real-model check deliberately reports these mismatches with a nonzero exit s
 
 ## Electron verification
 
-Real keyboard checks passed with Qwen 0.8B and Gemma Q8: typing `hello` kept every round locked, all three rounds were playable, and replacing a winning sentence immediately disabled advancement. Rapidly typing a sentence produced two or three actual evaluations, with the final request matching the current textarea. Both model pickers list models largest first. Camouflage retains its original document format and its previously tested first-round solution still wins.
+Real keyboard checks passed with Qwen 0.8B and Gemma Q8: typing `hello` kept every round locked, all three rounds were playable, and replacing a winning sentence immediately disabled advancement. Rapidly typing a sentence produced two or three actual evaluations, with the final request matching the current textarea. Both model pickers list models largest first. Signal Mixing retains its original document format and its previously tested first-round solution still wins.
 
 ## Repeat
 

@@ -8,7 +8,8 @@ export function hasSeenGameHelp(game: GameId) {
     if (seenGames.has(game))
         return true;
     try {
-        return localStorage.getItem(`game-help:${game}`) === "seen";
+        return localStorage.getItem(`game-help:${game}`) === "seen" ||
+            (game === "signalMixing" && localStorage.getItem("game-help:camouflage") === "seen");
     } catch {
         return false;
     }

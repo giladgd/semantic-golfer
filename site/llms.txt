@@ -23,7 +23,7 @@ The responsive loop is the experience: make an edit, see the model's judgment, a
 
 **Semantic Golfing:** write a message within the round's character limit. Every condition must reach at least 70%. For example, the first round asks for an animal name, a request for help, and a need for immediate action.
 
-**Category Camouflage:** blend two target meanings in one message. Both target categories must reach at least 70%, while each other category stays below 70%. The categories are evaluated independently; their values are not a probability distribution that sums to 100%.
+**Signal Mixing:** blend two target meanings in one message. Both target categories must reach at least 70%, while each other category stays below 70%. The categories are evaluated independently; their values are not a probability distribution that sums to 100%.
 
 Each game has 11 levels and 51 rounds. A round's score is `max(1, round(1000 * (1 - characters / characterLimit)))`. A completed level adds its round scores. The My scores screen saves personal bests per level, game, and model across app launches. Scores belong to the model used, because different models can judge the same text differently.
 

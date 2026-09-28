@@ -40,6 +40,7 @@ export function Play() {
         <div className="gameChoices">{(Object.keys(games) as GameId[]).map((id) => <button
             className="gameChoice"
             key={id}
+            disabled={id === "signalMixing"}
             onClick={() => {
                 playState.state = {...playState.state, screen: "levels", game: id};
             }}
@@ -48,9 +49,11 @@ export function Play() {
             <span className="gameName">{games[id].name}</span>
             <span className="description">{games[id].description}</span>
             <span className="gameMeta">
-                <span className="gameTag"><RoundsIconSVG aria-hidden="true" />{games[id].levels.length} levels</span>
-                <span className="gameTag"><ClockIconSVG aria-hidden="true" />5–10 min / level</span>
-                <span className="playGame">Play game <ArrowBackIconSVG aria-hidden="true" /></span>
+                {id === "signalMixing" ? <span className="gameTag">Coming soon</span> : <>
+                    <span className="gameTag"><RoundsIconSVG aria-hidden="true" />{games[id].levels.length} levels</span>
+                    <span className="gameTag"><ClockIconSVG aria-hidden="true" />5–10 min / level</span>
+                    <span className="playGame">Play game <ArrowBackIconSVG aria-hidden="true" /></span>
+                </>}
             </span>
         </button>)}
         </div>

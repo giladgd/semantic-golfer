@@ -445,7 +445,7 @@ void app.whenReady().then(async () => {
             await checkPlaygroundKeyboard(type);
         }
         await evaluate(() => {
-            for (const game of ["lock", "camouflage"])
+            for (const game of ["lock", "signalMixing"])
                 localStorage.setItem(`game-help:${game}`, "seen");
         });
         await click(".topBar nav button:first-child");
@@ -614,7 +614,7 @@ void app.whenReady().then(async () => {
             {...base, modelId: "qwen-0.8b", modelName: "Qwen 3.5 0.8B Q8_0", latest: 2000, completedAt: "2026-09-25T00:00:00Z"},
             {...base, modelId: "qwen-0.8b", modelName: "Qwen 3.5 0.8B Q8_0", level: 2},
             {...base, modelId: "gemma-q8", modelName: "Gemma 4 5B E2B Q8_0", level: 2, completedAt: "2026-09-24T00:00:00Z"},
-            {...base, game: "camouflage", level: 3},
+            {...base, game: "signalMixing", level: 3},
             {...base, modelId: `local:${"a".repeat(64)}`, modelName: localName, level: 4}
         ]};
         await rpc.updateState(state);

@@ -85,7 +85,7 @@ function round(id: string, title: string, limit: number, ...keys: (keyof typeof 
     };
 }
 
-export const camouflageLevels: GameLevel[] = [
+export const signalMixingLevels: GameLevel[] = [
     {id: 1, title: "Two meanings at once", skill: "Blend two clear meanings and avoid the distractions.", rounds: [
         round("1-1", "Praise and criticism", 120, "praise", "complaint", "question", "apology"),
         round("1-2", "Work can be fun", 110, "work", "leisure", "shopping", "warning"),

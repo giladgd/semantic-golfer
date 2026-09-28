@@ -8,7 +8,7 @@ import path from "node:path";
 import {parseArgs} from "node:util";
 import {getLlama} from "node-llama-cpp";
 import {createQuestion, type DecisionResult} from "../shared/decision.ts";
-import {camouflageTarget, gameProbabilities, gameRequest, games, isRoundWon, lockTarget, type GameId} from "../shared/games.ts";
+import {signalMixingTarget, gameProbabilities, gameRequest, games, isRoundWon, lockTarget, type GameId} from "../shared/games.ts";
 import {models} from "../shared/models.ts";
 import {missingDetails, singleMeaning} from "./fixtures/level-near-misses.ts";
 import {levelSolutions} from "./fixtures/level-solutions.ts";
@@ -129,7 +129,7 @@ try {
                                 const falseWin = won && mustFail;
                                 if (values.phase === "solutions" && won) {
                                     const margin = Math.min(...probabilities.map((value, index) => (game === "lock" ? value - lockTarget :
-                                        index < 2 ? value - camouflageTarget.min : camouflageTarget.other - value)));
+                                        index < 2 ? value - signalMixingTarget.min : signalMixingTarget.other - value)));
                                     if (margin > (solutionMargins[key] ?? -1)) {
                                         solutionMargins[key] = margin;
                                         knownSolutions[key] = text;

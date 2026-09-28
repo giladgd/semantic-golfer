@@ -1,7 +1,7 @@
 import {useEffect, useId, useRef} from "react";
 import {useExternalState} from "../../../hooks/useExternalState.ts";
 import {dismissGameHelp, gameHelpState} from "../../../state/gameHelpState.ts";
-import {camouflageTarget, games, lockTarget, type GameId} from "../../../../shared/games.ts";
+import {signalMixingTarget, games, lockTarget, type GameId} from "../../../../shared/games.ts";
 import {GameDemo, GameDemoPlayback} from "../GameDemo/GameDemo.tsx";
 import "./GameHelpDialog.css";
 
@@ -36,8 +36,8 @@ export function GameHelpDialog({game, ready}: {game: GameId, ready: boolean}) {
             ? <>Write a message that meets every condition.
                 Get every bar to {lockTarget * 100}% or more while staying within the character limit.
             </>
-            : <>Blend the first two categories at {camouflageTarget.min * 100}% or more each.
-                Keep every other category below {camouflageTarget.other * 100}%, within the character limit.
+            : <>Blend the first two categories at {signalMixingTarget.min * 100}% or more each.
+                Keep every other category below {signalMixingTarget.other * 100}%, within the character limit.
                 Use details, rather than naming the categories.
             </>}
         </p>

@@ -162,7 +162,7 @@ export const levelFeedback: Record<GameId, LevelFeedback[]> = {
             steady: "A well-crafted answer"
         }
     ],
-    camouflage: [
+    signalMixing: [
         { // Level 1
             compactQuick: "Two meanings found in a few beats",
             compactClear: "A small message with two clear signals",
@@ -335,7 +335,7 @@ export const roundFeedback: Record<GameId, string[][]> = {
         ["A little invitation with everything needed", "A considerate refusal neatly condensed", "A compact message ready for rescue", "A bargain with its essentials intact", "A handoff without the spare words", "Reassurance in a small space"],
         ["A complete gathering in one message", "A setback turned into a clear plan", "An emergency message ready to act on", "A repair with a concrete commitment", "A negotiation with clear boundaries", "A journey with the choices made clear", "A handover with every step accounted for", "A thank-you with a generous follow-through"]
     ],
-    camouflage: [
+    signalMixing: [
         ["A review with both sides expressed", "Work with a little room for fun", "A welcome with a clear caution"],
         ["A meeting of food and science", "Music with something to learn", "An active life with a pet"],
         ["A meal with an offer of help", "A digital topic with a clear question", "Gratitude with health in the picture"],

@@ -16,7 +16,7 @@ test("the built site includes readable content, social metadata, and crawlable s
     const brand = html.match(/<a class="brand"[^>]*>([\s\S]*?)<\/a>/)![1]!;
     assert.match(brand, /^<svg\b[^>]*aria-hidden="true"/);
     assert.doesNotMatch(brand, /<img\b/);
-    for (const text of ["Semantic Golfing", "Category Camouflage", "structured decisions", "Less text. More skill",
+    for (const text of ["Semantic Golfing", "Signal Mixing", "structured decisions", "Less text. More skill",
         "npx", "semantic-golfer", "yes-or-no", "Your text stays on your device", "No API key, no subscription"])
         assert.ok(html.includes(text), `Missing readable content: ${text}`);
     assert.ok(!html.includes("Small edits. Immediate feedback") && !html.includes("<details"));
@@ -57,7 +57,7 @@ test("the built site includes readable content, social metadata, and crawlable s
     assert.ok(robots.includes(`Sitemap: ${canonical}sitemap.xml`));
     assert.ok(html.includes(`href="${canonical}sitemap.xml"`) && html.includes(`href="${canonical}llms.txt"`));
     const guide = await readFile(new URL("llms.txt", root), "utf8");
-    for (const text of ["# Semantic Golfer", "npx semantic-golfer", "Semantic Golfing", "Category Camouflage",
+    for (const text of ["# Semantic Golfer", "npx semantic-golfer", "Semantic Golfing", "Signal Mixing",
         "noul", "choice", "score", "recorded evaluation durations", "Try it in real time", canonical])
         assert.ok(guide.includes(text), `Missing guide content: ${text}`);
     assert.ok(!html.includes("file://") && !html.includes("/home/node/"));

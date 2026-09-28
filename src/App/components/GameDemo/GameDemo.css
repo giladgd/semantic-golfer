@@ -55,7 +55,8 @@
             }
         }
         > .demoMeters {
-            padding: 18px;
+            --game-meter-inset: 18px;
+            padding: var(--game-meter-inset);
             align-content: center;
             border-inline-start: 1px solid var(--border-color);
             background: var(--surface-color);

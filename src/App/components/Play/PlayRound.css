@@ -125,6 +125,7 @@
                 > .gameTiming { padding-block: 16px; }
             }
             > .gameMeterList {
+                --game-meter-inset: var(--meters-padding);
                 min-height: 0;
                 overflow-y: auto;
                 padding-block: 2px;
