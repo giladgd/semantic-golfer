@@ -49,8 +49,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {platform: mac, arch: arm64, runner: macos-15, targets: 'dmg zip'}
-          - {platform: mac, arch: x64, runner: macos-15-intel, targets: 'dmg zip'}
+          # Compile native icons on Tahoe to avoid Xcode's macOS 15 asset-runtime framework crash.
+          - {platform: mac, arch: arm64, runner: macos-26, targets: 'dmg zip'}
+          - {platform: mac, arch: x64, runner: macos-26-intel, targets: 'dmg zip'}
           - {platform: win, arch: x64, runner: windows-2022, targets: nsis}
           - {platform: win, arch: arm64, runner: windows-11-arm, targets: nsis}
           - {platform: linux, arch: x64, runner: ubuntu-22.04, targets: 'AppImage snap deb tar.gz'}

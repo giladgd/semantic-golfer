@@ -25,10 +25,20 @@ test("macOS retains native icon appearances and a dark fallback for older system
 
     const appOutDir = await mkdtemp(path.join(tmpdir(), "semantic-golfer-icons-"));
     try {
-        const resources = path.join(appOutDir, "Semantic Golfer.app/Contents/Resources");
+        const resources = path.join(appOutDir, `${config.executableName}.app/Contents/Resources`);
         await mkdir(resources, {recursive: true});
         await writeFile(path.join(resources, "Assets.car"), "Native appearance catalog");
-        const context = {appOutDir, electronPlatformName: "darwin"} as PackContext;
+        const context = {
+            appOutDir,
+            electronPlatformName: "darwin",
+            packager: {
+                projectDir: process.cwd(),
+                getResourcesDir: (directory: string) => {
+                    assert.equal(directory, appOutDir);
+                    return resources;
+                }
+            }
+        } as PackContext;
         await config.afterPack(context);
         const fallback = await readFile(path.join(resources, "icon.icns"));
         assert.equal(fallback.toString("ascii", 0, 4), "icns");

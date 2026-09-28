@@ -39,10 +39,10 @@ export default {
         "node_modules/node-llama-cpp/llama/localBuilds",
         "node_modules/@node-llama-cpp/*"
     ],
-    afterPack: async ({electronPlatformName, appOutDir}) => {
+    afterPack: async ({electronPlatformName, appOutDir, packager}) => {
         if (electronPlatformName === "darwin") {
             // Older macOS versions use the dark ICNS; newer versions use Icon Composer's appearances.
-            await copyFile("assets/icon.icns", path.join(appOutDir, `${productName}.app/Contents/Resources/icon.icns`));
+            await copyFile(path.join(packager.projectDir, "assets/icon.icns"), path.join(packager.getResourcesDir(appOutDir), "icon.icns"));
         }
     },
     mac: {
