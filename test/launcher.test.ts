@@ -44,8 +44,9 @@ test("the launcher prepares/disposes llama before Electron and closes the child 
         await writeFile(path.join(root, "node_modules/node-llama-cpp/index.js"), `
             import assert from "node:assert/strict";
             import {appendFileSync} from "node:fs";
+            export const LlamaLogLevel = {error: "error"};
             export async function getLlama(...args) {
-                assert.equal(args.length, 0);
+                assert.deepEqual(args, [{logLevel: LlamaLogLevel.error}]);
                 appendFileSync(process.env.TRACE, "prepare\\n");
                 if (process.env.SCENARIO === "fail") throw Error("preparation failed");
                 return {async dispose() {
@@ -93,20 +94,24 @@ test("the launcher prepares/disposes llama before Electron and closes the child 
             });
             const exited = once(child, "exit");
             let stdout = "";
+            let stderr = "";
             child.stdout.on("data", (chunk) => {
                 stdout += chunk;
             });
-            child.stderr.resume();
+            child.stderr.on("data", (chunk) => {
+                stderr += chunk;
+            });
             try {
                 if (scenario.startsWith("SIG")) {
                     for (let attempt = 0; !stdout.includes("ready") && attempt < 100; attempt++)
                         await setTimeout(20);
-                    assert.ok(stdout.includes("ready"), "Electron must start after preparing the runtime");
+                    assert.ok(stdout.includes("ready"), `Electron must start after preparing the runtime: ${stderr}`);
                     child.kill(scenario as NodeJS.Signals);
                 }
                 const [code, signal] = await exited;
                 assert.equal(signal, null);
-                assert.equal(code, scenario === "exit" || scenario.startsWith("update") ? 7 : scenario === "SIGINT" ? 130 : scenario === "SIGTERM" ? 143 : 1);
+                assert.equal(code, scenario === "exit" || scenario.startsWith("update") ? 7 : scenario === "SIGINT" ? 130 : scenario === "SIGTERM" ? 143 : 1,
+                    `${scenario}: ${stderr}`);
                 const updated = scenario === "update" ? "install\nprepared new\nold closed\nupdated\n" :
                     scenario === "update-install-fail" ? "install\nupdate rejected\n" :
                         scenario === "update-prepare-fail" ? "install\nprepared new\nupdate rejected\n" : "";

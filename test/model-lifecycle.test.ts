@@ -74,6 +74,7 @@ test("model changes await inference and full disposal; failed loads and deletion
 
     mock.module("electron", {namedExports: {app: {getPath: () => profile}, BrowserWindow: class {}, dialog: {}, shell: {}}});
     mock.module("node-llama-cpp", {namedExports: {
+        LlamaLogLevel: {error: "error"},
         createModelDownloader: () => {
             throw new Error("Unexpected download");
         },
