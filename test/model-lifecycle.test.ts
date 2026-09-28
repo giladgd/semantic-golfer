@@ -78,14 +78,17 @@ test("model changes await inference and full disposal; failed loads and deletion
         createModelDownloader: () => {
             throw new Error("Unexpected download");
         },
-        getLlama: async () => ({
-            async loadModel() {
-                events.push("load");
-                if (failure === "load")
-                    throw new Error("load failed");
-                return new Model();
-            }
-        })
+        getLlama: async (...args: unknown[]) => {
+            assert.deepEqual(args, [{logLevel: "error"}], "Let node-llama-cpp select the runtime with its default build policy");
+            return {
+                async loadModel() {
+                    events.push("load");
+                    if (failure === "load")
+                        throw new Error("load failed");
+                    return new Model();
+                }
+            };
+        }
     }});
     const {loadModel, evaluateDecision, deleteModel} = await import("../electron/llm/models.ts");
     llmState.state = {...initialLlmState, models: Object.fromEntries(models.map(({id}) => [id, {downloaded: true}]))};

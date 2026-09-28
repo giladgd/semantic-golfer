@@ -13,6 +13,8 @@ import builderConfig from "../electron-builder.ts";
 test("CI builds the six supported platform/architecture pairs with all configured package formats", async () => {
     const {load} = createRequire(import.meta.url)("js-yaml");
     const workflow = load(await readFile(new URL("../.github/workflows/release.yml", import.meta.url), "utf8"));
+    assert.doesNotMatch(JSON.stringify(workflow), /source (?:download|build)|NODE_LLAMA_CPP_CMAKE_OPTION/,
+        "CI must use the installed prebuilt runtime without forcing a source build");
     const matrix: Array<{platform: "mac" | "win" | "linux", arch: string, targets: string}> = workflow.jobs.build.strategy.matrix.include;
     assert.deepEqual(matrix.map(({platform, arch}) => `${platform}-${arch}`).sort(),
         ["linux-arm64", "linux-x64", "mac-arm64", "mac-x64", "win-arm64", "win-x64"]);

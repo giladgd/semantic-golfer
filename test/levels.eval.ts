@@ -45,7 +45,7 @@ const write = async (row: unknown) => {
     if (!output.write(JSON.stringify(row) + "\n"))
         await once(output, "drain");
 };
-const llama = await getLlama("lastBuild", {maxThreads: Number(values.threads)});
+const llama = await getLlama({maxThreads: Number(values.threads)});
 let failed = false;
 try {
     for (const selectedModel of selected) {

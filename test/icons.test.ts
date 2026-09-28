@@ -6,6 +6,14 @@ import {test} from "node:test";
 import config from "../electron-builder.ts";
 import type {PackContext} from "electron-builder";
 
+test("Icon Composer produces a native macOS catalog and compatibility icon", {skip: process.platform !== "darwin"}, async () => {
+    const {generateAssetCatalogForIcon} = await import("app-builder-lib/out/util/macosIconComposer.js");
+    const {assetCatalog, icnsFile} = await generateAssetCatalogForIcon(config.mac.icon);
+    assert.ok(assetCatalog.length > 0, "actool must produce a nonempty Assets.car");
+    assert.equal(icnsFile.toString("ascii", 0, 4), "icns");
+    assert.equal(icnsFile.readUInt32BE(4), icnsFile.length);
+});
+
 test("macOS retains native icon appearances and a dark fallback for older systems", async () => {
     const icon = JSON.parse(await readFile(path.join(config.mac.icon, "icon.json"), "utf8"));
     assert.ok(icon["fill-specializations"].some((fill: {appearance?: string}) => fill.appearance === "dark"));

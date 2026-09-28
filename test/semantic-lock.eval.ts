@@ -46,7 +46,7 @@ const samples: {text: string, expected: boolean[], typeCharacters?: boolean, evi
     ]
 ];
 
-const llama = await getLlama("lastBuild");
+const llama = await getLlama();
 const model = await llama.loadModel({modelPath});
 const context = await model.createDecisionContext({contextSize: {max: 4096}, parallelQuestions: 3});
 await context.warmup();

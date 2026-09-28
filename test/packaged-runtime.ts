@@ -31,9 +31,10 @@ void app.whenReady().then(async () => {
     }
     const libraryUrl = pathToFileURL(path.join(archive, "node_modules/node-llama-cpp/dist/index.js"));
     const {getLlama} = await import(libraryUrl.href) as typeof import("node-llama-cpp");
-    // Load the packaged native module without requiring a model or GPU on the runner.
-    await getLlama("lastBuild", {dryRun: true, usePrebuiltBinaries: false, skipDownload: true});
-    console.info("Packaged assets verified and inference runtime loaded successfully.");
+    // A dry run loads and disposes the binary without initializing the backend, downloading, or building.
+    const llama = await getLlama({dryRun: true});
+    assert.equal(llama.buildType, "prebuilt", "Desktop releases must load the packaged prebuilt runtime");
+    console.info("Packaged assets verified and prebuilt inference runtime loaded successfully.");
     app.exit(0);
 })
     .catch((error) => {

@@ -49,45 +49,36 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {platform: mac, arch: arm64, runner: macos-15, gpu: metal, targets: 'dmg zip'}
-          - {platform: mac, arch: x64, runner: macos-15-intel, gpu: 'false', targets: 'dmg zip'}
-          - {platform: win, arch: x64, runner: windows-2022, gpu: 'false', targets: nsis}
-          - {platform: win, arch: arm64, runner: windows-11-arm, gpu: 'false', targets: nsis}
-          - {platform: linux, arch: x64, runner: ubuntu-22.04, gpu: 'false', targets: 'AppImage snap deb tar.gz'}
-          - {platform: linux, arch: arm64, runner: ubuntu-22.04-arm, gpu: 'false', targets: 'AppImage deb tar.gz'}
+          - {platform: mac, arch: arm64, runner: macos-15, targets: 'dmg zip'}
+          - {platform: mac, arch: x64, runner: macos-15-intel, targets: 'dmg zip'}
+          - {platform: win, arch: x64, runner: windows-2022, targets: nsis}
+          - {platform: win, arch: arm64, runner: windows-11-arm, targets: nsis}
+          - {platform: linux, arch: x64, runner: ubuntu-22.04, targets: 'AppImage snap deb tar.gz'}
+          - {platform: linux, arch: arm64, runner: ubuntu-22.04-arm, targets: 'AppImage deb tar.gz'}
     defaults:
       run:
         shell: bash
     steps:
       - uses: actions/checkout@v6
-      - name: Install Linux build tools
+      - name: Install Linux packaging tools
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y cmake ninja-build libarchive-tools rpm xvfb xauth libgtk-3-0 libnss3 libasound2
+          sudo apt-get install -y libarchive-tools rpm xvfb xauth libgtk-3-0 libnss3 libasound2
       - name: Install Snapcraft
         if: matrix.platform == 'linux' && matrix.arch == 'x64'
         run: sudo snap install snapcraft --classic --channel=8.x/stable
-      - name: Install macOS build tools
-        if: runner.os == 'macOS'
-        env:
-          HOMEBREW_NO_AUTO_UPDATE: '1'
-        run: brew install cmake ninja
       - name: Select Xcode for native icon appearances
         if: runner.os == 'macOS'
         run: |
           sudo xcode-select --switch /Applications/Xcode_26.3.app/Contents/Developer
           dirname "$(xcrun --find actool)" >> "$GITHUB_PATH"
       - uses: ./.github/actions/setup
-      - name: Build the native inference runtime
+      - name: Check native macOS icon compilation
+        if: runner.os == 'macOS'
         env:
-          TARGET_ARCH: ${{ matrix.arch }}
-          GPU: ${{ matrix.gpu }}
-          # Repacking can exceed Electron's single-allocation limit on CPU backends.
-          NODE_LLAMA_CPP_CMAKE_OPTION_GGML_CPU_REPACK: 'OFF'
-        run: |
-          node node_modules/node-llama-cpp/dist/cli/cli.js source download --skipBuild --noUsageExample
-          node node_modules/node-llama-cpp/dist/cli/cli.js source build --arch "$TARGET_ARCH" --gpu "$GPU" --ciMode --noUsageExample
+          DEBUG: electron-builder
+        run: node --test test/icons.test.ts
       - name: Set the release version
         if: needs.check.outputs.version != ''
         env:

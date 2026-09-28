@@ -9,7 +9,6 @@ import {getLlama, LlamaLogLevel} from "node-llama-cpp";
 import {prepareRuntime, prepareUpdate, savedUpdate} from "./prepareUpdate.ts";
 
 try {
-    // Node can build a missing native binary; Electron disables that fallback by default.
     const llama = await getLlama({logLevel: LlamaLogLevel.error});
     await llama.dispose();
 

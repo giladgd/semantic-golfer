@@ -105,10 +105,7 @@ export function loadModel(id: ModelId) {
     return withLock(inferenceScope, async () => {
         try {
             await unloadModel();
-            // Desktop builds use the prepared native runtime; npm launches prepare their own runtime.
-            llama ??= process.env.SEMANTIC_GOLFER_LAUNCHER === "1"
-                ? await getLlama({logLevel: LlamaLogLevel.error})
-                : await getLlama("lastBuild", {logLevel: LlamaLogLevel.error});
+            llama ??= await getLlama({logLevel: LlamaLogLevel.error});
             model = await llama.loadModel({
                 modelPath: filePath,
                 onLoadProgress(progress) {
