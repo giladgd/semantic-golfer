@@ -232,7 +232,7 @@ test("GitHub publication includes download links, waits for every upload, and le
                     if (route === "POST /repos/{owner}/{repo}/releases") {
                         assert.equal(options?.draft, true);
                         const body = options!.body;
-                        assert.ok(body.startsWith("## Downloads\n\n| OS | arm64 | x64 |\n| --- | --- | --- |\n"));
+                        assert.ok(body.startsWith("## Downloads\n\n|  | arm64 | x64 |\n| --- | --- | --- |\n"));
                         assert.ok(body.endsWith("\n\nTest release"), "keep the generated changelog below the table");
                         const downloads = [
                             ["macOS", "mac-arm64.dmg mac-arm64.zip", "mac-x64.dmg mac-x64.zip"],
