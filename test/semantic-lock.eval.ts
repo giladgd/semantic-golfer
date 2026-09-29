@@ -22,27 +22,20 @@ const samples: {text: string, expected: boolean[], typeCharacters?: boolean, evi
         {text: "Please rescue the trapped kitten immediately!", expected: [true, true, true]}
     ],
     [
-        {text: "Sorry I broke your mug.", expected: [true, false, false], typeCharacters: true, evidenceAt: [5, 0, 0]},
-        {text: "It is raining outside.", expected: [false, true, false]},
-        {text: "Let's go to the museum instead of the park.", expected: [false, false, true]},
-        {text: "The weather is sunny.", expected: [false, false, false]},
-        {text: "I am not sorry.", expected: [false, false, false]},
-        {text: "Sorry, a storm ruined our picnic. Let's eat indoors instead!", expected: [true, true, true],
-            typeCharacters: true, evidenceAt: [5, 14, 42]},
-        {text: "I'm sorry the rain canceled our picnic. Let's reschedule it for next week instead.", expected: [true, true, true]},
-        {text: "I'm sorry, the storm canceled our hike; let's visit the museum instead.", expected: [true, true, true]}
+        {text: "Could you give me a ride?", expected: [true, false, false], typeCharacters: true, evidenceAt: [23, 0, 0]},
+        {text: "I need to go to the library.", expected: [false, true, false]},
+        {text: "I will pay for your fuel.", expected: [false, false, true]},
+        {text: "Could you drive me to the library? I can pay for fuel.", expected: [true, true, true],
+            typeCharacters: true, evidenceAt: [18, 32, 51]},
+        {text: "Could you give me a lift to the station? I will cover the petrol.", expected: [true, true, true]}
     ],
     [
-        {text: "There is bread on the table.", expected: [true, false, false], typeCharacters: true, evidenceAt: [14, 0, 0]},
-        {text: "Where is the library?", expected: [false, true, false]},
-        {text: "Wow, I am so excited!", expected: [false, false, true]},
-        {text: "I do not have any questions.", expected: [false, false, false]},
-        {text: "I am bored.", expected: [false, false, false]},
-        {text: "Wow, pizza! Want to make some together?", expected: [true, true, true],
-            typeCharacters: true, evidenceAt: [10, 16, 3]},
-        {text: "I love cake! Shall we bake one?", expected: [true, true, true]},
-        {text: "Wow, shall we bake a delicious cake?", expected: [true, true, true]},
-        {text: "Want pizza? I'm so excited!", expected: [true, true, true]}
+        {text: "Have a cookie.", expected: [true, false, false]},
+        {text: "This is a chocolate cookie.", expected: [false, true, false]},
+        {text: "I baked these cookies myself.", expected: [false, false, true]},
+        {text: "Have a chocolate cookie; I baked them myself.", expected: [true, true, true],
+            typeCharacters: true, evidenceAt: [23, 23, 35]},
+        {text: "I baked these lemon cookies myself. Please take one.", expected: [true, true, true]}
     ]
 ];
 
@@ -81,7 +74,7 @@ try {
                 const duration = performance.now() - start;
                 const result = {answer: answers["0"]!, additionalAnswers: Object.keys(questions).slice(1)
                     .map((key) => answers[key]!), duration};
-                const probabilities = gameProbabilities("lock", result);
+                const probabilities = gameProbabilities(result);
                 // A prefix may establish a condition before the sentence is finished. Only
                 // assert negatives before evidence appears, then assert the complete sentence.
                 const expected = sample.expected.map((value, index) => (text === sample.text || !value ? value :

@@ -28,14 +28,25 @@ export async function recordReadmeDemo() {
     };
     freezeLayout(sheet.cssRules);
     const positions: string[] = [];
-    const styles = [...sheet.cssRules].map((rule) => rule.cssText).join("\n")
+    const recordSelector = (selector: string) => {
+        if (!positions.includes(selector))
+            positions.push(selector);
+        return `[data-p~="p${positions.indexOf(selector)}"]`;
+    };
+    let styles = [...sheet.cssRules].map((rule) => rule.cssText).join("\n");
+    // Hidden scene variants still match :has(). Record its original matches, including nested selector functions.
+    for (let start = styles.indexOf(":has("); start !== -1; start = styles.indexOf(":has(", start)) {
+        let end = styles.indexOf(")", start);
+        while (end !== -1 && !CSS.supports(`selector(${styles.slice(start, end + 1)})`))
+            end = styles.indexOf(")", end + 1);
+        if (end === -1)
+            throw new Error("Could not record a :has() selector in the demo styles");
+        styles = styles.slice(0, start) + recordSelector(styles.slice(start, end + 1)) + styles.slice(end + 1);
+    }
+    styles = styles
         .replace(/\btextarea\b/g, ":is(textarea,.exportTextarea)")
-        // Hidden scene variants must not change first/last/nth-child matching.
-        .replace(/:(?:(?:first|last|only)-(?:child|of-type)|nth-(?:child|of-type)\([^)]*\))/g, (selector) => {
-            if (!positions.includes(selector))
-                positions.push(selector);
-            return `[data-p~="p${positions.indexOf(selector)}"]`;
-        });
+        // Hidden scene variants must not change first/last/nth-child matching either.
+        .replace(/:(?:(?:first|last|only)-(?:child|of-type)|nth-(?:child|of-type)\([^)]*\))/g, recordSelector);
     await Promise.all([...viewport.querySelectorAll("img")].map(async (image) => {
         const blob = await (await fetch(image.src)).blob();
         image.src = await new Promise<string>((resolve) => {
@@ -52,6 +63,8 @@ export async function recordReadmeDemo() {
     let previous = -Infinity;
     let lastScene = 0;
     playbackState.state = {scene: 0, elapsed: 0, playing: false, firstPlay: false};
+    // Let React apply the reset and the cursor's deferred layout run before capturing frame zero.
+    await new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
     await new Promise<void>((resolve, reject) => {
         const timeout = window.setTimeout(() => reject(new Error("Timed out recording the README demo")), duration * 3);
         const started = performance.now();
@@ -234,14 +247,20 @@ export function compileReadmeDemo(frames: Sample[], duration: number, styles: st
     const poster = render([frames.findLast(({at}) => at < timeline[0]!.duration - 1000)!], duration);
     return `<svg xmlns="http://www.w3.org/2000/svg" id="export" width="1280" height="720" viewBox="0 0 1280 720"
 role="img" aria-labelledby="title description" data-duration="${duration}">
-<title id="title">Semantic Golfer — live structured decisions</title>
+<title id="title">Semantic Golfer - live structured decisions</title>
 <desc id="description">A looping recording of the real app: yes/no decisions, choosing a category, scoring an issue, and Semantic Golfing.
 Open the website for playback controls and the interactive demo.</desc>
 <style><![CDATA[
 ${styles}
+#export{background:transparent;width:100%;height:auto}
+/* WebKit drops the SVG scale for positioned HTML. Cancel it here and scale the HTML itself. */
+#export>foreignObject{overflow:visible;transform-origin:0 0;transform:scale(calc(1280px / 100vw))}
+#export>foreignObject>.playgroundDemo{width:1280px;height:720px;transform-origin:0 0;transform:scale(calc(100vw / 1280px))}
+#export>foreignObject>.playgroundDemo::after{content:"";position:absolute;inset:0;z-index:10;pointer-events:none;
+box-shadow:inset 0 0 0 1px var(--border-color);border-radius:20px}
 @font-face{font-family:"Inter Variable";font-style:normal;font-weight:100 900;src:url("data:font/woff2;base64,${font}") format("woff2")}
 .exportTextarea[data-placeholder="true"]{color:var(--muted-text-color)}
-.playgroundDemo>.demoFrame{box-shadow:none;border-radius:20px}
+.playgroundDemo>.demoFrame{background:var(--background-color);box-shadow:none;border-radius:20px}
 .exportPoster{display:none}
 ${rules.join("\n")}
 @media(prefers-reduced-motion:reduce){.exportMovie{display:none}.exportPoster{display:block}.exportPoster *{animation:none!important}}

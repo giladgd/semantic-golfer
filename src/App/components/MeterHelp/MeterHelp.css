@@ -1,0 +1,63 @@
+.meterHelp {
+    display: inline-flex;
+    flex-shrink: 0;
+    > button {
+        display: grid;
+        place-items: center;
+        height: 18px;
+        width: 16px;
+        padding: 2px 0px;
+        margin-inline-start: 1px;
+        border-radius: 6px;
+        background: transparent;
+        color: var(--muted-text-color);
+        opacity: 0.2;
+        transition: opacity 150ms, background-color 150ms;
+        &:is(:hover, :focus-visible):not(:disabled) {
+            opacity: 1;
+            background: color-mix(in srgb, currentColor 12%, transparent);
+        }
+        > svg { width: 14px; height: 14px; }
+    }
+    > .meterTooltip {
+        position: fixed;
+        inset: auto;
+        position-area: top;
+        justify-self: anchor-center;
+        position-try-fallbacks: flip-block;
+        width: min(280px, calc(100vw - 24px));
+        margin: 0 0 8px;
+        overflow: visible;
+        padding: 12px 14px;
+        border: 0;
+        border-radius: 12px;
+        color: var(--text-color);
+        background: color-mix(in srgb, light-dark(var(--surface-color), var(--subtle-surface-color)) 50%, transparent);
+        backdrop-filter: blur(8px) saturate(1.15);
+        box-shadow: 0 8px 24px -6px var(--popover-shadow-color);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.5;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(6px) scale(0.96);
+        transform-origin: bottom center;
+        transition: opacity 150ms, transform 150ms var(--transition-easing), display 150ms allow-discrete, overlay 150ms allow-discrete;
+        /* Keep the hover area connected to the icon across the gap. */
+        &::before {
+            content: "";
+            position: absolute;
+            inset: -8px 0;
+            z-index: -1;
+        }
+        &:popover-open {
+            opacity: 1;
+            transform: none;
+            transition-duration: 200ms;
+        }
+        @starting-style {
+            &:popover-open { opacity: 0; transform: translateY(6px) scale(0.96); }
+        }
+        @media (prefers-reduced-motion: reduce) { transition: none; }
+    }
+}

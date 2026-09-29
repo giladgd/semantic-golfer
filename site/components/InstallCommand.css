@@ -15,7 +15,6 @@
         border-radius: 14px;
         padding: 6px 6px 6px 12px;
         transition: border-color 180ms, background-color 180ms;
-        &:focus-within { border-color: var(--accent-color); }
         > .prompt {
             font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
             opacity: 0.5;
@@ -77,6 +76,7 @@
         text-decoration: none;
         margin-top: 3px;
         user-select: text;
+        border-radius: 4px;
         &:hover { color: var(--landing-link-color); text-decoration: none; }
         > span { padding-left: 4px; }
     }

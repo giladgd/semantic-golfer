@@ -4,6 +4,7 @@ import type {ModelId} from "./models.ts";
 export const decisionTypes = ["noul", "choice", "score"] as const;
 export type DecisionType = typeof decisionTypes[number];
 export const maxCriteria = {noul: 2, choice: 50, score: 10} as const;
+export const maxDecisionQuestions = 16;
 export type DecisionInput = {
     type: DecisionType,
     document: string,
@@ -23,8 +24,8 @@ export function validateDecisionRequest(request: DecisionRequest): string | unde
         return error;
     if (request.additionalInputs == null)
         return undefined;
-    if (!Array.isArray(request.additionalInputs) || request.additionalInputs.length > 6)
-        return "Use at most seven questions per document.";
+    if (!Array.isArray(request.additionalInputs) || request.additionalInputs.length >= maxDecisionQuestions)
+        return `Use at most ${maxDecisionQuestions} questions per document.`;
     for (const input of request.additionalInputs) {
         const error = validateDecisionInput(input);
         if (error != null)

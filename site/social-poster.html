@@ -11,6 +11,7 @@
                 font-weight: 100 900;
             }
             * { box-sizing: border-box; }
+            :root { color-scheme: dark; }
             body {
                 width: 1200px; height: 600px; margin: 0; overflow: hidden;
                 font-family: Inter, sans-serif; color: #e2eee5;
@@ -21,18 +22,13 @@
             h1 { position: absolute; top: 144px; left: 64px; margin: 0; font-size: 68px; line-height: 1.06; font-weight: 570; letter-spacing: -4px; }
             h1 span { color: #8ace9e; }
             p { position: absolute; top: 368px; left: 68px; margin: 0; color: #a3b7a9; font-size: 21px; line-height: 1.6; }
-            code { position: absolute; left: 64px; bottom: 70px; border: 1px solid #42664d; padding: 18px 24px; border-radius: 16px; font-size: 24px; color: #b3a4ed; background: #19221b; }
-            code span { color: #8ace9e; }
             .preview { position: absolute; left: 578px; top: 205px; width: 660px; border: 1px solid #ffffff18; border-radius: 20px; box-shadow: 0 30px 80px #0008; transform: rotate(-5deg); }
-            .platforms { position: absolute; bottom: 37px; left: 68px; color: #96a79c; font-size: 13px; }
         </style>
     </head>
     <body>
         <div class="brand"><img src="../public/icon.svg" alt="" />Semantic Golfer</div>
         <h1>Make every<br /><span>character<br />count</span></h1>
         <p>Word games. Live decisions.<br />Running locally, no cloud</p>
-        <code><span>npx</span> semantic-golfer</code>
         <img class="preview" src="../assets/playground-preview.png" alt="Semantic Golfer Playground" />
-        <div class="platforms">macOS · Windows · Linux</div>
     </body>
 </html>

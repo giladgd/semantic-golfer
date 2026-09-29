@@ -70,7 +70,7 @@ test("every typed demo frame has a real recording from the recommended model", a
     const game = scenes[3]!;
     for (const document of game.documents) {
         const result = data.recordings[3].frames.find((frame: {document: string}) => frame.document === document);
-        const won = isRoundWon("lock", golfRound, document, gameProbabilities("lock", result));
+        const won = isRoundWon("lock", golfRound, document, gameProbabilities(result));
         assert.equal(won, document.includes("now!"), document);
     }
     assert.ok(roundScore(golfRound, game.documents.at(-1)!.length) > roundScore(golfRound, game.documents.at(-2)!.length));
@@ -260,7 +260,7 @@ test("the hidden cursor makes a small reveal movement, pauses, then heads toward
     }
 });
 
-test("document replacements select all, delete, and wait a seeded 50–120ms before typing", () => {
+test("document replacements select all, delete, and wait a seeded 50-120ms before typing", () => {
     const selectionCounts: number[] = [];
     for (const [scene, timing] of timeline.entries()) {
         const selections = timing.steps.filter((step) => step.selected);

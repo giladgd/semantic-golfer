@@ -19,7 +19,7 @@ test("every level and round has authored feedback without trailing punctuation",
                 assert.doesNotMatch(message, /[.!?]/);
             }
             for (const round of level.rounds) {
-                const values = round.labels.map((_, index) => (game === "lock" || index < 2 ? 0.95 : 0.05));
+                const values = round.labels.map((_, index) => (index < round.goalCount ? 0.95 : 0.05));
                 assert.ok(getRoundFeedback(game, level, round, "A winning answer", values, 10_000));
                 assert.equal(getRoundFeedback(game, level, round, "", values, 10_000), undefined);
                 assert.equal(getRoundFeedback(game, level, round, "x".repeat(round.limit + 1), values, 10_000), undefined);
@@ -52,9 +52,11 @@ test("feedback responds to brevity, solve time, balanced bars and close threshol
 
     const blendLevel = games.signalMixing.levels[0]!;
     const blendRound = blendLevel.rounds[0]!;
-    const values = [0.95, 0.95, 0.695, 0.05];
+    const values = [0.95, 0.95, 0.595, 0.05];
     assert.equal(getRoundFeedback("signalMixing", blendLevel, blendRound, "xxx", values, 1000),
         `${blendRound.labels[2]} kept below the line`);
-    values[2] = 0.7;
+    assert.equal(getRoundFeedback("signalMixing", blendLevel, blendRound, "xxx", [0.705, 0.95, 0.1, 0.05], 1000),
+        `Just over the line: ${blendRound.labels[0]}`);
+    values[2] = 0.6;
     assert.equal(getRoundFeedback("signalMixing", blendLevel, blendRound, "xxx", values, 1000), undefined);
 });

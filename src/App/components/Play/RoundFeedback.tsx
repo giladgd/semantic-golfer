@@ -16,7 +16,7 @@ export function RoundFeedback({won, game, level, round, document, result, starte
     /* eslint-disable react-hooks/immutability */
     useEffect(() => {
         if (won) {
-            message.state = getRoundFeedback(game, level, round, document, gameProbabilities(game, result),
+            message.state = getRoundFeedback(game, level, round, document, gameProbabilities(result),
                 startedAt == null ? Infinity : performance.now() - startedAt) ?? "";
         }
     }, [won, game, level, round, document, result, startedAt, message]);

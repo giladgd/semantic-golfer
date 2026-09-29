@@ -7,9 +7,20 @@ import {tmpdir} from "node:os";
 import path from "node:path";
 import {test} from "node:test";
 import {fileURLToPath, pathToFileURL} from "node:url";
-import {getReleaseAssets} from "../scripts/releaseAssets.ts";
+import {getReleaseAssets, getReleaseBodyTemplate} from "../scripts/releaseAssets.ts";
 import builderConfig from "../electron-builder.ts";
 import type {LinuxPackager} from "app-builder-lib/out/linuxPackager.js";
+import type {Packager} from "app-builder-lib/out/packager.js";
+
+test("desktop builds use the display name on macOS and Windows and a shell-friendly Linux executable", async () => {
+    const {AppInfo} = await import("app-builder-lib/out/appInfo.js");
+    const metadata = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
+    for (const platform of ["mac", "win", "linux"] as const) {
+        const appInfo = new AppInfo({config: builderConfig, metadata} as Packager, undefined, builderConfig[platform]);
+        assert.equal(appInfo.productFilename, platform === "linux" ? "semantic-golfer" : "Semantic Golfer");
+        assert.equal(appInfo.productName, "Semantic Golfer");
+    }
+});
 
 test("CI builds the six supported platform/architecture pairs with all configured package formats", async () => {
     const {load} = createRequire(import.meta.url)("js-yaml");
@@ -48,20 +59,20 @@ test("Snap packaging uses the modern GNOME extension and retains model access an
     const helper = new LinuxTargetHelper({
         config: builderConfig,
         platformSpecificBuildOptions: builderConfig.linux,
-        executableName: builderConfig.executableName,
+        executableName: builderConfig.linux.executableName,
         appInfo: {version: metadata.version, productName: builderConfig.productName, description: metadata.description},
         info: {metadata}
     } as LinuxPackager);
     context.mock.getter(helper, "icons", async () => []);
     const snap = await helper.getSnapCore().createDescriptor(Arch.x64);
-    const app = snap.apps[builderConfig.executableName];
+    const app = snap.apps[builderConfig.linux.executableName];
     assert.equal(snap.base, "core24");
     assert.deepEqual(app.extensions, ["gnome"]);
-    assert.equal(app.command, `app/${builderConfig.executableName}`);
+    assert.equal(app.command, `app/${builderConfig.linux.executableName}`);
     for (const plug of ["home", "network", "browser-support"])
         assert.ok(app.plugs.includes(plug), `${plug} must remain available`);
     assert.equal(snap.plugs["browser-support"]["allow-sandbox"], true);
-    assert.ok(snap.parts[builderConfig.executableName]["stage-packages"].includes("libstdc++6"));
+    assert.ok(snap.parts[builderConfig.linux.executableName]["stage-packages"].includes("libstdc++6"));
     assert.doesNotMatch(JSON.stringify(snap), /gnome-3-28-1804|desktop-gtk2|desktop-gnome-specific/);
 });
 
@@ -197,11 +208,12 @@ test("release planning and publishing require the same version and every platfor
     }
 });
 
-test("GitHub publication waits for every upload and leaves failed uploads in a draft", async () => {
+test("GitHub publication includes download links, waits for every upload, and leaves failed uploads in a draft", async () => {
     // Exercise the installed plugin's publishing logic with a fake API; no GitHub requests are sent.
     const {default: publish} = await import(new URL("./lib/publish.js", import.meta.resolve("@semantic-release/github")).href);
     const config = JSON.parse(await readFile(new URL("../.releaserc.json", import.meta.url), "utf8"));
     const [, plugin] = config.plugins.find(([name]: [string]) => name === "@semantic-release/github");
+    plugin.releaseBodyTemplate = getReleaseBodyTemplate("1.0.0", config.repositoryUrl);
     const temp = await mkdtemp(path.join(tmpdir(), "semantic-golfer-publish-"));
     const assets = [...getReleaseAssets("1.0.0"), "semantic-golfer-1.0.0.tgz", "SHA256SUMS",
         "latest.yml", "latest-mac.yml", "latest-linux.yml", "latest-linux-arm64.yml"];
@@ -216,9 +228,28 @@ test("GitHub publication waits for every upload and leaves failed uploads in a d
             let drafts = 0;
             let publications = 0;
             class Octokit {
-                public async request(route: string | {name: string}, options?: {draft: boolean}) {
+                public async request(route: string | {name: string}, options?: {draft: boolean, body: string}) {
                     if (route === "POST /repos/{owner}/{repo}/releases") {
                         assert.equal(options?.draft, true);
+                        const body = options!.body;
+                        assert.ok(body.startsWith("## Downloads\n\n| OS | arm64 | x64 |\n| --- | --- | --- |\n"));
+                        assert.ok(body.endsWith("\n\nTest release"), "keep the generated changelog below the table");
+                        const downloads = [
+                            ["macOS", "mac-arm64.dmg mac-arm64.zip", "mac-x64.dmg mac-x64.zip"],
+                            ["Windows", "win-arm64.exe", "win-x64.exe"],
+                            ["Linux", "linux-arm64.AppImage linux-arm64.deb linux-arm64.tar.gz",
+                                "linux-x86_64.AppImage linux-amd64.snap linux-amd64.deb linux-x64.tar.gz"]
+                        ];
+                        for (const [os, ...columns] of downloads) {
+                            const cells = columns.map((column) => column.split(" ").map((suffix) => {
+                                const extension = suffix.slice(suffix.indexOf(".") + 1);
+                                const url = "https://github.com/giladgd/semantic-golfer/releases/download/v1.0.0/" +
+                                    `Semantic-Golfer-1.0.0-${suffix}`;
+                                return `[${extension}](${url})`;
+                            })
+                                .join(" \\| "));
+                            assert.ok(body.split("\n").includes(`| ${os} | ${cells.join(" | ")} |`), `${os} download columns`);
+                        }
                         drafts++;
                         return {data: {id: 1, "upload_url": "https://uploads.example.test/1", "html_url": "https://example.test/draft"}};
                     }

@@ -9,7 +9,6 @@
     max-width: 1100px;
     margin: 0 auto;
     padding-top: 24px;
-    &:has(> .gameBoard .gameMeter:nth-child(6)) { --meters-padding: 22px; }
     > .gameHeading, > .roundHeader, > .roundFooter {
         padding-inline: calc(var(--writing-padding) + 1px) calc(var(--meters-padding) + 1px);
     }
@@ -30,32 +29,21 @@
             font-size: 12px;
             > svg { width: 16px; height: 16px; flex-shrink: 0; }
         }
-    }
-    > .roundHeader {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-end;
-        gap: 12px 24px;
-        margin: 24px 0 18px;
-        > .roundIntro {
-            flex: 1 1 auto;
-            min-width: 0;
-            > h1 { font-size: 32px; margin: 0 0 10px; }
-            > p { color: var(--muted-text-color); font-size: 13px; margin: 0; line-height: 1.5; }
-        }
-        > .roundCount {
-            margin-inline-start: auto;
+        .roundCount {
             white-space: nowrap;
-            font-size: 12px;
-            color: var(--muted-text-color);
             font-variant-numeric: tabular-nums;
         }
     }
+    > .roundHeader {
+        margin: 24px 0 18px;
+        > .roundIntro {
+            > h1 { font-size: 32px; margin: 0 0 10px; }
+            > p { color: var(--muted-text-color); font-size: 13px; margin: 0; line-height: 1.5; }
+        }
+    }
     > .gameBoard {
-        flex: 1;
+        flex: 0 1 auto;
         min-height: 200px;
-        max-height: 456px;
-        flex: 20;
         display: grid;
         grid-template-columns: minmax(0, 1.3fr) minmax(260px, 1fr);
         border: 1px solid var(--border-color);
@@ -65,6 +53,9 @@
         background: var(--surface-color);
         box-shadow: var(--surface-shadow);
         > .writingArea {
+            /* Preserve the 456px board baseline; extra height comes from the meters, not the document. */
+            contain: size;
+            contain-intrinsic-height: calc(456px - 2px - 2 * var(--writing-padding));
             min-height: 0;
             padding: var(--writing-padding);
             display: flex;
@@ -80,7 +71,7 @@
             &:focus-within {
                 box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent-color) 65%, transparent);
             }
-            > .writingHeading { font-size: 12px; }
+            > .writingHeading { font-size: 15px; }
             > textarea {
                 flex: 1;
                 resize: none;
@@ -114,40 +105,39 @@
             min-height: 0;
             display: flex;
             flex-direction: column;
-            padding: var(--meters-padding);
-            gap: 24px;
+            padding: 0 var(--meters-padding) var(--meters-padding);
             border-inline-start: 1px solid var(--border-color);
-            &:has(> .gameMeterList > .gameMeter:nth-child(6)) {
-                --game-meter-gap: 8px;
-                --game-meter-label-gap: 6px;
-                --game-meter-number-size: 20px;
-                gap: 16px;
-                > .gameTiming { padding-block: 16px; }
-            }
-            > .gameMeterList {
+            > .gameMeterViewport {
                 --game-meter-inset: var(--meters-padding);
+                --game-meter-top-gap: 20px;
+                flex: 1 1 auto;
                 min-height: 0;
                 overflow-y: auto;
-                padding-block: 2px;
+                margin-inline: calc(-1 * var(--meters-padding));
+                padding: 0 var(--meters-padding) 26px;
                 scrollbar-width: thin;
             }
             > .gameTiming {
+                flex: 0 1 auto;
                 display: flex;
                 justify-content: flex-end;
-                align-items: baseline;
-                padding: 18px var(--meters-padding);
+                align-items: center;
+                font-size: 18px;
+                height: calc(1lh + 2 * 18px + 1px);
+                min-height: calc(1lh + 2 * 14px + 1px);
+                padding: 14px var(--meters-padding);
                 margin-top: auto;
                 margin-inline: calc(-1 * var(--meters-padding));
                 &:last-child { margin-bottom: calc(-1 * var(--meters-padding)); }
                 border-top: 1px solid var(--border-color);
                 > strong {
-                    font-size: 18px;
                     font-weight: 500;
                     font-variant-numeric: tabular-nums;
                     > span { font-size: 11px; color: var(--muted-text-color); }
                 }
             }
             > .gameError {
+                margin-top: 24px;
                 color: var(--error-color);
                 font-size: 12px;
                 overflow-wrap: anywhere;

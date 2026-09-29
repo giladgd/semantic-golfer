@@ -1,29 +1,60 @@
 .gameMeterList {
-    display: flex;
-    flex-direction: column;
-    gap: var(--game-meter-gap, 24px);
+    --game-meter-heading-bottom-row: minmax(min(16px, var(--game-meter-gap, 24px)), var(--game-meter-gap, 24px));
+    --game-meter-first-heading-rows:
+        minmax(min(16px, var(--game-meter-top-gap, 0px)), var(--game-meter-top-gap, 0px))
+        max-content var(--game-meter-heading-bottom-row);
+    --game-meter-heading-rows: minmax(16px, 20px) max-content var(--game-meter-heading-bottom-row);
+    --game-meter-divider-row: calc(var(--game-meter-inset, 0px) + 1px);
+    --game-meter-spacing-row: minmax(11px, var(--game-meter-gap, 24px));
+    --game-meter-rows: max-content minmax(5px, var(--game-meter-label-gap, 10px)) max-content;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
     min-width: 0;
-    margin-inline: calc(-1 * var(--game-meter-inset, 0px));
-    padding-inline: var(--game-meter-inset, 0px);
+    height: 100%;
 
-    &[data-game="signalMixing"] > .gameMeter:nth-child(3) {
-        border-top: 1px solid var(--border-color);
-        margin-top: calc(var(--game-meter-inset, 0px) - var(--game-meter-gap, 24px));
-        margin-inline: calc(-1 * var(--game-meter-inset, 0px));
-        padding-inline: var(--game-meter-inset, 0px);
-        padding-top: var(--game-meter-inset, 0px);
+    > .meterSectionHeading {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 3;
+        margin: 0;
+        font-size: 15px;
+        font-weight: 500;
+        > span { grid-row: 2; }
+
+        &[data-start-risks="true"] {
+            grid-row: span 4;
+            > span { grid-row: 3; }
+            &::before {
+                content: "";
+                grid-row: 1;
+                border-bottom: 1px solid var(--border-color);
+                margin-inline: calc(-1 * var(--game-meter-inset, 0px));
+            }
+        }
     }
 
     > .gameMeter {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 3;
         > .meterHeading {
+            grid-row: 1;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 10px;
             font-size: var(--game-meter-label-size, 12px);
-            margin-bottom: var(--game-meter-label-gap, 10px);
-            > span { display: flex; align-items: center; gap: 10px; }
-            > strong { font-weight: 500; font-variant-numeric: tabular-nums; }
+            > .meterLabel {
+                flex: 1;
+                min-width: 0;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                > .labelText { min-width: 0; }
+                .meterHelp { margin-inline-start: 4px; vertical-align: middle; }
+            }
+            > strong { flex-shrink: 0; font-weight: 500; font-variant-numeric: tabular-nums; }
             .lockNumber {
                 display: grid;
                 place-items: center;
@@ -39,6 +70,7 @@
         }
         &[data-target="true"] .lockNumber { color: var(--accent-color); background: var(--accent-surface-color); }
         > .meterBar {
+            grid-row: 3;
             --threshold-shadow-color: color-mix(in srgb, var(--text-color) 14%, transparent);
             position: relative;
 

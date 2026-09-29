@@ -3,7 +3,7 @@ import {LongTimeout} from "lifecycle-utils";
 import {CheckIconSVG} from "../../src/icons/CheckIconSVG.tsx";
 import "./InstallCommand.css";
 
-const command = "npx semantic-golfer";
+const command = "npx -y semantic-golfer@latest";
 
 export function InstallCommand() {
     const [copied, setCopied] = useState(false);
@@ -18,7 +18,7 @@ export function InstallCommand() {
 
     return <div className="installCommand">
         <div className="commandBox">
-            <span className="prompt" aria-hidden="true">$</span><code ref={code}><span className="commandName">npx</span>{" "}<span className="packageName">semantic-golfer</span></code>
+            <span className="prompt" aria-hidden="true">$</span><code ref={code}><span className="commandName">npx</span>{" -y "}<span className="packageName">semantic-golfer@latest</span></code>
             <button
                 aria-label={copied ? "Command copied" : "Copy install command"}
                 onClick={async () => {

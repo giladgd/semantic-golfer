@@ -8,7 +8,7 @@
         ["@semantic-release/npm", {"pkgRoot": "npm-package", "npmPublish": true, "tarballDir": "release"}],
         ["@semantic-release/github", {
             "assets": ["release/Semantic-Golfer-*", "release/semantic-golfer-*.tgz", "release/SHA256SUMS", "release/latest*.yml"],
-            "releaseNameTemplate": "Semantic Golfer ${nextRelease.version}",
+            "releaseNameTemplate": "${nextRelease.gitTag}",
             "failCommentCondition": false
         }]
     ]

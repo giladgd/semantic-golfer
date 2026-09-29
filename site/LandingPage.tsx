@@ -9,7 +9,7 @@ import {InstallCommand} from "./components/InstallCommand.tsx";
 export function LandingPage() {
     return <div className="landingPage">
         <header className="siteHeader">
-            <a className="brand" href="#"><AppIcon aria-hidden="true" /><strong>Semantic Golfer</strong></a>
+            <a className="brand"><AppIcon aria-hidden="true" /><strong>Semantic Golfer</strong></a>
             <nav aria-label="Website navigation">
                 <a className="githubLink" href="https://github.com/giladgd/semantic-golfer" aria-label="Semantic Golfer on GitHub"><GithubIconSVG /></a>
             </nav>

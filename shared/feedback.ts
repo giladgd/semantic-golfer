@@ -8,9 +8,9 @@ export function getRoundFeedback(
     if (!isRoundWon(game, round, document, probabilities))
         return undefined;
     const ratio = characterCount(document) / round.limit;
-    const targets = game === "lock" ? probabilities : probabilities.slice(0, 2);
+    const targets = probabilities.slice(0, round.goalCount);
     const margins = probabilities.map((value, index) => (game === "lock" ? value - lockTarget :
-        index < 2 ? value - signalMixingTarget.min : signalMixingTarget.other - value));
+        index < round.goalCount ? value - signalMixingTarget.min : signalMixingTarget.other - value));
     const closest = Math.min(...margins);
     const clear = closest >= 0.18;
     const compact = ratio <= 0.45;
@@ -36,10 +36,11 @@ export function getRoundFeedback(
     if (variation === 0 && ["clear", "steady", "finish"].includes(style))
         return roundFeedback[game][level.id - 1]![index]!;
     if (variation === 0 && style === "balanced")
-        return game === "lock" ? `All ${targets.length} conditions in balance` : `${round.labels[0]} and ${round.labels[1]} in balance`;
+        return `All ${targets.length} ${game === "lock" ? "conditions" : "goals"} in balance`;
     if (variation === 0 && style === "close" && game === "signalMixing") {
         const tightest = margins.indexOf(closest);
-        return `${round.labels[tightest]} ${tightest < 2 ? "just over" : "kept below"} the line`;
+        return tightest < round.goalCount
+            ? `Just over the line: ${round.labels[tightest]}` : `${round.labels[tightest]} kept below the line`;
     }
     return levelFeedback[game][level.id - 1]![style];
 }

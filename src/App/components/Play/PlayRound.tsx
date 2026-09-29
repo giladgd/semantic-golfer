@@ -1,9 +1,10 @@
 import {flushSync} from "react-dom";
 import {useExternalState} from "../../../hooks/useExternalState.ts";
 import {finishRound, playState, updateGame, type GameDraft} from "../../../state/playState.ts";
-import {signalMixingTarget, characterCount, gameProbabilities, gameRequest, games, isRoundWon, lockTarget,
+import {characterCount, gameProbabilities, gameRequest, games, isRoundWon,
     type GameId, type GameLevel} from "../../../../shared/games.ts";
 import {decisionRunner} from "../../../state/decisionState.ts";
+import {getGameMeterDescriptions} from "../../../../shared/gameDescriptions.ts";
 import {gameHelpState} from "../../../state/gameHelpState.ts";
 import {ArrowBackIconSVG} from "../../../icons/ArrowBackIconSVG.tsx";
 import {GameMeterList} from "../GameMeterList/GameMeterList.tsx";
@@ -26,7 +27,7 @@ export function PlayRound({game, level, modelId, draft}: {game: GameId, level: G
         JSON.stringify([result.request.input, ...result.request.additionalInputs ?? []]
             .map(({document, ...question}) => question)) ===
         JSON.stringify(round.questions);
-    const probabilities = gameProbabilities(game, sameRound ? result : undefined);
+    const probabilities = gameProbabilities(sameRound ? result : undefined);
     const current = result != null && JSON.stringify(result.request) === JSON.stringify(request);
     const won = current && evaluation.error == null && isRoundWon(game, round, draft.document, probabilities);
     const count = characterCount(draft.document);
@@ -38,17 +39,13 @@ export function PlayRound({game, level, modelId, draft}: {game: GameId, level: G
                 <ArrowBackIconSVG aria-hidden="true" />
                 Levels
             </button>
-            <span>{games[game].name}</span>
+            <span>{games[game].name} · <span className="roundCount">Level {level.id} · Round {draft.answers.length + 1} / {level.rounds.length}</span></span>
         </div>
         <div className="roundHeader">
-            <div className="roundIntro"><h1>{round.title}</h1><p>{game === "lock"
-                ? `Get every condition to ${lockTarget * 100}% or more.`
-                : <>Bring {round.labels[0]} and {round.labels[1]} to {signalMixingTarget.min * 100}% or more each.
-                    Keep every other category below {signalMixingTarget.other * 100}%.
-                </>}
-            </p>
+            <div className="roundIntro">
+                <h1>{round.title}</h1>
+                {round.brief != null && <p id="roundBrief">{round.brief}</p>}
             </div>
-            <div className="roundCount">Level {level.id} · Round {draft.answers.length + 1} / {level.rounds.length}</div>
         </div>
         <div className="gameBoard">
             <div className="writingArea">
@@ -62,7 +59,7 @@ export function PlayRound({game, level, modelId, draft}: {game: GameId, level: G
                     value={draft.document}
                     autoFocus
                     placeholder="Make every character count…"
-                    aria-describedby="characterLimit"
+                    aria-describedby={round.brief == null ? "characterLimit" : "roundBrief characterLimit"}
                     spellCheck={false}
                     disabled={modelId == null}
                     onChange={(event) => updateGame(modelId, game, level.id, {startedAt: draft.startedAt ?? performance.now(),
@@ -76,7 +73,15 @@ export function PlayRound({game, level, modelId, draft}: {game: GameId, level: G
                 </div>
             </div>
             <div className="gameMeters" aria-label="Live results" aria-busy={evaluation.running}>
-                <GameMeterList game={game} labels={round.labels} probabilities={probabilities} />
+                <div className="gameMeterViewport">
+                    <GameMeterList
+                        game={game}
+                        goalCount={round.goalCount}
+                        labels={round.labels}
+                        probabilities={probabilities}
+                        descriptions={getGameMeterDescriptions(game, round)}
+                    />
+                </div>
                 <div className="gameTiming" aria-label="Decision time">
                     <strong>{sameRound ? <>{result.duration.toLocaleString(undefined, {maximumFractionDigits: 1})}<span> ms</span></> : "—"}</strong>
                 </div>

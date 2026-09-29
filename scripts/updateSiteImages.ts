@@ -13,7 +13,6 @@ const root = fileURLToPath(new URL("../", import.meta.url));
 const size = {width: 4096, height: 2048};
 const profile = mkdtempSync(path.join(tmpdir(), "semantic-golfer-images-"));
 app.setPath("userData", profile);
-app.commandLine.appendSwitch("force-device-scale-factor", "1");
 nativeTheme.themeSource = "dark";
 app.on("window-all-closed", () => {});
 
@@ -28,14 +27,31 @@ void app.whenReady().then(async () => {
     try {
         await server.listen();
         window = new BrowserWindow({
-            ...size, useContentSize: true, show: false,
+            width: 1280, height: 640, useContentSize: true, show: false,
             webPreferences: {offscreen: true, backgroundThrottling: false}
         });
         const contents = window.webContents;
+        contents.debugger.attach("1.3");
         const evaluate = <T, R>(callback: (argument: T) => R, argument?: T): Promise<Awaited<R>> =>
             contents.executeJavaScript(`(${callback})(${JSON.stringify(argument)})`);
+        // Set CSS dimensions and output density separately, independent of the host display and page zoom.
+        const setViewport = (width: number) => contents.debugger.sendCommand("Emulation.setDeviceMetricsOverride", {
+            width, height: width / 2, deviceScaleFactor: size.width / width, mobile: false
+        });
+        const capture = async (width: number) => {
+            assert.deepEqual(await evaluate(() => ({width: innerWidth, height: innerHeight})),
+                {width, height: width / 2}, "The capture viewport must match the layout size.");
+            const {data} = await contents.debugger.sendCommand("Page.captureScreenshot", {
+                format: "png", captureBeyondViewport: false
+            });
+            const png = Buffer.from(data, "base64");
+            const metadata = await sharp(png).metadata();
+            assert.deepEqual({width: metadata.width, height: metadata.height}, size,
+                "The exported PNG must have the requested pixel dimensions.");
+            return png;
+        };
         await window.loadURL(server.resolvedUrls!.local[0]!);
-        contents.setZoomFactor(size.width / 1280);
+        await setViewport(1280);
         await waitUntil(() => evaluate(() => document.querySelector(".demoViewport .playground") != null));
         const text = await evaluate(async () => {
             document.body.style.overflow = "hidden";
@@ -68,21 +84,17 @@ void app.whenReady().then(async () => {
         assert.equal(rect.x, 0);
         assert.equal(rect.y, 0);
         assert.equal(await evaluate(() => document.querySelector(".decisionResult .error")?.textContent ?? ""), "");
-        const preview = await contents.capturePage(undefined, {stayHidden: true});
-        assert.deepEqual(preview.getSize(), size);
+        const previewPng = await capture(1280);
 
         await window.loadFile(path.join(root, "site/social-poster.html"));
-        contents.setZoomFactor(size.width / 1200);
+        await setViewport(1200);
         await evaluate(async (image) => {
             document.querySelector<HTMLImageElement>(".preview")!.src = image;
             await document.fonts.ready;
             await Promise.all([...document.images].map((image) => image.decode()));
-        }, preview.toDataURL());
-        const poster = await contents.capturePage(undefined, {stayHidden: true});
-        assert.deepEqual(poster.getSize(), size);
+        }, `data:image/png;base64,${previewPng.toString("base64")}`);
+        const posterPng = await capture(1200);
 
-        const previewPng = preview.toPNG();
-        const posterPng = poster.toPNG();
         const posterJpeg = await sharp(posterPng).jpeg({quality: 75, mozjpeg: true})
             .toBuffer();
         const socialPoster = await sharp(posterPng).resize(1280, 640)

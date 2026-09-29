@@ -2,6 +2,7 @@
   "name": "semantic-golfer",
   "private": true,
   "version": "0.0.0",
+  "description": "How little can you write and still get everything right? Play text golfing with node-llama-cpp's structured decisions, completely locally, no cloud",
   "main": "./dist-electron/index.js",
   "type": "module",
   "files": [
@@ -11,7 +12,7 @@
     "README.md",
     "LICENSE"
   ],
-  "homepage": "https://giladgd.github.io/semantic-golfer/",
+  "homepage": "https://semantic-golfer.giladgd.com",
   "scripts": {
     "start": "vite dev",
     "start:inspect": "cross-env ENABLE_INSPECT=true vite dev",
@@ -100,12 +101,23 @@
   },
   "productName": "Semantic Golfer",
   "desktopName": "semantic-golfer.desktop",
-  "description": "Play with meaning and explore fast, local AI structured decisions.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/giladgd/semantic-golfer.git"
   },
   "engines": {
     "node": ">=24.10.0"
-  }
+  },
+  "keywords": [
+    "node-llama-cpp",
+    "structured-decisions",
+    "system-one",
+    "jev",
+    "llama.cpp",
+    "local",
+    "self-hosted",
+    "game",
+    "playground",
+    "golfing"
+  ]
 }

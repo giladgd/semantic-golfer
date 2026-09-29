@@ -25,6 +25,7 @@ export default defineConfig({
     },
     build: {
         outDir: path.join(__dirname, "dist"),
+        emptyOutDir: true,
         target: "es2022",
         rollupOptions: {
             output: {

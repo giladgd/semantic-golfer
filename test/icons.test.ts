@@ -25,7 +25,7 @@ test("macOS retains native icon appearances and a dark fallback for older system
 
     const appOutDir = await mkdtemp(path.join(tmpdir(), "semantic-golfer-icons-"));
     try {
-        const resources = path.join(appOutDir, `${config.executableName}.app/Contents/Resources`);
+        const resources = path.join(appOutDir, `${config.productName}.app/Contents/Resources`);
         await mkdir(resources, {recursive: true});
         await writeFile(path.join(resources, "Assets.car"), "Native appearance catalog");
         const context = {

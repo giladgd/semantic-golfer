@@ -33,12 +33,13 @@ export function GameHelpDialog({game, ready}: {game: GameId, ready: boolean}) {
     >
         <h2 id={headingId}>{games[game].name}</h2>
         <p id={descriptionId}>{game === "lock"
-            ? <>Write a message that meets every condition.
+            ? <>Read the brief and write a message that meets every goal.
                 Get every bar to {lockTarget * 100}% or more while staying within the character limit.
             </>
-            : <>Blend the first two categories at {signalMixingTarget.min * 100}% or more each.
-                Keep every other category below {signalMixingTarget.other * 100}%, within the character limit.
-                Use details, rather than naming the categories.
+            : <>Read the brief and write a message that achieves every goal.
+                Get each goal to {signalMixingTarget.min * 100}% or more
+                and keep each risk below {signalMixingTarget.other * 100}%.
+                Revise your wording to balance clarity, tact, and the character limit.
             </>}
         </p>
         <p>Shorter answers earn more points. Finish every round to save your level score for this model.</p>

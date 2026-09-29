@@ -1,4 +1,4 @@
-The rounded folder, file, chevron, check, replay, trophy, and celebration icons are from [Google Material Symbols](https://github.com/google/material-design-icons), obtained via [Iconify](https://github.com/iconify/icon-sets/blob/master/json/material-symbols.json).
+The rounded folder, file, chevron, check, replay, trophy, celebration, and info (`material-symbols:info-i-rounded`) icons are from [Google Material Symbols](https://github.com/google/material-design-icons), obtained via [Iconify](https://github.com/iconify/icon-sets/blob/master/json/material-symbols.json).
 
 The external-link icon is [ic:round-arrow-outward](https://icon-sets.iconify.design/ic/round-arrow-outward/) from Google Material Icons, obtained via [Iconify](https://github.com/iconify/icon-sets/blob/master/json/ic.json).
 

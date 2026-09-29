@@ -2,8 +2,10 @@ import assert from "node:assert/strict";
 import {test} from "node:test";
 import {characterCount, games, levelScore, roundScore, type GameId} from "../shared/games.ts";
 import {addLevelScore, gameTotal, getLatestScore, getScore, readScoreRecords} from "../shared/scores.ts";
-import {singleMeaning} from "./fixtures/level-near-misses.ts";
+import {maxDecisionQuestions} from "../shared/decision.ts";
+import {semanticGolfingCases} from "./fixtures/semantic-golfing.ts";
 import {levelSolutions} from "./fixtures/level-solutions.ts";
+import {signalMixingCases} from "./fixtures/signal-mixing.ts";
 
 test("both games have a complete progression and reference answers for every round", () => {
     for (const game of Object.keys(games) as GameId[]) {
@@ -16,11 +18,12 @@ test("both games have a complete progression and reference answers for every rou
             for (const round of level.rounds) {
                 assert.ok(!ids.has(round.id));
                 ids.add(round.id);
-                assert.ok(round.labels.length >= 3 && round.labels.length <= 7);
+                assert.ok(round.labels.length >= 3 && round.labels.length <= maxDecisionQuestions);
                 assert.equal(round.questions.length, round.labels.length);
                 assert.equal(new Set(round.labels).size, round.labels.length);
                 assert.ok(levelSolutions[game][round.id]!.length >= 2);
-                assert.ok(singleMeaning[round.labels[0]!]!.length <= round.limit);
+                const nearMiss = game === "signalMixing" ? signalMixingCases[round.id]!.nearMisses[0]! : semanticGolfingCases[round.id]!.parts[0]!;
+                assert.ok(characterCount(nearMiss) <= round.limit);
                 for (const text of levelSolutions[game][round.id]!)
                     assert.ok(characterCount(text) <= round.limit, `${game}/${round.id}: ${text}`);
             }

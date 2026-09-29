@@ -2,9 +2,8 @@ import {copyFile} from "node:fs/promises";
 import path from "node:path";
 import type {Configuration} from "electron-builder";
 
-const appId = "ai.withcat.semantic-golfer";
+const appId = "com.giladgd.semantic-golfer";
 const productName = "Semantic Golfer";
-const executableName = "semantic-golfer";
 
 /**
  * @see - https://www.electron.build/configuration/configuration
@@ -13,7 +12,6 @@ export default {
     appId: appId,
     asar: true,
     productName: productName,
-    executableName: executableName,
     icon: "assets/icon.png",
     artifactName: "Semantic-Golfer-${version}-${os}-${arch}.${ext}",
     // Builder embeds the updater configuration; semantic-release remains the only publisher.
@@ -90,6 +88,7 @@ export default {
         }
     },
     linux: {
+        executableName: "semantic-golfer",
         icon: "assets/icon.png",
         syncDesktopName: true,
         target: [{

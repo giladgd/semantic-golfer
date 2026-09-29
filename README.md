@@ -1,5 +1,5 @@
 <div align="center">
-    <a href="https://giladgd.github.io/semantic-golfer/"><img alt="Semantic Golfer icon" src="https://raw.githubusercontent.com/giladgd/semantic-golfer/master/assets/icon.png" width="200" /></a>
+    <a href="https://semantic-golfer.giladgd.com"><img alt="Semantic Golfer icon" src="https://raw.githubusercontent.com/giladgd/semantic-golfer/master/assets/icon.png" width="200" /></a>
     <h1>Semantic Golfer</h1>
     <p>How little can you write and still get everything right?</p>
     <p></p>
@@ -9,10 +9,10 @@
 
 [![Build](https://github.com/giladgd/semantic-golfer/actions/workflows/release.yml/badge.svg)](https://github.com/giladgd/semantic-golfer/actions/workflows/release.yml)
 [![License](https://badgen.net/badge/license/MIT/green)](https://github.com/giladgd/semantic-golfer/blob/master/LICENSE)
-[![Website](https://badgen.net/badge/website/Semantic%20Golfer/blue)](https://giladgd.github.io/semantic-golfer/)
+[![Website](https://badgen.net/badge/website/Semantic%20Golfer/blue)](https://semantic-golfer.giladgd.com)
 [![npm](https://badgen.net/npm/v/semantic-golfer)](https://www.npmjs.com/package/semantic-golfer)
 
-[![Semantic Golfer's Playground and Semantic Golfing demo](https://raw.githubusercontent.com/giladgd/semantic-golfer/master/assets/demo.video.svg)](https://giladgd.github.io/semantic-golfer/)
+[![Semantic Golfer's Playground and Semantic Golfing demo](https://raw.githubusercontent.com/giladgd/semantic-golfer/master/assets/demo.video.svg)](https://semantic-golfer.giladgd.com)
 
 </div>
 
@@ -20,7 +20,7 @@ A playground and a game to play around with [node-llama-cpp](https://github.com/
 Try writing the shortest text that meets all criteria, and watch the local model score its meaning as you type in real time.
 
 ```bash
-npx semantic-golfer
+npx -y semantic-golfer@latest
 ```
 
 [Or download the desktop app](https://github.com/giladgd/semantic-golfer/releases/latest)
@@ -28,7 +28,7 @@ npx semantic-golfer
 ## Features
 
 - **Semantic Golfing:** write a message that matches every condition within the character limit
-- **Signal Mixing:** blend two target meanings while avoiding the other categories
+- **Signal Mixing:** balance competing communication goals without crossing the line
 - **Playground:** experiment with `noul`, `choice`, and `score` decisions using your own documents and criteria
 - Download a model in the app or open a local GGUF file. Inference runs on your machine
 - macOS, Windows, and Linux support

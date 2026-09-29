@@ -2,7 +2,7 @@ import {createHash} from "node:crypto";
 import {createReadStream} from "node:fs";
 import {appendFile, readFile, readdir, stat, writeFile} from "node:fs/promises";
 import semanticRelease from "semantic-release";
-import {getReleaseAssets} from "./releaseAssets.ts";
+import {getReleaseAssets, getReleaseBodyTemplate} from "./releaseAssets.ts";
 
 const dryRun = process.argv.includes("--dry-run");
 const config = JSON.parse(await readFile(new URL("../.releaserc.json", import.meta.url), "utf8"));
@@ -54,6 +54,10 @@ if (dryRun) {
         // JSON is valid YAML, avoiding a separate serializer for the updater manifests.
         await writeFile(`release/${name}`, JSON.stringify({version, releaseDate: new Date().toISOString(),
             files: files.filter(({url}) => pattern.test(url))}, null, 2) + "\n");
+    }
+    for (const [plugin, options] of config.plugins) {
+        if (plugin === "@semantic-release/github")
+            options.releaseBodyTemplate = getReleaseBodyTemplate(version, config.repositoryUrl);
     }
     // semantic-release publishes plugins in order: npm must succeed before GitHub uploads or publication.
     await semanticRelease(config);

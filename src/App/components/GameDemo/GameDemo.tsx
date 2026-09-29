@@ -3,6 +3,7 @@ import {LongTimeout, State} from "lifecycle-utils";
 import {useExternalState} from "../../../hooks/useExternalState.ts";
 import {demoStepDuration, gameDemos, getGameDemoFrame} from "../../../state/gameDemos.ts";
 import {games, isRoundWon, type GameId} from "../../../../shared/games.ts";
+import {getGameMeterDescriptions} from "../../../../shared/gameDescriptions.ts";
 import {CheckIconSVG} from "../../../icons/CheckIconSVG.tsx";
 import {GameMeterList} from "../GameMeterList/GameMeterList.tsx";
 import "./GameDemo.css";
@@ -45,14 +46,21 @@ export function GameDemo({game, active}: {game: GameId, active: boolean}) {
     return <figure className="gameDemo" aria-label="Example round">
         <div className="demoScene">
             <div className="demoDocument">
-                <span className="demoLabel">Your sentence</span>
+                <span className="demoLabel">Your message</span>
                 <div className="demoSentence">{frame.document}<span className="caret" data-playing={playback.playing} aria-hidden="true" /></div>
                 <div className="demoFooter">
-                    <span className="demoSuccess" data-won={won}><CheckIconSVG />{game === "lock" ? "Unlocked" : "Blended"}</span>
+                    <span className="demoSuccess" data-won={won}><CheckIconSVG />{game === "lock" ? "Unlocked" : "Balanced"}</span>
                     <span>{frame.document.length} / {demo.limit} characters</span>
                 </div>
             </div>
-            <div className="demoMeters"><GameMeterList game={game} labels={round.labels} probabilities={frame.probabilities} /></div>
+            <div className="demoMeters"><GameMeterList
+                game={game}
+                goalCount={round.goalCount}
+                labels={round.labels}
+                probabilities={frame.probabilities}
+                descriptions={getGameMeterDescriptions(game, round)}
+            />
+            </div>
         </div>
         <figcaption>{frame.caption}</figcaption>
     </figure>;

@@ -36,7 +36,7 @@ export function getDemoDocument(scene: number, elapsed: number) {
     return timeline[scene]!.steps.findLast((step) => step.at <= elapsed)!.document;
 }
 
-// Settle briefly on the target before clicking, then wait 75–200ms before the next action.
+// Settle briefly on the target before clicking, then wait 75-200ms before the next action.
 export function getDemoFrame(scene: number, elapsed: number, firstPlay = false) {
     const {steps, moves, inputClick, typingStart, revealPause} = timeline[scene]!;
     const step = steps.findLast((step) => step.at <= elapsed)!;

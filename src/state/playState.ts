@@ -35,7 +35,7 @@ export function finishRound(modelId: ModelId, game: GameId, levelId: number, eva
     const round = level.rounds[draft.answers.length];
     if (round == null || evaluation.error != null || evaluation.result == null ||
         JSON.stringify(evaluation.result.request) !== JSON.stringify(gameRequest(modelId, round, draft.document)) ||
-        !isRoundWon(game, round, draft.document, gameProbabilities(game, evaluation.result)))
+        !isRoundWon(game, round, draft.document, gameProbabilities(evaluation.result)))
         return;
     updateGame(modelId, game, levelId, {answers: [...draft.answers, draft.document], document: "", startedAt: undefined});
     if (draft.answers.length + 1 === level.rounds.length)

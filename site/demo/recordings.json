@@ -9,7 +9,7 @@
   },
   "modelFile": "gemma-q8.gguf",
   "modelBytes": 4995021216,
-  "recordedAt": "2026-09-28T07:58:55.107Z",
+  "recordedAt": "2026-09-29T02:51:42.109Z",
   "recordings": [
     {
       "input": {
@@ -28,7 +28,7 @@
             "type": "noul",
             "value": 0.09009893571517409
           },
-          "measuredDuration": 53.0105410000001
+          "measuredDuration": 45.24654099999998
         },
         {
           "document": "T",
@@ -36,7 +36,7 @@
             "type": "noul",
             "value": 0.028727773412576738
           },
-          "measuredDuration": 43.74391699999978
+          "measuredDuration": 42.150709000000006
         },
         {
           "document": "Th",
@@ -44,7 +44,7 @@
             "type": "noul",
             "value": 0.04542059245208563
           },
-          "measuredDuration": 43.7938750000003
+          "measuredDuration": 42.42950000000019
         },
         {
           "document": "Tha",
@@ -52,7 +52,7 @@
             "type": "noul",
             "value": 0.020152784609957904
           },
-          "measuredDuration": 42.60087500000009
+          "measuredDuration": 43.27262500000006
         },
         {
           "document": "Than",
@@ -60,7 +60,7 @@
             "type": "noul",
             "value": 0.07982109099479381
           },
-          "measuredDuration": 44.450874999999996
+          "measuredDuration": 43.426750000000084
         },
         {
           "document": "Thank",
@@ -68,7 +68,7 @@
             "type": "noul",
             "value": 0.01742562542325972
           },
-          "measuredDuration": 44.910249999999905
+          "measuredDuration": 43.021790999999666
         },
         {
           "document": "Thanks",
@@ -76,7 +76,7 @@
             "type": "noul",
             "value": 0.0030696793837972653
           },
-          "measuredDuration": 43.63716699999986
+          "measuredDuration": 42.161249999999654
         },
         {
           "document": "Thanks ",
@@ -84,7 +84,7 @@
             "type": "noul",
             "value": 0.008238871526654777
           },
-          "measuredDuration": 43.59091600000011
+          "measuredDuration": 42.152000000000044
         },
         {
           "document": "Thanks f",
@@ -92,7 +92,7 @@
             "type": "noul",
             "value": 0.010740531747013402
           },
-          "measuredDuration": 43.889458000000104
+          "measuredDuration": 42.269750000000386
         },
         {
           "document": "Thanks fo",
@@ -100,7 +100,7 @@
             "type": "noul",
             "value": 0.030635050130926794
           },
-          "measuredDuration": 43.89829200000031
+          "measuredDuration": 42.62804199999982
         },
         {
           "document": "Thanks for",
@@ -108,7 +108,7 @@
             "type": "noul",
             "value": 0.013605698954160245
           },
-          "measuredDuration": 43.27170800000022
+          "measuredDuration": 42.467125000000124
         },
         {
           "document": "Thanks for ",
@@ -116,7 +116,7 @@
             "type": "noul",
             "value": 0.019378783801393254
           },
-          "measuredDuration": 44.26933400000007
+          "measuredDuration": 42.44074999999975
         },
         {
           "document": "Thanks for t",
@@ -124,7 +124,7 @@
             "type": "noul",
             "value": 0.01293339621992042
           },
-          "measuredDuration": 43.28220800000008
+          "measuredDuration": 42.160917000000154
         },
         {
           "document": "Thanks for th",
@@ -132,7 +132,7 @@
             "type": "noul",
             "value": 0.03797665428878595
           },
-          "measuredDuration": 43.590000000000146
+          "measuredDuration": 41.895334000000275
         },
         {
           "document": "Thanks for the",
@@ -140,7 +140,7 @@
             "type": "noul",
             "value": 0.10628389802360927
           },
-          "measuredDuration": 43.315500000000156
+          "measuredDuration": 41.97029199999997
         },
         {
           "document": "Thanks for the ",
@@ -148,7 +148,7 @@
             "type": "noul",
             "value": 0.14494980756525064
           },
-          "measuredDuration": 43.20691700000043
+          "measuredDuration": 42.138124999999945
         },
         {
           "document": "Thanks for the u",
@@ -156,7 +156,7 @@
             "type": "noul",
             "value": 0.021680208711700153
           },
-          "measuredDuration": 43.061583000000155
+          "measuredDuration": 41.95391699999982
         },
         {
           "document": "Thanks for the up",
@@ -164,7 +164,7 @@
             "type": "noul",
             "value": 0.012580138569580136
           },
-          "measuredDuration": 42.71745800000008
+          "measuredDuration": 41.62437499999987
         },
         {
           "document": "Thanks for the upd",
@@ -172,7 +172,7 @@
             "type": "noul",
             "value": 0.011726096443217086
           },
-          "measuredDuration": 42.97387499999968
+          "measuredDuration": 42.001916000000165
         },
         {
           "document": "Thanks for the upda",
@@ -180,7 +180,7 @@
             "type": "noul",
             "value": 0.16285638191671897
           },
-          "measuredDuration": 43.58408300000019
+          "measuredDuration": 42.90108400000008
         },
         {
           "document": "Thanks for the updat",
@@ -188,7 +188,7 @@
             "type": "noul",
             "value": 0.031807537101271995
           },
-          "measuredDuration": 43.06395900000007
+          "measuredDuration": 42.40162499999997
         },
         {
           "document": "Thanks for the update",
@@ -196,7 +196,7 @@
             "type": "noul",
             "value": 0.004024912694661411
           },
-          "measuredDuration": 43.21587499999987
+          "measuredDuration": 41.930541000000176
         },
         {
           "document": "Thanks for the update.",
@@ -204,7 +204,7 @@
             "type": "noul",
             "value": 0.018511149950949067
           },
-          "measuredDuration": 43.92929200000026
+          "measuredDuration": 41.75766700000031
         },
         {
           "document": "Thanks for the update.\n",
@@ -212,7 +212,7 @@
             "type": "noul",
             "value": 0.0028650545088895296
           },
-          "measuredDuration": 45.90774999999985
+          "measuredDuration": 42.43541699999969
         },
         {
           "document": "Thanks for the update.\nC",
@@ -220,7 +220,7 @@
             "type": "noul",
             "value": 0.0035808197479201822
           },
-          "measuredDuration": 46.947541999999885
+          "measuredDuration": 42.75624999999991
         },
         {
           "document": "Thanks for the update.\nCo",
@@ -228,7 +228,7 @@
             "type": "noul",
             "value": 0.007058683247179311
           },
-          "measuredDuration": 43.2512499999998
+          "measuredDuration": 42.216333000000304
         },
         {
           "document": "Thanks for the update.\nCou",
@@ -236,7 +236,7 @@
             "type": "noul",
             "value": 0.007044513582475228
           },
-          "measuredDuration": 43.159250000000156
+          "measuredDuration": 42.04658299999983
         },
         {
           "document": "Thanks for the update.\nCoul",
@@ -244,7 +244,7 @@
             "type": "noul",
             "value": 0.009323097236118209
           },
-          "measuredDuration": 43.57729100000006
+          "measuredDuration": 42.03125
         },
         {
           "document": "Thanks for the update.\nCould",
@@ -252,7 +252,7 @@
             "type": "noul",
             "value": 0.035736015921517796
           },
-          "measuredDuration": 43.540250000000015
+          "measuredDuration": 41.78366700000015
         },
         {
           "document": "Thanks for the update.\nCould ",
@@ -260,7 +260,7 @@
             "type": "noul",
             "value": 0.0557035300879504
           },
-          "measuredDuration": 43.52283299999999
+          "measuredDuration": 42.00170799999978
         },
         {
           "document": "Thanks for the update.\nCould y",
@@ -268,7 +268,7 @@
             "type": "noul",
             "value": 0.1626110561536675
           },
-          "measuredDuration": 43.35487499999999
+          "measuredDuration": 42.083250000000135
         },
         {
           "document": "Thanks for the update.\nCould yo",
@@ -276,7 +276,7 @@
             "type": "noul",
             "value": 0.230492891845028
           },
-          "measuredDuration": 42.947625000000244
+          "measuredDuration": 43.915915999999925
         },
         {
           "document": "Thanks for the update.\nCould you",
@@ -284,7 +284,7 @@
             "type": "noul",
             "value": 0.2537096597673845
           },
-          "measuredDuration": 43.39449999999988
+          "measuredDuration": 42.88054199999988
         },
         {
           "document": "Thanks for the update.\nCould you ",
@@ -292,7 +292,7 @@
             "type": "noul",
             "value": 0.49580536192958785
           },
-          "measuredDuration": 43.09195899999986
+          "measuredDuration": 42.31620800000019
         },
         {
           "document": "Thanks for the update.\nCould you c",
@@ -300,7 +300,7 @@
             "type": "noul",
             "value": 0.029627598231158164
           },
-          "measuredDuration": 43.34299999999985
+          "measuredDuration": 42.444124999999985
         },
         {
           "document": "Thanks for the update.\nCould you co",
@@ -308,7 +308,7 @@
             "type": "noul",
             "value": 0.07471042364223429
           },
-          "measuredDuration": 43.07166700000016
+          "measuredDuration": 43.144708000000264
         },
         {
           "document": "Thanks for the update.\nCould you con",
@@ -316,7 +316,7 @@
             "type": "noul",
             "value": 0.07920128214001651
           },
-          "measuredDuration": 43.030541999999514
+          "measuredDuration": 43.17475000000013
         },
         {
           "document": "Thanks for the update.\nCould you conf",
@@ -324,7 +324,7 @@
             "type": "noul",
             "value": 0.06799169491931051
           },
-          "measuredDuration": 43.102874999999585
+          "measuredDuration": 44.15620899999976
         },
         {
           "document": "Thanks for the update.\nCould you confi",
@@ -332,7 +332,7 @@
             "type": "noul",
             "value": 0.13671821016563862
           },
-          "measuredDuration": 42.749540999999226
+          "measuredDuration": 42.72699999999986
         },
         {
           "document": "Thanks for the update.\nCould you confir",
@@ -340,7 +340,7 @@
             "type": "noul",
             "value": 0.9751121519137123
           },
-          "measuredDuration": 43.076999999999316
+          "measuredDuration": 42.16279200000008
         },
         {
           "document": "Thanks for the update.\nCould you confirm",
@@ -348,7 +348,7 @@
             "type": "noul",
             "value": 0.9692477115058068
           },
-          "measuredDuration": 42.92912499999966
+          "measuredDuration": 42.21566699999994
         },
         {
           "document": "Thanks for the update.\nCould you confirm ",
@@ -356,7 +356,7 @@
             "type": "noul",
             "value": 0.9674174705692048
           },
-          "measuredDuration": 45.12816699999985
+          "measuredDuration": 41.996083
         },
         {
           "document": "Thanks for the update.\nCould you confirm t",
@@ -364,7 +364,7 @@
             "type": "noul",
             "value": 0.3425234238109062
           },
-          "measuredDuration": 44.645792000000256
+          "measuredDuration": 42.228000000000065
         },
         {
           "document": "Thanks for the update.\nCould you confirm th",
@@ -372,7 +372,7 @@
             "type": "noul",
             "value": 0.23965993058856927
           },
-          "measuredDuration": 43.240999999999985
+          "measuredDuration": 42.02137499999981
         },
         {
           "document": "Thanks for the update.\nCould you confirm the",
@@ -380,7 +380,7 @@
             "type": "noul",
             "value": 0.20867739079053185
           },
-          "measuredDuration": 43.43987500000003
+          "measuredDuration": 42.41658299999972
         },
         {
           "document": "Thanks for the update.\nCould you confirm the ",
@@ -388,7 +388,7 @@
             "type": "noul",
             "value": 0.9600142441554111
           },
-          "measuredDuration": 43.98266700000022
+          "measuredDuration": 43.59508300000016
         },
         {
           "document": "Thanks for the update.\nCould you confirm the n",
@@ -396,7 +396,7 @@
             "type": "noul",
             "value": 0.852199459292014
           },
-          "measuredDuration": 43.022500000000036
+          "measuredDuration": 42.27062500000011
         },
         {
           "document": "Thanks for the update.\nCould you confirm the ne",
@@ -404,7 +404,7 @@
             "type": "noul",
             "value": 0.8433924133368335
           },
-          "measuredDuration": 43.283040999999685
+          "measuredDuration": 42.22387499999968
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new",
@@ -412,7 +412,7 @@
             "type": "noul",
             "value": 0.07916178675539072
           },
-          "measuredDuration": 44.84679099999994
+          "measuredDuration": 42.319790999999896
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new ",
@@ -420,7 +420,7 @@
             "type": "noul",
             "value": 0.39577028386807006
           },
-          "measuredDuration": 43.335959
+          "measuredDuration": 42.4678329999997
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new d",
@@ -428,7 +428,7 @@
             "type": "noul",
             "value": 0.9987987358876969
           },
-          "measuredDuration": 43.867833999999675
+          "measuredDuration": 41.99945800000023
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new da",
@@ -436,7 +436,7 @@
             "type": "noul",
             "value": 0.9998360817211703
           },
-          "measuredDuration": 43.19883300000038
+          "measuredDuration": 42.345000000000255
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new dat",
@@ -444,7 +444,7 @@
             "type": "noul",
             "value": 0.9996818724882377
           },
-          "measuredDuration": 43.46283399999993
+          "measuredDuration": 42.42895799999951
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new date",
@@ -452,7 +452,7 @@
             "type": "noul",
             "value": 0.9999428608683922
           },
-          "measuredDuration": 42.94708300000002
+          "measuredDuration": 42.38316699999996
         },
         {
           "document": "Thanks for the update.\nCould you confirm the new date?",
@@ -460,7 +460,7 @@
             "type": "noul",
             "value": 0.9999406184855135
           },
-          "measuredDuration": 43.2196670000003
+          "measuredDuration": 42.43712500000038
         }
       ]
     },
@@ -488,7 +488,7 @@
               "2": 0.000917447690577491
             }
           },
-          "measuredDuration": 44.870584000000235
+          "measuredDuration": 43.370750000000044
         },
         {
           "document": "I",
@@ -502,7 +502,7 @@
               "2": 0.001695054452774856
             }
           },
-          "measuredDuration": 43.24720799999977
+          "measuredDuration": 43.01033300000017
         },
         {
           "document": "I ",
@@ -516,7 +516,7 @@
               "2": 0.0011758760816182932
             }
           },
-          "measuredDuration": 43.84883300000001
+          "measuredDuration": 42.32775000000038
         },
         {
           "document": "I n",
@@ -530,7 +530,7 @@
               "2": 0.0026496069900698795
             }
           },
-          "measuredDuration": 43.659208000000035
+          "measuredDuration": 42.61783299999934
         },
         {
           "document": "I ne",
@@ -544,7 +544,7 @@
               "2": 0.004111606690234927
             }
           },
-          "measuredDuration": 44.12354200000027
+          "measuredDuration": 43.25316699999985
         },
         {
           "document": "I nee",
@@ -558,7 +558,7 @@
               "2": 0.0007304414228112303
             }
           },
-          "measuredDuration": 44.65708300000006
+          "measuredDuration": 42.67979199999991
         },
         {
           "document": "I need",
@@ -572,7 +572,7 @@
               "2": 0.0003769013518388584
             }
           },
-          "measuredDuration": 43.44725000000017
+          "measuredDuration": 42.867457999999715
         },
         {
           "document": "I need ",
@@ -586,7 +586,7 @@
               "2": 0.0003738696730705322
             }
           },
-          "measuredDuration": 42.848291000000245
+          "measuredDuration": 42.896333000000595
         },
         {
           "document": "I need i",
@@ -600,7 +600,7 @@
               "2": 0.0008094466892627846
             }
           },
-          "measuredDuration": 42.86800000000039
+          "measuredDuration": 42.73662499999955
         },
         {
           "document": "I need it",
@@ -614,7 +614,7 @@
               "2": 0.0013850244365783307
             }
           },
-          "measuredDuration": 43.05016599999999
+          "measuredDuration": 43.16633399999955
         },
         {
           "document": "I need it ",
@@ -628,7 +628,7 @@
               "2": 0.000862980604321905
             }
           },
-          "measuredDuration": 42.911292000000685
+          "measuredDuration": 42.73979200000031
         },
         {
           "document": "I need it d",
@@ -642,7 +642,7 @@
               "2": 0.005190726857081618
             }
           },
-          "measuredDuration": 42.94720899999993
+          "measuredDuration": 42.13166699999965
         },
         {
           "document": "I need it de",
@@ -656,7 +656,7 @@
               "2": 0.0013384068349308947
             }
           },
-          "measuredDuration": 43.029874999999265
+          "measuredDuration": 42.65220899999986
         },
         {
           "document": "I need it del",
@@ -670,7 +670,7 @@
               "2": 0.003881927540149485
             }
           },
-          "measuredDuration": 44.90154200000052
+          "measuredDuration": 42.895291999999245
         },
         {
           "document": "I need it deli",
@@ -684,7 +684,7 @@
               "2": 0.11517561937241273
             }
           },
-          "measuredDuration": 43.10345899999993
+          "measuredDuration": 42.66337500000009
         },
         {
           "document": "I need it deliv",
@@ -698,7 +698,7 @@
               "2": 0.0011716667662548135
             }
           },
-          "measuredDuration": 43.05595900000026
+          "measuredDuration": 42.79162499999984
         },
         {
           "document": "I need it delive",
@@ -712,7 +712,7 @@
               "2": 0.0022498622392729192
             }
           },
-          "measuredDuration": 41.96850000000086
+          "measuredDuration": 42.55345900000066
         },
         {
           "document": "I need it deliver",
@@ -726,7 +726,7 @@
               "2": 0.007701428548776527
             }
           },
-          "measuredDuration": 42.32579100000021
+          "measuredDuration": 43.113124999999854
         },
         {
           "document": "I need it delivere",
@@ -740,7 +740,7 @@
               "2": 0.00444473782260847
             }
           },
-          "measuredDuration": 42.59045799999967
+          "measuredDuration": 43.08037500000046
         },
         {
           "document": "I need it delivered",
@@ -754,7 +754,7 @@
               "2": 0.06642623185893469
             }
           },
-          "measuredDuration": 42.40716699999939
+          "measuredDuration": 42.56474999999955
         },
         {
           "document": "I need it delivered ",
@@ -768,7 +768,7 @@
               "2": 0.018849739088215803
             }
           },
-          "measuredDuration": 42.68162500000017
+          "measuredDuration": 42.76249999999982
         },
         {
           "document": "I need it delivered a",
@@ -782,7 +782,7 @@
               "2": 0.004004141552472504
             }
           },
-          "measuredDuration": 42.461083000000144
+          "measuredDuration": 42.86870900000031
         },
         {
           "document": "I need it delivered as",
@@ -796,7 +796,7 @@
               "2": 0.00503282045657683
             }
           },
-          "measuredDuration": 43.73645800000031
+          "measuredDuration": 42.81962500000009
         },
         {
           "document": "I need it delivered as ",
@@ -810,7 +810,7 @@
               "2": 0.004218802581979572
             }
           },
-          "measuredDuration": 43.23491699999977
+          "measuredDuration": 42.70787500000006
         },
         {
           "document": "I need it delivered as s",
@@ -824,7 +824,7 @@
               "2": 0.004668049144486628
             }
           },
-          "measuredDuration": 42.6284999999998
+          "measuredDuration": 42.67516700000033
         },
         {
           "document": "I need it delivered as so",
@@ -838,7 +838,7 @@
               "2": 0.0021839065173808953
             }
           },
-          "measuredDuration": 42.63287500000024
+          "measuredDuration": 42.94420799999989
         },
         {
           "document": "I need it delivered as soo",
@@ -852,7 +852,7 @@
               "2": 0.009778079512435004
             }
           },
-          "measuredDuration": 42.46116700000039
+          "measuredDuration": 42.63625000000047
         },
         {
           "document": "I need it delivered as soon",
@@ -866,7 +866,7 @@
               "2": 0.004578290385483195
             }
           },
-          "measuredDuration": 42.676000000000386
+          "measuredDuration": 42.899749999999585
         },
         {
           "document": "I need it delivered as soon ",
@@ -880,7 +880,7 @@
               "2": 0.02127512347569425
             }
           },
-          "measuredDuration": 42.49562499999956
+          "measuredDuration": 42.604042000000845
         },
         {
           "document": "I need it delivered as soon a",
@@ -894,7 +894,7 @@
               "2": 0.004819567756285852
             }
           },
-          "measuredDuration": 42.4823750000005
+          "measuredDuration": 42.62320799999998
         },
         {
           "document": "I need it delivered as soon as",
@@ -908,7 +908,7 @@
               "2": 0.08547196847428673
             }
           },
-          "measuredDuration": 42.50029100000029
+          "measuredDuration": 42.6987079999999
         },
         {
           "document": "I need it delivered as soon as ",
@@ -922,7 +922,7 @@
               "2": 0.08142496692987396
             }
           },
-          "measuredDuration": 42.08774999999969
+          "measuredDuration": 43.500583000000006
         },
         {
           "document": "I need it delivered as soon as p",
@@ -936,7 +936,7 @@
               "2": 0.009782709783756241
             }
           },
-          "measuredDuration": 42.35925000000043
+          "measuredDuration": 43.21424999999999
         },
         {
           "document": "I need it delivered as soon as po",
@@ -950,7 +950,7 @@
               "2": 0.00625546903911532
             }
           },
-          "measuredDuration": 42.22783299999992
+          "measuredDuration": 42.83508400000028
         },
         {
           "document": "I need it delivered as soon as pos",
@@ -964,7 +964,7 @@
               "2": 0.02167487624860149
             }
           },
-          "measuredDuration": 42.85033300000032
+          "measuredDuration": 44.559541999999965
         },
         {
           "document": "I need it delivered as soon as poss",
@@ -978,7 +978,7 @@
               "2": 0.006861322887203659
             }
           },
-          "measuredDuration": 42.65266700000029
+          "measuredDuration": 43.215000000000146
         },
         {
           "document": "I need it delivered as soon as possi",
@@ -992,7 +992,7 @@
               "2": 0.006397399177216395
             }
           },
-          "measuredDuration": 42.42229199999929
+          "measuredDuration": 42.7984579999993
         },
         {
           "document": "I need it delivered as soon as possib",
@@ -1006,7 +1006,7 @@
               "2": 0.012835331541291855
             }
           },
-          "measuredDuration": 43.049958999999944
+          "measuredDuration": 42.37779200000023
         },
         {
           "document": "I need it delivered as soon as possibl",
@@ -1020,7 +1020,7 @@
               "2": 0.01963997893147371
             }
           },
-          "measuredDuration": 42.96191700000054
+          "measuredDuration": 42.77808399999958
         },
         {
           "document": "I need it delivered as soon as possible",
@@ -1034,7 +1034,7 @@
               "2": 0.008899704066765803
             }
           },
-          "measuredDuration": 45.59633399999984
+          "measuredDuration": 43.34649999999965
         },
         {
           "document": "I p",
@@ -1048,7 +1048,7 @@
               "2": 0.005432140069534172
             }
           },
-          "measuredDuration": 43.28687500000069
+          "measuredDuration": 42.97291699999914
         },
         {
           "document": "I pr",
@@ -1062,7 +1062,7 @@
               "2": 0.0028124940130397308
             }
           },
-          "measuredDuration": 43.37024999999994
+          "measuredDuration": 42.265957999999955
         },
         {
           "document": "I pre",
@@ -1076,7 +1076,7 @@
               "2": 0.002569897409112076
             }
           },
-          "measuredDuration": 43.699250000000575
+          "measuredDuration": 42.57349999999951
         },
         {
           "document": "I pref",
@@ -1090,7 +1090,7 @@
               "2": 0.0027635550714469126
             }
           },
-          "measuredDuration": 42.64325000000008
+          "measuredDuration": 42.573207999999795
         },
         {
           "document": "I prefe",
@@ -1104,7 +1104,7 @@
               "2": 0.004475426560040526
             }
           },
-          "measuredDuration": 42.33070899999984
+          "measuredDuration": 43.21362500000032
         },
         {
           "document": "I prefer",
@@ -1118,7 +1118,7 @@
               "2": 0.0020653573972594873
             }
           },
-          "measuredDuration": 42.53679199999988
+          "measuredDuration": 42.90925000000061
         },
         {
           "document": "I prefer ",
@@ -1132,7 +1132,7 @@
               "2": 0.0015888404640989034
             }
           },
-          "measuredDuration": 42.08075000000008
+          "measuredDuration": 43.2915839999996
         },
         {
           "document": "I prefer t",
@@ -1146,7 +1146,7 @@
               "2": 0.028034217598246723
             }
           },
-          "measuredDuration": 42.46370900000056
+          "measuredDuration": 42.503584000000046
         },
         {
           "document": "I prefer to",
@@ -1160,7 +1160,7 @@
               "2": 0.009755502747535798
             }
           },
-          "measuredDuration": 42.73500000000058
+          "measuredDuration": 42.5161250000001
         },
         {
           "document": "I prefer to ",
@@ -1174,7 +1174,7 @@
               "2": 0.006389776920222737
             }
           },
-          "measuredDuration": 41.84429199999977
+          "measuredDuration": 42.22712499999943
         },
         {
           "document": "I prefer to t",
@@ -1188,7 +1188,7 @@
               "2": 0.041551720329902044
             }
           },
-          "measuredDuration": 42.3653749999994
+          "measuredDuration": 45.567541999999776
         },
         {
           "document": "I prefer to ta",
@@ -1202,7 +1202,7 @@
               "2": 0.08272254563185083
             }
           },
-          "measuredDuration": 42.54479100000026
+          "measuredDuration": 42.75666699999965
         },
         {
           "document": "I prefer to tak",
@@ -1216,7 +1216,7 @@
               "2": 0.029747968083628708
             }
           },
-          "measuredDuration": 42.3784169999999
+          "measuredDuration": 42.6830829999999
         },
         {
           "document": "I prefer to take",
@@ -1230,7 +1230,7 @@
               "2": 0.013738292929844105
             }
           },
-          "measuredDuration": 44.7279580000004
+          "measuredDuration": 42.434290999999575
         },
         {
           "document": "I prefer to take ",
@@ -1244,7 +1244,7 @@
               "2": 0.009994339593733779
             }
           },
-          "measuredDuration": 43.035249999999905
+          "measuredDuration": 42.31275000000005
         },
         {
           "document": "I prefer to take i",
@@ -1258,7 +1258,7 @@
               "2": 0.8519460881913481
             }
           },
-          "measuredDuration": 42.8579579999996
+          "measuredDuration": 42.41462500000034
         },
         {
           "document": "I prefer to take it",
@@ -1272,7 +1272,7 @@
               "2": 0.5557074384953806
             }
           },
-          "measuredDuration": 42.51062499999989
+          "measuredDuration": 42.770542000000205
         },
         {
           "document": "I prefer to take it ",
@@ -1286,7 +1286,7 @@
               "2": 0.839499366571809
             }
           },
-          "measuredDuration": 43.04508299999998
+          "measuredDuration": 42.554957999999715
         },
         {
           "document": "I prefer to take it i",
@@ -1300,7 +1300,7 @@
               "2": 0.8236825650304734
             }
           },
-          "measuredDuration": 42.20420899999954
+          "measuredDuration": 42.56670800000029
         },
         {
           "document": "I prefer to take it in",
@@ -1314,7 +1314,7 @@
               "2": 0.9962369858125468
             }
           },
-          "measuredDuration": 42.68474999999944
+          "measuredDuration": 42.70024999999987
         },
         {
           "document": "I prefer to take it in ",
@@ -1328,7 +1328,7 @@
               "2": 0.985642140862183
             }
           },
-          "measuredDuration": 43.16295900000023
+          "measuredDuration": 42.4467080000004
         },
         {
           "document": "I prefer to take it in p",
@@ -1342,7 +1342,7 @@
               "2": 0.9900721613251627
             }
           },
-          "measuredDuration": 43.01887499999975
+          "measuredDuration": 42.53679199999988
         },
         {
           "document": "I prefer to take it in pe",
@@ -1356,7 +1356,7 @@
               "2": 0.9996553129063149
             }
           },
-          "measuredDuration": 43.13158300000032
+          "measuredDuration": 42.32116600000063
         },
         {
           "document": "I prefer to take it in per",
@@ -1370,7 +1370,7 @@
               "2": 0.9082604159570103
             }
           },
-          "measuredDuration": 42.250708999999915
+          "measuredDuration": 42.10883300000023
         },
         {
           "document": "I prefer to take it in pers",
@@ -1384,7 +1384,7 @@
               "2": 0.4254892287573746
             }
           },
-          "measuredDuration": 42.569124999999985
+          "measuredDuration": 43.20274999999947
         },
         {
           "document": "I prefer to take it in perso",
@@ -1398,7 +1398,7 @@
               "2": 0.9996574804445085
             }
           },
-          "measuredDuration": 42.32724999999937
+          "measuredDuration": 42.46716699999979
         },
         {
           "document": "I prefer to take it in person",
@@ -1412,7 +1412,7 @@
               "2": 0.9999775434136139
             }
           },
-          "measuredDuration": 41.99462500000027
+          "measuredDuration": 42.72624999999971
         }
       ]
     },
@@ -1440,7 +1440,7 @@
               0.9970399057499677
             ]
           },
-          "measuredDuration": 43.4057499999999
+          "measuredDuration": 42.440959000000475
         },
         {
           "document": "T",
@@ -1454,7 +1454,7 @@
               0.9881430970929591
             ]
           },
-          "measuredDuration": 41.98491699999977
+          "measuredDuration": 42.36383399999977
         },
         {
           "document": "Th",
@@ -1468,7 +1468,7 @@
               0.9719186175870043
             ]
           },
-          "measuredDuration": 41.379541000000245
+          "measuredDuration": 42.49570799999947
         },
         {
           "document": "The",
@@ -1482,7 +1482,7 @@
               0.9827810157731562
             ]
           },
-          "measuredDuration": 41.57166700000016
+          "measuredDuration": 43.24275000000034
         },
         {
           "document": "The ",
@@ -1496,7 +1496,7 @@
               0.9892158230660585
             ]
           },
-          "measuredDuration": 43.48491600000034
+          "measuredDuration": 42.20024999999987
         },
         {
           "document": "The f",
@@ -1510,7 +1510,7 @@
               0.7996856766630481
             ]
           },
-          "measuredDuration": 42.52633400000013
+          "measuredDuration": 41.986417000000074
         },
         {
           "document": "The fo",
@@ -1524,7 +1524,7 @@
               0.6839060600643702
             ]
           },
-          "measuredDuration": 42.22587500000009
+          "measuredDuration": 42.27929199999926
         },
         {
           "document": "The foo",
@@ -1538,7 +1538,7 @@
               0.6016690972989259
             ]
           },
-          "measuredDuration": 41.76337500000045
+          "measuredDuration": 42.30845799999952
         },
         {
           "document": "The food",
@@ -1552,7 +1552,7 @@
               0.9776050112237964
             ]
           },
-          "measuredDuration": 41.90187499999956
+          "measuredDuration": 42.20245799999975
         },
         {
           "document": "The food ",
@@ -1566,7 +1566,7 @@
               0.931509249774086
             ]
           },
-          "measuredDuration": 41.550208000000566
+          "measuredDuration": 42.02774999999929
         },
         {
           "document": "The food w",
@@ -1580,7 +1580,7 @@
               0.5466570740520429
             ]
           },
-          "measuredDuration": 41.923124999999345
+          "measuredDuration": 42.08495800000037
         },
         {
           "document": "The food wa",
@@ -1594,7 +1594,7 @@
               0.5484352508644251
             ]
           },
-          "measuredDuration": 41.77729199999885
+          "measuredDuration": 41.60054200000013
         },
         {
           "document": "The food was",
@@ -1608,7 +1608,7 @@
               0.5605101155912737
             ]
           },
-          "measuredDuration": 42.47029199999997
+          "measuredDuration": 42.0698339999999
         },
         {
           "document": "The food was ",
@@ -1622,7 +1622,7 @@
               0.5526524134669444
             ]
           },
-          "measuredDuration": 41.83879200000047
+          "measuredDuration": 41.7037079999991
         },
         {
           "document": "The food was a",
@@ -1636,7 +1636,7 @@
               0.7402358525114761
             ]
           },
-          "measuredDuration": 41.73516699999891
+          "measuredDuration": 41.88575000000037
         },
         {
           "document": "The food was am",
@@ -1650,7 +1650,7 @@
               0.4220228648567153
             ]
           },
-          "measuredDuration": 42.093667000001005
+          "measuredDuration": 41.91899999999987
         },
         {
           "document": "The food was ama",
@@ -1664,7 +1664,7 @@
               0.785976514255483
             ]
           },
-          "measuredDuration": 43.4822090000016
+          "measuredDuration": 41.74316700000054
         },
         {
           "document": "The food was amaz",
@@ -1678,7 +1678,7 @@
               0.9999963630310389
             ]
           },
-          "measuredDuration": 42.296542000000045
+          "measuredDuration": 42.27033300000039
         },
         {
           "document": "The food was amazi",
@@ -1692,7 +1692,7 @@
               0.9999953655873626
             ]
           },
-          "measuredDuration": 43.70895799999926
+          "measuredDuration": 42.060209000000214
         },
         {
           "document": "The food was amazin",
@@ -1706,7 +1706,7 @@
               0.9999991832206617
             ]
           },
-          "measuredDuration": 43.14545799999905
+          "measuredDuration": 42.18241699999999
         },
         {
           "document": "The food was amazing",
@@ -1720,7 +1720,7 @@
               0.9999997447477019
             ]
           },
-          "measuredDuration": 43.46766699999898
+          "measuredDuration": 41.70483299999978
         },
         {
           "document": "The food was amazing,",
@@ -1734,7 +1734,7 @@
               0.9999997237892156
             ]
           },
-          "measuredDuration": 42.26441599999998
+          "measuredDuration": 41.61187500000051
         },
         {
           "document": "The food was amazing, ",
@@ -1748,7 +1748,7 @@
               0.9999997117543564
             ]
           },
-          "measuredDuration": 41.76783400000022
+          "measuredDuration": 41.413000000000466
         },
         {
           "document": "The food was amazing, b",
@@ -1762,7 +1762,7 @@
               0.9999985362266938
             ]
           },
-          "measuredDuration": 41.87633300000016
+          "measuredDuration": 41.90758300000016
         },
         {
           "document": "The food was amazing, bu",
@@ -1776,7 +1776,7 @@
               0.9999975752891922
             ]
           },
-          "measuredDuration": 42.24066700000003
+          "measuredDuration": 41.61254199999894
         },
         {
           "document": "The food was amazing, but",
@@ -1790,7 +1790,7 @@
               0.999729950548653
             ]
           },
-          "measuredDuration": 43.209749999999985
+          "measuredDuration": 41.675792
         },
         {
           "document": "The food was amazing, but ",
@@ -1804,7 +1804,7 @@
               0.9590548069574966
             ]
           },
-          "measuredDuration": 42.65858300000036
+          "measuredDuration": 41.9659589999992
         },
         {
           "document": "The food was amazing, but w",
@@ -1818,7 +1818,7 @@
               0.9704254334157685
             ]
           },
-          "measuredDuration": 41.98583300000064
+          "measuredDuration": 42.06495800000084
         },
         {
           "document": "The food was amazing, but we",
@@ -1832,7 +1832,7 @@
               0.9999104031368996
             ]
           },
-          "measuredDuration": 42.15774999999849
+          "measuredDuration": 42.743500000000495
         },
         {
           "document": "The food was amazing, but we ",
@@ -1846,7 +1846,7 @@
               0.996204863569247
             ]
           },
-          "measuredDuration": 41.84929199999897
+          "measuredDuration": 43.04012500000135
         },
         {
           "document": "The food was amazing, but we w",
@@ -1860,7 +1860,7 @@
               0.9993544166705048
             ]
           },
-          "measuredDuration": 42.01441700000032
+          "measuredDuration": 42.57087499999943
         },
         {
           "document": "The food was amazing, but we wa",
@@ -1874,7 +1874,7 @@
               0.9991730538478601
             ]
           },
-          "measuredDuration": 41.500458000000435
+          "measuredDuration": 43.459624999999505
         },
         {
           "document": "The food was amazing, but we wai",
@@ -1888,7 +1888,7 @@
               0.9770637882222093
             ]
           },
-          "measuredDuration": 41.85150000000067
+          "measuredDuration": 44.05983399999968
         },
         {
           "document": "The food was amazing, but we wait",
@@ -1902,7 +1902,7 @@
               0.053275853400372074
             ]
           },
-          "measuredDuration": 43.57741700000042
+          "measuredDuration": 42.570417000000816
         },
         {
           "document": "The food was amazing, but we waite",
@@ -1916,7 +1916,7 @@
               0.27225448100339544
             ]
           },
-          "measuredDuration": 43.044082999998864
+          "measuredDuration": 42.733250000001135
         },
         {
           "document": "The food was amazing, but we waited",
@@ -1930,7 +1930,7 @@
               0.018178818751115575
             ]
           },
-          "measuredDuration": 42.144874999999956
+          "measuredDuration": 42.46112499999981
         },
         {
           "document": "The food was amazing, but we waited ",
@@ -1944,7 +1944,7 @@
               0.02350031458753423
             ]
           },
-          "measuredDuration": 42.84229100000084
+          "measuredDuration": 43.00450000000092
         },
         {
           "document": "The food was amazing, but we waited a",
@@ -1958,7 +1958,7 @@
               0.6212359692594815
             ]
           },
-          "measuredDuration": 43.26658300000054
+          "measuredDuration": 42.37866699999904
         },
         {
           "document": "The food was amazing, but we waited an",
@@ -1972,7 +1972,7 @@
               0.37299122572580484
             ]
           },
-          "measuredDuration": 42.34991700000137
+          "measuredDuration": 42.80025000000023
         },
         {
           "document": "The food was amazing, but we waited an ",
@@ -1986,7 +1986,7 @@
               0.10346963701109206
             ]
           },
-          "measuredDuration": 42.08100000000013
+          "measuredDuration": 42.74562499999956
         },
         {
           "document": "The food was amazing, but we waited an h",
@@ -2000,7 +2000,7 @@
               0.02547473315100641
             ]
           },
-          "measuredDuration": 42.96608399999968
+          "measuredDuration": 42.319124999999985
         },
         {
           "document": "The food was amazing, but we waited an ho",
@@ -2014,7 +2014,7 @@
               0.06553404588016096
             ]
           },
-          "measuredDuration": 43.22204199999942
+          "measuredDuration": 41.941417
         },
         {
           "document": "The food was amazing, but we waited an hou",
@@ -2028,7 +2028,7 @@
               0.022198634892765443
             ]
           },
-          "measuredDuration": 43.00916699999834
+          "measuredDuration": 42.40583299999889
         },
         {
           "document": "The food was amazing, but we waited an hour",
@@ -2042,7 +2042,7 @@
               0.005943642901171282
             ]
           },
-          "measuredDuration": 42.54975000000013
+          "measuredDuration": 43.302208000000974
         }
       ]
     },
@@ -2093,7 +2093,7 @@
               "value": 0.0000022082757192882676
             }
           ],
-          "measuredDuration": 122.50045899999895
+          "measuredDuration": 118.36891699999978
         },
         {
           "document": "M",
@@ -2111,7 +2111,7 @@
               "value": 0.000004100306648088523
             }
           ],
-          "measuredDuration": 115.93483299999934
+          "measuredDuration": 115.63433299999997
         },
         {
           "document": "My",
@@ -2129,7 +2129,7 @@
               "value": 6.548017857005254e-7
             }
           ],
-          "measuredDuration": 120.25737499999923
+          "measuredDuration": 114.64500000000044
         },
         {
           "document": "My ",
@@ -2147,7 +2147,7 @@
               "value": 0.0000010656937392976252
             }
           ],
-          "measuredDuration": 116.96516599999995
+          "measuredDuration": 114.54662499999904
         },
         {
           "document": "My c",
@@ -2165,7 +2165,7 @@
               "value": 5.067583073602265e-7
             }
           ],
-          "measuredDuration": 113.77533299999959
+          "measuredDuration": 115.26224999999977
         },
         {
           "document": "My ca",
@@ -2183,7 +2183,7 @@
               "value": 0.000002225754594193385
             }
           ],
-          "measuredDuration": 114.10587499999929
+          "measuredDuration": 116.76154200000019
         },
         {
           "document": "My cat",
@@ -2201,7 +2201,7 @@
               "value": 1.7735671851539978e-7
             }
           ],
-          "measuredDuration": 115.85070900000028
+          "measuredDuration": 116.97504200000003
         },
         {
           "document": "My cat ",
@@ -2219,7 +2219,7 @@
               "value": 1.4126733351344195e-7
             }
           ],
-          "measuredDuration": 114.50095799999872
+          "measuredDuration": 115.81104200000118
         },
         {
           "document": "My cat i",
@@ -2237,7 +2237,7 @@
               "value": 3.46886429926667e-7
             }
           ],
-          "measuredDuration": 114.72662499999933
+          "measuredDuration": 115.14895799999977
         },
         {
           "document": "My cat is",
@@ -2255,7 +2255,7 @@
               "value": 3.3817561581742465e-7
             }
           ],
-          "measuredDuration": 114.19687499999964
+          "measuredDuration": 115.49983299999985
         },
         {
           "document": "My cat is ",
@@ -2273,7 +2273,7 @@
               "value": 2.419685176436524e-7
             }
           ],
-          "measuredDuration": 113.58512500000143
+          "measuredDuration": 113.92891699999927
         },
         {
           "document": "My cat is s",
@@ -2291,7 +2291,7 @@
               "value": 4.283156685501392e-7
             }
           ],
-          "measuredDuration": 115.52958299999955
+          "measuredDuration": 114.32858400000077
         },
         {
           "document": "My cat is st",
@@ -2309,7 +2309,7 @@
               "value": 5.664168526214872e-7
             }
           ],
-          "measuredDuration": 115.04691700000149
+          "measuredDuration": 113.93420800000058
         },
         {
           "document": "My cat is stu",
@@ -2327,7 +2327,7 @@
               "value": 3.2828941502248876e-7
             }
           ],
-          "measuredDuration": 114.81029200000012
+          "measuredDuration": 115.37829199999942
         },
         {
           "document": "My cat is stuc",
@@ -2345,7 +2345,7 @@
               "value": 0.00008795701133824821
             }
           ],
-          "measuredDuration": 113.82924999999886
+          "measuredDuration": 114.70987499999865
         },
         {
           "document": "My cat is stuck",
@@ -2363,7 +2363,7 @@
               "value": 0.49760438844851484
             }
           ],
-          "measuredDuration": 113.8877909999992
+          "measuredDuration": 115.54670799999985
         },
         {
           "document": "My cat is stuck.",
@@ -2381,7 +2381,7 @@
               "value": 0.3104542454922806
             }
           ],
-          "measuredDuration": 113.09120799999982
+          "measuredDuration": 113.65170899999976
         },
         {
           "document": "My cat is stuck. ",
@@ -2399,7 +2399,7 @@
               "value": 0.009099596908074322
             }
           ],
-          "measuredDuration": 115.55083299999933
+          "measuredDuration": 115.21199999999953
         },
         {
           "document": "My cat is stuck. P",
@@ -2417,7 +2417,7 @@
               "value": 0.41425261146334164
             }
           ],
-          "measuredDuration": 117.4038330000003
+          "measuredDuration": 115.11116700000093
         },
         {
           "document": "My cat is stuck. Pl",
@@ -2435,7 +2435,7 @@
               "value": 0.9467566921819579
             }
           ],
-          "measuredDuration": 115.63512499999888
+          "measuredDuration": 114.3836250000004
         },
         {
           "document": "My cat is stuck. Ple",
@@ -2453,7 +2453,7 @@
               "value": 0.8651876017696916
             }
           ],
-          "measuredDuration": 114.81125000000065
+          "measuredDuration": 114.69174999999996
         },
         {
           "document": "My cat is stuck. Plea",
@@ -2471,7 +2471,7 @@
               "value": 0.9992195532992612
             }
           ],
-          "measuredDuration": 114.59179199999926
+          "measuredDuration": 115.23737500000061
         },
         {
           "document": "My cat is stuck. Pleas",
@@ -2489,7 +2489,7 @@
               "value": 0.9993716485107698
             }
           ],
-          "measuredDuration": 115.70924999999988
+          "measuredDuration": 116.06158300000061
         },
         {
           "document": "My cat is stuck. Please",
@@ -2507,7 +2507,7 @@
               "value": 0.9995530760528596
             }
           ],
-          "measuredDuration": 115.46850000000086
+          "measuredDuration": 117.98170899999968
         },
         {
           "document": "My cat is stuck. Please ",
@@ -2525,7 +2525,7 @@
               "value": 0.9986636373266506
             }
           ],
-          "measuredDuration": 114.05354200000147
+          "measuredDuration": 113.85949999999866
         },
         {
           "document": "My cat is stuck. Please h",
@@ -2543,7 +2543,7 @@
               "value": 0.9991206167052137
             }
           ],
-          "measuredDuration": 117.48770800000057
+          "measuredDuration": 114.09112499999901
         },
         {
           "document": "My cat is stuck. Please he",
@@ -2561,7 +2561,7 @@
               "value": 0.9995639402599764
             }
           ],
-          "measuredDuration": 117.26016600000003
+          "measuredDuration": 115.2164159999993
         },
         {
           "document": "My cat is stuck. Please hel",
@@ -2579,7 +2579,7 @@
               "value": 0.9997846493375236
             }
           ],
-          "measuredDuration": 114.51408400000037
+          "measuredDuration": 114.3157910000009
         },
         {
           "document": "My cat is stuck. Please help",
@@ -2597,7 +2597,7 @@
               "value": 0.9998146838091576
             }
           ],
-          "measuredDuration": 113.57941699999901
+          "measuredDuration": 115.71600000000035
         },
         {
           "document": "My cat is stuck. Please help ",
@@ -2615,7 +2615,7 @@
               "value": 0.9998152561337885
             }
           ],
-          "measuredDuration": 113.1319999999996
+          "measuredDuration": 113.73274999999921
         },
         {
           "document": "My cat is stuck. Please help n",
@@ -2633,7 +2633,7 @@
               "value": 0.9995814420006974
             }
           ],
-          "measuredDuration": 113.67112499999894
+          "measuredDuration": 114.7364579999994
         },
         {
           "document": "My cat is stuck. Please help no",
@@ -2651,7 +2651,7 @@
               "value": 0.9995151830353316
             }
           ],
-          "measuredDuration": 114.83720800000083
+          "measuredDuration": 114.5864590000001
         },
         {
           "document": "My cat is stuck. Please help now",
@@ -2669,7 +2669,7 @@
               "value": 0.9999912118996395
             }
           ],
-          "measuredDuration": 113.890625
+          "measuredDuration": 118.74375000000146
         },
         {
           "document": "My cat is stuck. Please help now!",
@@ -2687,7 +2687,7 @@
               "value": 0.9999927302014855
             }
           ],
-          "measuredDuration": 113.87970799999857
+          "measuredDuration": 112.4288749999996
         },
         {
           "document": "H",
@@ -2705,7 +2705,7 @@
               "value": 0.000003270025031593987
             }
           ],
-          "measuredDuration": 114.23508299999958
+          "measuredDuration": 113.44091599999956
         },
         {
           "document": "He",
@@ -2723,7 +2723,7 @@
               "value": 0.0000012241960594501418
             }
           ],
-          "measuredDuration": 114.84337500000038
+          "measuredDuration": 115.42145900000105
         },
         {
           "document": "Hel",
@@ -2741,7 +2741,7 @@
               "value": 0.000011280759051036132
             }
           ],
-          "measuredDuration": 113.69616599999972
+          "measuredDuration": 115.2950409999994
         },
         {
           "document": "Help",
@@ -2759,7 +2759,7 @@
               "value": 0.0216044041872871
             }
           ],
-          "measuredDuration": 115.6828749999986
+          "measuredDuration": 115.0655829999996
         },
         {
           "document": "Help ",
@@ -2777,7 +2777,7 @@
               "value": 0.0010617898449006063
             }
           ],
-          "measuredDuration": 118.88387499999953
+          "measuredDuration": 113.16391699999986
         },
         {
           "document": "Help m",
@@ -2795,7 +2795,7 @@
               "value": 0.007348497417174831
             }
           ],
-          "measuredDuration": 114.57758400000057
+          "measuredDuration": 114.09174999999959
         },
         {
           "document": "Help my",
@@ -2813,7 +2813,7 @@
               "value": 0.000038584125609511015
             }
           ],
-          "measuredDuration": 115.50733299999956
+          "measuredDuration": 113.55770800000028
         },
         {
           "document": "Help my ",
@@ -2831,7 +2831,7 @@
               "value": 0.00010106765984193135
             }
           ],
-          "measuredDuration": 112.57587500000045
+          "measuredDuration": 112.18637500000114
         },
         {
           "document": "Help my c",
@@ -2849,7 +2849,7 @@
               "value": 0.0017870348000308877
             }
           ],
-          "measuredDuration": 115.57591700000012
+          "measuredDuration": 114.4120839999996
         },
         {
           "document": "Help my ca",
@@ -2867,7 +2867,7 @@
               "value": 0.9481691580406987
             }
           ],
-          "measuredDuration": 115.88487499999974
+          "measuredDuration": 113.98904200000106
         },
         {
           "document": "Help my cat",
@@ -2885,7 +2885,7 @@
               "value": 0.9987724557883637
             }
           ],
-          "measuredDuration": 114.85470800000076
+          "measuredDuration": 115.28258300000016
         },
         {
           "document": "Help my cat ",
@@ -2903,7 +2903,7 @@
               "value": 0.9995207235525169
             }
           ],
-          "measuredDuration": 113.65362500000083
+          "measuredDuration": 114.4012500000008
         },
         {
           "document": "Help my cat n",
@@ -2921,7 +2921,7 @@
               "value": 0.995287028807864
             }
           ],
-          "measuredDuration": 114.54470899999978
+          "measuredDuration": 115.60308299999997
         },
         {
           "document": "Help my cat no",
@@ -2939,7 +2939,7 @@
               "value": 0.9963736725533657
             }
           ],
-          "measuredDuration": 114.6899169999997
+          "measuredDuration": 115.3159999999989
         },
         {
           "document": "Help my cat now",
@@ -2957,7 +2957,7 @@
               "value": 0.9999886317850071
             }
           ],
-          "measuredDuration": 117.56804200000079
+          "measuredDuration": 115.49758399999882
         },
         {
           "document": "Help my cat now!",
@@ -2975,7 +2975,7 @@
               "value": 0.9999963271002542
             }
           ],
-          "measuredDuration": 113.31195800000023
+          "measuredDuration": 115.12395800000013
         }
       ]
     }

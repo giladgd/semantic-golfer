@@ -26,9 +26,13 @@ void app.whenReady().then(async () => {
     assert.deepEqual(await readFile(path.join(archive, "dist/icon.png")), await readFile("assets/icon.png"));
     assert.deepEqual(await readFile(path.join(archive, "dist/icon.svg")), await readFile("public/icon.svg"));
     if (process.platform === "darwin") {
+        const bundle = path.resolve(archive, "../../..");
+        assert.equal(path.basename(bundle), "Semantic Golfer.app");
+        await access(path.join(bundle, "Contents/MacOS/Semantic Golfer"));
         assert.deepEqual(await readFile(path.join(archive, "../icon.icns")), await readFile("assets/icon.icns"));
         await access(path.join(archive, "../Assets.car"));
-    }
+    } else
+        await access(path.resolve(archive, "../..", process.platform === "win32" ? "Semantic Golfer.exe" : "semantic-golfer"));
     const libraryUrl = pathToFileURL(path.join(archive, "node_modules/node-llama-cpp/dist/index.js"));
     const {getLlama} = await import(libraryUrl.href) as typeof import("node-llama-cpp");
     // A dry run loads and disposes the binary without initializing the backend, downloading, or building.

@@ -11,6 +11,8 @@ import {createBirpc} from "birpc";
 import {initialLlmState, type LlmState} from "../shared/llmState.ts";
 import {models, type ModelId} from "../shared/models.ts";
 import {addLevelScore, type LevelScoreInput} from "../shared/scores.ts";
+import {games} from "../shared/games.ts";
+import {getGameMeterDescriptions} from "../shared/gameDescriptions.ts";
 import type {DecisionRequest, DecisionResult} from "../shared/decision.ts";
 
 const profile = await mkdtemp(path.join(tmpdir(), "decision-input-test-"));
@@ -65,11 +67,18 @@ void app.whenReady().then(async () => {
             // Return older results while edits continue, without requiring a downloaded model.
             await setTimeout(80);
             evaluations.push(request);
-            const answers = [request.input, ...request.additionalInputs ?? []].map((input, index): DecisionResult["answer"] => {
+            const inputs = [request.input, ...request.additionalInputs ?? []];
+            const round = Object.values(games).flatMap(({levels}) => levels.flatMap(({rounds}) => rounds))
+                .find(({questions}) => questions.length === inputs.length &&
+                    questions.every((question, index) => question.type === inputs[index]!.type &&
+                        question.instruction === inputs[index]!.instruction &&
+                        JSON.stringify(question.criteria) === JSON.stringify(inputs[index]!.criteria)));
+            const answers = inputs.map((input, index): DecisionResult["answer"] => {
                 if (input.type === "noul")
-                    return {type: "noul", value: input.document.includes("invalid") ? 0.1 : 0.8};
-                const probabilities = request.additionalInputs?.length && input.type === "choice"
-                    ? (index < 2 ? [0.1, 0.9] : [0.9, 0.1])
+                    return {type: "noul", value: input.document.includes("invalid") || (round != null && index >= round.goalCount)
+                        ? 0.1 : 0.8};
+                const probabilities = round != null && input.type === "choice"
+                    ? (index < round.goalCount ? [0.1, 0.9] : [0.9, 0.1])
                     : input.criteria.map(() => 1 / input.criteria.length);
                 return input.type === "choice"
                     ? {type: "choice", choice: "0", confidence: 0.5,
@@ -451,12 +460,106 @@ void app.whenReady().then(async () => {
         await click(".topBar nav button:first-child");
         await waitFor(() => evaluate(() => document.querySelector(".gameChoice") != null));
         await waitFor(() => evaluate(() => document.documentElement.dataset.modeMotion === "[-24,24]"));
+        assert.deepEqual(await evaluate(() => [...document.querySelectorAll(".gameChoice .gameTag")]
+            .map((tag) => tag.textContent?.trim())), Object.values(games).map((game) => `${game.levels.length} levels`));
         for (const index of [1, 2]) {
             await click(`.gameChoice:nth-child(${index})`);
             await waitFor(() => evaluate(() => document.querySelector(".levelPicker .level") != null));
+            assert.deepEqual(await evaluate(() => [...document.querySelectorAll(".levelPicker .estimatedDuration")]
+                .map((tag) => tag.textContent?.trim())),
+            games[index === 1 ? "lock" : "signalMixing"].levels.map((level) => `≈${level.estimatedDuration}`));
             await click(".levelPicker .level:first-child");
             await waitFor(() => evaluate(() => document.querySelector("#gameDocument") != null));
             await checkEditing("#gameDocument");
+            const round = games[index === 1 ? "lock" : "signalMixing"].levels[0]!.rounds[0]!;
+            const descriptions = getGameMeterDescriptions(index === 1 ? "lock" : "signalMixing", round);
+            assert.deepEqual(await evaluate(() => [...document.querySelectorAll(".gameMeterViewport .meterHelp button")]
+                .map((button) => button.getAttribute("aria-label"))),
+            round.labels.filter((_, index) => descriptions[index] != null).map((label) => `About ${label}`));
+            assert.equal(await evaluate(() => document.querySelectorAll(".meterTooltip").length), 0,
+                "Unused tooltips should not be mounted");
+            if (descriptions.some((description) => description != null)) {
+                const hoverDelay = await evaluate(async () => {
+                    const help = document.querySelector<HTMLElement>(".gameMeterViewport .meterHelp")!;
+                    const opened = new Promise<number>((resolve) => {
+                        const observer = new MutationObserver(() => {
+                            if (help.querySelector(".meterTooltip:popover-open")) {
+                                observer.disconnect();
+                                resolve(performance.now());
+                            }
+                        });
+                        observer.observe(help, {childList: true});
+                    });
+                    const start = performance.now();
+                    help.dispatchEvent(new PointerEvent("pointerover", {bubbles: true}));
+                    const delay = await opened - start;
+                    help.dispatchEvent(new PointerEvent("pointerout", {bubbles: true, relatedTarget: document.body}));
+                    return delay;
+                });
+                assert.ok(hoverDelay >= 240, "Meter help waits 250ms before opening on hover");
+                await evaluate(() => document.querySelector<HTMLButtonElement>(".gameMeterViewport .meterHelp button")!.focus());
+                await waitFor(() => evaluate(() => document.querySelector(".meterTooltip:popover-open") != null));
+                assert.ok(await evaluate(() => document.querySelector(".meterTooltip:popover-open")!.textContent!.length > 15));
+                const closedAt = performance.now();
+                await evaluate(() => document.querySelector<HTMLTextAreaElement>("#gameDocument")!.focus());
+                await waitFor(() => evaluate(() => document.querySelector(".meterTooltip:popover-open") == null));
+                assert.equal(await evaluate(() => document.querySelectorAll(".meterTooltip").length), 1,
+                    "A closing tooltip stays mounted for its exit transition");
+                await waitFor(() => evaluate(() => document.querySelector(".meterTooltip") == null));
+                assert.ok(performance.now() - closedAt >= 1900, "Closed tooltips remain mounted for two seconds");
+                const iconPosition = await evaluate(() => {
+                    const rect = document.querySelector(".gameMeterViewport .meterHelp button")!.getBoundingClientRect();
+                    return {x: Math.round(rect.x + rect.width / 2), y: Math.round(rect.y + rect.height / 2)};
+                });
+                contents.sendInputEvent({type: "mouseMove", ...iconPosition});
+                await setTimeout(200);
+                const hoverBackground = await evaluate(() => {
+                    const button = document.querySelector(".gameMeterViewport .meterHelp button")!;
+                    const expected = document.createElement("span");
+                    expected.style.color = getComputedStyle(button.querySelector("svg")!).fill;
+                    expected.style.background = "color-mix(in srgb, currentColor 12%, transparent)";
+                    document.body.append(expected);
+                    const result = {actual: getComputedStyle(button).backgroundColor, expected: getComputedStyle(expected).backgroundColor};
+                    expected.remove();
+                    return result;
+                });
+                contents.sendInputEvent({type: "mouseMove", x: 0, y: 0});
+                assert.equal(hoverBackground.actual, hoverBackground.expected, "Info icon hover overrides the global button hover style");
+            }
+            const meterLayout = () => evaluate(() => {
+                const viewport = document.querySelector<HTMLElement>(".gameMeterViewport")!;
+                const timing = document.querySelector<HTMLElement>(".gameTiming")!;
+                return {
+                    headings: [...viewport.querySelectorAll("h2")].map((heading) => heading.textContent),
+                    headingGaps: [...viewport.querySelectorAll("h2")].map((heading) => {
+                        const title = heading.firstElementChild!.getBoundingClientRect();
+                        const divider = heading.dataset.startRisks === "true"
+                            ? parseFloat(getComputedStyle(viewport).getPropertyValue("--game-meter-inset")) + 1 : 0;
+                        return [title.top - heading.getBoundingClientRect().top - divider,
+                            heading.getBoundingClientRect().bottom - title.bottom];
+                    }),
+                    gaps: [...viewport.querySelectorAll(".meterGap")].map((gap) => gap.getBoundingClientRect().height),
+                    labelGaps: [...viewport.querySelectorAll(".gameMeter")].map((meter) =>
+                        meter.lastElementChild!.getBoundingClientRect().top - meter.firstElementChild!.getBoundingClientRect().bottom),
+                    timingGaps: [timing.firstElementChild!.getBoundingClientRect().top - timing.getBoundingClientRect().top - 1,
+                        timing.getBoundingClientRect().bottom - timing.firstElementChild!.getBoundingClientRect().bottom],
+                    scrolls: viewport.scrollHeight > viewport.clientHeight
+                };
+            });
+            const roomy = await meterLayout();
+            assert.deepEqual(roomy.headings, index === 1 ? ["Goals"] : ["Goals", "Risks"]);
+            assert.ok(roomy.gaps.every((gap) => gap >= 11 && gap <= 24));
+            if (index === 1)
+                assert.ok(roomy.gaps.every((gap) => gap === 24), "Keep full meter spacing when the content fits");
+            window.setSize(1380, 560);
+            await waitFor(async () => (await meterLayout()).labelGaps.every((gap) => gap === 5));
+            const compact = await meterLayout();
+            assert.ok(compact.gaps.every((gap) => gap === 11), "Leave extra separation between compact meters");
+            assert.ok(compact.headingGaps.flat().every((gap) => gap === 16), "Both section headings use the same minimum spacing");
+            assert.ok(compact.timingGaps.every((gap) => gap === 14), "Reduce duration padding symmetrically");
+            assert.equal(compact.scrolls, true, "Scroll meters once the gaps reach their minimum");
+            window.setSize(1380, 900);
+            await waitFor(async () => (await meterLayout()).gaps.every((gap, index) => Math.abs(gap - roomy.gaps[index]!) < 1));
             await waitFor(() => evaluations.at(-1)?.input.document.includes("Hello beautiful 🐈 world"));
             await click(".backButton");
             await click(".levelPicker .backButton");
@@ -499,12 +602,12 @@ void app.whenReady().then(async () => {
         const roundHeading = await evaluate(() => document.querySelector(".roundCount")!.textContent);
         await advance(undefined, true);
         await advance(testPlatform === "darwin" ? 2 : 4);
-        await evaluate(() => {
-            const modifier = window.platform === "darwin" ? {metaKey: true} : {ctrlKey: true};
+        await evaluate((platform) => {
+            const modifier = platform === "darwin" ? {metaKey: true} : {ctrlKey: true};
             document.activeElement!.dispatchEvent(new KeyboardEvent("keydown", {
                 key: "Enter", ...modifier, isComposing: true, bubbles: true, cancelable: true
             }));
-        });
+        }, testPlatform);
         await click(".howToPlay");
         await waitFor(() => evaluate(() => document.querySelector<HTMLDialogElement>(".gameHelpDialog")!.open));
         await advance();

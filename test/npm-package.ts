@@ -15,11 +15,12 @@ test("the npm package ships compiled code and direct runtimes without local depe
     assert.deepEqual(sourcePkg.files, ["dist", "dist-electron", "dist-cli", "README.md", "LICENSE"]);
     assert.deepEqual(pkg.files, sourcePkg.files);
     assert.equal(pkg.name, "semantic-golfer");
+    assert.deepEqual(pkg.publishConfig, {access: "public", tag: "latest"});
     assert.ok(!pkg.private);
     assert.ok(pkg.dependencies.electron);
     assert.ok(pkg.dependencies["electron-updater"]);
-    assert.equal(pkg.homepage, "https://giladgd.github.io/semantic-golfer/");
-    assert.match(await readFile(new URL("README.md", root), "utf8"), /https:\/\/giladgd\.github\.io\/semantic-golfer\//);
+    assert.equal(pkg.homepage, "https://semantic-golfer.giladgd.com/");
+    assert.match(await readFile(new URL("README.md", root), "utf8"), /https:\/\/semantic-golfer\.giladgd\.com\//);
     assert.match(pkg.dependencies["node-llama-cpp"], /^\d+\.\d+\.\d+/);
     assert.equal(pkg.dependencies["node-llama-cpp"], await getModuleVersion());
     assert.ok(pkg.dependencies["lifecycle-utils"]);

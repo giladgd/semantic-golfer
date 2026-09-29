@@ -1,4 +1,6 @@
-# Level evaluation report
+# Original level evaluation report
+
+This report covers the original catalogs. Its results do not validate either redesigned game; see the current [Signal Mixing](signal-mixing-results.md) and [Semantic Golfing](semantic-golfing-results.md) evaluations.
 
 Validated on 2026-09-26 using the current catalog and updated node-llama-cpp checkout. Every round has a natural winning answer on each built-in model, verified through real Electron inference. Classification still has the limitations below; the negative suite is not entirely passing.
 

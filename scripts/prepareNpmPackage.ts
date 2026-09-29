@@ -27,7 +27,7 @@ await writeFile(new URL("package.json", output), JSON.stringify({
     bugs: pkg.bugs,
     funding: pkg.funding,
     engines: pkg.engines,
-    publishConfig: {access: "public"},
+    publishConfig: {access: "public", tag: "latest"},
     dependencies: {
         electron: pkg.devDependencies.electron,
         "electron-updater": pkg.dependencies["electron-updater"],

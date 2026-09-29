@@ -99,8 +99,8 @@ export function DemoCursor({frame, playing}: {
     return <div className="demoCursor" aria-hidden="true" data-playing={playing}>
         <div className="typingMirror" ref={mirror} data-selected={frame.selected} hidden><span ref={text} /><span className="caret" /></div>
         <div className="pointer" ref={pointer} data-visible={frame.cursor.visible}>
-            <svg width="17" height="23" viewBox="0 0 17 23" fill="#000" stroke="#fff" strokeWidth="1" strokeLinejoin="round">
-                <path d="M1 1v16l4.3-3.6 3.6 7.8 3.1-1.5-3.5-7.5h6Z" />
+            <svg width="17" height="23" viewBox="0 0 17 23">
+                <path d="M1 1v16l4.3-3.6 3.6 7.8 3.1-1.5-3.5-7.5h6Z" fill="#000" stroke="#fff" strokeWidth="1" strokeLinejoin="round" />
             </svg>
         </div>
     </div>;

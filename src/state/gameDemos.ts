@@ -4,15 +4,16 @@ type DemoStep = {text: string, probabilities: number[], caption: string};
 export const demoStepDuration = 3000;
 export const gameDemos: Record<GameId, {limit: number, steps: DemoStep[]}> = {
     lock: {limit: 40, steps: [
-        {text: "My cat", probabilities: [0.9, 0.1, 0.08], caption: "Mention an animal to pass the first threshold."},
-        {text: "My cat is stuck", probabilities: [0.94, 0.32, 0.38], caption: "A problem alone does not ask for help."},
-        {text: "My cat is stuck. Please help", probabilities: [0.96, 0.91, 0.42], caption: "Ask for help to open the second lock."},
-        {text: "My cat is stuck. Please help now!", probabilities: [0.96, 0.94, 0.92], caption: "Add urgency to get every bar past its target."}
+        {text: "My cat", probabilities: [0.9, 0.1, 0.08], caption: "Mention an animal to pass the first threshold"},
+        {text: "My cat is stuck", probabilities: [0.94, 0.32, 0.38], caption: "A problem alone does not ask for help"},
+        {text: "My cat is stuck. Please help", probabilities: [0.96, 0.91, 0.42], caption: "Ask for help to open the second lock"},
+        {text: "My cat is stuck. Please help now!", probabilities: [0.96, 0.94, 0.92], caption: "Add urgency to get every bar past its target"}
     ]},
-    signalMixing: {limit: 60, steps: [
-        {text: "I absolutely love the cake!", probabilities: [0.86, 0.06, 0.04, 0.04], caption: "Start with praise and watch which category rises."},
-        {text: "I absolutely love the cake! I hated", probabilities: [0.72, 0.18, 0.04, 0.06], caption: "Add a contrasting detail to express both meanings."},
-        {text: "I absolutely love the cake! I hated the rude service", probabilities: [0.91, 0.88, 0.04, 0.04], caption: "Get both target bars past their thresholds, and keep the rest low."}
+    // Recorded with Gemma 4 5B E2B Q8_0 against the first round's questions.
+    signalMixing: {limit: 150, steps: [
+        {text: "Could I", probabilities: [0.000261, 0.000003, 0.012399, 0.000248], caption: "Start a request"},
+        {text: "Could I borrow your charger?", probabilities: [0.999998, 0.000002, 0.001228, 0.000051], caption: "Ask for the charger; a little thanks is still missing"},
+        {text: "Could I borrow your charger? Thanks", probabilities: [0.999998, 0.999446, 0.001262, 0.000070], caption: "Add thanks while keeping entitlement and ultimatums low"}
     ]}
 };
 

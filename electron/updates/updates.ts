@@ -26,7 +26,7 @@ export function dismissUpdate() {
 
 async function manualUpdateReason() {
     if (process.env.SEMANTIC_GOLFER_LAUNCHER === "1")
-        return process.connected && process.env.npm_execpath ? undefined : "Run npx semantic-golfer@latest to update this installation.";
+        return process.connected && process.env.npm_execpath ? undefined : "Run npx -y semantic-golfer@latest to update this installation.";
     if (!app.isPackaged)
         return "Update the source checkout to use a newer development build.";
     if (process.platform === "darwin") {

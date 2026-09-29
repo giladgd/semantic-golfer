@@ -22,7 +22,7 @@ if (process.env.SEMANTIC_GOLFER_LAUNCHER === "1") {
         app.quit();
 }
 if (process.platform === "win32")
-    app.setAppUserModelId("ai.withcat.semantic-golfer");
+    app.setAppUserModelId("com.giladgd.semantic-golfer");
 
 // The built directory structure
 //

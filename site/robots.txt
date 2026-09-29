@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://giladgd.github.io/semantic-golfer/sitemap.xml
+Sitemap: https://semantic-golfer.giladgd.com/sitemap.xml

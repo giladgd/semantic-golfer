@@ -56,7 +56,7 @@ export async function prepareUpdate(version: string, signal: AbortSignal, childr
         throw new Error("Invalid update request.");
     const npm = process.env.npm_execpath;
     if (!npm || !path.isAbsolute(npm))
-        throw new Error("Start the app with npx semantic-golfer to install updates.");
+        throw new Error("Start the app with npx -y semantic-golfer@latest to install updates.");
     const target = path.join(updatesDirectory(), `npm-${version}`);
     // Install beside the running app; never mutate a global install or npm's npx cache.
     await mkdir(updatesDirectory(), {recursive: true});
