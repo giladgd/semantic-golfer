@@ -39,3 +39,18 @@ test("the README export shares repeated styles, animation keyframes, and icons",
     assert.match(svg, /#export \.s\d+\{/);
     assert.doesNotMatch(svg, / style="/);
 });
+
+test("the README export keeps icon gradients inside their themed SVG", () => {
+    const node = (tag: string, attributes: Array<[string, string]> = []) => ({tag, attributes,
+        style: {}, position: "static", clip: "none", children: [] as string[]});
+    const icon = {...node("svg", [["class", "semanticGolferIcon"]]), children: [
+        {...node("defs"), children: [{...node("linearGradient", [["id", "tile"]]), children: [
+            node("stop", [["stop-color", "var(--tile-top)"]])
+        ]}]},
+        node("rect", [["fill", "url(#tile)"]])
+    ]};
+    const svg = compileReadmeDemo([{at: 0, value: icon}], 1000, "", "");
+    assert.match(svg, /<svg class="semanticGolferIcon s\d+"><defs\b/);
+    assert.match(svg, /stop-color="var\(--tile-top\)"/);
+    assert.doesNotMatch(svg, /<use\b/);
+});

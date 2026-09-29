@@ -232,7 +232,8 @@ export function compileReadmeDemo(frames: Sample[], duration: number, styles: st
                 .join("");
             let children = node.children.map((_, child) => render(run.samples.map(({at, value}) =>
                 ({at, value: value.children[child]!})), until)).join("");
-            if (node.tag === "svg") {
+            // Paint servers need their SVG's inherited theme variables; keep local definitions inside that SVG.
+            if (node.tag === "svg" && !node.children.some((child) => typeof child !== "string" && child.tag === "defs")) {
                 let icon = icons.get(children);
                 if (icon == null) {
                     icon = `i${nextId++}`;

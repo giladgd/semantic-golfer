@@ -1,4 +1,5 @@
 import {flushSync} from "react-dom";
+import AppIcon from "../../../../public/icon.svg?react";
 import {useExternalState} from "../../../hooks/useExternalState.ts";
 import {modeState} from "../../../state/playState.ts";
 import {GithubIconSVG} from "../../../icons/GithubIconSVG.tsx";
@@ -38,7 +39,7 @@ export function TopBar({state}: {state: LlmState}) {
             title="Semantic Golfer on GitHub"
             draggable={false}
         >
-            <img className="appMark" src="./icon.svg" alt="" draggable={false} />
+            <AppIcon className="semanticGolferIcon appMark" aria-hidden="true" />
             <strong>Semantic Golfer</strong>
             <ExternalLinkIconSVG className="identityLinkIcon" aria-hidden="true" />
         </a>

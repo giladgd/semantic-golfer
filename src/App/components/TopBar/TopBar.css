@@ -46,7 +46,6 @@
         > .appMark {
             width: 36px;
             height: 36px;
-            object-fit: contain;
         }
         > strong { font-size: 15px; font-weight: 550; letter-spacing: -0.04em; white-space: nowrap; }
     }
