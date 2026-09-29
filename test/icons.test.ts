@@ -6,6 +6,18 @@ import {test} from "node:test";
 import config from "../electron-builder.ts";
 import type {PackContext} from "electron-builder";
 
+test("Windows uses the ready-made ICO without running the icon converter", async (context) => {
+    const {default: iconTools} = await import("app-builder-lib/out/toolsets/icons.js");
+    const {convertIcon} = await import("app-builder-lib/out/util/iconConverter.js");
+    context.mock.method(iconTools, "runIconsTool", () => {
+        throw new Error("Windows builds must not run the icon conversion tool");
+    });
+    const result = await convertIcon({
+        sources: [config.win.icon], fallbackSources: [], roots: [process.cwd()], format: "ico", outDir: "release/.icon-ico"
+    });
+    assert.deepEqual(result, {icons: [{file: path.resolve(config.win.icon), size: 256}], isFallback: false});
+});
+
 test("Icon Composer produces a native macOS catalog and compatibility icon", {skip: process.platform !== "darwin"}, async () => {
     const {generateAssetCatalogForIcon} = await import("app-builder-lib/out/util/macosIconComposer.js");
     const {assetCatalog, icnsFile} = await generateAssetCatalogForIcon(config.mac.icon);

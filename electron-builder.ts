@@ -64,6 +64,7 @@ export default {
         }]
     },
     win: {
+        icon: "assets/icon.ico",
         target: [{
             target: "nsis",
             arch: [
