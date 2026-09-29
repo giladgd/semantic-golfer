@@ -8,7 +8,7 @@ test("the built site includes readable content, social metadata, and crawlable s
     const root = new URL("../dist-site/", import.meta.url);
     const html = await readFile(new URL("index.html", root), "utf8");
     const pkg = JSON.parse(await readFile(new URL("../package.json", import.meta.url), "utf8"));
-    const canonical = pkg.homepage;
+    const canonical = new URL(pkg.homepage).href;
     assert.equal(canonical, "https://semantic-golfer.giladgd.com/");
     const meta = (name: string) => html.match(new RegExp(`<meta (?:name|property)="${name}" content="([^"]+)"`))?.[1];
     assert.ok(html.includes(`<link rel="canonical" href="${canonical}"`));
