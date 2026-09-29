@@ -19,8 +19,8 @@ test("the npm package ships compiled code and direct runtimes without local depe
     assert.ok(!pkg.private);
     assert.ok(pkg.dependencies.electron);
     assert.ok(pkg.dependencies["electron-updater"]);
-    assert.equal(pkg.homepage, "https://semantic-golfer.giladgd.com/");
-    assert.match(await readFile(new URL("README.md", root), "utf8"), /https:\/\/semantic-golfer\.giladgd\.com\//);
+    assert.equal(new URL(pkg.homepage).href, "https://semantic-golfer.giladgd.com/");
+    assert.match(await readFile(new URL("README.md", root), "utf8"), /https:\/\/semantic-golfer\.giladgd\.com\/?(?=["')\s])/);
     assert.match(pkg.dependencies["node-llama-cpp"], /^\d+\.\d+\.\d+/);
     assert.equal(pkg.dependencies["node-llama-cpp"], await getModuleVersion());
     assert.ok(pkg.dependencies["lifecycle-utils"]);

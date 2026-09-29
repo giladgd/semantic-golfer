@@ -467,7 +467,7 @@ void app.whenReady().then(async () => {
             await waitFor(() => evaluate(() => document.querySelector(".levelPicker .level") != null));
             assert.deepEqual(await evaluate(() => [...document.querySelectorAll(".levelPicker .estimatedDuration")]
                 .map((tag) => tag.textContent?.trim())),
-            games[index === 1 ? "lock" : "signalMixing"].levels.map((level) => `≈${level.estimatedDuration}`));
+            games[index === 1 ? "lock" : "signalMixing"].levels.map((level) => level.estimatedDuration));
             await click(".levelPicker .level:first-child");
             await waitFor(() => evaluate(() => document.querySelector("#gameDocument") != null));
             await checkEditing("#gameDocument");
