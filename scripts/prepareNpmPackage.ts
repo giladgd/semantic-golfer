@@ -16,6 +16,7 @@ await writeFile(new URL("package.json", output), JSON.stringify({
     name: pkg.name,
     version: pkg.version,
     description: pkg.description,
+    keywords: pkg.keywords,
     type: "module",
     main: pkg.main,
     bin: {[pkg.name]: "dist-cli/index.js"},

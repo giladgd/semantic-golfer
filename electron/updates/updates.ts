@@ -33,7 +33,7 @@ async function manualUpdateReason() {
         const signature = await promisify(execFile)("/usr/bin/codesign", ["-dv", "--verbose=2", app.getPath("exe")])
             .catch(() => ({stderr: ""}));
         if (!/^TeamIdentifier=(?!not set$)\S+$/m.test(signature.stderr))
-            return "This unsigned macOS build needs to be replaced with the downloaded app.";
+            return "Automatic updates aren't available for this version on macOS since it's unsigned. Download the new version and replace the current app.";
     }
     if (process.platform === "linux" && !process.env.APPIMAGE) {
         const type = await readFile(path.join(process.resourcesPath, "package-type"), "utf8").catch(() => "");

@@ -14,6 +14,7 @@ test("the npm package ships compiled code and direct runtimes without local depe
     const pkg = JSON.parse(await readFile(new URL("package.json", root), "utf8"));
     assert.deepEqual(sourcePkg.files, ["dist", "dist-electron", "dist-cli", "README.md", "LICENSE"]);
     assert.deepEqual(pkg.files, sourcePkg.files);
+    assert.deepEqual(pkg.keywords, sourcePkg.keywords);
     assert.equal(pkg.name, "semantic-golfer");
     assert.deepEqual(pkg.publishConfig, {access: "public", tag: "latest"});
     assert.ok(!pkg.private);
