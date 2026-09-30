@@ -63,6 +63,9 @@
         }
     }
     > .requiredPicker {
+        position: fixed;
+        inset: 0;
+        margin: auto;
         width: min(500px, calc(100vw - 32px));
         max-height: calc(100dvh - 100px);
         padding: 12px;
@@ -75,7 +78,6 @@
             margin: 0 0 22px;
         }
         > .modelList { max-height: calc(100dvh - 180px); }
-        &::backdrop { background: transparent; }
         &[open] {
             opacity: 1;
             transform: none;

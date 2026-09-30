@@ -36,7 +36,7 @@ void app.whenReady().then(async () => {
     let selectedFile: ModelId | undefined;
     let loadCount = 0;
     let updateClicks = 0;
-    let state: LlmState = {...initialLlmState, loadedModelId: "qwen-0.8b",
+    let state: LlmState = {...initialLlmState,
         models: Object.fromEntries(models.map(({id}) => [id, {downloaded: true}]))};
     const rpc = createBirpc<{updateState: (state: LlmState) => void}>({
         getState: () => state,
@@ -104,6 +104,20 @@ void app.whenReady().then(async () => {
         }
     };
     const click = (selector: string) => evaluate((selector) => document.querySelector<HTMLButtonElement>(selector)!.click(), selector);
+    const pointerClick = async (selector: string) => {
+        await waitFor(() => evaluate((selector) => {
+            const button = document.querySelector(selector)!;
+            const {x, y, width, height} = button.getBoundingClientRect();
+            return button.contains(document.elementFromPoint(x + width / 2, y + height / 2));
+        }, selector));
+        const point = await evaluate((selector) => {
+            const {x, y, width, height} = document.querySelector(selector)!.getBoundingClientRect();
+            return {x: Math.round(x + width / 2), y: Math.round(y + height / 2)};
+        }, selector);
+        contents.sendInputEvent({type: "mouseMove", ...point});
+        contents.sendInputEvent({type: "mouseDown", button: "left", clickCount: 1, ...point});
+        contents.sendInputEvent({type: "mouseUp", button: "left", clickCount: 1, ...point});
+    };
     const select = (selector: string, start: number, end = start) => evaluate(({selector, start, end}) => {
         const input = document.querySelector<HTMLInputElement | HTMLTextAreaElement>(selector)!;
         input.focus();
@@ -335,12 +349,43 @@ void app.whenReady().then(async () => {
                 errors.push(parameters.exceptionDetails);
         });
         await contents.debugger.sendCommand("Runtime.enable");
-        await waitFor(() => evaluate(() => document.querySelector<HTMLElement>(".mainContent")?.inert === false));
+        await waitFor(() => evaluate(() => document.querySelector<HTMLDialogElement>(".requiredPicker")?.open));
+        assert.equal(await evaluate(() => document.querySelector(".requiredPicker")!.matches(":modal")), false);
+        assert.equal(await evaluate(() => {
+            const header = document.querySelector(".topBar")!;
+            const {x, y, width} = header.getBoundingClientRect();
+            return document.elementFromPoint(x + width / 2, y + 2) === header &&
+                getComputedStyle(header).getPropertyValue("app-region") === "drag";
+        }), true, "The title bar's draggable area is exposed before a model loads");
+        const openedLinks: string[] = [];
+        contents.setWindowOpenHandler(({url}) => {
+            openedLinks.push(url);
+            return {action: "deny"};
+        });
+        for (const selector of [".appIdentity", ".repositoryLink"]) {
+            const url = await evaluate((selector) => document.querySelector<HTMLAnchorElement>(selector)!.href, selector);
+            await pointerClick(selector);
+            await waitFor(() => openedLinks.at(-1) === url);
+        }
+        for (const [index, mode] of [[2, "playground"], [1, "play"]] as const) {
+            const selector = `.topBar nav button:nth-child(${index})`;
+            await pointerClick(selector);
+            await waitFor(() => evaluate((mode) => document.querySelector<HTMLElement>(".mainContent")!.dataset.mode === mode, mode));
+            await evaluate((selector) => document.querySelector<HTMLButtonElement>(selector)!.focus(), selector);
+            assert.equal(await evaluate((selector) => document.activeElement?.matches(selector), selector), true);
+            assert.equal(await evaluate(() => document.querySelector<HTMLElement>(".mainContent")!.inert), true);
+            assert.equal(await evaluate(() => document.querySelector<HTMLDialogElement>(".requiredPicker")!.open), true);
+            await setTimeout(300);
+        }
+        contents.sendInputEvent({type: "keyDown", keyCode: "Escape"});
+        contents.sendInputEvent({type: "keyUp", keyCode: "Escape"});
+        assert.equal(await evaluate(() => document.querySelector<HTMLDialogElement>(".requiredPicker")!.open), true);
+        console.log("Startup title bar: exposed drag region, real link/navigation clicks, keyboard focus, and required model gate passed");
         state = {...state, update: {status: "available", version: "1.2.3"}};
         await rpc.updateState(state);
         await waitFor(() => evaluate(() => document.querySelector(".updateToast")?.matches(":popover-open")));
         assert.equal(await evaluate(() => document.querySelector(".updateMessage strong")!.textContent), "1.2.3 is available");
-        await click(".installUpdate");
+        await pointerClick(".installUpdate");
         await waitFor(() => evaluate(() => document.querySelector(".installUpdate")?.textContent?.includes("42%")));
         assert.equal(updateClicks, 1);
         assert.equal(await evaluate(() => document.querySelector<HTMLButtonElement>(".installUpdate")!.disabled), true);
@@ -348,12 +393,31 @@ void app.whenReady().then(async () => {
         state = {...state, update: {status: "error", version: "1.2.3", error: "Download interrupted"}};
         await rpc.updateState(state);
         await waitFor(() => evaluate(() => document.querySelector(".installUpdate")?.textContent === "Retry update"));
-        await click(".dismissUpdate");
+        await pointerClick(".dismissUpdate");
         await waitFor(() => evaluate(() => !document.querySelector(".updateToast")?.matches(":popover-open")));
         state = {...state, update: {status: "available", version: "1.2.3", manual: "Download this build"}};
         await rpc.updateState(state);
         await waitFor(() => evaluate(() => document.querySelector(".installUpdate")?.textContent === "Download update"));
-        await click(".dismissUpdate");
+        // Opening a confirmation must keep the toast interactive, then return it to the app.
+        await pointerClick(".requiredPicker .deleteModel");
+        await waitFor(() => evaluate(() => document.querySelector(".requiredPicker .deleteModelDialog")?.matches(":modal")));
+        await pointerClick(".dismissUpdate");
+        await waitFor(() => evaluate(() => !document.querySelector(".updateToast")?.matches(":popover-open")));
+        state = {...state, update: {status: "available", version: "1.2.3"}};
+        await rpc.updateState(state);
+        await pointerClick(".requiredPicker .deleteModelDialog .dialogActions button:first-child");
+        await waitFor(() => evaluate(() => !document.querySelector(".requiredPicker .deleteModelDialog")?.matches(":modal")));
+        await evaluate(() => document.querySelector<HTMLButtonElement>(".dismissUpdate")!.focus());
+        assert.equal(await evaluate(() => document.activeElement?.matches(".dismissUpdate")), true,
+            "Toast controls remain keyboard-accessible alongside the required picker");
+        assert.equal(await evaluate(() => document.querySelector<HTMLElement>(".mainContent")!.inert), true);
+        state = {...state, loadedModelId: "qwen-0.8b"};
+        await rpc.updateState(state);
+        await waitFor(() => evaluate(() => document.querySelector<HTMLElement>(".mainContent")?.inert === false));
+        await pointerClick(".dismissUpdate");
+        await waitFor(() => evaluate(() => !document.querySelector(".updateToast")?.matches(":popover-open")));
+        contents.sendInputEvent({type: "keyDown", keyCode: "Tab"});
+        contents.sendInputEvent({type: "keyUp", keyCode: "Tab"});
         const identity = await evaluate(() => {
             const link = document.querySelector<HTMLAnchorElement>(".appIdentity")!;
             link.focus();
@@ -364,7 +428,7 @@ void app.whenReady().then(async () => {
         await evaluate(() => (document.activeElement as HTMLElement)?.blur());
         state = {...state, update: undefined};
         await rpc.updateState(state);
-        console.log("Update toast: progress, disabled download button, errors, dismissal, manual fallback, and identity link passed");
+        console.log("Update toast: real clicks during model selection, nested modals, keyboard access, progress, dismissal, and identity link passed");
         const pickerPosition = () => evaluate(() => {
             const rect = document.querySelector("#modelsPopover")!.getBoundingClientRect();
             return [rect.right, rect.top];

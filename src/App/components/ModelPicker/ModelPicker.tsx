@@ -26,7 +26,8 @@ export function ModelPicker({state}: {state: LlmState}) {
     useEffect(() => {
         if (required) {
             popover.current?.hidePopover();
-            dialog.current?.showModal();
+            // Only the main content is inert; keep the title bar available for navigation and dragging.
+            dialog.current?.show();
         } else {
             dialog.current?.close();
             if (loading)
@@ -47,10 +48,6 @@ export function ModelPicker({state}: {state: LlmState}) {
         <dialog
             className="requiredPicker"
             ref={dialog}
-            onCancel={(event) => {
-                if (event.target === event.currentTarget)
-                    event.preventDefault();
-            }}
             aria-labelledby="pickModelHeading"
         >
             <h1 id="pickModelHeading">Pick a model</h1>
