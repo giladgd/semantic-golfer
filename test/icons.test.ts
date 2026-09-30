@@ -18,6 +18,18 @@ test("Windows uses the ready-made ICO without running the icon converter", async
     assert.deepEqual(result, {icons: [{file: path.resolve(config.win.icon), size: 256}], isFallback: false});
 });
 
+test("Linux icon set only uses sizes the hicolor theme indexes", async () => {
+    const {convertIcon} = await import("app-builder-lib/out/util/iconConverter.js");
+    const {icons} = await convertIcon({
+        sources: [config.linux.icon], fallbackSources: [], roots: [process.cwd()], format: "set", outDir: "release/.icon-set"
+    });
+    // The sizes hicolor's index.theme declares; launchers don't look up icons in other directories.
+    const hicolorSizes = [16, 22, 24, 32, 36, 48, 64, 72, 96, 128, 192, 256, 512];
+    const sizes = icons.map((icon) => icon.size);
+    assert.ok(sizes.every((size) => hicolorSizes.includes(size)), `Unindexed icon sizes: ${sizes.join(", ")}`);
+    assert.equal(sizes.at(-1), 512);
+});
+
 test("Icon Composer produces a native macOS catalog and compatibility icon", {skip: process.platform !== "darwin"}, async () => {
     const {generateAssetCatalogForIcon} = await import("app-builder-lib/out/util/macosIconComposer.js");
     const {assetCatalog, icnsFile} = await generateAssetCatalogForIcon(config.mac.icon);
