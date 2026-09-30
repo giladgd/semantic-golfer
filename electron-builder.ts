@@ -90,7 +90,8 @@ export default {
     },
     linux: {
         executableName: "semantic-golfer",
-        icon: "assets/icon.png",
+        // A directory, so the builder resizes its icon.png to hicolor's sizes; a PNG path ships as-is at 1024x1024, which launchers ignore
+        icon: "assets",
         syncDesktopName: true,
         target: [{
             target: "AppImage",
